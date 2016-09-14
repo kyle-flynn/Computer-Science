@@ -28,7 +28,9 @@ public class GeoCountDownTimer {
     private int years;
 
     /*****************************************************************
-     Constructor. TODO - Ask what this is supposed to do.
+     Constructor that should never be called because our class should
+     never be called with an empty constructor. In the rare case that
+     it is, set the defaults to 0.
      *****************************************************************/
     private GeoCountDownTimer() {
         this(0, 0, 0);
@@ -65,6 +67,8 @@ public class GeoCountDownTimer {
      @throws IllegalArgumentException if the date is invalid
     *****************************************************************/
     public GeoCountDownTimer(String geoDate) {
+
+        /** Date must contain 3 arguments, month, day and year */
         String[] splitter = geoDate.split("/");
 
         /**
@@ -77,8 +81,14 @@ public class GeoCountDownTimer {
 
         /** If we can't parse the parameters, catch an error */
         try {
+
+            /** Trying to parse month string data. */
             int months = Integer.parseInt(splitter[0]);
+
+            /** Trying to parse day string data. */
             int days = Integer.parseInt(splitter[1]);
+
+            /** Trying to parse year string data. */
             int years = Integer.parseInt(splitter[2]);
 
             this.yearMonth = YearMonth.of(years, months);
@@ -115,7 +125,10 @@ public class GeoCountDownTimer {
     }
 
     /*****************************************************************
-     @param args
+     Main method that tests our software, and runs the user interface
+     to go along with it.
+     @param args arguments put into the launch options of the program
+     @return none
     *****************************************************************/
     public static void main(String[] args) {
         GeoCountDownTimer s = new GeoCountDownTimer("2/10/2018");
@@ -131,9 +144,6 @@ public class GeoCountDownTimer {
         for (int i = 0; i < (366 + 365 + 365 + 365); i++)
             s2.inc();
         System.out.println("Date: " + s2);
-
-        // Create many more test cases in this driver method to
-        // Prove the class is functioning correctly.
 
         GeoCountDownTimer s3 = new GeoCountDownTimer("2/1/2016");
         s3.inc(29);
@@ -181,6 +191,8 @@ public class GeoCountDownTimer {
         GeoCountDownTimer s6 = new GeoCountDownTimer("9/7/2018");
         System.out.println(s6.daysToGo("9/7/2017"));
 
+        /** Create an instance of our user interface */
+        new MyTimerPanel();
     }
 
     /*****************************************************************
@@ -193,20 +205,36 @@ public class GeoCountDownTimer {
     *****************************************************************/
     @Override
     public boolean equals(Object other) {
-        if (this == other) return true;
-        if (other == null || getClass() != other.getClass()) return false;
+        if (this == other) {
+            return true;
+        }
+
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
 
         GeoCountDownTimer that = (GeoCountDownTimer) other;
 
-        if (months != that.months) return false;
-        if (days != that.days) return false;
-        if (years != that.years) return false;
+        if (months != that.months) {
+            return false;
+        }
+
+        if (days != that.days) {
+            return false;
+        }
+
+        if (years != that.years) {
+            return false;
+        }
 
         /**
          Ternary function that turns 3-4 if statements into one concise
          return statement.
          */
-        return yearMonth != null ? yearMonth.equals(that.yearMonth) : that.yearMonth == null;
+        boolean result = yearMonth != null ?
+                yearMonth.equals(that.yearMonth) : that.yearMonth == null;
+
+        return result;
     }
 
     /*****************************************************************
@@ -243,6 +271,8 @@ public class GeoCountDownTimer {
         for (int i = 0; i < days; i++) {
 
             if (this.days == 1) {
+
+                /** This will hold data for our new month */
                 YearMonth newMonth;
                 if (this.months == 1) {
 
@@ -285,7 +315,10 @@ public class GeoCountDownTimer {
     *****************************************************************/
     public void inc(int days) {
         for (int i = 0; i < days; i++) {
+
             if (this.days + 1 > this.yearMonth.lengthOfMonth()) {
+
+                /** This will hold data for our new month */
                 YearMonth newMonth;
                 if (this.months == 12) {
 
@@ -323,7 +356,13 @@ public class GeoCountDownTimer {
      @return the 'this' GeoCountDownTimer object as Month DD, YYYY.
     *****************************************************************/
     public String toString() {
+
+        /**
+         We put the month string into a variable to make it more
+         easily accessible.
+         */
         String monthString = yearMonth.getMonth().toString();
+
         return  monthString + " " + this.days + ", " + this.years;
     }
 
@@ -348,7 +387,8 @@ public class GeoCountDownTimer {
         /**
          LocalDate is Java 8 specific and will throw a DateTimeException if
          the date is not valid. But, we  return false instead of
-         printing the stacktrace.
+         printing the stacktrace. Very simple line of code that will
+         validate our date!
          */
         try {
             LocalDate.of(years, months, days);
@@ -363,16 +403,32 @@ public class GeoCountDownTimer {
      and the 'this' GeoCountDownTimer date.
      @param fromDate date to get the amount of days between
      @return integer from the 'this' GeoCountDownTimer and the fromDate
+     @throws IllegalArgumentException if the fromDate is larger than
+     the 'this' GeoCountDownTimer.
     *****************************************************************/
     public int daysToGo(String fromDate) {
-        GeoCountDownTimer futureTimer = new GeoCountDownTimer(fromDate);
-        LocalDate thisDate = LocalDate.of(years, months, days);
-        LocalDate laterDate = LocalDate.of(futureTimer.getYears(),
-                futureTimer.getMonths(), futureTimer.getDays());
 
-        /** For some reason, DAYS.between returns a long. We cast it to an int. */
-        if ((int) DAYS.between(laterDate, thisDate) >= 0) {
-            return (int) DAYS.between(laterDate, thisDate);
+        /**
+         Creating instance of timer to countdown to, as this will
+         also validate our date, and allow us to access the getter
+         methods.
+         */
+        GeoCountDownTimer countdownTimer = new GeoCountDownTimer(fromDate);
+
+        /** Making a Java 8 object of 'this' date. */
+        LocalDate thisDate = LocalDate.of(years, months, days);
+
+        /** Making a Java 8 object of 'countdown' date. */
+        LocalDate countdownDate = LocalDate.of(countdownTimer.getYears(),
+                countdownTimer.getMonths(), countdownTimer.getDays());
+
+        /**
+         For some reason, DAYS.between returns a long. We cast it to
+         an int and return the result. Otherwise, it is very robust at
+         giving us what we need!
+         */
+        if ((int) DAYS.between(countdownDate, thisDate) >= 0) {
+            return (int) DAYS.between(countdownDate, thisDate);
         } else {
             throw new IllegalArgumentException();
         }
@@ -386,10 +442,15 @@ public class GeoCountDownTimer {
      @return none.
     *****************************************************************/
     public void save(String fileName) {
+
+        /** How we will write to a file. Starts null. */
         PrintWriter out = null;
+
         try {
             out = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
             out.println(this.months + "/" + this.days + "/" + this.years);
+
+            /** Must close the stream to prevent memory leaks */
             out.close();
         } catch (IOException e) {
             System.out.println("File not found");
@@ -403,13 +464,20 @@ public class GeoCountDownTimer {
     *****************************************************************/
     public void load(String fileName) {
         try {
-            // open the data file
+
+            /** Loads the file through scanner. */
             Scanner fileReader = new Scanner(new File(fileName));
 
+            /** Splits our data by '/' */
             String[] splitter = fileReader.next().split("/");
 
+            /** Trying to parse month string data. */
             int months = Integer.parseInt(splitter[0]);
+
+            /** Trying to parse day string data. */
             int days = Integer.parseInt(splitter[1]);
+
+            /** Trying to parse year string data. */
             int years = Integer.parseInt(splitter[2]);
 
             this.yearMonth = YearMonth.of(years, months);
@@ -429,6 +497,8 @@ public class GeoCountDownTimer {
             }
 
             System.out.println(this.toString());
+
+            /** Must close the stream to prevent memory leaks */
             fileReader.close();
         } catch(Exception error) {
             System.out.println("File not found");
