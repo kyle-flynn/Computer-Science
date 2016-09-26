@@ -15,7 +15,7 @@ public class NumberGame implements NumberSlider {
     private int[][] boardValues;
     private boolean[][] hasMerged;
 
-    private final boolean debug = true;
+    private final boolean debug = false;
 
     private ArrayList<ArrayList<Cell>> savedBoards;
 
@@ -37,10 +37,10 @@ public class NumberGame implements NumberSlider {
 
         // testing values
         if (debug) {
-            boardValues[0][0] = 1;
-            boardValues[1][0] = 1;
-            boardValues[2][0] = 1;
-            boardValues[3][0] = 1;
+            boardValues[0][0] = 8;
+            boardValues[0][1] = 2;
+            boardValues[1][0] = 4;
+//            boardValues[0][3] = 1;
         }
 
     }
@@ -251,10 +251,12 @@ public class NumberGame implements NumberSlider {
 
                             if (canMerge(y, j, y-1, j)) {
                                 merge(y, j, y-1, j);
+                                didSlide = true;
                             }
 
                             if (canMove(y, j, y-1, j)) {
                                 move(y, j, y-1, j);
+                                didSlide = true;
                             }
 
                             y--;
@@ -265,9 +267,103 @@ public class NumberGame implements NumberSlider {
                 }
             }
 
+        } else if (dir == SlideDirection.DOWN) {
+
+            for (int i = height-1; i >= 0; i--) {
+                for (int j = width-1; j >= 0; j--) {
+
+                    /* We don't want to slide empty tiles */
+                    if (boardValues[i][j] != 0) {
+
+                        /* Re-assigning our 'i' value to a 'y' value for manipulation. */
+                        int y = i;
+
+                        while (y < width-1) {
+
+                            if (canMerge(y, j, y+1, j)) {
+                                merge(y, j, y+1, j);
+                                didSlide = true;
+                            }
+
+                            if (canMove(y, j, y+1, j)) {
+                                move(y, j, y+1, j);
+                                didSlide = true;
+                            }
+
+                            y++;
+                        }
+
+                    }
+
+                }
+            }
+
+        } else if (dir == SlideDirection.LEFT) {
+
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+
+                    /* We don't want to slide empty tiles */
+                    if (boardValues[i][j] != 0) {
+
+                        /* Re-assigning our 'j' value to a 'x' value for manipulation. */
+                        int x = j;
+
+                        while (x > 0) {
+
+                            if (canMerge(i, x, i, x-1)) {
+                                merge(i, x, i, x-1);
+                                didSlide = true;
+                            }
+
+                            if (canMove(i, x, i, x-1)) {
+                                move(i, x, i, x-1);
+                                didSlide = true;
+                            }
+
+                            x--;
+                        }
+
+                    }
+
+                }
+            }
+
+        } else if (dir == SlideDirection.RIGHT) {
+
+            for (int i = height-1; i >= 0; i--) {
+                for (int j = width-1; j >= 0; j--) {
+
+                    /* We don't want to slide empty tiles */
+                    if (boardValues[i][j] != 0) {
+
+                        /* Re-assigning our 'j' value to a 'x' value for manipulation. */
+                        int x = j;
+
+                        while (x < width-1) {
+
+                            if (canMerge(i, x, i, x+1)) {
+                                merge(i, x, i, x+1);
+                                System.out.println("MERGE");
+                                didSlide = true;
+                            }
+
+                            if (canMove(i, x, i, x+1)) {
+                                move(i, x, i, x+1);
+                                didSlide = true;
+                            }
+
+                            x++;
+                        }
+
+                    }
+
+                }
+            }
+
         }
 
-        if (didSlide) {
+        if (didSlide && !debug) {
             placeRandomValue();
         }
 
@@ -335,6 +431,14 @@ public class NumberGame implements NumberSlider {
         savedBoards.add(cells);
     }
 
+    private void resetMerges() {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                hasMerged[i][j] = false;
+            }
+        }
+    }
+
     private void merge(int i1, int j1, int i2, int j2) {
         boardValues[i2][j2] = boardValues[i1][j1] * 2;
         boardValues[i1][j1] = 0;
@@ -346,18 +450,11 @@ public class NumberGame implements NumberSlider {
         boardValues[i1][j1] = 0;
     }
 
-    private void resetMerges() {
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                hasMerged[i][j] = false;
-            }
-        }
-    }
-
     private boolean canMerge(int i1, int j1, int i2, int j2) {
-        boolean sameTile = boardValues[i1][j2] == boardValues[i2][j2];
+        boolean notZero = boardValues[i1][j1] != 0 && boardValues[i2][j2] != 0;
+        boolean sameTile = boardValues[i1][j1] == boardValues[i2][j2];
         boolean didMerge = hasMerged[i1][j1] || hasMerged[i2][j2];
-        return sameTile && !didMerge;
+        return sameTile && !didMerge && notZero;
     }
 
     private boolean canMove(int i1, int j1, int i2, int j2) {

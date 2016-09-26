@@ -63,8 +63,8 @@ public class TextUI {
      */
     public void playLoop() {
         /* Place the first two random tiles */
-//        game.placeRandomValue();
-//        game.placeRandomValue();
+        game.placeRandomValue();
+        game.placeRandomValue();
         renderBoard();
 
         /* To keep the right margin within 75 columns, we split the
