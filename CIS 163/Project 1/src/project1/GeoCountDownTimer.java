@@ -382,7 +382,7 @@ public class GeoCountDownTimer {
      @param years Current year of the 'this' GeoCountDownTimer
      @return true if the date is valid, false if the date does not exist.
     *****************************************************************/
-    public boolean isDateValid(int months, int days, int years) {
+    private boolean isDateValid(int months, int days, int years) {
 
         /**
          LocalDate is Java 8 specific and will throw a DateTimeException if

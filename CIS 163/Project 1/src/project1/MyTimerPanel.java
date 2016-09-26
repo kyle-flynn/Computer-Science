@@ -140,26 +140,32 @@ public class MyTimerPanel extends JPanel {
             if (running) {
                 if (geoCountDownTimer1.daysToGo("5/10/2016") > 0) {
 
-                    geoTimer1.setText("1. Days to go (5/10/2016): " + geoCountDownTimer1);
+                    geoTimer1.setText("1. Days to go (5/10/2016): " +
+                            geoCountDownTimer1);
                     geoCountDownTimer1.dec();
                 } else {
-                    geoTimer1.setText("1. Days to go (5/10/2016): " + geoCountDownTimer1);
+                    geoTimer1.setText("1. Days to go (5/10/2016): " +
+                            geoCountDownTimer1);
                 }
 
                 if (geoCountDownTimer2.daysToGo("5/10/2016") > 0) {
 
-                    geoTimer2.setText("2. Days to go (5/10/2016): " + geoCountDownTimer2);
+                    geoTimer2.setText("2. Days to go (5/10/2016): " +
+                            geoCountDownTimer2);
                     geoCountDownTimer2.dec();
                 } else {
-                    geoTimer2.setText("2. Days to go (5/10/2016): " + geoCountDownTimer2);
+                    geoTimer2.setText("2. Days to go (5/10/2016): " +
+                            geoCountDownTimer2);
                 }
 
                 if (geoCountDownTimer3.daysToGo("5/10/2016") > 0) {
 
-                    geoTimer3.setText("3. Days to go (5/10/2016): " + geoCountDownTimer3);
+                    geoTimer3.setText("3. Days to go (5/10/2016): " +
+                            geoCountDownTimer3);
                     geoCountDownTimer3.dec();
                 } else {
-                    geoTimer3.setText("3. Days to go (5/10/2016): " + geoCountDownTimer3);
+                    geoTimer3.setText("3. Days to go (5/10/2016): " +
+                            geoCountDownTimer3);
                 }
             }
         }
