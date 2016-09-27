@@ -67,6 +67,7 @@ public class TextUI {
         game.placeRandomValue();
         renderBoard();
 
+
         /* To keep the right margin within 75 columns, we split the
            following long string literal into two lines
          */
