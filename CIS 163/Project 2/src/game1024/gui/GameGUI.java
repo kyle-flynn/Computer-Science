@@ -16,26 +16,19 @@ public class GameGUI {
     private int width;
     private int height;
 
-    private int boardWidth;
-    private int boardHeight;
-
     private NumberGame game;
 
     private JFrame frame;
     private GamePanel boardPanel;
-    private JPanel buttonPanel;
 
     public GameGUI() {
         width = 800;
         height = 600;
-        boardWidth = 4;
-        boardHeight = 4;
 
         game = new NumberGame();
 
         frame = new JFrame();
         boardPanel = new GamePanel(4, 4, game);
-        buttonPanel = new JPanel();
     }
 
     public void init() {

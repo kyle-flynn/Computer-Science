@@ -1,7 +1,10 @@
 package game1024;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * Created by kylef_000 on 9/20/2016.
@@ -18,8 +21,10 @@ public class NumberGame implements NumberSlider {
     private boolean[][] hasMerged;
 
     private int score;
+    private int highScore;
 
-    private ArrayList<int[][]> savedBoards;
+    private Stack<int[][]> savedBoards;
+    private Stack<Integer> savedScores;
 
     @Override
     public void resizeBoard(int height, int width, int winningValue) {
@@ -30,8 +35,10 @@ public class NumberGame implements NumberSlider {
         this.hasMerged = new boolean[height][width];
         this.currentStatus = GameStatus.IN_PROGRESS;
         this.cells = new ArrayList<>();
-        this.savedBoards = new ArrayList<>();
+        this.savedBoards = new Stack<>();
+        this.savedScores = new Stack<>();
         this.score = 0;
+        this.highScore = 0;
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -39,6 +46,8 @@ public class NumberGame implements NumberSlider {
                 hasMerged[i][j] = false;
             }
         }
+
+        loadHighScore();
 
     }
 
@@ -48,7 +57,11 @@ public class NumberGame implements NumberSlider {
         this.hasMerged = new boolean[height][width];
         this.cells.clear();
         this.savedBoards.clear();
+        this.savedScores.clear();
         this.score = 0;
+
+        saveHighScore();
+        loadHighScore();
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -320,19 +333,60 @@ public class NumberGame implements NumberSlider {
     public void undo() {
 
         if (savedBoards.size() > 1) {
-            int[][] prevBoard = savedBoards.get(savedBoards.size() - 2);
+
+            savedBoards.pop();
+            savedScores.pop();
+
+            int[][] prevBoard = savedBoards.pop();
+            int prevScore = savedScores.pop();
 
             setValues(prevBoard);
-
-            savedBoards.remove(savedBoards.size() - 1);
+            score = prevScore;
         } else {
             throw new IllegalStateException();
         }
 
     }
 
+    public void loadHighScore() {
+        try {
+
+            /** Loads the file through scanner. */
+            Scanner fileReader = new Scanner(new File("highscore.txt"));
+
+            /** Splits our data by '/' */
+            int highScore = fileReader.nextInt();
+
+            this.highScore = highScore;
+
+            fileReader.close();
+        } catch(Exception error) {
+            System.out.println("Error retrieving high score.");
+            this.highScore = 0;
+        }
+    }
+
+    public void saveHighScore() {
+        /** How we will write to a file. Starts null. */
+        PrintWriter out = null;
+
+        try {
+            out = new PrintWriter(new BufferedWriter(new FileWriter("highscore.txt")));
+            out.println(this.highScore);
+
+            /** Must close the stream to prevent memory leaks */
+            out.close();
+        } catch (IOException e) {
+            System.out.println("Error writing out to file.");
+        }
+    }
+
     public int getScore() {
         return score;
+    }
+
+    public int getHighScore() {
+        return highScore;
     }
 
     private ArrayList<Cell> getEmptyTiles() {
@@ -360,7 +414,8 @@ public class NumberGame implements NumberSlider {
             }
         }
 
-        savedBoards.add(temp);
+        savedBoards.push(temp);
+        savedScores.push(score);
     }
 
     private void resetMerges() {
@@ -376,6 +431,10 @@ public class NumberGame implements NumberSlider {
         boardValues[i1][j1] = 0;
         hasMerged[i2][j2] = true;
         score+= boardValues[i2][j2];
+
+        if (score > highScore) {
+            this.highScore = score;
+        }
     }
 
     private void move(int i1, int j1, int i2, int j2) {

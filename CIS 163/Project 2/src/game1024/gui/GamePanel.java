@@ -8,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Stack;
 
 /**
  * Created by kylef_000 on 9/28/2016.
@@ -32,8 +31,10 @@ public class GamePanel extends JPanel {
     private JButton undo;
     private JPanel buttonPanel;
     private JPanel buttonContainer;
-    private JPanel infoPanel;
+    private JPanel rightInfoPanel;
+    private JPanel leftInfoPanel;
     private JLabel score;
+    private JLabel highScore;
 
     private NumberTile[][] tiles;
     private int size;
@@ -59,8 +60,10 @@ public class GamePanel extends JPanel {
         menuListener = new MenuListener();
         buttonPanel = new JPanel();
         buttonContainer = new JPanel();
-        infoPanel = new JPanel();
+        rightInfoPanel = new JPanel();
+        leftInfoPanel = new JPanel();
         score = new JLabel();
+        highScore = new JLabel();
 
         slideUp = new JButton("Slide Up");
         slideDown = new JButton("Slide Down");
@@ -102,16 +105,24 @@ public class GamePanel extends JPanel {
         gameMenu.add(gameResize);
         gameMenu.add(gameWinChange);
 
-        infoPanel.setLayout(new BorderLayout());
-        infoPanel.add(score, BorderLayout.CENTER);
+        rightInfoPanel.setLayout(new BorderLayout());
+        rightInfoPanel.add(score, BorderLayout.CENTER);
+        rightInfoPanel.setBackground(Color.BLACK);
+
+        leftInfoPanel.setLayout(new BorderLayout());
+        leftInfoPanel.add(highScore, BorderLayout.CENTER);
+        leftInfoPanel.setBackground(Color.BLACK);
 
         score.setForeground(Color.WHITE);
-        score.setFont(new Font("Helvetica", Font.PLAIN, 32));
+        score.setFont(new Font("Helvetica", Font.PLAIN, 24));
 
-        buttonContainer.add(score, BorderLayout.NORTH);
+        highScore.setForeground(Color.WHITE);
+        highScore.setFont(new Font("Helvetica", Font.PLAIN, 24));
+
         buttonContainer.add(buttonPanel, BorderLayout.SOUTH);
         add(menuBar, BorderLayout.PAGE_START);
-        add(infoPanel, BorderLayout.NORTH);
+        add(rightInfoPanel, BorderLayout.WEST);
+        add(leftInfoPanel, BorderLayout.EAST);
         add(buttonContainer, BorderLayout.SOUTH);
 
         setFocusable(true);
@@ -169,6 +180,7 @@ public class GamePanel extends JPanel {
         }
 
         score.setText("Current Score: " + game.getScore());
+        highScore.setText("High Score: " + game.getHighScore());
 
         checkStatus();
 
