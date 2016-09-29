@@ -1,7 +1,8 @@
 package game1024;
 
 
-import java.util.ArrayList;
+import game1024.gui.GameGUI;
+
 import java.util.Scanner;
 
 /**

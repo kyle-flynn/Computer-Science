@@ -17,7 +17,7 @@ public class NumberGame implements NumberSlider {
     private int[][] boardValues;
     private boolean[][] hasMerged;
 
-    private final boolean debug = false;
+    private int score;
 
     private ArrayList<int[][]> savedBoards;
 
@@ -31,8 +31,7 @@ public class NumberGame implements NumberSlider {
         this.currentStatus = GameStatus.IN_PROGRESS;
         this.cells = new ArrayList<>();
         this.savedBoards = new ArrayList<>();
-
-        System.out.println(width + " | " + height);
+        this.score = 0;
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -41,21 +40,15 @@ public class NumberGame implements NumberSlider {
             }
         }
 
-        // testing values
-        if (debug) {
-            boardValues[3][0] = 1;
-            boardValues[3][1] = 1;
-            boardValues[3][0] = 1;
-            boardValues[3][3] = 1;
-        }
-
     }
 
     @Override
     public void reset() {
         this.boardValues = new int[height][width];
         this.hasMerged = new boolean[height][width];
-        this.cells = new ArrayList<>();
+        this.cells.clear();
+        this.savedBoards.clear();
+        this.score = 0;
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -240,7 +233,7 @@ public class NumberGame implements NumberSlider {
 
         }
 
-        if (didSlide && !debug) {
+        if (didSlide) {
             placeRandomValue();
             saveBoard();
         }
@@ -338,6 +331,10 @@ public class NumberGame implements NumberSlider {
 
     }
 
+    public int getScore() {
+        return score;
+    }
+
     private ArrayList<Cell> getEmptyTiles() {
 
         ArrayList<Cell> temp = new ArrayList<>();
@@ -378,6 +375,7 @@ public class NumberGame implements NumberSlider {
         boardValues[i2][j2] = boardValues[i1][j1] * 2;
         boardValues[i1][j1] = 0;
         hasMerged[i2][j2] = true;
+        score+= boardValues[i2][j2];
     }
 
     private void move(int i1, int j1, int i2, int j2) {

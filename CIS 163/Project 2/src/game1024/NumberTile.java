@@ -15,7 +15,7 @@ public class NumberTile extends JLabel implements ActionListener {
     private Timer tick;
     private Color current, target;
     private int dRed, dGreen, dBlue, step;
-    private int NSTEPS = 6;
+    private static final int NSTEPS = 6;
 
     static {
         bgColorMap = new TreeMap<String,Color>();
@@ -35,13 +35,16 @@ public class NumberTile extends JLabel implements ActionListener {
     public NumberTile(String text, int horizontalAlignment) {
         super(text, horizontalAlignment);
         setOpaque(true);
-        tick = new Timer(50, this);
     }
 
     private void animateColorTo (Color next) {
+        if (getBackground() == null) {
+            setBackground(Color.LIGHT_GRAY);
+            tick = new Timer(50, this);
+        }
         target = next;
-        current = getBackground();
         step = 0;
+        current = getBackground();
         dRed = (next.getRed() - current.getRed()) / NSTEPS;
         dGreen = (next.getGreen() - current.getGreen()) / NSTEPS;
         dBlue = (next.getBlue() - current.getBlue()) / NSTEPS;
