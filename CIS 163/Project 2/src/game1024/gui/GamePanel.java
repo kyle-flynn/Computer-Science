@@ -23,11 +23,17 @@ public class GamePanel extends JPanel {
     private JMenu gameMenu;
     private JMenuItem gameReset;
     private JMenuItem gameResize;
+    private JMenuItem gameWinChange;
 
     private JButton slideUp;
     private JButton slideDown;
     private JButton slideLeft;
     private JButton slideRight;
+    private JButton undo;
+    private JPanel buttonPanel;
+    private JPanel buttonContainer;
+    private JPanel infoPanel;
+    private JLabel score;
 
     private NumberTile[][] tiles;
     private int size;
@@ -39,58 +45,74 @@ public class GamePanel extends JPanel {
 
     private NumberGame game;
 
-    private JPanel buttonPanel;
-
     public GamePanel(int width, int height, NumberGame game) {
         this.width = width;
         this.height = height;
         this.game = game;
-
-        size = 72;
+        this.size = 72;
 
         setLayout(null);
-
         resizeBoard(width, height);
 
-        this.keyListener = new KeyboardListener();
-        this.btnListener = new ButtonListener();
-        this.menuListener = new MenuListener();
-        this.buttonPanel = new JPanel();
+        keyListener = new KeyboardListener();
+        btnListener = new ButtonListener();
+        menuListener = new MenuListener();
+        buttonPanel = new JPanel();
+        buttonContainer = new JPanel();
+        infoPanel = new JPanel();
+        score = new JLabel();
 
         slideUp = new JButton("Slide Up");
         slideDown = new JButton("Slide Down");
         slideLeft = new JButton("Slide Left");
         slideRight = new JButton("Slide Right");
+        undo = new JButton("Undo");
 
         slideLeft.addActionListener(btnListener);
         slideUp.addActionListener(btnListener);
         slideDown.addActionListener(btnListener);
         slideRight.addActionListener(btnListener);
+        undo.addActionListener(btnListener);
 
         addKeyListener(keyListener);
 
         setLayout(new BorderLayout());
+        buttonPanel.setLayout(new BorderLayout());
         buttonPanel.add(slideLeft, BorderLayout.WEST);
         buttonPanel.add(slideUp, BorderLayout.NORTH);
         buttonPanel.add(slideDown, BorderLayout.SOUTH);
         buttonPanel.add(slideRight, BorderLayout.EAST);
+        buttonPanel.add(undo, BorderLayout.CENTER);
         buttonPanel.setBackground(Color.BLACK);
+        buttonContainer.setBackground(Color.BLACK);
 
         menuBar = new JMenuBar();
         gameMenu = new JMenu("Game");
-        gameReset = new JMenuItem("Reset");
-        gameResize = new JMenuItem("Resize");
+        gameReset = new JMenuItem("Reset Game");
+        gameResize = new JMenuItem("Resize Board");
+        gameWinChange = new JMenuItem("Change Winning Tile");
 
         gameReset.addActionListener(menuListener);
         gameResize.addActionListener(menuListener);
+        gameWinChange.addActionListener(menuListener);
 
         menuBar.add(gameMenu);
 
         gameMenu.add(gameReset);
         gameMenu.add(gameResize);
+        gameMenu.add(gameWinChange);
 
+        infoPanel.setLayout(new BorderLayout());
+        infoPanel.add(score, BorderLayout.CENTER);
+
+        score.setForeground(Color.WHITE);
+        score.setFont(new Font("Helvetica", Font.PLAIN, 32));
+
+        buttonContainer.add(score, BorderLayout.NORTH);
+        buttonContainer.add(buttonPanel, BorderLayout.SOUTH);
         add(menuBar, BorderLayout.PAGE_START);
-        add(buttonPanel, BorderLayout.SOUTH);
+        add(infoPanel, BorderLayout.NORTH);
+        add(buttonContainer, BorderLayout.SOUTH);
 
         setFocusable(true);
         requestFocusInWindow();
@@ -112,7 +134,7 @@ public class GamePanel extends JPanel {
         this.width = width;
 
         xOffset = (800/2) - ((size * width)/2);
-        yOffset = (600/2) - ((size * height)/2) - 60;
+        yOffset = (600/2) - ((size * height)/2) - 20;
         tiles = new NumberTile[height][width];
 
         game.resizeBoard(width, height, 1024);
@@ -146,6 +168,13 @@ public class GamePanel extends JPanel {
             }
         }
 
+        score.setText("Current Score: " + game.getScore());
+
+        checkStatus();
+
+    }
+
+    private void checkStatus() {
         if (game.getStatus() == GameStatus.USER_LOST) {
             int option = JOptionPane.showConfirmDialog(this, "You have lost! Play Again?", "1024", JOptionPane.YES_NO_OPTION);
 
@@ -157,9 +186,15 @@ public class GamePanel extends JPanel {
             }
 
         } else if (game.getStatus() == GameStatus.USER_WON) {
+            int option = JOptionPane.showConfirmDialog(this, "You have won! Congratulations! Play Again?", "1024", JOptionPane.YES_NO_OPTION);
 
+            if (option == 1) {
+                System.exit(0);
+            } else {
+                game.reset();
+                renderBoard();
+            }
         }
-
     }
 
     private class ButtonListener implements ActionListener {
@@ -178,6 +213,13 @@ public class GamePanel extends JPanel {
             } else if (e.getSource() == slideRight) {
                 game.slide(SlideDirection.RIGHT);
                 renderBoard();
+            } else if (e.getSource() == undo) {
+                try {
+                    game.undo();
+                    renderBoard();
+                } catch(IllegalStateException ise) {
+                    JOptionPane.showMessageDialog(null, "Can't undo that far!", "1024", JOptionPane.OK_OPTION);
+                }
             }
         }
     }
@@ -203,6 +245,13 @@ public class GamePanel extends JPanel {
             } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
                 game.slide(SlideDirection.RIGHT);
                 renderBoard();
+            } else if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                try {
+                    game.undo();
+                    renderBoard();
+                } catch(IllegalStateException ise) {
+                    JOptionPane.showMessageDialog(null, "Can't undo that far!", "1024", JOptionPane.OK_OPTION);
+                }
             }
         }
 
@@ -223,6 +272,16 @@ public class GamePanel extends JPanel {
                 try {
                     int width = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter width of new board (must be an integer)", "1024", JOptionPane.INFORMATION_MESSAGE));
                     int height = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter height of new board (must be an integer)", "1024", JOptionPane.INFORMATION_MESSAGE));
+
+                    // TODO - Not working...
+//                    resizeBoard(width, height);
+                    renderBoard();
+                } catch (NumberFormatException nfe){
+                    JOptionPane.showConfirmDialog(null, "Error making new board. Did you enter an integer?", "1024", JOptionPane.OK_OPTION);
+                }
+            } else if (e.getSource() == gameWinChange) {
+                try {
+                    int newVal = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter new winning value (must be an integer)", "1024", JOptionPane.INFORMATION_MESSAGE));
 
                     // TODO - Not working...
 //                    resizeBoard(width, height);
