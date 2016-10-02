@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c75ff288-5a55-40ec-99a8-9b9c1206cb97" name="Default" comment="" />
+    <list default="true" id="c75ff288-5a55-40ec-99a8-9b9c1206cb97" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/NumberGame.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/NumberGame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$ButtonListener.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$ButtonListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$KeyboardListener.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$KeyboardListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$MenuListener.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$MenuListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/highscore.txt" afterPath="$PROJECT_DIR$/highscore.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game1024/NumberGame.java" afterPath="$PROJECT_DIR$/src/game1024/NumberGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game1024/gui/GameGUI.java" afterPath="$PROJECT_DIR$/src/game1024/gui/GameGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game1024/gui/GamePanel.java" afterPath="$PROJECT_DIR$/src/game1024/gui/GamePanel.java" />
+    </list>
     <ignored path="Project 2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -13,6 +24,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -32,19 +44,10 @@
       <file leaf-file-name="NumberGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game1024/NumberGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="206">
+              <caret line="316" column="4" selection-start-line="316" selection-start-column="4" selection-end-line="320" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-                <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-                <element signature="e#10726#10727#0" expanded="true" />
-                <element signature="e#10758#10759#0" expanded="true" />
-                <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-                <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-                <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-                <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-                <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -53,8 +56,8 @@
       <file leaf-file-name="GameGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game1024/gui/GameGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+            <state relative-caret-position="80">
+              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,11 +68,9 @@
       <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game1024/gui/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="92">
+              <caret line="410" column="49" selection-start-line="410" selection-start-column="49" selection-end-line="410" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -112,10 +113,10 @@
         <option value="$PROJECT_DIR$/src/game1024/NumberTile.java" />
         <option value="$PROJECT_DIR$/src/game1024/TextUI.java" />
         <option value="$PROJECT_DIR$/src/game1024/gui/ButtonPanel.java" />
+        <option value="$PROJECT_DIR$/highscore.txt" />
+        <option value="$PROJECT_DIR$/src/game1024/NumberGame.java" />
         <option value="$PROJECT_DIR$/src/game1024/gui/GameGUI.java" />
         <option value="$PROJECT_DIR$/src/game1024/gui/GamePanel.java" />
-        <option value="$PROJECT_DIR$/src/game1024/NumberGame.java" />
-        <option value="$PROJECT_DIR$/highscore.txt" />
       </list>
     </option>
   </component>
@@ -128,8 +129,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -156,6 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -216,7 +218,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
@@ -316,13 +317,8 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="GAPID_DISABLE_PCS" value="false" />
-      </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method />
@@ -341,13 +337,8 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="GAPID_DISABLE_PCS" value="false" />
-      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -765,6 +756,8 @@
       <workItem from="1475099598472" duration="12437000" />
       <workItem from="1475167359498" duration="3286000" />
       <workItem from="1475173188042" duration="2480000" />
+      <workItem from="1475179272059" duration="904000" />
+      <workItem from="1475421456924" duration="6497000" />
     </task>
     <servers />
   </component>
@@ -801,10 +794,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74093000" />
+    <option name="totallyTimeSpent" value="81494000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -814,18 +807,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3488624" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24840085" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -856,11 +849,56 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/game1024/gui/GameGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game1024/gui/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game1024/NumberGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game1024/gui/GameGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game1024/gui/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/game1024/TextUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2121">
           <caret line="103" column="59" selection-start-line="103" selection-start-column="59" selection-end-line="103" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -870,15 +908,6 @@
           <caret line="325" column="0" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -897,9 +926,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -907,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2121">
           <caret line="103" column="59" selection-start-line="103" selection-start-column="59" selection-end-line="103" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,15 +943,6 @@
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -944,9 +961,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2159">
           <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,15 +978,6 @@
           <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -992,7 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1105">
           <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,15 +1006,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1026,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
           <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,15 +1030,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1060,7 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
           <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,15 +1054,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1101,7 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1111,15 +1085,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1135,7 +1100,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
           <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,15 +1109,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1169,7 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="38" column="16" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,15 +1133,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1203,7 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="38" column="16" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1213,15 +1157,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1267,7 +1202,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2121">
           <caret line="103" column="59" selection-start-line="103" selection-start-column="59" selection-end-line="103" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,50 +1213,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game1024/gui/GameGUI.java">
+    <entry file="file://$PROJECT_DIR$/highscore.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game1024/NumberGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="316" column="4" selection-start-line="316" selection-start-column="4" selection-end-line="320" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/highscore.txt">
+    <entry file="file://$PROJECT_DIR$/src/game1024/gui/GameGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game1024/NumberGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="80">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getNonEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#getStatus#0;class#NumberGame#0" expanded="false" />
-            <element signature="e#10726#10727#0" expanded="true" />
-            <element signature="e#10758#10759#0" expanded="true" />
-            <element signature="method#getEmptyTiles#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#resetMerges#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#move#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMerge#0;class#NumberGame#0" expanded="false" />
-            <element signature="method#canMove#0;class#NumberGame#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game1024/gui/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="92">
+          <caret line="410" column="49" selection-start-line="410" selection-start-column="49" selection-end-line="410" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,37 +1,50 @@
 package game1024.gui;
 
 import game1024.NumberGame;
-import game1024.NumberSlider;
-import game1024.NumberTile;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
-/**
- * Created by kylef_000 on 9/27/2016.
- */
+/*****************************************************************
+ * GameGUI Container class.
+ * @author Kyle Flynn
+ * @version 1.0
+ *****************************************************************/
 public class GameGUI {
 
+    /** Holds the width of the window **/
     private int width;
+
+    /** Holds the height of the window **/
     private int height;
 
+    /** NumberGame instance that we pass to the game panel. **/
     private NumberGame game;
 
+    /** JFrame object to create our window **/
     private JFrame frame;
+
+    /** Instance of the board panel that will hold our entire game. **/
     private GamePanel boardPanel;
 
+    /*****************************************************************
+     * Constructor that initializes our variables.
+     *****************************************************************/
     public GameGUI() {
         width = 800;
         height = 600;
-
-        game = new NumberGame();
-
         frame = new JFrame();
+        game = new NumberGame();
         boardPanel = new GamePanel(4, 4, game);
     }
 
+    /*****************************************************************
+     * Method that initializes the parameters of the JFrame and creates
+     * our window.
+     *****************************************************************/
     public void init() {
+
+        /** Setting parameters for the JFrame window. **/
         frame.setLayout(new BorderLayout());
         frame.add(boardPanel, BorderLayout.CENTER);
         frame.setTitle("1024 Revamped");
