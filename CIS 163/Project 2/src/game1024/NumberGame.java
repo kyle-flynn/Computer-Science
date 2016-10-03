@@ -138,7 +138,8 @@ public class NumberGame implements NumberSlider {
 
         /** Gets a random empty cell using a helper method. This is
          * fool proof and won't bottom-out searching for a cell. **/
-        Cell randomCell = getEmptyTiles().get(random.nextInt(getEmptyTiles().size()));
+        Cell randomCell = getEmptyTiles().get(
+                random.nextInt(getEmptyTiles().size()));
 
         /** Grabbing te row and coumn of the random cell. **/
         int r = randomCell.row;
@@ -347,7 +348,7 @@ public class NumberGame implements NumberSlider {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
 
-                /** If the boardValue is the winning value, you've won! **/
+                /** If boardValue is the winning value, you've won! **/
                 if (boardValues[i][j] == winningValue) {
                     currentStatus = GameStatus.USER_WON;
                     return currentStatus;
@@ -466,7 +467,8 @@ public class NumberGame implements NumberSlider {
         PrintWriter out = null;
 
         try {
-            out = new PrintWriter(new BufferedWriter(new FileWriter("highscore.txt")));
+            out = new PrintWriter(new BufferedWriter(
+                    new FileWriter("highscore.txt")));
             out.println(this.highScore);
 
             /** Must close the stream to prevent memory leaks */
@@ -490,6 +492,15 @@ public class NumberGame implements NumberSlider {
      *****************************************************************/
     public int getHighScore() {
         return highScore;
+    }
+
+    /*****************************************************************
+     * Method that sets the winning value. Really is only used for the
+     * GUI end.
+     *****************************************************************/
+    public void setWinningValue(int winningValue) {
+        this.winningValue = winningValue;
+        getStatus();
     }
 
     /*****************************************************************
@@ -571,7 +582,8 @@ public class NumberGame implements NumberSlider {
      * same move, and if they are not 0. Returns false otherwise.
      *****************************************************************/
     private boolean canMerge(int i1, int j1, int i2, int j2) {
-        boolean notZero = boardValues[i1][j1] != 0 && boardValues[i2][j2] != 0;
+        boolean notZero = boardValues[i1][j1] != 0 &&
+                            boardValues[i2][j2] != 0;
         boolean sameTile = boardValues[i1][j1] == boardValues[i2][j2];
         boolean didMerge = hasMerged[i1][j1] || hasMerged[i2][j2];
         return sameTile && !didMerge && notZero;

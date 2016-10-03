@@ -22,23 +22,8 @@ public class GamePanel extends JPanel {
     /** Instance of button listener **/
     private ButtonListener btnListener;
 
-    /** Instance of menu listener **/
-    private MenuListener menuListener;
-
-    /** Main JMenuBar that will hold all menu items **/
-    private JMenuBar menuBar;
-
-    /** Game Menu that will allow for reset, etc. **/
-    private JMenu gameMenu;
-
-    /** Menu Item that will reset game **/
-    private JMenuItem gameReset;
-
-    /** Menu Item that will resize the board **/
-    private JMenuItem gameResize;
-
-    /** Menu Item that will change the winning value **/
-    private JMenuItem gameWinChange;
+    /** Instance of TimerListener **/
+    private TimerListener timerListener;
 
     /** Button that slide the tiles up **/
     private JButton slideUp;
@@ -73,6 +58,18 @@ public class GamePanel extends JPanel {
     /** JLabel that holds the game's all-time high score **/
     private JLabel highScore;
 
+    /** JLabel that only displays 'Current Score:' **/
+    private JLabel scoreText;
+
+    /** JLabel that only displays 'High Score:' **/
+    private JLabel highscoreText;
+
+    /** JLabel that displays the time left to win **/
+    private JLabel timerLabel;
+
+    /** Timer object that counts down every second **/
+    private Timer timer;
+
     /** 2d array that holds the graphic game tiles **/
     private NumberTile[][] tiles;
 
@@ -91,6 +88,9 @@ public class GamePanel extends JPanel {
     /** Holds the height of the game board **/
     private int height;
 
+    /** Holds amount of time left **/
+    private int timeLeft;
+
     /** Instance of the game **/
     private NumberGame game;
 
@@ -98,7 +98,8 @@ public class GamePanel extends JPanel {
         this.width = width;
         this.height = height;
         this.game = game;
-        this.size = 72;
+        this.size = 64;
+        this.timeLeft = 200;
 
         /** Use a null layout to position our elements manually **/
         setLayout(null);
@@ -107,13 +108,19 @@ public class GamePanel extends JPanel {
         /** Initializing all of our variables **/
         keyListener = new KeyboardListener();
         btnListener = new ButtonListener();
-        menuListener = new MenuListener();
+        timerListener = new TimerListener();
         buttonPanel = new JPanel();
         buttonContainer = new JPanel();
         rightInfoPanel = new JPanel();
         leftInfoPanel = new JPanel();
         score = new JLabel();
         highScore = new JLabel();
+        scoreText = new JLabel();
+        highscoreText = new JLabel();
+        timerLabel = new JLabel();
+
+        /** Initializing our timer that runs every second **/
+        timer = new Timer(1000, timerListener);
 
         /** Initializing our buttons **/
         slideUp = new JButton("Slide Up");
@@ -143,50 +150,56 @@ public class GamePanel extends JPanel {
         buttonPanel.setBackground(Color.BLACK);
         buttonContainer.setBackground(Color.BLACK);
 
-        /** Initializing our menu options **/
-        menuBar = new JMenuBar();
-        gameMenu = new JMenu("Game");
-        gameReset = new JMenuItem("Reset Game");
-        gameResize = new JMenuItem("Resize Board");
-        gameWinChange = new JMenuItem("Change Winning Tile");
-
-        /** Adding menu listeners to the menu items **/
-        gameReset.addActionListener(menuListener);
-        gameResize.addActionListener(menuListener);
-        gameWinChange.addActionListener(menuListener);
-
-        /** Connecting our menu items to the menu **/
-        menuBar.add(gameMenu);
-        gameMenu.add(gameReset);
-        gameMenu.add(gameResize);
-        gameMenu.add(gameWinChange);
-
         /** Dealing with layouts and adding scores to the panels **/
         rightInfoPanel.setLayout(new BorderLayout());
         rightInfoPanel.add(score, BorderLayout.CENTER);
+        rightInfoPanel.add(scoreText, BorderLayout.NORTH);
         rightInfoPanel.setBackground(Color.BLACK);
         leftInfoPanel.setLayout(new BorderLayout());
         leftInfoPanel.add(highScore, BorderLayout.CENTER);
+        leftInfoPanel.add(highscoreText, BorderLayout.NORTH);
         leftInfoPanel.setBackground(Color.BLACK);
 
         /** Setting font of the score and high score labels **/
         score.setForeground(Color.WHITE);
-        score.setFont(new Font("Helvetica", Font.PLAIN, 24));
+        score.setFont(new Font("Consolas", Font.PLAIN, 48));
+        score.setVerticalAlignment(SwingConstants.CENTER);
+        score.setHorizontalAlignment(SwingConstants.CENTER);
         highScore.setForeground(Color.WHITE);
-        highScore.setFont(new Font("Helvetica", Font.PLAIN, 24));
+        highScore.setFont(new Font("Consolas", Font.PLAIN, 48));
+        highScore.setHorizontalAlignment(SwingConstants.CENTER);
+        highScore.setVerticalAlignment(SwingConstants.CENTER);
+        scoreText.setForeground(Color.WHITE);
+        scoreText.setFont(new Font("Consolas", Font.PLAIN, 24));
+        scoreText.setText("Current Score");
+        scoreText.setHorizontalAlignment(SwingConstants.CENTER);
+        scoreText.setVerticalAlignment(SwingConstants.BOTTOM);
+        highscoreText.setForeground(Color.WHITE);
+        highscoreText.setFont(new Font("Consolas", Font.PLAIN, 24));
+        highscoreText.setText("High Score");
+        highscoreText.setHorizontalAlignment(SwingConstants.CENTER);
+        highscoreText.setVerticalAlignment(SwingConstants.BOTTOM);
+        timerLabel.setForeground(Color.WHITE);
+        timerLabel.setFont(new Font("Consolas", Font.PLAIN, 24));
+        timerLabel.setText("Time Left to Win: " + timeLeft);
+        timerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        timerLabel.setVerticalAlignment(SwingConstants.CENTER);
 
         /** Adding our containers to 'this' panel **/
         buttonContainer.add(buttonPanel, BorderLayout.SOUTH);
-        add(menuBar, BorderLayout.PAGE_START);
         add(rightInfoPanel, BorderLayout.WEST);
         add(leftInfoPanel, BorderLayout.EAST);
         add(buttonContainer, BorderLayout.SOUTH);
+        add(timerLabel, BorderLayout.NORTH);
 
         /** Parameters for 'this' panel **/
         setFocusable(true);
         requestFocusInWindow();
         setBackground(Color.BLACK);
         renderBoard();
+
+        /** Start the countdown to win **/
+        timer.start();
     }
 
     /*****************************************************************
@@ -195,38 +208,51 @@ public class GamePanel extends JPanel {
      * @param height height of the board.
      *****************************************************************/
     private void resizeBoard(int width, int height) {
-
-        /** TODO - WHY DOESN'T THIS WORK **/
-        if (tiles != null) {
-            for (int i = 0; i < this.height; i++) {
-                for (int j = 0; j < this.width; j++) {
-                    remove(tiles[i][j]);
-                }
-            }
-        }
-
         this.height = height;
         this.width = width;
+
+        /** In order to make sure our board is truly dynamic,
+         * we must check to see if the board width/height
+         * exceeds a magic number (414 in this case - tested)
+         * and if it does, keep decreasing the tile size
+         * until it fits inside the board. **/
+        int boardWidth = (size * width) + (width * 5);
+        int boardHeight = (size * height) + (height * 5);
+
+        while (boardWidth > 414 || boardHeight > 414) {
+            size--;
+            boardWidth = (size * width) + (width * 5);
+            boardHeight = (size * height) + (height * 5);
+        }
 
         /** Calculating our centering variables. We do this by
          * dividing the screen width/height by 2, then using the
          * size of each tile and width/height of the board.
          * The yOffset has another offset of 20. **/
         xOffset = (800/2) - ((size * width)/2);
-        yOffset = (600/2) - ((size * height)/2) - 20;
+        yOffset = (600/2) - ((size * height)/2) - 80;
         tiles = new NumberTile[height][width];
 
         /** Game logic required **/
-        game.resizeBoard(width, height, 1024);
+        game.resizeBoard(height, width, 1024);
         game.placeRandomValue();
         game.placeRandomValue();
 
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
+
+                /** Setting each tile to a NumberTile **/
                 tiles[i][j] = new NumberTile("", JLabel.CENTER);
                 tiles[i][j].setFont(new Font("Helvetica", Font.PLAIN, 32));
-                tiles[i][j].setBounds(new Rectangle((xOffset - ((j*5)/2)) + (size*j) + (j*5), yOffset + (size*i) + (i*5), size, size));
+
+                /** Setting the position of our rectangle using
+                 * x/y offset calculations, as well with some
+                 * spacing between tiles for neatness. **/
+                tiles[i][j].setBounds(
+                        new Rectangle(
+                                (xOffset - ((j*5)/2)) + (size*j) + (j*5),
+                                yOffset + (size*i) + (i*5), size, size));
 
                 add(tiles[i][j]);
             }
@@ -239,8 +265,10 @@ public class GamePanel extends JPanel {
 
     /*****************************************************************
      * Method that renders the board to the screen and changes values.
+     * This needs to be public becasue the GameGUI class will need
+     * to render the board after a reset, or board resize.
      *****************************************************************/
-    private void renderBoard() {
+    public void renderBoard() {
         /** By default, set label to empty **/
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -250,14 +278,15 @@ public class GamePanel extends JPanel {
 
         /** If a tile isn't empty, render it's value **/
         for (Cell cell : game.getNonEmptyTiles()) {
-            if (tiles[cell.row][cell.column].getText().contains(cell.value + "") == false) {
+            if (!tiles[cell.row][cell.column].getText().contains(
+                    cell.value + "")) {
                 tiles[cell.row][cell.column].setText(cell.value + "");
             }
         }
 
         /** Sets the text of our scores **/
-        score.setText("Current Score: " + game.getScore());
-        highScore.setText("High Score: " + game.getHighScore());
+        score.setText("" + game.getScore());
+        highScore.setText("" + game.getHighScore());
 
         /** Check to see the status of our game **/
         checkStatus();
@@ -268,20 +297,22 @@ public class GamePanel extends JPanel {
      * Method that checks if the user has lost or won, and prompts to
      * play again.
      *****************************************************************/
-    private void checkStatus() {
-        if (game.getStatus() == GameStatus.USER_LOST) {
-            int option = JOptionPane.showConfirmDialog(this, "You have lost! Play Again?", "1024", JOptionPane.YES_NO_OPTION);
+    public void checkStatus() {
+        if (game.getStatus() != GameStatus.IN_PROGRESS) {
 
-            if (option == 1) {
-                game.saveHighScore();
-                System.exit(0);
-            } else {
-                game.reset();
-                renderBoard();
+            /** Create a variable to save space from duplicate code. **/
+            String message = "";
+
+            if (game.getStatus() == GameStatus.USER_WON) {
+                message = "You have lost! Play Again?";
+            }
+            if (game.getStatus() == GameStatus.USER_LOST) {
+                message = "You have won! Congratulations! Play Again?";
             }
 
-        } else if (game.getStatus() == GameStatus.USER_WON) {
-            int option = JOptionPane.showConfirmDialog(this, "You have won! Congratulations! Play Again?", "1024", JOptionPane.YES_NO_OPTION);
+            int option = JOptionPane.showConfirmDialog(
+                    this, message,
+                    "1024", JOptionPane.YES_NO_OPTION);
 
             if (option == 1) {
                 game.saveHighScore();
@@ -323,7 +354,9 @@ public class GamePanel extends JPanel {
                     game.undo();
                     renderBoard();
                 } catch(IllegalStateException ise) {
-                    JOptionPane.showMessageDialog(null, "Can't undo that far!", "1024", JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(
+                            null, "Can't undo that far!",
+                            "1024", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         }
@@ -341,9 +374,7 @@ public class GamePanel extends JPanel {
          * use this.
          *****************************************************************/
         @Override
-        public void keyTyped(KeyEvent e) {
-
-        }
+        public void keyTyped(KeyEvent e) {}
 
         /*****************************************************************
          * Overriden method that controls when a key is pressed. We use
@@ -368,7 +399,9 @@ public class GamePanel extends JPanel {
                     game.undo();
                     renderBoard();
                 } catch(IllegalStateException ise) {
-                    JOptionPane.showMessageDialog(null, "Can't undo that far!", "1024", JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(
+                            null, "Can't undo that far!",
+                            "1024", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         }
@@ -378,48 +411,40 @@ public class GamePanel extends JPanel {
          * don't need this.
          *****************************************************************/
         @Override
-        public void keyReleased(KeyEvent e) {
-
-        }
+        public void keyReleased(KeyEvent e) {}
     }
 
     /*****************************************************************
-     * private MenuListener class.
+     * private KeyboardListener class.
      * @author Kyle Flynn
      * @version v1.0
      *****************************************************************/
-    private class MenuListener implements ActionListener {
+    private class TimerListener implements ActionListener {
 
         /*****************************************************************
          * Overriden method that controls when an action is invoked.
-         * We use it to listen for when a menu item is clicked.
+         * We use it to listen for the change in time.
          *****************************************************************/
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == gameReset) {
-                game.reset();
-                renderBoard();
-            } else if (e.getSource() == gameResize) {
-                try {
-                    int width = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter width of new board (must be an integer)", "1024", JOptionPane.INFORMATION_MESSAGE));
-                    int height = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter height of new board (must be an integer)", "1024", JOptionPane.INFORMATION_MESSAGE));
+            if (timeLeft <= 0 && game.getStatus() != GameStatus.IN_PROGRESS) {
+                timerLabel.setText("Time Left to Win: " + timeLeft);
 
-                    // TODO - Not working...
-                    resizeBoard(width, height);
-                    renderBoard();
-                } catch (NumberFormatException nfe){
-                    JOptionPane.showMessageDialog(null, "Error making new board. Did you enter an integer?", "1024", JOptionPane.OK_OPTION);
-                }
-            } else if (e.getSource() == gameWinChange) {
-                try {
-                    int newVal = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter new winning value (must be an integer)", "1024", JOptionPane.INFORMATION_MESSAGE));
+                int option = JOptionPane.showConfirmDialog(
+                        null, "You have lost! Play Again?",
+                        "1024", JOptionPane.YES_NO_OPTION);
 
-                    // TODO - Not working...
-//                    resizeBoard(width, height);
+                if (option == 1) {
+                    game.saveHighScore();
+                    System.exit(0);
+                } else {
+                    game.reset();
+                    timeLeft = 200;
                     renderBoard();
-                } catch (NumberFormatException nfe){
-                    JOptionPane.showMessageDialog(null, "Error making new board. Did you enter an integer?", "1024", JOptionPane.OK_OPTION);
                 }
+            } else {
+                timerLabel.setText("Time Left to Win: " + timeLeft);
+                timeLeft--;
             }
         }
     }

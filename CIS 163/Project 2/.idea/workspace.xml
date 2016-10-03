@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c75ff288-5a55-40ec-99a8-9b9c1206cb97" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$MenuListener.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/NumberGame.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/NumberGame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GameGUI.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GameGUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$ButtonListener.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$ButtonListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$KeyboardListener.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$KeyboardListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$MenuListener.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel$MenuListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel.class" afterPath="$PROJECT_DIR$/out/production/Project 2/game1024/gui/GamePanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/highscore.txt" afterPath="$PROJECT_DIR$/highscore.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game1024/NumberGame.java" afterPath="$PROJECT_DIR$/src/game1024/NumberGame.java" />
@@ -44,8 +46,8 @@
       <file leaf-file-name="NumberGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game1024/NumberGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="316" column="4" selection-start-line="316" selection-start-column="4" selection-end-line="320" selection-end-column="71" />
+            <state relative-caret-position="170">
+              <caret line="503" column="5" selection-start-line="503" selection-start-column="5" selection-end-line="503" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,8 +58,8 @@
       <file leaf-file-name="GameGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game1024/gui/GameGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+            <state relative-caret-position="-2308">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,9 +70,11 @@
       <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game1024/gui/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="410" column="49" selection-start-line="410" selection-start-column="49" selection-end-line="410" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="323">
+              <caret line="327" column="12" selection-start-line="327" selection-start-column="12" selection-end-line="327" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,8 +118,8 @@
         <option value="$PROJECT_DIR$/src/game1024/TextUI.java" />
         <option value="$PROJECT_DIR$/src/game1024/gui/ButtonPanel.java" />
         <option value="$PROJECT_DIR$/highscore.txt" />
-        <option value="$PROJECT_DIR$/src/game1024/NumberGame.java" />
         <option value="$PROJECT_DIR$/src/game1024/gui/GameGUI.java" />
+        <option value="$PROJECT_DIR$/src/game1024/NumberGame.java" />
         <option value="$PROJECT_DIR$/src/game1024/gui/GamePanel.java" />
       </list>
     </option>
@@ -125,6 +129,16 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -157,7 +171,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -218,8 +231,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -726,8 +740,8 @@
     <recent_temporary>
       <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Application.GameGUI" />
-        <item index="1" class="java.lang.String" itemvalue="Application.TextUI" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TenTwentyFourTester" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TenTwentyFourTester" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TextUI" />
       </list>
     </recent_temporary>
   </component>
@@ -758,13 +772,11 @@
       <workItem from="1475173188042" duration="2480000" />
       <workItem from="1475179272059" duration="904000" />
       <workItem from="1475421456924" duration="6497000" />
+      <workItem from="1475526351793" duration="8592000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TenTwentyFourTester - 2016.09.26 at 19h 26m 34s.xml">
-      <configuration name="TenTwentyFourTester" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TenTwentyFourTester - 2016.09.26 at 19h 37m 00s.xml">
       <configuration name="TenTwentyFourTester" configurationId="JUnit" />
     </history-entry>
@@ -792,9 +804,12 @@
     <history-entry file="TenTwentyFourTester - 2016.09.27 at 15h 43m 00s.xml">
       <configuration name="TenTwentyFourTester" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TenTwentyFourTester - 2016.10.03 at 17h 07m 05s.xml">
+      <configuration name="TenTwentyFourTester" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81494000" />
+    <option name="totallyTimeSpent" value="90086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -806,12 +821,12 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -863,7 +878,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -891,7 +908,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -926,7 +945,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -961,7 +982,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1190,13 +1213,6 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/src.zip!/java/util/Random.java" />
-    <entry file="file://$PROJECT_DIR$/src/game1024/TenTwentyFourTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="188" column="36" selection-start-line="188" selection-start-column="36" selection-end-line="188" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game1024/gui/ButtonPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/game1024/TextUI.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1217,23 +1233,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game1024/NumberGame.java">
+    <entry file="file://$PROJECT_DIR$/src/game1024/TenTwentyFourTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="316" column="4" selection-start-line="316" selection-start-column="4" selection-end-line="320" selection-end-column="71" />
+        <state relative-caret-position="1593">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game1024/gui/GameGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2308">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game1024/gui/GameGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/game1024/NumberGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        <state relative-caret-position="170">
+          <caret line="503" column="5" selection-start-line="503" selection-start-column="5" selection-end-line="503" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1242,9 +1267,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game1024/gui/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="410" column="49" selection-start-line="410" selection-start-column="49" selection-end-line="410" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="327" column="12" selection-start-line="327" selection-start-column="12" selection-end-line="327" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
