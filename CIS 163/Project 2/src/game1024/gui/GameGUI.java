@@ -8,76 +8,54 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /*****************************************************************
- * GameGUI Container class.
- * @author Kyle Flynn
- * @version 1.0
- *****************************************************************/
+GameGUI Container class.
+@author Kyle Flynn
+@version 1.0
+*****************************************************************/
 public class GameGUI {
 
-    /**
-     * Holds the width of the window
-     **/
+    /** Holds the width of the window */
     private int width;
 
-    /**
-     * Holds the height of the window
-     **/
+    /** Holds the height of the window */
     private int height;
 
-    /**
-     * NumberGame instance that we pass to the game panel.
-     **/
+    /** NumberGame instance that we pass to the game panel. */
     private NumberGame game;
 
-    /**
-     * JFrame object to create our window
-     **/
+    /** JFrame object to create our window */
     private JFrame frame;
 
-    /**
-     * Instance of the board panel that will hold our entire game.
-     **/
+    /** Instance of the board panel that will hold our entire game. */
     private GamePanel boardPanel;
 
-    /**
-     * Instance of menu listener
-     **/
+    /** Instance of menu listener */
     private MenuListener menuListener;
 
-    /**
-     * Main JMenuBar that will hold all menu items
-     **/
+    /** Main JMenuBar that will hold all menu items */
     private JMenuBar menuBar;
 
-    /**
-     * Game Menu that will allow for reset, etc.
-     **/
+    /** Game Menu that will allow for reset, etc. */
     private JMenu gameMenu;
 
-    /**
-     * Menu Item that will reset game
-     **/
+    /** Menu Item that will reset game */
     private JMenuItem gameReset;
 
-    /**
-     * Menu Item that will resize the board
-     **/
+    /** Menu Item that will resize the board */
     private JMenuItem gameResize;
 
-    /**
-     * Menu Item that will change the winning value
-     **/
+    /** Menu Item that will change the winning value */
     private JMenuItem gameWinChange;
 
     /*****************************************************************
-     * Constructor that initializes our variables.
-     *****************************************************************/
+    Constructor that initializes our variables.
+    *****************************************************************/
     public GameGUI() {
         width = 800;
         height = 600;
         frame = new JFrame();
 
-        /** Initializing our menu options **/
+        /** Initializing our menu options */
         menuBar = new JMenuBar();
         gameMenu = new JMenu("Game");
         gameReset = new JMenuItem("Reset Game");
@@ -90,23 +68,23 @@ public class GameGUI {
     }
 
     /*****************************************************************
-     * Method that initializes the parameters of the JFrame and creates
-     * our window.
-     *****************************************************************/
+    Method that initializes the parameters of the JFrame and creates
+    our window.
+    *****************************************************************/
     public void init() {
 
-        /** Adding menu listeners to the menu items **/
+        /** Adding menu listeners to the menu items */
         gameReset.addActionListener(menuListener);
         gameResize.addActionListener(menuListener);
         gameWinChange.addActionListener(menuListener);
 
-        /** Connecting our menu items to the menu **/
+        /** Connecting our menu items to the menu */
         menuBar.add(gameMenu);
         gameMenu.add(gameReset);
         gameMenu.add(gameResize);
         gameMenu.add(gameWinChange);
 
-        /** Setting parameters for the JFrame window. **/
+        /** Setting parameters for the JFrame window. */
         frame.setLayout(new BorderLayout());
         frame.add(boardPanel, BorderLayout.CENTER);
         frame.setJMenuBar(menuBar);
@@ -125,17 +103,16 @@ public class GameGUI {
     }
 
     /*****************************************************************
-     * private MenuListener class.
-     *
-     * @author Kyle Flynn
-     * @version v1.0
-     *****************************************************************/
+    private MenuListener class.
+    @author Kyle Flynn
+    @version v1.0
+    *****************************************************************/
     private class MenuListener implements ActionListener {
 
         /*****************************************************************
-         * Overriden method that controls when an action is invoked.
-         * We use it to listen for when a menu item is clicked.
-         *****************************************************************/
+        Overriden method that controls when an action is invoked.
+        We use it to listen for when a menu item is clicked.
+        *****************************************************************/
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == gameReset) {
@@ -151,8 +128,8 @@ public class GameGUI {
                             "1024", JOptionPane.INFORMATION_MESSAGE));
 
                     /** In order for the resize board to work, we must
-                     * remove the panel from the JFrame, declare a new
-                     * instance, and revalidate/repaint the frame. **/
+                    remove the panel from the JFrame, declare a new
+                    instance, and revalidate/repaint the frame. */
                     frame.remove(boardPanel);
                     boardPanel = new GamePanel(width, height, game);
                     frame.add(boardPanel);

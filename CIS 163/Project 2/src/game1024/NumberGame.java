@@ -7,51 +7,51 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /*****************************************************************
- * Number Game Logic.
- * @author Kyle Flynn
- * @version 1.0
- *****************************************************************/
+Number Game Logic.
+@author Kyle Flynn
+@version 1.0
+*****************************************************************/
 public class NumberGame implements NumberSlider {
 
-    /** Holds useful data such as location, and value of a cell **/
+    /** Holds useful data such as location, and value of a cell */
     private ArrayList<Cell> cells;
 
-    /** Must be a variable for an IN_PROGRESS check later on **/
+    /** Must be a variable for an IN_PROGRESS check later on */
     private GameStatus currentStatus;
 
-    /** Holds the width of the board **/
+    /** Holds the width of the board */
     private int width;
 
-    /** Holds the height of the board **/
+    /** Holds the height of the board */
     private int height;
 
-    /** Holds the value required to win the game **/
+    /** Holds the value required to win the game */
     private int winningValue;
 
-    /** Holds all values of the board in a 2d array **/
+    /** Holds all values of the board in a 2d array */
     private int[][] boardValues;
 
-    /** Simple 2d array that tells if a tile has merged **/
+    /** Simple 2d array that tells if a tile has merged */
     private boolean[][] hasMerged;
 
-    /** Holds the current score of the game **/
+    /** Holds the current score of the game */
     private int score;
 
-    /** Holds the highest score completed in any session **/
+    /** Holds the highest score completed in any session */
     private int highScore;
 
-    /** Stack used to save boards after the user slides **/
+    /** Stack used to save boards after the user slides */
     private Stack<int[][]> savedBoards;
 
-    /** Stack used to save scores after the user slides **/
+    /** Stack used to save scores after the user slides */
     private Stack<Integer> savedScores;
 
     /*****************************************************************
-     * Overriden method that sets all the necessary values up for play.
-     * @param height The height of the board.
-     * @param width The width of the board.
-     * @param winningValue The value required to win.
-     *****************************************************************/
+    Overriden method that sets all the necessary values up for play.
+    @param height The height of the board.
+    @param width The width of the board.
+    @param winningValue The value required to win.
+   *****************************************************************/
     @Override
     public void resizeBoard(int height, int width, int winningValue) {
         this.width = width;
@@ -66,7 +66,7 @@ public class NumberGame implements NumberSlider {
         this.score = 0;
         this.highScore = 0;
 
-        /** Resetting board values **/
+        /** Resetting board values */
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 boardValues[i][j] = 0;
@@ -74,14 +74,14 @@ public class NumberGame implements NumberSlider {
             }
         }
 
-        /** Getting the high score from a pre-set file **/
+        /** Getting the high score from a pre-set file */
         loadHighScore();
 
     }
 
     /*****************************************************************
-     * Overriden method that resets the board for another session.
-     *****************************************************************/
+    Overriden method that resets the board for another session.
+   *****************************************************************/
     @Override
     public void reset() {
         this.boardValues = new int[height][width];
@@ -91,11 +91,11 @@ public class NumberGame implements NumberSlider {
         this.savedScores.clear();
         this.score = 0;
 
-        /** High score is saved and then loaded on reset **/
+        /** High score is saved and then loaded on reset */
         saveHighScore();
         loadHighScore();
 
-        /** Resetting board values **/
+        /** Resetting board values */
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 boardValues[i][j] = 0;
@@ -103,7 +103,7 @@ public class NumberGame implements NumberSlider {
             }
         }
 
-        /** This simple line passes a JUnit test! **/
+        /** This simple line passes a JUnit test! */
         this.currentStatus = GameStatus.IN_PROGRESS;
 
         placeRandomValue();
@@ -111,37 +111,37 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Overriden method that replaces the current board values.
-     * @param ref The 2d int array to set the board values to.
-     *****************************************************************/
+    Overriden method that replaces the current board values.
+    @param ref The 2d int array to set the board values to.
+   *****************************************************************/
     @Override
     public void setValues(int[][] ref) {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
 
-                /** Sets the 'this' board values to the reference **/
+                /** Sets the 'this' board values to the reference */
                 boardValues[i][j] = ref[i][j];
             }
         }
     }
 
     /*****************************************************************
-     * Overriden method that places a random value on a random empty
-     * cell.
-     * @return null if a Cell couldn't be placed. Returns the random
-     * Cell if it was placed.
-     *****************************************************************/
+    Overriden method that places a random value on a random empty
+    cell.
+    @return null if a Cell couldn't be placed. Returns the random
+    Cell if it was placed.
+   *****************************************************************/
     @Override
     public Cell placeRandomValue() {
 
         Random random = new Random();
 
         /** Gets a random empty cell using a helper method. This is
-         * fool proof and won't bottom-out searching for a cell. **/
+        fool proof and won't bottom-out searching for a cell. */
         Cell randomCell = getEmptyTiles().get(
                 random.nextInt(getEmptyTiles().size()));
 
-        /** Grabbing te row and coumn of the random cell. **/
+        /** Grabbing te row and coumn of the random cell. */
         int r = randomCell.row;
         int c = randomCell.column;
 
@@ -150,12 +150,12 @@ public class NumberGame implements NumberSlider {
                 if (r == i && c == j) {
 
                     /** Ternary function that determines if the
-                     * number should be a one or a two. We go to ten
-                     * to add variance. **/
+                    number should be a one or a two. We go to ten
+                    to add variance. */
                     int val = (((random.nextInt(9) + 1)/2) == 1 ? 1 : 2);
                     boardValues[r][c] = val;
 
-                    /** Returns the newly created cell. **/
+                    /** Returns the newly created cell. */
                     return new Cell(r, c, val);
                 }
             }
@@ -166,10 +166,10 @@ public class NumberGame implements NumberSlider {
 
 
     /*****************************************************************
-     * Overriden method that slides the board in the given direction.
-     * cell.
-     * @return true if cells did slide, and false if they didn't.
-     *****************************************************************/
+    Overriden method that slides the board in the given direction.
+    cell.
+    @return true if cells did slide, and false if they didn't.
+    *****************************************************************/
     @Override
     public boolean slide(SlideDirection dir) {
         boolean didSlide = false;
@@ -309,27 +309,27 @@ public class NumberGame implements NumberSlider {
             saveBoard();
         }
 
-        /** We reset merges every slide **/
+        /** We reset merges every slide */
         resetMerges();
 
         return didSlide;
     }
 
     /*****************************************************************
-     * Overriden method that gets tiles that aren't empty.
-     * cell.
-     * @return an ArrayList of type Cell of tiles that are not empty.
-     *****************************************************************/
+    Overriden method that gets tiles that aren't empty.
+    cell.
+    @return an ArrayList of type Cell of tiles that are not empty.
+    *****************************************************************/
     @Override
     public ArrayList<Cell> getNonEmptyTiles() {
 
-        /** Temporary ArrayList to store values. **/
+        /** Temporary ArrayList to store values. */
         ArrayList<Cell> temp = new ArrayList<>();
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
 
-                /** Checks if the tile isn't 0, and adds it. **/
+                /** Checks if the tile isn't 0, and adds it. */
                 if (boardValues[i][j] != 0) {
                     temp.add(new Cell(i, j, boardValues[i][j]));
                 }
@@ -340,15 +340,15 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Overriden method that controls that status of the game.
-     * @return Current GameStatus (IN_PROGRESS, USER_LOST, USER_WON).
-     *****************************************************************/
+    Overriden method that controls that status of the game.
+    @return Current GameStatus (IN_PROGRESS, USER_LOST, USER_WON).
+    *****************************************************************/
     @Override
     public GameStatus getStatus() {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
 
-                /** If boardValue is the winning value, you've won! **/
+                /** If boardValue is the winning value, you've won! */
                 if (boardValues[i][j] == winningValue) {
                     currentStatus = GameStatus.USER_WON;
                     return currentStatus;
@@ -356,7 +356,7 @@ public class NumberGame implements NumberSlider {
             }
         }
 
-        /** Determines if the board is filled **/
+        /** Determines if the board is filled */
         if (getNonEmptyTiles().size() == (width * height)) {
 
             for (int i = 0; i < height; i++) {
@@ -364,7 +364,7 @@ public class NumberGame implements NumberSlider {
 
                     if (i > 0) {
 
-                        /** Checks if the tile above can be merged **/
+                        /** Checks if the tile above can be merged */
                         if (canMerge(i, j, i-1, j)) {
                             this.currentStatus = GameStatus.IN_PROGRESS;
                             return currentStatus;
@@ -372,7 +372,7 @@ public class NumberGame implements NumberSlider {
 
                         if (i < height-1) {
 
-                            /** Checks if the tile below can be merged **/
+                            /** Checks if the tile below can be merged */
                             if (canMerge(i, j, i+1, j)) {
                                 this.currentStatus = GameStatus.IN_PROGRESS;
                                 return currentStatus;
@@ -382,7 +382,7 @@ public class NumberGame implements NumberSlider {
 
                     if (j > 0) {
 
-                        /** Checks if tile to the right can merge. **/
+                        /** Checks if tile to the right can merge. */
                         if (canMerge(i, j, i, j-1)) {
                             this.currentStatus = GameStatus.IN_PROGRESS;
                             return currentStatus;
@@ -390,7 +390,7 @@ public class NumberGame implements NumberSlider {
 
                         if (j < width-1) {
 
-                            /** Checks if tile to the left can merge. **/
+                            /** Checks if tile to the left can merge. */
                             if (canMerge(i, j, i, j+1)) {
                                 this.currentStatus = GameStatus.IN_PROGRESS;
                                 return currentStatus;
@@ -411,25 +411,25 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Overriden method that undos the last move the player made.
-     *****************************************************************/
+    Overriden method that undos the last move the player made.
+    *****************************************************************/
     @Override
     public void undo() {
 
         if (savedBoards.size() > 1) {
 
             /** We have to pop() twice because the top is the current
-             * save and the next one is the save we want. **/
+            save and the next one is the save we want. */
             savedBoards.pop();
             savedScores.pop();
 
-            /** Previous board values. **/
+            /** Previous board values. */
             int[][] prevBoard = savedBoards.pop();
 
-            /** The previous score is also saved. **/
+            /** The previous score is also saved. */
             int prevScore = savedScores.pop();
 
-            /** Setting the board values **/
+            /** Setting the board values */
             setValues(prevBoard);
             score = prevScore;
         } else {
@@ -439,15 +439,15 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Method that loads the highest score from a file.
-     *****************************************************************/
+    Method that loads the highest score from a file.
+    *****************************************************************/
     public void loadHighScore() {
         try {
 
             /** Loads the file through scanner. */
             Scanner fileReader = new Scanner(new File("highscore.txt"));
 
-            /** The only data in the file is the highscore. **/
+            /** The only data in the file is the highscore. */
             int highScore = fileReader.nextInt();
 
             this.highScore = highScore;
@@ -460,8 +460,8 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Method that saves the highscore into a file.
-     *****************************************************************/
+    Method that saves the highscore into a file.
+    *****************************************************************/
     public void saveHighScore() {
         /** How we will write to a file. Starts null. */
         PrintWriter out = null;
@@ -479,34 +479,34 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Method that returns the curent score of the game.
-     * @return the current score as an int.
-     *****************************************************************/
+    Method that returns the curent score of the game.
+    @return the current score as an int.
+    *****************************************************************/
     public int getScore() {
         return score;
     }
 
     /*****************************************************************
-     * Method that returns the al-time high score.
-     * @return the high score as an int.
-     *****************************************************************/
+    Method that returns the al-time high score.
+    @return the high score as an int.
+    *****************************************************************/
     public int getHighScore() {
         return highScore;
     }
 
     /*****************************************************************
-     * Method that sets the winning value. Really is only used for the
-     * GUI end.
-     *****************************************************************/
+    Method that sets the winning value. Really is only used for the
+    GUI end.
+    *****************************************************************/
     public void setWinningValue(int winningValue) {
         this.winningValue = winningValue;
         getStatus();
     }
 
     /*****************************************************************
-     * Method that gets all tiles that are 0, or empty.
-     * @return an ArrayList of type Cell that are equal to 0.
-     *****************************************************************/
+    Method that gets all tiles that are 0, or empty.
+    @return an ArrayList of type Cell that are equal to 0.
+    *****************************************************************/
     private ArrayList<Cell> getEmptyTiles() {
 
         ArrayList<Cell> temp = new ArrayList<>();
@@ -514,7 +514,7 @@ public class NumberGame implements NumberSlider {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
 
-                /** Checks if boardValues are 0 **/
+                /** Checks if boardValues are 0 */
                 if (boardValues[i][j] == 0) {
                     temp.add(new Cell(i, j, boardValues[i][j]));
                 }
@@ -525,11 +525,11 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Method that saves the current board into the savedBoards stack.
-     *****************************************************************/
+    Method that saves the current board into the savedBoards stack.
+    *****************************************************************/
     private void saveBoard() {
 
-        /** Temporary 2d Integer array. **/
+        /** Temporary 2d Integer array. */
         int[][] temp = new int[height][width];
 
         for (int i = 0; i < height; i++) {
@@ -538,14 +538,14 @@ public class NumberGame implements NumberSlider {
             }
         }
 
-        /** Pushing the board and score to respective Stacks. **/
+        /** Pushing the board and score to respective Stacks. */
         savedBoards.push(temp);
         savedScores.push(score);
     }
 
     /*****************************************************************
-     * Method that resets the hasMerged 2d boolean array.
-     *****************************************************************/
+    Method that resets the hasMerged 2d boolean array.
+    *****************************************************************/
     private void resetMerges() {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -555,8 +555,8 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Method that merges two cells together to create a new one.
-     *****************************************************************/
+    Method that merges two cells together to create a new one.
+    *****************************************************************/
     private void merge(int i1, int j1, int i2, int j2) {
         boardValues[i2][j2] = boardValues[i1][j1] * 2;
         boardValues[i1][j1] = 0;
@@ -569,18 +569,18 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Method that moves a tile into another space.
-     *****************************************************************/
+    Method that moves a tile into another space.
+    *****************************************************************/
     private void move(int i1, int j1, int i2, int j2) {
         boardValues[i2][j2] = boardValues[i1][j1];
         boardValues[i1][j1] = 0;
     }
 
     /*****************************************************************
-     * Method that checks if two tiles can merge.
-     * @return true if they are the same tile, have not merged in the
-     * same move, and if they are not 0. Returns false otherwise.
-     *****************************************************************/
+    Method that checks if two tiles can merge.
+    @return true if they are the same tile, have not merged in the
+    same move, and if they are not 0. Returns false otherwise.
+    *****************************************************************/
     private boolean canMerge(int i1, int j1, int i2, int j2) {
         boolean notZero = boardValues[i1][j1] != 0 &&
                             boardValues[i2][j2] != 0;
@@ -590,10 +590,10 @@ public class NumberGame implements NumberSlider {
     }
 
     /*****************************************************************
-     * Method that checks if a tile can move into a given space.
-     * @return true if the current tile is not 0, and the goal
-     * tile is empty.
-     *****************************************************************/
+    Method that checks if a tile can move into a given space.
+    @return true if the current tile is not 0, and the goal
+    tile is empty.
+    *****************************************************************/
     private boolean canMove(int i1, int j1, int i2, int j2) {
         return boardValues[i1][j1] != 0 && boardValues[i2][j2] == 0;
     }
