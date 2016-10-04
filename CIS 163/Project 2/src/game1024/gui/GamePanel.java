@@ -10,88 +10,88 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /*****************************************************************
- * Game Panel.
- * @author Kyle Flynn
- * @version 1.0
- *****************************************************************/
+Game Panel.
+@author Kyle Flynn
+@version 1.0
+*****************************************************************/
 public class GamePanel extends JPanel {
 
-    /** Instance of keyboard listener (testing/efficiency purposes) **/
+    /** Instance of keyboard listener (testing/efficiency purposes) */
     private KeyboardListener keyListener;
 
-    /** Instance of button listener **/
+    /** Instance of button listener */
     private ButtonListener btnListener;
 
-    /** Instance of TimerListener **/
+    /** Instance of TimerListener */
     private TimerListener timerListener;
 
-    /** Button that slide the tiles up **/
+    /** Button that slide the tiles up */
     private JButton slideUp;
 
-    /** Button that slide the tiles down **/
+    /** Button that slide the tiles down */
     private JButton slideDown;
 
-    /** Button that slide the tiles left **/
+    /** Button that slide the tiles left */
     private JButton slideLeft;
 
-    /** Button that slide the tiles right **/
+    /** Button that slide the tiles right */
     private JButton slideRight;
 
-    /** Button that will undo the last move **/
+    /** Button that will undo the last move */
     private JButton undo;
 
-    /** JPanel that contains all of the buttons **/
+    /** JPanel that contains all of the buttons */
     private JPanel buttonPanel;
 
-    /** JPanel that will hold the button container **/
+    /** JPanel that will hold the button container */
     private JPanel buttonContainer;
 
-    /** JPanel that holds info on the right side of the window **/
+    /** JPanel that holds info on the right side of the window */
     private JPanel rightInfoPanel;
 
-    /** JPanel that holds info on the left side of the window **/
+    /** JPanel that holds info on the left side of the window */
     private JPanel leftInfoPanel;
 
-    /** JLabel that holds the current game score **/
+    /** JLabel that holds the current game score */
     private JLabel score;
 
-    /** JLabel that holds the game's all-time high score **/
+    /** JLabel that holds the game's all-time high score */
     private JLabel highScore;
 
-    /** JLabel that only displays 'Current Score:' **/
+    /** JLabel that only displays 'Current Score:' */
     private JLabel scoreText;
 
-    /** JLabel that only displays 'High Score:' **/
+    /** JLabel that only displays 'High Score:' */
     private JLabel highscoreText;
 
-    /** JLabel that displays the time left to win **/
+    /** JLabel that displays the time left to win */
     private JLabel timerLabel;
 
-    /** Timer object that counts down every second **/
+    /** Timer object that counts down every second */
     private Timer timer;
 
-    /** 2d array that holds the graphic game tiles **/
+    /** 2d array that holds the graphic game tiles */
     private NumberTile[][] tiles;
 
-    /** Integer that holds the size of each tile in pixels **/
+    /** Integer that holds the size of each tile in pixels */
     private int size;
 
-    /** Integer that centers the board tile x-axis **/
+    /** Integer that centers the board tile x-axis */
     private int xOffset;
 
-    /** Integer that centers the board tile y-axis **/
+    /** Integer that centers the board tile y-axis */
     private int yOffset;
 
-    /** Holds the width of the game board **/
+    /** Holds the width of the game board */
     private int width;
 
-    /** Holds the height of the game board **/
+    /** Holds the height of the game board */
     private int height;
 
-    /** Holds amount of time left **/
+    /** Holds amount of time left */
     private int timeLeft;
 
-    /** Instance of the game **/
+    /** Instance of the game */
     private NumberGame game;
 
     public GamePanel(int width, int height, NumberGame game) {
@@ -101,11 +101,11 @@ public class GamePanel extends JPanel {
         this.size = 64;
         this.timeLeft = 200;
 
-        /** Use a null layout to position our elements manually **/
+        /** Use a null layout to position our elements manually */
         setLayout(null);
         resizeBoard(width, height);
 
-        /** Initializing all of our variables **/
+        /** Initializing all of our variables */
         keyListener = new KeyboardListener();
         btnListener = new ButtonListener();
         timerListener = new TimerListener();
@@ -119,24 +119,24 @@ public class GamePanel extends JPanel {
         highscoreText = new JLabel();
         timerLabel = new JLabel();
 
-        /** Initializing our timer that runs every second **/
+        /** Initializing our timer that runs every second */
         timer = new Timer(1000, timerListener);
 
-        /** Initializing our buttons **/
+        /** Initializing our buttons */
         slideUp = new JButton("Slide Up");
         slideDown = new JButton("Slide Down");
         slideLeft = new JButton("Slide Left");
         slideRight = new JButton("Slide Right");
         undo = new JButton("Undo");
 
-        /** Adding button listeners to our buttons **/
+        /** Adding button listeners to our buttons */
         slideLeft.addActionListener(btnListener);
         slideUp.addActionListener(btnListener);
         slideDown.addActionListener(btnListener);
         slideRight.addActionListener(btnListener);
         undo.addActionListener(btnListener);
 
-        /** Adding key listener to our window **/
+        /** Adding key listener to our window */
         addKeyListener(keyListener);
 
         /** Adding buttons to the button panel */
@@ -150,7 +150,7 @@ public class GamePanel extends JPanel {
         buttonPanel.setBackground(Color.BLACK);
         buttonContainer.setBackground(Color.BLACK);
 
-        /** Dealing with layouts and adding scores to the panels **/
+        /** Dealing with layouts and adding scores to the panels */
         rightInfoPanel.setLayout(new BorderLayout());
         rightInfoPanel.add(score, BorderLayout.CENTER);
         rightInfoPanel.add(scoreText, BorderLayout.NORTH);
@@ -160,7 +160,7 @@ public class GamePanel extends JPanel {
         leftInfoPanel.add(highscoreText, BorderLayout.NORTH);
         leftInfoPanel.setBackground(Color.BLACK);
 
-        /** Setting font of the score and high score labels **/
+        /** Setting font of the score and high score labels */
         score.setForeground(Color.WHITE);
         score.setFont(new Font("Consolas", Font.PLAIN, 48));
         score.setVerticalAlignment(SwingConstants.CENTER);
@@ -185,55 +185,55 @@ public class GamePanel extends JPanel {
         timerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         timerLabel.setVerticalAlignment(SwingConstants.CENTER);
 
-        /** Adding our containers to 'this' panel **/
+        /** Adding our containers to 'this' panel */
         buttonContainer.add(buttonPanel, BorderLayout.SOUTH);
         add(rightInfoPanel, BorderLayout.WEST);
         add(leftInfoPanel, BorderLayout.EAST);
         add(buttonContainer, BorderLayout.SOUTH);
         add(timerLabel, BorderLayout.NORTH);
 
-        /** Parameters for 'this' panel **/
+        /** Parameters for 'this' panel */
         setFocusable(true);
         requestFocusInWindow();
         setBackground(Color.BLACK);
         renderBoard();
 
-        /** Start the countdown to win **/
+        /** Start the countdown to win */
         timer.start();
     }
 
     /*****************************************************************
-     * Method that is responsible for resize and repainting the board.
-     * @param width width of the board.
-     * @param height height of the board.
-     *****************************************************************/
+    Method that is responsible for resize and repainting the board.
+    @param width width of the board.
+    @param height height of the board.
+    *****************************************************************/
     private void resizeBoard(int width, int height) {
         this.height = height;
         this.width = width;
 
         /** In order to make sure our board is truly dynamic,
-         * we must check to see if the board width/height
-         * exceeds a magic number (414 in this case - tested)
-         * and if it does, keep decreasing the tile size
-         * until it fits inside the board. **/
-        int boardWidth = (size * width) + (width * 5);
-        int boardHeight = (size * height) + (height * 5);
+        we must check to see if the board width/height
+        exceeds a magic number (414 in this case - tested)
+        and if it does, keep decreasing the tile size
+        until it fits inside the board. */
+        int boardWidth = (size*width) + (width*5);
+        int boardHeight = (size*height) + (height*5);
 
         while (boardWidth > 414 || boardHeight > 414) {
             size--;
-            boardWidth = (size * width) + (width * 5);
-            boardHeight = (size * height) + (height * 5);
+            boardWidth = (size*width) + (width*5);
+            boardHeight = (size*height) + (height*5);
         }
 
         /** Calculating our centering variables. We do this by
-         * dividing the screen width/height by 2, then using the
-         * size of each tile and width/height of the board.
-         * The yOffset has another offset of 20. **/
-        xOffset = (800/2) - ((size * width)/2);
-        yOffset = (600/2) - ((size * height)/2) - 80;
+        dividing the screen width/height by 2, then using the
+        size of each tile and width/height of the board.
+        The yOffset has another offset of 20. */
+        xOffset = (800/2) - ((size*width)/2);
+        yOffset = (600/2) - ((size*height)/2) - 80;
         tiles = new NumberTile[height][width];
 
-        /** Game logic required **/
+        /** Game logic required */
         game.resizeBoard(height, width, 1024);
         game.placeRandomValue();
         game.placeRandomValue();
@@ -242,13 +242,13 @@ public class GamePanel extends JPanel {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
 
-                /** Setting each tile to a NumberTile **/
+                /** Setting each tile to a NumberTile */
                 tiles[i][j] = new NumberTile("", JLabel.CENTER);
                 tiles[i][j].setFont(new Font("Helvetica", Font.PLAIN, 32));
 
                 /** Setting the position of our rectangle using
-                 * x/y offset calculations, as well with some
-                 * spacing between tiles for neatness. **/
+                x/y offset calculations, as well with some
+                spacing between tiles for neatness. */
                 tiles[i][j].setBounds(
                         new Rectangle(
                                 (xOffset - ((j*5)/2)) + (size*j) + (j*5),
@@ -258,25 +258,25 @@ public class GamePanel extends JPanel {
             }
         }
 
-        /** Necessary for the JPanel to show our tiles **/
+        /** Necessary for the JPanel to show our tiles */
         setBackground(Color.BLACK);
         revalidate();
     }
 
     /*****************************************************************
-     * Method that renders the board to the screen and changes values.
-     * This needs to be public becasue the GameGUI class will need
-     * to render the board after a reset, or board resize.
-     *****************************************************************/
+    Method that renders the board to the screen and changes values.
+    This needs to be public becasue the GameGUI class will need
+    to render the board after a reset, or board resize.
+    *****************************************************************/
     public void renderBoard() {
-        /** By default, set label to empty **/
+        /** By default, set label to empty */
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 tiles[i][j].setText("");
             }
         }
 
-        /** If a tile isn't empty, render it's value **/
+        /** If a tile isn't empty, render it's value */
         for (Cell cell : game.getNonEmptyTiles()) {
             if (!tiles[cell.row][cell.column].getText().contains(
                     cell.value + "")) {
@@ -284,23 +284,23 @@ public class GamePanel extends JPanel {
             }
         }
 
-        /** Sets the text of our scores **/
+        /** Sets the text of our scores */
         score.setText("" + game.getScore());
         highScore.setText("" + game.getHighScore());
 
-        /** Check to see the status of our game **/
+        /** Check to see the status of our game */
         checkStatus();
 
     }
 
     /*****************************************************************
-     * Method that checks if the user has lost or won, and prompts to
-     * play again.
-     *****************************************************************/
+    Method that checks if the user has lost or won, and prompts to
+    play again.
+    *****************************************************************/
     public void checkStatus() {
         if (game.getStatus() != GameStatus.IN_PROGRESS) {
 
-            /** Create a variable to save space from duplicate code. **/
+            /** Create a variable to save space from duplicate code. */
             String message = "";
 
             if (game.getStatus() == GameStatus.USER_WON) {
@@ -325,16 +325,16 @@ public class GamePanel extends JPanel {
     }
 
     /*****************************************************************
-     * private ButtonListener class.
-     * @author Kyle Flynn
-     * @version v1.0
-     *****************************************************************/
+    private ButtonListener class.
+    @author Kyle Flynn
+    @version v1.0
+    *****************************************************************/
     private class ButtonListener implements ActionListener {
 
         /*****************************************************************
-         * Overriden method that controls when an action is invoked.
-         * We use it to listen for button clicks.
-         *****************************************************************/
+        Overriden method that controls when an action is invoked.
+        We use it to listen for button clicks.
+        *****************************************************************/
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == slideUp) {
@@ -363,23 +363,23 @@ public class GamePanel extends JPanel {
     }
 
     /*****************************************************************
-     * private KeyboardListener class.
-     * @author Kyle Flynn
-     * @version v1.0
-     *****************************************************************/
+    private KeyboardListener class.
+    @author Kyle Flynn
+    @version v1.0
+    *****************************************************************/
     private class KeyboardListener implements KeyListener {
 
         /*****************************************************************
-         * Overriden method that controls when a key is typed. We don't
-         * use this.
-         *****************************************************************/
+        Overriden method that controls when a key is typed. We don't
+        use this.
+        *****************************************************************/
         @Override
         public void keyTyped(KeyEvent e) {}
 
         /*****************************************************************
-         * Overriden method that controls when a key is pressed. We use
-         * this for easier gameplay.
-         *****************************************************************/
+        Overriden method that controls when a key is pressed. We use
+        this for easier gameplay.
+        *****************************************************************/
         @Override
         public void keyPressed(KeyEvent e) {
             if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -407,24 +407,24 @@ public class GamePanel extends JPanel {
         }
 
         /*****************************************************************
-         * Overriden method that controls when a key is released. We
-         * don't need this.
-         *****************************************************************/
+        Overriden method that controls when a key is released. We
+        don't need this.
+        *****************************************************************/
         @Override
         public void keyReleased(KeyEvent e) {}
     }
 
     /*****************************************************************
-     * private KeyboardListener class.
-     * @author Kyle Flynn
-     * @version v1.0
-     *****************************************************************/
+    private KeyboardListener class.
+    @author Kyle Flynn
+    @version v1.0
+    *****************************************************************/
     private class TimerListener implements ActionListener {
 
         /*****************************************************************
-         * Overriden method that controls when an action is invoked.
-         * We use it to listen for the change in time.
-         *****************************************************************/
+        Overriden method that controls when an action is invoked.
+        We use it to listen for the change in time.
+        *****************************************************************/
         @Override
         public void actionPerformed(ActionEvent e) {
             if (timeLeft <= 0 && game.getStatus() != GameStatus.IN_PROGRESS) {
@@ -443,8 +443,10 @@ public class GamePanel extends JPanel {
                     renderBoard();
                 }
             } else {
-                timerLabel.setText("Time Left to Win: " + timeLeft);
-                timeLeft--;
+                if (game.getStatus() == GameStatus.IN_PROGRESS) {
+                    timerLabel.setText("Time Left to Win: " + timeLeft);
+                    timeLeft--;
+                }
             }
         }
     }
