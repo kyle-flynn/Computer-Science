@@ -64,6 +64,8 @@ public class GameGUI {
 
         menuListener = new MenuListener();
         game = new NumberGame();
+
+        /** Initializing our board with a default 4x4 grid. */
         boardPanel = new GamePanel(4, 4, game);
     }
 

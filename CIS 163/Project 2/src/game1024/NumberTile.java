@@ -7,9 +7,13 @@ import java.awt.event.ActionListener;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Created by Hans Dulimarta on Feb 09, 2016.
- */
+/*****************************************************************
+NumberTile JLabel class. Originally when initialized, this class
+would throw a NullPointerException. I have edited it (comments
+where edits occur) so that it works properly.
+@author Hans Dulimarta
+@version 1.0
+*****************************************************************/
 public class NumberTile extends JLabel implements ActionListener {
     private static Map<String,Color> bgColorMap;
     private Timer tick;
@@ -34,14 +38,23 @@ public class NumberTile extends JLabel implements ActionListener {
     }
     public NumberTile(String text, int horizontalAlignment) {
         super(text, horizontalAlignment);
+
+        /** Originally there were variable initializations here,
+        but they all threw a NPE. I've removed them and placed
+        them elsewhere. */
         setOpaque(true);
     }
 
     private void animateColorTo (Color next) {
+
+        /** Here I check if the background is null, and set it to a
+        default color, then initialize the timer properly. */
         if (getBackground() == null) {
             setBackground(Color.LIGHT_GRAY);
             tick = new Timer(50, this);
         }
+
+        /** Simply enough, the following code now runs successfully. */
         target = next;
         step = 0;
         current = getBackground();
