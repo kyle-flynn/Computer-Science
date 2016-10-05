@@ -118,6 +118,7 @@ public class GameGUI {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == gameReset) {
+                game.setWinningValue(1024);
                 boardPanel.reset();
             } else if (e.getSource() == gameResize) {
                 try {

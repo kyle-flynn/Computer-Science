@@ -64,6 +64,12 @@ public class GamePanel extends JPanel {
     /** JLabel that only displays 'High Score:' */
     private JLabel highscoreText;
 
+    /** JLabel that only displays loses for session */
+    private JLabel losesText;
+
+    /** JLabel that only displays wins for session */
+    private JLabel winsText;
+
     /** JLabel that displays the time left to win */
     private JLabel timerLabel;
 
@@ -88,6 +94,12 @@ public class GamePanel extends JPanel {
     /** Holds the height of the game board */
     private int height;
 
+    /** Controls wins in current session */
+    private int wins;
+
+    /** Controls loses in current session */
+    private int loses;
+
     /** Holds amount of time left */
     private int timeLeft;
 
@@ -99,7 +111,9 @@ public class GamePanel extends JPanel {
         this.height = height;
         this.game = game;
         this.size = 64;
-        this.timeLeft = 200;
+        this.timeLeft = 300;
+        this.wins = 0;
+        this.loses = 0;
 
         /** Use a null layout to position our elements manually */
         setLayout(null);
@@ -117,6 +131,8 @@ public class GamePanel extends JPanel {
         highScore = new JLabel();
         scoreText = new JLabel();
         highscoreText = new JLabel();
+        losesText = new JLabel();
+        winsText = new JLabel();
         timerLabel = new JLabel();
 
         /** Initializing our timer that runs every second */
@@ -154,10 +170,12 @@ public class GamePanel extends JPanel {
         rightInfoPanel.setLayout(new BorderLayout());
         rightInfoPanel.add(score, BorderLayout.CENTER);
         rightInfoPanel.add(scoreText, BorderLayout.NORTH);
+        rightInfoPanel.add(losesText, BorderLayout.SOUTH);
         rightInfoPanel.setBackground(Color.BLACK);
         leftInfoPanel.setLayout(new BorderLayout());
         leftInfoPanel.add(highScore, BorderLayout.CENTER);
         leftInfoPanel.add(highscoreText, BorderLayout.NORTH);
+        leftInfoPanel.add(winsText, BorderLayout.SOUTH);
         leftInfoPanel.setBackground(Color.BLACK);
 
         /** Setting font of the score and high score labels */
@@ -179,6 +197,16 @@ public class GamePanel extends JPanel {
         highscoreText.setText("High Score");
         highscoreText.setHorizontalAlignment(SwingConstants.CENTER);
         highscoreText.setVerticalAlignment(SwingConstants.BOTTOM);
+        winsText.setForeground(Color.WHITE);
+        winsText.setText("Wins: 0");
+        winsText.setFont(new Font("Consolas", Font.PLAIN, 36));
+        winsText.setHorizontalAlignment(SwingConstants.CENTER);
+        winsText.setVerticalAlignment(SwingConstants.CENTER);
+        losesText.setForeground(Color.WHITE);
+        losesText.setText("Loses: 0");
+        losesText.setFont(new Font("Consolas", Font.PLAIN, 36));
+        losesText.setHorizontalAlignment(SwingConstants.CENTER);
+        losesText.setVerticalAlignment(SwingConstants.CENTER);
         timerLabel.setForeground(Color.WHITE);
         timerLabel.setFont(new Font("Consolas", Font.PLAIN, 24));
         timerLabel.setText("Time Left to Win: " + timeLeft);
@@ -187,8 +215,8 @@ public class GamePanel extends JPanel {
 
         /** Adding our containers to 'this' panel */
         buttonContainer.add(buttonPanel, BorderLayout.SOUTH);
-        add(rightInfoPanel, BorderLayout.WEST);
-        add(leftInfoPanel, BorderLayout.EAST);
+        add(rightInfoPanel, BorderLayout.EAST);
+        add(leftInfoPanel, BorderLayout.WEST);
         add(buttonContainer, BorderLayout.SOUTH);
         add(timerLabel, BorderLayout.NORTH);
 
@@ -304,11 +332,16 @@ public class GamePanel extends JPanel {
             String message = "";
 
             if (game.getStatus() == GameStatus.USER_WON) {
-                message = "You have lost! Play Again?";
+                message = "You have won! Congratulations! Play Again?";
+                wins++;
             }
             if (game.getStatus() == GameStatus.USER_LOST) {
-                message = "You have won! Congratulations! Play Again?";
+                message = "You have lost! Play Again?";
+                loses++;
             }
+
+            winsText.setText("Wins: " + wins);
+            losesText.setText("Loses: " + loses);
 
             int option = JOptionPane.showConfirmDialog(
                     this, message,
@@ -326,11 +359,12 @@ public class GamePanel extends JPanel {
 
     /*****************************************************************
     Method that simply resets the current game, renders the board,
-     and resets the time.
+    and resets the time.
     *****************************************************************/
     public void reset() {
         game.reset();
-        timeLeft = 200;
+        game.setWinningValue(1024);
+        timeLeft = 300;
         renderBoard();
     }
 
