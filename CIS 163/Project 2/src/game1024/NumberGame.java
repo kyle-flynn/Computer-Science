@@ -164,7 +164,6 @@ public class NumberGame implements NumberSlider {
         return null;
     }
 
-
     /*****************************************************************
     Overriden method that slides the board in the given direction.
     cell.
@@ -179,129 +178,21 @@ public class NumberGame implements NumberSlider {
         }
 
         if (dir == SlideDirection.UP) {
-
-            for (int i = 0; i < height; i++) {
-                for (int j = 0; j < width; j++) {
-
-                    /* We don't want to slide empty tiles */
-                    if (boardValues[i][j] != 0) {
-
-                        /* Re-assigning our 'i' value to a 'y' value for manipulation. */
-                        int y = i;
-
-                        while (y > 0) {
-
-                            if (canMerge(y, j, y-1, j)) {
-                                merge(y, j, y-1, j);
-                                didSlide = true;
-                            }
-
-                            if (canMove(y, j, y-1, j)) {
-                                move(y, j, y-1, j);
-                                didSlide = true;
-                            }
-
-                            y--;
-                        }
-
-                    }
-
-                }
+            if (moveVertically(-1)) {
+                didSlide = true;
             }
-
         } else if (dir == SlideDirection.DOWN) {
-
-            for (int i = height-1; i >= 0; i--) {
-                for (int j = width-1; j >= 0; j--) {
-
-                    /* We don't want to slide empty tiles */
-                    if (boardValues[i][j] != 0) {
-
-                        /* Re-assigning our 'i' value to a 'y' value for manipulation. */
-                        int y = i;
-
-                        while (y < height-1) {
-
-                            if (canMerge(y, j, y+1, j)) {
-                                merge(y, j, y+1, j);
-                                didSlide = true;
-                            }
-
-                            if (canMove(y, j, y+1, j)) {
-                                move(y, j, y+1, j);
-                                didSlide = true;
-                            }
-
-                            y++;
-                        }
-
-                    }
-
-                }
+            if (moveVertically(1)) {
+                didSlide = true;
             }
-
         } else if (dir == SlideDirection.LEFT) {
-
-            for (int i = 0; i < height; i++) {
-                for (int j = 0; j < width; j++) {
-
-                    /* We don't want to slide empty tiles */
-                    if (boardValues[i][j] != 0) {
-
-                        /* Re-assigning our 'j' value to a 'x' value for manipulation. */
-                        int x = j;
-
-                        while (x > 0) {
-
-                            if (canMerge(i, x, i, x-1)) {
-                                merge(i, x, i, x-1);
-                                didSlide = true;
-                            }
-
-                            if (canMove(i, x, i, x-1)) {
-                                move(i, x, i, x-1);
-                                didSlide = true;
-                            }
-
-                            x--;
-                        }
-
-                    }
-
-                }
+            if (moveHorizontally(-1)) {
+                didSlide = true;
             }
-
         } else if (dir == SlideDirection.RIGHT) {
-
-            for (int i = height-1; i >= 0; i--) {
-                for (int j = width-1; j >= 0; j--) {
-
-                    /* We don't want to slide empty tiles */
-                    if (boardValues[i][j] != 0) {
-
-                        /* Re-assigning our 'j' value to a 'x' value for manipulation. */
-                        int x = j;
-
-                        while (x < width-1) {
-
-                            if (canMerge(i, x, i, x+1)) {
-                                merge(i, x, i, x+1);
-                                didSlide = true;
-                            }
-
-                            if (canMove(i, x, i, x+1)) {
-                                move(i, x, i, x+1);
-                                didSlide = true;
-                            }
-
-                            x++;
-                        }
-
-                    }
-
-                }
+            if (moveHorizontally(1)) {
+                didSlide = true;
             }
-
         }
 
         if (didSlide) {
@@ -501,6 +392,130 @@ public class NumberGame implements NumberSlider {
     public void setWinningValue(int winningValue) {
         this.winningValue = winningValue;
         getStatus();
+    }
+
+    /*****************************************************************
+     Private helper method that controls tile movement vertically.
+     @return true if tiles were moved, and false if no tiles moved.
+     *****************************************************************/
+    private boolean moveVertically(int dir) {
+
+        /** The 'i' value we are iterating over */
+        int i = 0;
+
+        /** The 'j' value we are iterating over */
+        int j = 0;
+
+        /** Where the 'i' value will be starting */
+        int iStart = 0;
+
+        /** Where the 'j' value will be starting */
+        int jStart = 0;
+
+        /** Controls the return value and whether tiles were moved */
+        boolean didSlide = false;
+
+        /** Setting the variables appropriately based on direction */
+        if (dir == 1) {
+            iStart = height - 1;
+            jStart = width - 1;
+        } else {
+            iStart = 0;
+            jStart = 0;
+        }
+
+        for (i = iStart; dir == 1 ? i >= 0 : i < height; i-=dir) {
+            for (j = jStart; dir == 1 ? j >= 0 : j < width; j-=dir) {
+
+                /** We don't want to slide empty tiles */
+                if (boardValues[i][j] != 0) {
+
+                    /** Re-assigning our 'i' value to a 'y' value for manipulation. */
+                    int y = i;
+
+                    while (dir == -1 ? y > 0 : y < height-1) {
+
+                        if (canMerge(y, j, y+dir, j)) {
+                            merge(y, j, y+dir, j);
+                            didSlide = true;
+                        }
+
+                        if (canMove(y, j, y+dir, j)) {
+                            move(y, j, y+dir, j);
+                            didSlide = true;
+                        }
+
+                        y+=dir;
+                    }
+
+                }
+
+            }
+        }
+
+        return didSlide;
+    }
+
+    /*****************************************************************
+     Private helper method that controls tile movement horizontally.
+     @return true if tiles were moved, and false if no tiles moved.
+     *****************************************************************/
+    private boolean moveHorizontally(int dir) {
+
+        /** The 'i' value we are iterating over */
+        int i = 0;
+
+        /** The 'j' value we are iterating over */
+        int j = 0;
+
+        /** Where the 'i' value will be starting */
+        int iStart = 0;
+
+        /** Where the 'j' value will be starting */
+        int jStart = 0;
+
+        /** Controls the return value and whether tiles were moved */
+        boolean didSlide = false;
+
+        /** Setting the variables appropriately based on direction */
+        if (dir == 1) {
+            iStart = height - 1;
+            jStart = width - 1;
+        } else {
+            iStart = 0;
+            jStart = 0;
+        }
+
+        for (i = iStart; dir == 1 ? i >= 0 : i < height; i-=dir) {
+            for (j = jStart; dir == 1 ? j >= 0 : j < width; j-=dir) {
+
+                /** We don't want to slide empty tiles */
+                if (boardValues[i][j] != 0) {
+
+                    /** Re-assigning our 'i' value to a 'y' value for manipulation. */
+                    int x = j;
+
+                    while (dir == -1 ? x > 0 : x < width-1) {
+
+                        if (canMerge(i, x, i, x+dir)) {
+                            merge(i, x, i, x+dir);
+                            didSlide = true;
+                        }
+
+                        if (canMove(i, x, i, x+dir)) {
+                            move(i, x, i, x+dir);
+                            didSlide = true;
+                        }
+
+                        x+=dir;
+                    }
+
+                }
+
+            }
+        }
+
+        return didSlide;
     }
 
     /*****************************************************************

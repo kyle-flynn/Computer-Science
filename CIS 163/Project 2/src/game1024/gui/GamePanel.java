@@ -314,14 +314,24 @@ public class GamePanel extends JPanel {
                     this, message,
                     "1024", JOptionPane.YES_NO_OPTION);
 
+            /** Exit if 'no' is pressed, continue if 'Yes' is pressed. */
             if (option == 1) {
                 game.saveHighScore();
                 System.exit(0);
             } else {
-                game.reset();
-                renderBoard();
+                reset();
             }
         }
+    }
+
+    /*****************************************************************
+    Method that simply resets the current game, renders the board,
+     and resets the time.
+    *****************************************************************/
+    public void reset() {
+        game.reset();
+        timeLeft = 200;
+        renderBoard();
     }
 
     /*****************************************************************
@@ -427,20 +437,20 @@ public class GamePanel extends JPanel {
         *****************************************************************/
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (timeLeft <= 0 && game.getStatus() != GameStatus.IN_PROGRESS) {
+            if (timeLeft <= 0 &&
+                    game.getStatus() != GameStatus.IN_PROGRESS) {
                 timerLabel.setText("Time Left to Win: " + timeLeft);
 
                 int option = JOptionPane.showConfirmDialog(
                         null, "You have lost! Play Again?",
                         "1024", JOptionPane.YES_NO_OPTION);
 
+                /** Exit if 'no' is pressed, continue if 'Yes' is pressed. */
                 if (option == 1) {
                     game.saveHighScore();
                     System.exit(0);
                 } else {
-                    game.reset();
-                    timeLeft = 200;
-                    renderBoard();
+                    reset();
                 }
             } else {
                 if (game.getStatus() == GameStatus.IN_PROGRESS) {

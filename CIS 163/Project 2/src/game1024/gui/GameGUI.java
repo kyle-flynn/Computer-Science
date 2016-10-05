@@ -116,8 +116,7 @@ public class GameGUI {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == gameReset) {
-                game.reset();
-                boardPanel.renderBoard();
+                boardPanel.reset();
             } else if (e.getSource() == gameResize) {
                 try {
                     int width = Integer.parseInt(JOptionPane.showInputDialog(
