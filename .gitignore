@@ -1,0 +1,9 @@
+*.class
+*.xml
+*.iml
+Project 1/out
+Project 2/out
+Project 3/out
+Project 1/.idea
+Project 2/.idea
+Project 3/.idea
