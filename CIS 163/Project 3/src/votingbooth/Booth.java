@@ -12,14 +12,13 @@ public class Booth implements ClockListener {
     private Voter person;   // this is the person at the booth.
     private int completed = 0;
 
-    public void add (Voter person)
-    {
+    public void add (Voter person) {
         Q.add(person);
         if (Q.size() > maxQlength)
             maxQlength = Q.size();
     }
 
-    public void event (int tick){
+    public void event (int tick) {
         if (tick >= timeOfNextEvent) {
 //			if (person != null) { 			// Notice the delay that takes place here
 //				person.getDestination().add(person);    // take this person to the next station.
