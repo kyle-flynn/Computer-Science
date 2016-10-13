@@ -40,7 +40,8 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     private int avgSecondsVoting = 0;
     private int secondsBeforeLeaves = 0;
     private int booths = 0;
-
+    private int throughput = 0;
+    
     private VoterProducer produce;
 
     @Override
@@ -61,6 +62,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
      * This will link the Start Button to the Logic in the back end
      * For this we are re-assigning the variables to what is
      * stored in the text fields -JP
+     * @return void
      ***********************************************/
     
     public void startSimulation(){
@@ -70,9 +72,22 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     	avgSecondsVoting = Integer.parseInt(avgVotingTime.getText());
     	secondsBeforeLeaves = Integer.parseInt(secondsBeforeLeave.getText());
     	booths = Integer.parseInt(boothCount.getText());
+    	outputInformation();
     }
-
-    @Override
+    /**********************************************
+     * Prints the output information
+     * @return void
+     *********************************************/
+    private void outputInformation() {
+		//Print throughput
+    	/**
+    	 * Total number of people passing through the voting booths, I feel like this
+    	 * is calculated from the other variables that the user enters
+    	 */
+		
+    	
+	}
+	@Override
     public void handle(long now) {
     	
     }
