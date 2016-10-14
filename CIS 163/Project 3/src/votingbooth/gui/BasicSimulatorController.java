@@ -66,6 +66,8 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
      ***********************************************/
     
     public void startSimulation(){
+    	//Enter Number of People
+    	
     	nextPerson = Integer.parseInt(secondsToNext.getText());
     	avgSecondsCheckIn = Integer.parseInt(avgCheckInTime.getText());
     	totalTimeSec = Integer.parseInt(totalTime.getText());
@@ -84,6 +86,8 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     	 * Total number of people passing through the voting booths, I feel like this
     	 * is calculated from the other variables that the user enters
     	 */
+    	
+    	
 		
     	
 	}
