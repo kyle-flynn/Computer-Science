@@ -86,7 +86,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     	 * Total number of people passing through the voting booths, I feel like this
     	 * is calculated from the other variables that the user enters
     	 */
-    	
+    	//Test for git integration with IJ -- Ignore this comment
     	
 		
     	
