@@ -92,6 +92,10 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         }
     }
 
+    /*********************************************
+     * Quits the simulator, this is linked to the FXML GUI button
+     * @return void
+     *********************************************/
     @FXML
     private void quitSimulation() {
         System.exit(0);
