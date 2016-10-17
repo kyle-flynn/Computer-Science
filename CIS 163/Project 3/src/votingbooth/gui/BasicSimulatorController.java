@@ -68,7 +68,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
      ***********************************************/
     @FXML
     public void startSimulation(){
-    	//Enter Number of People
+
         try {
             nextPerson = Integer.parseInt(secondsToNext.getText());
             avgSecondsCheckIn = Integer.parseInt(avgCheckInTime.getText());
@@ -102,12 +102,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
      * @return void
      *********************************************/
     private void outputInformation() {
-		//Print throughput
-    	/**
-    	 * Total number of people passing through the voting booths, I feel like this
-    	 * is calculated from the other variables that the user enters
-    	 */
-    	//Test for git integration with IJ -- Ignore this comment
+
     	
 		
     	started = true;
