@@ -63,7 +63,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     /***********************************************
      * This will link the Start Button to the Logic in the back end
      * For this we are re-assigning the variables to what is
-     * stored in the text fields -JP
+     * stored in the text fields
      * @return void
      ***********************************************/
     @FXML
@@ -106,16 +106,39 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
      * @return void
      *********************************************/
     private void outputInformation() {
-
-    	
-		
     	started = true;
 	}
+
+    /********************************************
+     * Set up file menus
+     *******************************************/
+    @FXML
+	private void setupMenus(){
+
+    }
+
+    /*******************************************
+     * Resets everything in the GUI for different
+     * simulations, this will be accessed via the
+     * file Menu
+     * @return void
+     ******************************************/
+    @FXML
+    private void reset(){
+        secondsToNext.clear();
+        avgCheckInTime.clear();
+        totalTime.clear();
+        avgVotingTime.clear();
+        secondsBeforeLeave.clear();
+        boothCount.clear();
+    }
+
 	@Override
     public void handle(long now) {
     	if (started) {
             throughPut.setText(booth.getThroughPut() + " people with Max = " + (totalTimeSec / nextPerson));
-            peopleInLine.setText("" + booth.getLeft());
+            avgVotingTime.setText((booth.getThroughPut() / avgSecondsVoting ) + "");
+            peopleInLine.setText("" + booth.getLeft() + " people");
         }
     }
     
