@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import votingbooth.Booth;
 import votingbooth.Clock;
+import votingbooth.ClockTimer;
 import votingbooth.VoterProducer;
 
 import java.net.URL;
@@ -17,7 +18,6 @@ import java.util.ResourceBundle;
  */
 public class BasicSimulatorController extends AnimationTimer implements Initializable {
 
-
     @FXML private TextField secondsToNext;
     @FXML private TextField avgCheckInTime;
     @FXML private TextField totalTime;
@@ -25,10 +25,16 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     @FXML private TextField secondsBeforeLeave;
     @FXML private TextField boothCount;
 
+    @FXML private TextField throughPut;
+    @FXML private TextField peopleInLine;
+
+    @FXML private Button startButton;
+    @FXML private Button quitButton;
+
     private Button startSim;
     private Button stopSim;
 
-    private Clock clk;
+    private ClockTimer clk;
     private Booth booth;
 
     private int numOfTicksNextPerson = 20;
@@ -44,38 +50,53 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     
     private VoterProducer produce;
 
+    private boolean started;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        clk = new Clock();
-        booth = new Booth();
-        produce = new VoterProducer(booth, 20, 18);
-
-        clk.add(produce);
-        clk.add(booth);
-
-        clk.run(10000);
+        started = false;
 
         start();
     }
+
+
     /***********************************************
      * This will link the Start Button to the Logic in the back end
      * For this we are re-assigning the variables to what is
      * stored in the text fields -JP
      * @return void
      ***********************************************/
-    
+    @FXML
     public void startSimulation(){
     	//Enter Number of People
-    	
-    	nextPerson = Integer.parseInt(secondsToNext.getText());
-    	avgSecondsCheckIn = Integer.parseInt(avgCheckInTime.getText());
-    	totalTimeSec = Integer.parseInt(totalTime.getText());
-    	avgSecondsVoting = Integer.parseInt(avgVotingTime.getText());
-    	secondsBeforeLeaves = Integer.parseInt(secondsBeforeLeave.getText());
-    	booths = Integer.parseInt(boothCount.getText());
-    	outputInformation();
+        try {
+            nextPerson = Integer.parseInt(secondsToNext.getText());
+            avgSecondsCheckIn = Integer.parseInt(avgCheckInTime.getText());
+            totalTimeSec = Integer.parseInt(totalTime.getText());
+            avgSecondsVoting = Integer.parseInt(avgVotingTime.getText());
+            secondsBeforeLeaves = Integer.parseInt(secondsBeforeLeave.getText());
+            booths = Integer.parseInt(boothCount.getText());
+
+            clk = new ClockTimer();
+            booth = new Booth();
+            produce = new VoterProducer(booth, nextPerson, avgSecondsVoting);
+
+            clk.add(produce);
+            clk.add(booth);
+
+            clk.run(totalTimeSec);
+
+            outputInformation();
+        } catch (NumberFormatException nfe) {
+            System.out.println("Can't convert.");
+        }
     }
+
+    @FXML
+    private void quitSimulation() {
+        System.exit(0);
+    }
+
     /**********************************************
      * Prints the output information
      * @return void
@@ -89,11 +110,14 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     	//Test for git integration with IJ -- Ignore this comment
     	
 		
-    	
+    	started = true;
 	}
 	@Override
     public void handle(long now) {
-    	
+    	if (started) {
+            throughPut.setText(booth.getThroughPut() + " people with Max = " + (totalTimeSec / nextPerson));
+            peopleInLine.setText("" + booth.getLeft());
+        }
     }
     
     /**************************************************

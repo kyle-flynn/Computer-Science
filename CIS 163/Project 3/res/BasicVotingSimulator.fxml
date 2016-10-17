@@ -57,8 +57,8 @@
             <Label text="Average Seconds for Voting" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
             <Label text="Seconds Before Person Leaves" GridPane.halignment="LEFT" GridPane.rowIndex="6" />
             <Label text="Number of Booths" GridPane.halignment="LEFT" GridPane.rowIndex="7" />
-            <Button mnemonicParsing="false" text="Start Simulation" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
-            <Button mnemonicParsing="false" text="Quit Simulation" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button fx:id="startButton" mnemonicParsing="false" onAction="#startSimulation" text="Start Simulation" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+            <Button fx:id="quitButton" mnemonicParsing="false" onAction="#quitSimulation" text="Quit Simulation" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <Label text="--------------------------------------------------------" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Output Information" GridPane.halignment="LEFT" GridPane.rowIndex="9" />
             <Label text="--------------------------------------------------------" GridPane.columnIndex="1" GridPane.rowIndex="9" />
@@ -69,14 +69,14 @@
             <TextField fx:id="secondsBeforeLeave" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <TextField fx:id="boothCount" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <Label text="Throughput" GridPane.halignment="LEFT" GridPane.rowIndex="10" />
-            <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField fx:id="throughPut" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="10" />
             <Label text="Average time for a voter from start to finish" GridPane.rowIndex="11" />
             <Label text="Number of people left in line" GridPane.rowIndex="12" />
             <Label text="Max Q length CheckIn A-L" GridPane.rowIndex="13" />
             <Label text="Max Q length CheckIn M-Z" GridPane.rowIndex="14" />
             <Label text="Max Q length Voting Booth Line" GridPane.rowIndex="15" />
             <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-            <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <TextField fx:id="peopleInLine" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="12" />
             <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="13" />
             <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="14" />
             <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="15" />
