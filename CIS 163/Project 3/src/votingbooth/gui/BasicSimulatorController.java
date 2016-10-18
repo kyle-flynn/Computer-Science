@@ -123,6 +123,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
 
     /********************************************
      * Set up file menus
+     * @return void
      *******************************************/
     @FXML
 	private void setupMenus(){
@@ -145,6 +146,13 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         boothCount.clear();
     }
 
+    /*****************************************
+     * Inherited from animation class, allows
+     * the text to change dynamically, useful for
+     * the complex GUI
+     * @param now
+     * @return void
+     ****************************************/
 	@Override
     public void handle(long now) {
     	if (started) {
@@ -158,6 +166,11 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         }
     }
 
+    /*******************************************
+     * Calculate the statistics and store them for
+     * output
+     * @return void
+     ******************************************/
     private void calculateStatistics() {
         for (Booth b : booths) {
             // TODO - Append all booth statistics,
@@ -168,10 +181,4 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             votingLineQ += b.getMaxQlength();
         }
     }
-
-    /**************************************************
-     * Methods to do the Input Information
-     * 
-     **************************************************/
-    
 }
