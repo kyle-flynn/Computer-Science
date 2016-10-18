@@ -77,9 +77,9 @@
                 <Label text="Max Q length Voting Booth Line" GridPane.rowIndex="15" />
                 <TextField fx:id="avgTotalVoteTime" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                 <TextField fx:id="peopleInLine" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-                <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-                <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                <TextField fx:id="checkInOne" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                <TextField fx:id="checkInTwo" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                <TextField fx:id="votingBoothQ" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="15" />
             </children>
         </GridPane>
     </children>

@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
  */
 public class BasicSimulatorController extends AnimationTimer implements Initializable {
 
+    // Top-half of the text field variables
     @FXML private TextField secondsToNext;
     @FXML private TextField avgCheckInTime;
     @FXML private TextField totalTime;
@@ -25,30 +26,37 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     @FXML private TextField secondsBeforeLeave;
     @FXML private TextField boothCount;
 
+    // Bottom-half of the text field variables
     @FXML private TextField throughPut;
     @FXML private TextField peopleInLine;
     @FXML private TextField avgTotalVoteTime;
+    @FXML private TextField checkInOne;
+    @FXML private TextField checkInTwo;
+    @FXML private TextField votingBoothQ;
 
+    // Middle parts of the variables
     @FXML private Button startButton;
     @FXML private Button quitButton;
 
-    private Button startSim;
-    private Button stopSim;
-
     private ClockTimer clk;
-    private Booth booth;
+    private Booth[] booths;
 
-    private int numOfTicksNextPerson = 20;
-    private int averageBoothTime = 20;
-    
+    // Data inputs from the top text fields
     private int nextPerson = 0;
     private int avgSecondsCheckIn = 0;
     private int totalTimeSec = 0;
-    private int avgSecondsVoting = 0;
+    private int avgSecToVote = 0;
     private int secondsBeforeLeaves = 0;
-    private int booths = 0;
-    private int throughput = 0;
-    
+    private int boothNum = 0;
+
+    // Data output variables
+    private int throughput;
+    private int avgVoteTime;
+    private int peopleLeft;
+    private int checkInOneLeft;
+    private int checkInTwoLeft;
+    private int votingLineQ;
+
     private VoterProducer produce;
 
     private boolean started;
@@ -74,16 +82,19 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             nextPerson = Integer.parseInt(secondsToNext.getText());
             avgSecondsCheckIn = Integer.parseInt(avgCheckInTime.getText());
             totalTimeSec = Integer.parseInt(totalTime.getText());
-            avgSecondsVoting = Integer.parseInt(avgVotingTime.getText());
+            avgSecToVote = Integer.parseInt(avgVotingTime.getText());
             secondsBeforeLeaves = Integer.parseInt(secondsBeforeLeave.getText());
-            booths = Integer.parseInt(boothCount.getText());
+            boothNum = Integer.parseInt(boothCount.getText());
 
             clk = new ClockTimer();
-            booth = new Booth();
-            produce = new VoterProducer(booth, nextPerson, avgSecondsVoting);
+            booths = new Booth[boothNum];
+            produce = new VoterProducer(booths, nextPerson, avgSecToVote);
 
             clk.add(produce);
-            clk.add(booth);
+
+            for (Booth b : booths) {
+                clk.add(b);
+            }
 
             clk.run(totalTimeSec);
 
@@ -137,14 +148,27 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
 	@Override
     public void handle(long now) {
     	if (started) {
-            throughPut.setText(booth.getThroughPut() + " people with Max = " + (totalTimeSec / nextPerson));
-            peopleInLine.setText("" + booth.getLeft());
-            avgTotalVoteTime.setText((booth.getThroughPut() / totalTimeSec) + "");
-            avgVotingTime.setText((booth.getThroughPut() / avgSecondsVoting ) + "");
-            peopleInLine.setText("" + booth.getLeft() + " people");
+    	    calculateStatistics();
+            throughPut.setText(throughput + " people with Max = " + (totalTimeSec / nextPerson));
+            peopleInLine.setText(peopleLeft + "");
+            avgVotingTime.setText(avgVoteTime + "");
+            checkInOne.setText("");
+            checkInTwo.setText("");
+            votingBoothQ.setText(votingLineQ + "");
         }
     }
-    
+
+    private void calculateStatistics() {
+        for (Booth b : booths) {
+            // TODO - Append all booth statistics,
+            // and then calculate average for votingTime
+            throughput += 0;
+            peopleLeft += 0;
+            avgVoteTime += 0;
+            votingLineQ += 0;
+        }
+    }
+
     /**************************************************
      * Methods to do the Input Information
      * 

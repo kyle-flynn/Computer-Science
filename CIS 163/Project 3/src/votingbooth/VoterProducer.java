@@ -9,7 +9,7 @@ import java.util.Random;
 public class VoterProducer implements ClockListener {
 
     private int nextPerson = 0;
-    private Booth booth;
+    private Booth[] booths;
     private int numOfTicksNextPerson;
     private int averageBoothTime;
 
@@ -17,11 +17,11 @@ public class VoterProducer implements ClockListener {
 
     private Random r = new Random();
 
-    public VoterProducer(Booth booth,
+    public VoterProducer(Booth[] booths,
                          int numOfTicksNextPerson,
                          int averageBoothTime) {
 
-        this.booth = booth;
+        this.booths = booths;
         this.numOfTicksNextPerson = numOfTicksNextPerson;
         this.averageBoothTime = averageBoothTime;
         this.avgBoothTimes = new ArrayList<>();
@@ -29,6 +29,8 @@ public class VoterProducer implements ClockListener {
     }
 
     public void event(int tick) {
+
+        /** This dictates when to generate a new voter */
         if (nextPerson <= tick) {
             nextPerson = tick + numOfTicksNextPerson;
 
@@ -36,7 +38,9 @@ public class VoterProducer implements ClockListener {
 
             person.setBoothTime(averageBoothTime*0.5*r.nextGaussian() + averageBoothTime +.5);
             person.setTickTime(tick);
-            booth.add(person);
+
+            // TODO - Dictate which person goes to which booth
+            booths[0].add(person);
             avgBoothTimes.add(person.getBoothTime());
             //	person.setDestination(theLocationAfterTheBooth);  // You can save off where the voter should go.
         }
