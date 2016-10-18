@@ -64,12 +64,12 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     /***********************************************
      * This will link the Start Button to the Logic in the back end
      * For this we are re-assigning the variables to what is
-     * stored in the text fields -JP
+     * stored in the text fields
      * @return void
      ***********************************************/
     @FXML
     public void startSimulation(){
-    	//Enter Number of People
+
         try {
             nextPerson = Integer.parseInt(secondsToNext.getText());
             avgSecondsCheckIn = Integer.parseInt(avgCheckInTime.getText());
@@ -93,6 +93,10 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         }
     }
 
+    /*********************************************
+     * Quits the simulator, this is linked to the FXML GUI button
+     * @return void
+     *********************************************/
     @FXML
     private void quitSimulation() {
         System.exit(0);
@@ -103,22 +107,41 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
      * @return void
      *********************************************/
     private void outputInformation() {
-		//Print throughput
-    	/**
-    	 * Total number of people passing through the voting booths, I feel like this
-    	 * is calculated from the other variables that the user enters
-    	 */
-    	//Test for git integration with IJ -- Ignore this comment
-    	
-		
     	started = true;
 	}
+
+    /********************************************
+     * Set up file menus
+     *******************************************/
+    @FXML
+	private void setupMenus(){
+
+    }
+
+    /*******************************************
+     * Resets everything in the GUI for different
+     * simulations, this will be accessed via the
+     * file Menu
+     * @return void
+     ******************************************/
+    @FXML
+    private void reset(){
+        secondsToNext.clear();
+        avgCheckInTime.clear();
+        totalTime.clear();
+        avgVotingTime.clear();
+        secondsBeforeLeave.clear();
+        boothCount.clear();
+    }
+
 	@Override
     public void handle(long now) {
     	if (started) {
             throughPut.setText(booth.getThroughPut() + " people with Max = " + (totalTimeSec / nextPerson));
             peopleInLine.setText("" + booth.getLeft());
             avgTotalVoteTime.setText((booth.getThroughPut() / totalTimeSec) + "");
+            avgVotingTime.setText((booth.getThroughPut() / avgSecondsVoting ) + "");
+            peopleInLine.setText("" + booth.getLeft() + " people");
         }
     }
     
