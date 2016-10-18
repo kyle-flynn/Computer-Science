@@ -162,10 +162,10 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         for (Booth b : booths) {
             // TODO - Append all booth statistics,
             // and then calculate average for votingTime
-            throughput += 0;
-            peopleLeft += 0;
-            avgVoteTime += 0;
-            votingLineQ += 0;
+            throughput += b.getThroughPut();
+            peopleLeft += b.getLeft();
+            avgVoteTime += (b.getThroughPut() / totalTimeSec);
+            votingLineQ += b.getMaxQlength();
         }
     }
 
