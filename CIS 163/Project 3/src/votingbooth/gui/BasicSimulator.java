@@ -12,6 +12,7 @@ import java.io.IOException;
  * Created by kylef_000 on 10/12/2016.
  */
 public class BasicSimulator extends Application {
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 

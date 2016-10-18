@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import votingbooth.Booth;
-import votingbooth.Clock;
-import votingbooth.ClockTimer;
-import votingbooth.VoterProducer;
+import votingbooth.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,6 +37,10 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
 
     private ClockTimer clk;
     private Booth[] booths;
+
+    // Right now, we control the amount of check-in tables
+    private CheckInTable tableOne;
+    private CheckInTable tableTwo;
 
     // Data inputs from the top text fields
     private int nextPerson = 0;
@@ -88,12 +89,20 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
 
             clk = new ClockTimer();
             booths = new Booth[boothNum];
+            tableOne = new CheckInTable(avgSecondsCheckIn);
+            tableTwo = new CheckInTable(avgSecondsCheckIn);
             produce = new VoterProducer(booths, nextPerson, avgSecToVote);
 
-            clk.add(produce);
+            produce.addTable(tableOne);
+            produce.addTable(tableTwo);
 
-            for (Booth b : booths) {
-                clk.add(b);
+            clk.add(produce);
+            clk.add(tableOne);
+            clk.add(tableTwo);
+
+            for (int i = 0; i < boothNum; i++) {
+                booths[i] = new Booth();
+                clk.add(booths[i]);
             }
 
             clk.run(totalTimeSec);
@@ -152,8 +161,8 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             throughPut.setText(throughput + " people with Max = " + (totalTimeSec / nextPerson));
             peopleInLine.setText(peopleLeft + "");
             avgVotingTime.setText(avgVoteTime + "");
-            checkInOne.setText("");
-            checkInTwo.setText("");
+            checkInOne.setText(tableOne.getVoterQ() + "");
+            checkInTwo.setText(tableTwo.getVoterQ() + "");
             votingBoothQ.setText(votingLineQ + "");
         }
     }
