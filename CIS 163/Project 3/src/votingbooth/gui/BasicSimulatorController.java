@@ -27,6 +27,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
 
     @FXML private TextField throughPut;
     @FXML private TextField peopleInLine;
+    @FXML private TextField avgTotalVoteTime;
 
     @FXML private Button startButton;
     @FXML private Button quitButton;
@@ -117,6 +118,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     	if (started) {
             throughPut.setText(booth.getThroughPut() + " people with Max = " + (totalTimeSec / nextPerson));
             peopleInLine.setText("" + booth.getLeft());
+            avgTotalVoteTime.setText((booth.getThroughPut() / totalTimeSec) + "");
         }
     }
     

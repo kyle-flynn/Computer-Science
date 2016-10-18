@@ -18,12 +18,12 @@ public class Voter {
         return Destination;
     }
 
-    public void setDestination(Booth destination) {
-        Destination = destination;
-    }
-
     public int getTickTime() {
         return tickTime;
+    }
+
+    public void setDestination(Booth destination) {
+        Destination = destination;
     }
 
     public void setTickTime(int tickTime) {
