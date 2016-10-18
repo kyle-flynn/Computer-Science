@@ -16,6 +16,8 @@ public class Sim {
 
 //        VoterProducer produce = new VoterProducer(booth, 20, 18);
 //        clk.add(produce);
+        //VoterProducer produce = new VoterProducer(booth, 20, 18);
+        //clk.add(produce);
         clk.add(booth);
 
         clk.run(10000);
