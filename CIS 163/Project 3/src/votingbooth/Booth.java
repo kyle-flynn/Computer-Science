@@ -32,6 +32,7 @@ public class Booth implements ClockListener {
                     completed++;
                     person.addTime(person.getBoothTime());
                     person.setStatus(VoterStatus.DONE);
+                    System.out.println("Voter " + person.getVoterID() + " done. Total time " + person.getTimeSpent());
                 }
             }
         }

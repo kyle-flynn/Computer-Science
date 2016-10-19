@@ -51,15 +51,17 @@ public class CheckInTable implements ClockListener {
                 for (int i = 0; i < booths.length; i++) {
                     if (i < booths.length - 1) {
                         // If the current booth is less than the next booth, assign voter.
-                        if (booths[i].getMaxQlength() <= booths[i+1].getMaxQlength()) {
+                        if (booths[i].getLeft() <= booths[i+1].getLeft() || booths[i].getLeft() == 0) {
                             booths[i].add(person);
                             person.setBoothTime(booths[i].getAverageBoothTime()*0.5*r.nextGaussian() + booths[i].getAverageBoothTime() +.5);
+                            System.out.println("Voter " + person.getVoterID() + " Going in to booth " + i);
                             break;
                         }
                     } else {
-                        if (booths[i].getMaxQlength() <= booths[0].getMaxQlength()) {
+                        if (booths[i].getLeft() <= booths[0].getLeft()) {
                             booths[i].add(person);
                             person.setBoothTime(booths[i].getAverageBoothTime()*0.5*r.nextGaussian() + booths[i].getAverageBoothTime() +.5);
+                            System.out.println("Voter " + person.getVoterID() + " Going in to booth " + i);
                             break;
                         }
                     }

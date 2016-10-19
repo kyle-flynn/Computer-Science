@@ -16,6 +16,8 @@ public class VoterProducer implements ClockListener {
     private ArrayList<Double> avgBoothTimes;
     private ArrayList<CheckInTable> tables;
 
+    private int count;
+
     public VoterProducer(Booth[] booths,
                          int numOfTicksNextPerson,
                          int averageBoothTime) {
@@ -25,6 +27,8 @@ public class VoterProducer implements ClockListener {
         this.averageBoothTime = averageBoothTime;
         this.avgBoothTimes = new ArrayList<>();
         this.tables = new ArrayList<>();
+
+        this.count = 0;
         //r.setSeed(13);    // This will cause the same random numbers
     }
 
@@ -34,17 +38,22 @@ public class VoterProducer implements ClockListener {
             nextPerson = tick + numOfTicksNextPerson;
 
             Voter person = new Voter();
+            count++;
+
+            person.setID(count);
 
             // Here send the voter to a checkIn A-L or M-Z
             for (int i = 0; i < tables.size(); i++) {
                 if (i < tables.size() - 1) {
                     if (tables.get(i).getVoterQ() <= tables.get(i+1).getVoterQ()) {
+                        System.out.println("Voter " + person.getVoterID() + " Checking in on table " + i);
                         tables.get(i).addVoter(person);
                         break;
                     }
                 } else {
                     if (tables.get(i).getVoterQ() <= tables.get(0).getVoterQ()) {
                         tables.get(i).addVoter(person);
+                        System.out.println("Voter " + person.getVoterID() + " Checking in on table " + i);
                         break;
                     }
                 }

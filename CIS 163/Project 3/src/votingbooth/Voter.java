@@ -8,9 +8,14 @@ public class Voter {
     private double timeSpent;
     private Booth Destination;
     private VoterStatus status;
+    private int voterID;
 
     // max time person stays in line
     protected double boothTime;
+
+    public void setID(int voterID) {
+        this.voterID = voterID;
+    }
 
     public void addTime(double time) {
         this.timeSpent += time;
@@ -26,6 +31,10 @@ public class Voter {
 
     public int getTickTime() {
         return tickTime;
+    }
+
+    public int getVoterID() {
+        return voterID;
     }
 
     public double getTimeSpent() {

@@ -35,7 +35,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     @FXML private Button startButton;
     @FXML private Button quitButton;
 
-    private ClockTimer clk;
+    private Clock clk;
     private Booth[] booths;
 
     // Right now, we control the amount of check-in tables
@@ -87,7 +87,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             secondsBeforeLeaves = Integer.parseInt(secondsBeforeLeave.getText());
             boothNum = Integer.parseInt(boothCount.getText());
 
-            clk = new ClockTimer();
+            clk = new Clock();
             booths = new Booth[boothNum];
             tableOne = new CheckInTable(avgSecondsCheckIn, booths);
             tableTwo = new CheckInTable(avgSecondsCheckIn, booths);
@@ -112,8 +112,8 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             System.out.println("Can't convert.");
         }
     }
-
     /*********************************************
+
      * Quits the simulator, this is linked to the FXML GUI button
      * @return void
      *********************************************/
@@ -150,7 +150,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         secondsToNext.clear();
         avgCheckInTime.clear();
         totalTime.clear();
-        avgVotingTime.clear();
+        avgTotalVoteTime.clear();
         secondsBeforeLeave.clear();
         boothCount.clear();
     }
@@ -168,7 +168,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     	    calculateStatistics();
             throughPut.setText(throughput + " people with Max = " + (totalTimeSec / nextPerson));
             peopleInLine.setText(peopleLeft + "");
-            avgVotingTime.setText(avgVoteTime + "");
+            avgTotalVoteTime.setText(avgVoteTime + "");
             checkInOne.setText(tableOne.getVoterQ() + "");
             checkInTwo.setText(tableTwo.getVoterQ() + "");
             votingBoothQ.setText(votingLineQ + "");
