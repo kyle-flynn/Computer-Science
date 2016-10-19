@@ -89,8 +89,8 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
 
             clk = new ClockTimer();
             booths = new Booth[boothNum];
-            tableOne = new CheckInTable(avgSecondsCheckIn);
-            tableTwo = new CheckInTable(avgSecondsCheckIn);
+            tableOne = new CheckInTable(avgSecondsCheckIn, booths);
+            tableTwo = new CheckInTable(avgSecondsCheckIn, booths);
             produce = new VoterProducer(booths, nextPerson, avgSecToVote);
 
             produce.addTable(tableOne);
@@ -101,7 +101,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             clk.add(tableTwo);
 
             for (int i = 0; i < boothNum; i++) {
-                booths[i] = new Booth();
+                booths[i] = new Booth(avgSecToVote);
                 clk.add(booths[i]);
             }
 
@@ -184,10 +184,10 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         for (Booth b : booths) {
             // TODO - Append all booth statistics,
             // and then calculate average for votingTime
-            throughput += b.getThroughPut();
-            peopleLeft += b.getLeft();
+            throughput = produce.getAllThrougPut();
+            peopleLeft = produce.getAllLeft();
             avgVoteTime += (b.getThroughPut() / totalTimeSec);
-            votingLineQ += b.getMaxQlength();
+            votingLineQ = produce.getBoothQ();
         }
     }
 }

@@ -16,8 +16,6 @@ public class VoterProducer implements ClockListener {
     private ArrayList<Double> avgBoothTimes;
     private ArrayList<CheckInTable> tables;
 
-    private Random r = new Random();
-
     public VoterProducer(Booth[] booths,
                          int numOfTicksNextPerson,
                          int averageBoothTime) {
@@ -42,20 +40,21 @@ public class VoterProducer implements ClockListener {
                 if (i < tables.size() - 1) {
                     if (tables.get(i).getVoterQ() <= tables.get(i+1).getVoterQ()) {
                         tables.get(i).addVoter(person);
-                    } else {
-                        tables.get(i+1).addVoter(person);
+                        break;
+                    }
+                } else {
+                    if (tables.get(i).getVoterQ() <= tables.get(0).getVoterQ()) {
+                        tables.get(i).addVoter(person);
+                        break;
                     }
                 }
             }
 
             // Here set the voter booth time and stuff
-            person.setBoothTime(averageBoothTime*0.5*r.nextGaussian() + averageBoothTime +.5);
             person.setTickTime(tick);
+            person.setStatus(VoterStatus.CHECKING_IN);
 
-            // TODO - Dictate which person goes to which booth
-            booths[0].add(person);
             avgBoothTimes.add(person.getBoothTime());
-            //	person.setDestination(theLocationAfterTheBooth);  // You can save off where the voter should go.
         }
     }
 
@@ -72,6 +71,30 @@ public class VoterProducer implements ClockListener {
             return sum / avgBoothTimes.size();
         }
         return 0.0;
+    }
+
+    public int getAllThrougPut() {
+        int completed = 0;
+        for (Booth b : booths) {
+            completed += b.getThroughPut();
+        }
+        return completed;
+    }
+
+    public int getAllLeft() {
+        int left = 0;
+        for (Booth b : booths) {
+            left += b.getLeft();
+        }
+        return left;
+    }
+
+    public int getBoothQ() {
+        int boothQ = 0;
+        for (Booth b : booths) {
+            boothQ += b.getMaxQlength();
+        }
+        return boothQ;
     }
 
 }

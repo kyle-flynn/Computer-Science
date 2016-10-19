@@ -5,10 +5,16 @@ package votingbooth;
  */
 public class Voter {
     private int tickTime;
+    private double timeSpent;
     private Booth Destination;
+    private VoterStatus status;
 
     // max time person stays in line
     protected double boothTime;
+
+    public void addTime(double time) {
+        this.timeSpent += time;
+    }
 
     public double getBoothTime() {
         return boothTime;
@@ -22,6 +28,14 @@ public class Voter {
         return tickTime;
     }
 
+    public double getTimeSpent() {
+        return timeSpent;
+    }
+
+    public VoterStatus getStatus() {
+        return status;
+    }
+
     public void setDestination(Booth destination) {
         Destination = destination;
     }
@@ -33,4 +47,9 @@ public class Voter {
     public void setBoothTime(double checkInTime) {
         this.boothTime = checkInTime;
     }
+
+    public void setStatus(VoterStatus status) {
+        this.status = status;
+    }
+
 }

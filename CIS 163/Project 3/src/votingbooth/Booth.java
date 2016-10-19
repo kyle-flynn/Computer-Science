@@ -11,6 +11,11 @@ public class Booth implements ClockListener {
     private int maxQlength = 0;
     private Voter person;   // this is the person at the booth.
     private int completed = 0;
+    private int averageBoothTime;
+
+    public Booth(int averageBoothTime) {
+        this.averageBoothTime = averageBoothTime;
+    }
 
     public void add (Voter person) {
         Q.add(person);
@@ -20,17 +25,20 @@ public class Booth implements ClockListener {
 
     public void event (int tick) {
         if (tick >= timeOfNextEvent) {
-//			if (person != null) { 			// Notice the delay that takes place here
-//				person.getDestination().add(person);    // take this person to the next station.
-//			person = null;				// I have send the person on.
-//			}
-
             if (Q.size() >= 1) {
-                person = Q.remove(0);		// do not send this person as of yet, make them wait.
-                timeOfNextEvent = tick + (int) (person.getBoothTime() + 1);
-                completed++;
+                if (Q.get(0).getStatus() == VoterStatus.WAITING_FOR_BOOTH) {
+                    person = Q.remove(0);
+                    timeOfNextEvent = tick + (int) (person.getBoothTime() + 1);
+                    completed++;
+                    person.addTime(person.getBoothTime());
+                    person.setStatus(VoterStatus.DONE);
+                }
             }
         }
+    }
+
+    public int getAverageBoothTime() {
+        return averageBoothTime;
     }
 
     public int getLeft() {

@@ -9,7 +9,7 @@ public class Sim {
     public static void main (String[] args) {
 
         Clock clk = new Clock();
-        Booth booth = new Booth();
+        Booth booth = new Booth(60);
 
         // 		int numOfTicksNextPerson = 20
         //      int averageBoothTime = 20
