@@ -1,25 +1,17 @@
 package votingbooth;
 
-import votingbooth.gui.BasicSimulatorController;
-
 /**
- * @author   Roger Ferguson
+ * Created by Jarred on 10/19/16.
  */
-public class Voter {
+public class RegularVoter extends Voter {
+    private int tickTime;
     private double timeSpent;
+    private Booth Destination;
     private VoterStatus status;
     private int voterID;
-<<<<<<< HEAD
-
-    /** Controller Object **/
-    public BasicSimulatorController basicController;
 
     // max time person stays in line
     protected double boothTime;
-=======
-    private Double boothTime;
-    private int tolerance;
->>>>>>> origin/master
 
     public void setID(int voterID) {
         this.voterID = voterID;
@@ -29,8 +21,16 @@ public class Voter {
         this.timeSpent += time;
     }
 
-    public Double getBoothTime() {
+    public double getBoothTime() {
         return boothTime;
+    }
+
+    public Booth getDestination() {
+        return Destination;
+    }
+
+    public int getTickTime() {
+        return tickTime;
     }
 
     public int getVoterID() {
@@ -49,20 +49,19 @@ public class Voter {
         return status;
     }
 
-    public void setBoothTime(Double checkInTime) {
+    public void setDestination(Booth destination) {
+        Destination = destination;
+    }
+
+    public void setTickTime(int tickTime) {
+        this.tickTime = tickTime;
+    }
+
+    public void setBoothTime(double checkInTime) {
         this.boothTime = checkInTime;
     }
 
     public void setStatus(VoterStatus status) {
         this.status = status;
     }
-
-    public void setTolerance(int tolerance) {
-        this.tolerance = tolerance;
-    }
-
-    public int getTolerance() {
-        return tolerance;
-    }
-
 }

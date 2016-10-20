@@ -10,7 +10,7 @@ public class LimitedTimeVoter extends Voter{
     // max time person stays in line
     protected double boothTime;
 
-    public double getBoothTime() {
+    public Double getBoothTime() {
         return boothTime * 0.5;
     }
 
