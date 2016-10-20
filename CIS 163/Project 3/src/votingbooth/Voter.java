@@ -4,14 +4,11 @@ package votingbooth;
  * @author   Roger Ferguson
  */
 public class Voter {
-    private int tickTime;
     private double timeSpent;
-    private Booth Destination;
     private VoterStatus status;
     private int voterID;
-
-    // max time person stays in line
-    protected double boothTime;
+    private Double boothTime;
+    private int tolerance;
 
     public void setID(int voterID) {
         this.voterID = voterID;
@@ -21,16 +18,8 @@ public class Voter {
         this.timeSpent += time;
     }
 
-    public double getBoothTime() {
+    public Double getBoothTime() {
         return boothTime;
-    }
-
-    public Booth getDestination() {
-        return Destination;
-    }
-
-    public int getTickTime() {
-        return tickTime;
     }
 
     public int getVoterID() {
@@ -45,20 +34,20 @@ public class Voter {
         return status;
     }
 
-    public void setDestination(Booth destination) {
-        Destination = destination;
-    }
-
-    public void setTickTime(int tickTime) {
-        this.tickTime = tickTime;
-    }
-
-    public void setBoothTime(double checkInTime) {
+    public void setBoothTime(Double checkInTime) {
         this.boothTime = checkInTime;
     }
 
     public void setStatus(VoterStatus status) {
         this.status = status;
+    }
+
+    public void setTolerance(int tolerance) {
+        this.tolerance = tolerance;
+    }
+
+    public int getTolerance() {
+        return tolerance;
     }
 
 }

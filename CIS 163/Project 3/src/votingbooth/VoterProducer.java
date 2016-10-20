@@ -1,7 +1,6 @@
 package votingbooth;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * @author Roger Ferguson
@@ -11,7 +10,8 @@ public class VoterProducer implements ClockListener {
     private int nextPerson = 0;
     private Booth[] booths;
     private int numOfTicksNextPerson;
-    private int averageBoothTime;
+    private int toleranceTime;
+
 
     private ArrayList<Double> avgBoothTimes;
     private ArrayList<CheckInTable> tables;
@@ -20,11 +20,11 @@ public class VoterProducer implements ClockListener {
 
     public VoterProducer(Booth[] booths,
                          int numOfTicksNextPerson,
-                         int averageBoothTime) {
+                         int toleranceTime) {
 
         this.booths = booths;
         this.numOfTicksNextPerson = numOfTicksNextPerson;
-        this.averageBoothTime = averageBoothTime;
+        this.toleranceTime = toleranceTime;
         this.avgBoothTimes = new ArrayList<>();
         this.tables = new ArrayList<>();
 
@@ -41,45 +41,30 @@ public class VoterProducer implements ClockListener {
             count++;
 
             person.setID(count);
+            person.setTolerance(toleranceTime);
+
+            // TODO - Add leave time for the voter
 
             // Here send the voter to a checkIn A-L or M-Z
             for (int i = 0; i < tables.size(); i++) {
                 if (i < tables.size() - 1) {
                     if (tables.get(i).getVoterQ() <= tables.get(i+1).getVoterQ()) {
-                        System.out.println("Voter " + person.getVoterID() + " Checking in on table " + i);
                         tables.get(i).addVoter(person);
                         break;
                     }
                 } else {
                     if (tables.get(i).getVoterQ() <= tables.get(0).getVoterQ()) {
                         tables.get(i).addVoter(person);
-                        System.out.println("Voter " + person.getVoterID() + " Checking in on table " + i);
                         break;
                     }
                 }
             }
-
-            // Here set the voter booth time and stuff
-            person.setTickTime(tick);
             person.setStatus(VoterStatus.CHECKING_IN);
-
-            avgBoothTimes.add(person.getBoothTime());
         }
     }
 
     public void addTable(CheckInTable table) {
         tables.add(table);
-    }
-
-    public double getAverageBoothTime() {
-        if (avgBoothTimes.size() > 0) {
-            double sum = 0.0;
-            for (Double times : avgBoothTimes) {
-                sum += times;
-            }
-            return sum / avgBoothTimes.size();
-        }
-        return 0.0;
     }
 
     public int getAllThrougPut() {
@@ -88,22 +73,6 @@ public class VoterProducer implements ClockListener {
             completed += b.getThroughPut();
         }
         return completed;
-    }
-
-    public int getAllLeft() {
-        int left = 0;
-        for (Booth b : booths) {
-            left += b.getLeft();
-        }
-        return left;
-    }
-
-    public int getBoothQ() {
-        int boothQ = 0;
-        for (Booth b : booths) {
-            boothQ += b.getMaxQlength();
-        }
-        return boothQ;
     }
 
 }

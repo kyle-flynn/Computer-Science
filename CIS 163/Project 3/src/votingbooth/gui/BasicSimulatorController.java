@@ -36,6 +36,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     @FXML private Button quitButton;
 
     private Clock clk;
+    private BoothLine boothQ;
     private Booth[] booths;
 
     // Right now, we control the amount of check-in tables
@@ -52,7 +53,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
 
     // Data output variables
     private int throughput;
-    private int avgVoteTime;
+    private double avgVoteTime;
     private int peopleLeft;
     private int checkInOneLeft;
     private int checkInTwoLeft;
@@ -89,9 +90,16 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
 
             clk = new Clock();
             booths = new Booth[boothNum];
-            tableOne = new CheckInTable(avgSecondsCheckIn, booths);
-            tableTwo = new CheckInTable(avgSecondsCheckIn, booths);
-            produce = new VoterProducer(booths, nextPerson, avgSecToVote);
+
+            for (int i = 0; i < boothNum; i++) {
+                booths[i] = new Booth(avgSecToVote);
+                clk.add(booths[i]);
+            }
+
+            boothQ = new BoothLine(booths);
+            tableOne = new CheckInTable(avgSecondsCheckIn, boothQ);
+            tableTwo = new CheckInTable(avgSecondsCheckIn, boothQ);
+            produce = new VoterProducer(booths, nextPerson, secondsBeforeLeaves);
 
             produce.addTable(tableOne);
             produce.addTable(tableTwo);
@@ -99,11 +107,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             clk.add(produce);
             clk.add(tableOne);
             clk.add(tableTwo);
-
-            for (int i = 0; i < boothNum; i++) {
-                booths[i] = new Booth(avgSecToVote);
-                clk.add(booths[i]);
-            }
+            clk.add(boothQ);
 
             clk.run(totalTimeSec);
 
@@ -169,8 +173,8 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             throughPut.setText(throughput + " people with Max = " + (totalTimeSec / nextPerson));
             peopleInLine.setText(peopleLeft + "");
             avgTotalVoteTime.setText(avgVoteTime + "");
-            checkInOne.setText(tableOne.getVoterQ() + "");
-            checkInTwo.setText(tableTwo.getVoterQ() + "");
+            checkInOne.setText(tableOne.getMaxQlength() + "");
+            checkInTwo.setText(tableTwo.getMaxQlength() + "");
             votingBoothQ.setText(votingLineQ + "");
         }
     }
@@ -181,13 +185,21 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
      * @return void
      ******************************************/
     private void calculateStatistics() {
+        int stillVoting = 0;
+        avgVoteTime = 0;
         for (Booth b : booths) {
             // TODO - Append all booth statistics,
             // and then calculate average for votingTime
             throughput = produce.getAllThrougPut();
-            peopleLeft = produce.getAllLeft();
-            avgVoteTime += (b.getThroughPut() / totalTimeSec);
-            votingLineQ = produce.getBoothQ();
+            if (b.inUse()) {
+                stillVoting++;
+            }
+            peopleLeft = boothQ.getLeft() + tableOne.getVoterQ() + tableTwo.getVoterQ() + stillVoting;
+            for (double time : b.getCompletedTimes()) {
+                avgVoteTime += time;
+            }
+            votingLineQ = boothQ.getMaxQlength();
         }
+        avgVoteTime = avgVoteTime / (totalTimeSec / nextPerson);
     }
 }

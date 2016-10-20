@@ -9,7 +9,7 @@ import java.util.Random;
 public class CheckInTable implements ClockListener {
 
     private ArrayList<Voter> Q;
-    private Booth[] booths;
+    private BoothLine boothQ;
     private int maxQlength;
     private int checkInTime;
     private int checkedIn;
@@ -19,11 +19,11 @@ public class CheckInTable implements ClockListener {
 
     private int count;
 
-    public CheckInTable(int checkInTime, Booth[] booths) {
+    public CheckInTable(int checkInTime, BoothLine boothQ) {
         this.checkInTime = checkInTime;
         this.checkedIn = 0;
         this.nextEvent = 0;
-        this.booths = booths;
+        this.boothQ = boothQ;
         this.Q = new ArrayList<>();
 
         this.count = 0;
@@ -34,7 +34,10 @@ public class CheckInTable implements ClockListener {
         if (Q.size() > maxQlength) {
             maxQlength = Q.size();
         }
+    }
 
+    public int getMaxQlength() {
+        return maxQlength;
     }
 
     @Override
@@ -44,29 +47,9 @@ public class CheckInTable implements ClockListener {
                 Voter person = Q.remove(0);
 
                 person.addTime(checkInTime);
-                person.setTickTime(tick);
                 person.setStatus(VoterStatus.WAITING_FOR_BOOTH);
 
-                // Here we dictate which booth the voter will go to
-                for (int i = 0; i < booths.length; i++) {
-                    if (i < booths.length - 1) {
-                        // If the current booth is less than the next booth, assign voter.
-                        if (booths[i].getLeft() <= booths[i+1].getLeft() || booths[i].getLeft() == 0) {
-                            booths[i].add(person);
-                            person.setBoothTime(booths[i].getAverageBoothTime()*0.5*r.nextGaussian() + booths[i].getAverageBoothTime() +.5);
-                            System.out.println("Voter " + person.getVoterID() + " Going in to booth " + i);
-                            break;
-                        }
-                    } else {
-                        if (booths[i].getLeft() <= booths[0].getLeft()) {
-                            booths[i].add(person);
-                            person.setBoothTime(booths[i].getAverageBoothTime()*0.5*r.nextGaussian() + booths[i].getAverageBoothTime() +.5);
-                            System.out.println("Voter " + person.getVoterID() + " Going in to booth " + i);
-                            break;
-                        }
-                    }
-                }
-
+                boothQ.addVoter(person);
                 nextEvent = checkInTime + tick;
                 checkedIn++;
             }
@@ -75,14 +58,6 @@ public class CheckInTable implements ClockListener {
 
     public int getVoterQ() {
         return Q.size();
-    }
-
-    public int getCheckedIn() {
-        return checkedIn;
-    }
-
-    private Booth[] getBooths() {
-        return booths;
     }
 
 }

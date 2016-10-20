@@ -10,7 +10,7 @@ public class SpecialNeedsVoter extends Voter{
     // max time person stays in line
     protected double boothTime;
 
-    public double getBoothTime() {
+    public Double getBoothTime() {
         return boothTime * 3;
     }
 
