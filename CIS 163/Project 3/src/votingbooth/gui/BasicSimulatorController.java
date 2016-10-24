@@ -51,11 +51,23 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     private int secondsBeforeLeaves = 0;
     private int boothNum = 0;
 
-    // Data output variables
+    // Statistics
     private int throughput;
     private double avgVoteTime;
     private int peopleLeft;
     private int votingLineQ;
+
+    // TODO - Implement the following statistics
+    private int peoplePissed;
+    private int limitedVoters;
+    private int specialVoters;
+    private int normalVoters;
+    private int avgLimitedVoteTime;
+    private int avgSpecialVoteTime;
+    private int avgNormalVoteTime;
+    private int avgLimitedCheckInTime;
+    private int avgSpecialCheckInTime;
+    private int avgNormalCheckInTime;
 
     private VoterProducer produce;
 
@@ -195,7 +207,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     	    calculateStatistics();
             throughPut.setText(throughput + " people with Max = " + (totalTimeSec / nextPerson));
             peopleInLine.setText(peopleLeft + "");
-            avgTotalVoteTime.setText(avgVoteTime + "");
+            avgTotalVoteTime.setText(avgVoteTime + " seconds");
             checkInOne.setText(tableOne.getMaxQlength() + "");
             checkInTwo.setText(tableTwo.getMaxQlength() + "");
             votingBoothQ.setText(votingLineQ + "");
