@@ -2,9 +2,13 @@ package votingbooth.gui;
 
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import votingbooth.*;
 
 import java.net.URL;
@@ -31,10 +35,6 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     @FXML private TextField checkInTwo;
     @FXML private TextField votingBoothQ;
 
-    // Middle parts of the variables
-    @FXML private Button startButton;
-    @FXML private Button quitButton;
-
     private Clock clk;
     private BoothLine boothQ;
     private Booth[] booths;
@@ -55,8 +55,6 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     private int throughput;
     private double avgVoteTime;
     private int peopleLeft;
-    private int checkInOneLeft;
-    private int checkInTwoLeft;
     private int votingLineQ;
 
     private VoterProducer produce;
@@ -70,6 +68,31 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         start();
     }
 
+    // EDIT THESE METHODS. THEY SHOULD NEVER BE LESS THAN 0
+    private int validateVoterGen(int value) {
+        return value;
+    }
+
+    private int validateCheckIn(int value) {
+        return value;
+    }
+
+    private int validateTotalTime(int value) {
+        return value;
+    }
+
+    private int validateVoteTime(int value) {
+        return value;
+    }
+
+    private int validateLeaveTime(int value) {
+        return value;
+    }
+
+    private int validateBoothNum(int value) {
+        return value;
+    }
+    // END METHODS YOU'RE SUPPOSED TO EDIT
 
     /***********************************************
      * This will link the Start Button to the Logic in the back end
@@ -81,12 +104,12 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     public void startSimulation(){
 
         try {
-            nextPerson = Integer.parseInt(secondsToNext.getText());
-            avgSecondsCheckIn = Integer.parseInt(avgCheckInTime.getText());
-            totalTimeSec = Integer.parseInt(totalTime.getText());
-            avgSecToVote = Integer.parseInt(avgVotingTime.getText());
-            secondsBeforeLeaves = Integer.parseInt(secondsBeforeLeave.getText());
-            boothNum = Integer.parseInt(boothCount.getText());
+            nextPerson = validateVoterGen(Integer.parseInt(secondsToNext.getText()));
+            avgSecondsCheckIn = validateCheckIn(Integer.parseInt(avgCheckInTime.getText()));
+            totalTimeSec = validateTotalTime(Integer.parseInt(totalTime.getText()));
+            avgSecToVote = validateVoteTime(Integer.parseInt(avgVotingTime.getText()));
+            secondsBeforeLeaves = validateLeaveTime(Integer.parseInt(secondsBeforeLeave.getText()));
+            boothNum = validateBoothNum(Integer.parseInt(boothCount.getText()));
 
             clk = new Clock();
             booths = new Booth[boothNum];
@@ -188,8 +211,6 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         int stillVoting = 0;
         avgVoteTime = 0;
         for (Booth b : booths) {
-            // TODO - Append all booth statistics,
-            // and then calculate average for votingTime
             throughput = produce.getAllThrougPut();
             if (b.inUse()) {
                 stillVoting++;
@@ -202,4 +223,20 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         }
         avgVoteTime = avgVoteTime / (totalTimeSec / nextPerson);
     }
+
+    private void showDataGraphically() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/GraphicalData.fxml"));
+            Scene scene = new Scene(root);
+            Stage newStage = new Stage();
+
+            newStage.setScene(scene);
+            newStage.setTitle("Graphical Data");
+            newStage.setResizable(false);
+            newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
