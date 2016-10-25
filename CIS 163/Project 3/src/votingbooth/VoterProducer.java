@@ -12,13 +12,16 @@ public class VoterProducer implements ClockListener {
     private int nextPerson = 0;
     private Booth[] booths;
     private int numOfTicksNextPerson;
-<<<<<<< HEAD
+
     private int averageBoothTime;
     private int voterSplit = 0;
-=======
+
     private int toleranceTime;
 
->>>>>>> origin/master
+
+    private int toleranceTime;
+
+
 
     private ArrayList<Double> avgBoothTimes;
     private ArrayList<CheckInTable> tables;
@@ -85,7 +88,7 @@ public class VoterProducer implements ClockListener {
         return completed;
     }
 
-<<<<<<< HEAD
+
     public int getAllLeft() {
         int left = 0;
         for (Booth b : booths) {
@@ -112,6 +115,5 @@ public class VoterProducer implements ClockListener {
 
     }
 
-=======
->>>>>>> origin/master
+
 }

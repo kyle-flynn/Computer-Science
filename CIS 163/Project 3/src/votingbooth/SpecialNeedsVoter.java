@@ -18,7 +18,6 @@ public class SpecialNeedsVoter extends Voter{
     // max time person stays in line
     protected double boothTime;
 
-<<<<<<< HEAD
     public void setID(int voterID) {
         this.voterID = voterID;
     }
@@ -29,10 +28,9 @@ public class SpecialNeedsVoter extends Voter{
 
     public double getBoothTime() {
         return boothTime;
-=======
+    }
     public Double getBoothTime() {
         return boothTime * 3;
->>>>>>> origin/master
     }
 
     public Booth getDestination() {

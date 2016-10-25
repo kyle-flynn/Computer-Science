@@ -9,17 +9,20 @@ public class Voter {
     private double timeSpent;
     private VoterStatus status;
     private int voterID;
-<<<<<<< HEAD
+
 
     /** Controller Object **/
     public BasicSimulatorController basicController;
 
     // max time person stays in line
     protected double boothTime;
-=======
+
     private Double boothTime;
     private int tolerance;
->>>>>>> origin/master
+
+    private Double boothTime;
+    private int tolerance;
+
 
     public void setID(int voterID) {
         this.voterID = voterID;
