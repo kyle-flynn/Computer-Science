@@ -26,6 +26,15 @@ public class BoothLine implements ClockListener {
     @Override
     public void event(int tick) {
         if (Q.size() >= 1) {
+            for (int i = 0; i < Q.size(); i++) {
+                Q.get(i).addTime(1);
+                if (Q.get(i).getTimeSpent() >= Q.get(i).getTolerance()) {
+                    // fuck this shit im out
+                    System.out.println("Voter " + Q.get(i).getVoterID() + ": FUCK THIS");
+                    Q.remove(i);
+                }
+            }
+
             for (Booth b : booths) {
                 if (!b.inUse()) {
                     if (Q.get(0).getStatus() == VoterStatus.WAITING_FOR_BOOTH) {
@@ -33,15 +42,6 @@ public class BoothLine implements ClockListener {
                         b.add(person);
                         break;
                     }
-                }
-            }
-
-            for (int i = 0; i < Q.size(); i++) {
-                Q.get(i).addTime(1);
-                if (Q.get(i).getTimeSpent() >= Q.get(i).getTolerance()) {
-                    // fuck this shit im out
-                    System.out.println("Voter " + Q.get(i).getVoterID() + ": FUCK THIS");
-                    Q.remove(i);
                 }
             }
 

@@ -28,7 +28,7 @@ public class Booth implements ClockListener {
     public void add(Voter voter) {
         person = voter;
         inUse = true;
-        person.setBoothTime(averageBoothTime*0.5*r.nextGaussian() + averageBoothTime +.5);
+        person.setBoothTime(averageBoothTime*0.1*r.nextGaussian() + averageBoothTime);
         person.setStatus(VoterStatus.VOTING);
         timeToVote = person.getBoothTime().intValue();
     }
