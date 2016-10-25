@@ -134,7 +134,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             boothQ = new BoothLine(booths);
             tableOne = new CheckInTable(avgSecondsCheckIn, boothQ);
             tableTwo = new CheckInTable(avgSecondsCheckIn, boothQ);
-            produce = new VoterProducer(booths, nextPerson, secondsBeforeLeaves);
+            produce = new VoterProducer(booths, nextPerson, secondsBeforeLeaves, (totalTimeSec / nextPerson));
 
             produce.addTable(tableOne);
             produce.addTable(tableTwo);

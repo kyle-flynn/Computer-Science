@@ -11,22 +11,36 @@ public class VoterProducer implements ClockListener {
     private Booth[] booths;
     private int numOfTicksNextPerson;
     private int toleranceTime;
+    private int totalPeople;
 
     private ArrayList<CheckInTable> tables;
+    private ArrayList<Voter> normalVoters;
+    private ArrayList<Voter> limitedVoters;
+    private ArrayList<Voter> specialVoters;
+
+    private Integer maxNormalVoters;
+    private Integer maxLimitedVoters;
+    private Integer maxSpecialVoters;
 
     private int count;
 
     public VoterProducer(Booth[] booths,
                          int numOfTicksNextPerson,
-                         int toleranceTime) {
+                         int toleranceTime,
+                         Integer totalPeople) {
 
         this.booths = booths;
         this.numOfTicksNextPerson = numOfTicksNextPerson;
         this.toleranceTime = toleranceTime;
+        this.totalPeople = totalPeople;
         this.tables = new ArrayList<>();
-
+        this.normalVoters = new ArrayList<>();
+        this.limitedVoters = new ArrayList<>();
+        this.specialVoters = new ArrayList<>();
+        this.maxNormalVoters = ((Double)(totalPeople.doubleValue() * 0.7)).intValue();
+        this.maxLimitedVoters = ((Double)(totalPeople.doubleValue() * 0.2)).intValue();
+        this.maxSpecialVoters = ((Double)(totalPeople.doubleValue() * 0.1)).intValue();
         this.count = 0;
-        //r.setSeed(13);    // This will cause the same random numbers
     }
 
     public void event(int tick) {
@@ -34,13 +48,25 @@ public class VoterProducer implements ClockListener {
         if (nextPerson <= tick) {
             nextPerson = tick + numOfTicksNextPerson;
 
-            Voter person = new Voter();
+            /** Determines what type of voter to generate */
+
+            Voter person;
+
+            if (limitedVoters.size() < maxLimitedVoters) {
+                person = new LimitedTimeVoter();
+                limitedVoters.add(person);
+            } else if (specialVoters.size() < maxSpecialVoters) {
+                person = new SpecialNeedsVoter();
+                specialVoters.add(person);
+            } else {
+                person = new Voter();
+                normalVoters.add(person);
+            }
+
             count++;
 
             person.setID(count);
             person.setTolerance(toleranceTime);
-
-            // TODO - Add leave time for the voter
 
             // Here send the voter to a checkIn A-L or M-Z
             for (int i = 0; i < tables.size(); i++) {
@@ -70,6 +96,18 @@ public class VoterProducer implements ClockListener {
             completed += b.getThroughPut();
         }
         return completed;
+    }
+
+    public ArrayList<Voter> getNormalVoters() {
+        return normalVoters;
+    }
+
+    public ArrayList<Voter> getLimitedVoters() {
+        return limitedVoters;
+    }
+
+    public ArrayList<Voter> getSpecialVoters() {
+        return specialVoters;
     }
 
 }
