@@ -9,7 +9,7 @@ public class Voter {
     private double timeSpent;
     private VoterStatus status;
     private int voterID;
-<<<<<<< HEAD
+
 
 
     /** Controller Object **/
@@ -18,9 +18,9 @@ public class Voter {
     // max time person stays in line
     protected double boothTime;
 
-=======
+
     private Double checkInTime;
->>>>>>> origin/master
+
     private Double boothTime;
     private int tolerance;
 

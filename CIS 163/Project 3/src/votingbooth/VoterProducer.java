@@ -21,12 +21,11 @@ public class VoterProducer implements ClockListener {
 
     private int toleranceTime;
 
-<<<<<<< HEAD
+
 
 
     private ArrayList<Double> avgBoothTimes;
-=======
->>>>>>> origin/master
+
     private ArrayList<CheckInTable> tables;
 
     private BasicSimulatorController basicController;
@@ -41,7 +40,7 @@ public class VoterProducer implements ClockListener {
         this.numOfTicksNextPerson = numOfTicksNextPerson;
         this.toleranceTime = toleranceTime;
         this.tables = new ArrayList<>();
-        b = new BasicSimulatorController();
+        basicController = new BasicSimulatorController();
 
         this.count = 0;
         //r.setSeed(13);    // This will cause the same random numbers

@@ -8,6 +8,7 @@ import java.util.Random;
  */
 public class CheckInTable implements ClockListener {
 
+    private ArrayList<Voter> pissed;
     private ArrayList<Voter> Q;
     private BoothLine boothQ;
     private Voter current;
@@ -29,6 +30,7 @@ public class CheckInTable implements ClockListener {
         this.Q = new ArrayList<>();
         this.inUse = false;
         this.current = null;
+        this.pissed = new ArrayList<>();
     }
 
     public void addVoter(Voter person) {
@@ -52,12 +54,13 @@ public class CheckInTable implements ClockListener {
                 inUse = true;
             }
 
+
             for (int i = 0; i < Q.size(); i++) {
                 Q.get(i).addTime(1);
                 if (Q.get(i).getTimeSpent() >= Q.get(i).getTolerance()) {
                     // fuck this shit im out
                     System.out.println("Voter " + Q.get(i).getVoterID() + ": FUCK THIS");
-                    Q.remove(i);
+                    peoplePissed(Q.remove(i));
                 }
             }
 
@@ -71,6 +74,28 @@ public class CheckInTable implements ClockListener {
             }
 
         }
+    }
+
+    /**
+     * Calculate the people that are 'pissed' and leave the Voting Q. Parses through the
+     * ArrayList and ticks the time until it gets to the "tolerance" point. If the tolerance
+     * is exceeded
+     *
+     *
+     * @param person is of type Voter to be used with the ArrayList
+     * @return the ArrayList
+     */
+    public ArrayList<Voter> peoplePissed(Voter person){
+        if (pissed.size() >= 1) {
+            for (int i = 0; i < pissed.size(); i++) {
+                pissed.get(i).addTime(1);
+                if (pissed.get(i).getTimeSpent() >= pissed.get(i).getTolerance()) {
+                    pissed.add(person);
+
+                }
+            }
+        }
+        return pissed;
     }
 
     public int getVoterQ() {
