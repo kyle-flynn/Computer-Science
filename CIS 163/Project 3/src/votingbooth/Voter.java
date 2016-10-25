@@ -9,6 +9,7 @@ public class Voter {
     private double timeSpent;
     private VoterStatus status;
     private int voterID;
+<<<<<<< HEAD
 
 
     /** Controller Object **/
@@ -17,6 +18,9 @@ public class Voter {
     // max time person stays in line
     protected double boothTime;
 
+=======
+    private Double checkInTime;
+>>>>>>> origin/master
     private Double boothTime;
     private int tolerance;
 
@@ -36,6 +40,10 @@ public class Voter {
         return boothTime;
     }
 
+    public Double getCheckInTime() {
+        return checkInTime;
+    }
+
     public int getVoterID() {
         return voterID;
     }
@@ -52,8 +60,12 @@ public class Voter {
         return status;
     }
 
-    public void setBoothTime(Double checkInTime) {
-        this.boothTime = checkInTime;
+    public void setBoothTime(Double boothTime) {
+        this.boothTime = boothTime;
+    }
+
+    public void setCheckInTime(Double checkInTime) {
+        this.checkInTime = checkInTime;
     }
 
     public void setStatus(VoterStatus status) {

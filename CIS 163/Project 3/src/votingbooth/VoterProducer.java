@@ -21,9 +21,12 @@ public class VoterProducer implements ClockListener {
 
     private int toleranceTime;
 
+<<<<<<< HEAD
 
 
     private ArrayList<Double> avgBoothTimes;
+=======
+>>>>>>> origin/master
     private ArrayList<CheckInTable> tables;
 
     private BasicSimulatorController basicController;
@@ -37,7 +40,6 @@ public class VoterProducer implements ClockListener {
         this.booths = booths;
         this.numOfTicksNextPerson = numOfTicksNextPerson;
         this.toleranceTime = toleranceTime;
-        this.avgBoothTimes = new ArrayList<>();
         this.tables = new ArrayList<>();
         b = new BasicSimulatorController();
 

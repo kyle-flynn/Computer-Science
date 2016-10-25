@@ -10,26 +10,29 @@ public class CheckInTable implements ClockListener {
 
     private ArrayList<Voter> Q;
     private BoothLine boothQ;
+    private Voter current;
     private int maxQlength;
-    private int checkInTime;
+    private Integer avgCheckInTime;
+    private Integer checkInTime;
     private int checkedIn;
     private int nextEvent;
+    private boolean inUse;
 
     private Random r = new Random();
 
-    private int count;
-
-    public CheckInTable(int checkInTime, BoothLine boothQ) {
-        this.checkInTime = checkInTime;
+    public CheckInTable(Integer avgCheckInTime, BoothLine boothQ) {
+        this.avgCheckInTime = avgCheckInTime;
+        this.checkInTime = 0;
         this.checkedIn = 0;
         this.nextEvent = 0;
         this.boothQ = boothQ;
         this.Q = new ArrayList<>();
-
-        this.count = 0;
+        this.inUse = false;
+        this.current = null;
     }
 
     public void addVoter(Voter person) {
+        person.setCheckInTime(avgCheckInTime.doubleValue()*0.1*r.nextGaussian() + avgCheckInTime);
         Q.add(person);
         if (Q.size() > maxQlength) {
             maxQlength = Q.size();
@@ -42,17 +45,31 @@ public class CheckInTable implements ClockListener {
 
     @Override
     public void event(int tick) {
-        if (tick >= nextEvent) {
-            if (Q.size() >= 1) {
-                Voter person = Q.remove(0);
-
-                person.addTime(checkInTime);
-                person.setStatus(VoterStatus.WAITING_FOR_BOOTH);
-
-                boothQ.addVoter(person);
-                nextEvent = checkInTime + tick;
-                checkedIn++;
+        if (Q.size() >= 1) {
+            if (!inUse) {
+                current = Q.remove(0);
+                checkInTime = current.getCheckInTime().intValue();
+                inUse = true;
             }
+
+            for (int i = 0; i < Q.size(); i++) {
+                Q.get(i).addTime(1);
+                if (Q.get(i).getTimeSpent() >= Q.get(i).getTolerance()) {
+                    // fuck this shit im out
+                    System.out.println("Voter " + Q.get(i).getVoterID() + ": FUCK THIS");
+                    Q.remove(i);
+                }
+            }
+
+            current.addTime(1);
+            checkInTime--;
+            if (checkInTime <= 0) {
+                current.setStatus(VoterStatus.WAITING_FOR_BOOTH);
+                boothQ.addVoter(current);
+                checkedIn++;
+                inUse = false;
+            }
+
         }
     }
 
