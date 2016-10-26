@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import votingbooth.*;
@@ -17,7 +16,7 @@ import java.util.ResourceBundle;
 /**
  * Created by kylef_000 on 10/12/2016.
  */
-public class BasicSimulatorController extends AnimationTimer implements Initializable {
+public class BasicSimulatorController implements Initializable {
 
     // Top-half of the text field variables
     @FXML private TextField secondsToNext;
@@ -35,6 +34,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     @FXML private TextField checkInTwo;
     @FXML private TextField votingBoothQ;
 
+    // Back-end logic
     private Clock clk;
     private BoothLine boothQ;
     private Booth[] booths;
@@ -56,6 +56,7 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     private double avgVoteTime;
     private int peopleLeft;
     private int votingLineQ;
+    private int stillVoting;
 
     // TODO - Implement the following statistics
     private int peoplePissed;
@@ -70,15 +71,6 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
     private int avgNormalCheckInTime;
 
     private VoterProducer produce;
-
-    private boolean started;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        started = false;
-
-        start();
-    }
 
     // EDIT THESE METHODS. THEY SHOULD NEVER BE LESS THAN 0
     private int validateVoterGen(int value) {
@@ -105,6 +97,10 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
         return value;
     }
     // END METHODS YOU'RE SUPPOSED TO EDIT
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    }
 
     /***********************************************
      * This will link the Start Button to the Logic in the back end
@@ -151,8 +147,8 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
             System.out.println("Can't convert.");
         }
     }
-    /*********************************************
 
+    /*********************************************
      * Quits the simulator, this is linked to the FXML GUI button
      * @return void
      *********************************************/
@@ -166,53 +162,14 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
      * @return void
      *********************************************/
     private void outputInformation() {
-    	started = true;
+        calculateStatistics();
+        throughPut.setText(Statistics.getStatistic("throughput") + " people with Max = " + Statistics.getStatistic("maxVoters"));
+        peopleInLine.setText(Statistics.getStatistic("peopleLeft") + "");
+        avgTotalVoteTime.setText(Statistics.getStatistic("avgVoteTime") + " seconds");
+        checkInOne.setText(tableOne.getMaxQlength() + "");
+        checkInTwo.setText(tableTwo.getMaxQlength() + "");
+        votingBoothQ.setText(Statistics.getStatistic("votingLineQ") + "");
 	}
-
-    /********************************************
-     * Set up file menus
-     * @return void
-     *******************************************/
-    @FXML
-	private void setupMenus(){
-
-    }
-
-    /*******************************************
-     * Resets everything in the GUI for different
-     * simulations, this will be accessed via the
-     * file Menu
-     * @return void
-     ******************************************/
-    @FXML
-    private void reset(){
-        secondsToNext.clear();
-        avgCheckInTime.clear();
-        totalTime.clear();
-        avgTotalVoteTime.clear();
-        secondsBeforeLeave.clear();
-        boothCount.clear();
-    }
-
-    /*****************************************
-     * Inherited from animation class, allows
-     * the text to change dynamically, useful for
-     * the complex GUI
-     * @param now
-     * @return void
-     ****************************************/
-	@Override
-    public void handle(long now) {
-    	if (started) {
-    	    calculateStatistics();
-            throughPut.setText(throughput + " people with Max = " + (totalTimeSec / nextPerson));
-            peopleInLine.setText(peopleLeft + "");
-            avgTotalVoteTime.setText(avgVoteTime + " seconds");
-            checkInOne.setText(tableOne.getMaxQlength() + "");
-            checkInTwo.setText(tableTwo.getMaxQlength() + "");
-            votingBoothQ.setText(votingLineQ + "");
-        }
-    }
 
     /*******************************************
      * Calculate the statistics and store them for
@@ -220,30 +177,45 @@ public class BasicSimulatorController extends AnimationTimer implements Initiali
      * @return void
      ******************************************/
     private void calculateStatistics() {
-        int stillVoting = 0;
+        stillVoting = 0;
         avgVoteTime = 0;
         for (Booth b : booths) {
-            throughput = produce.getAllThrougPut();
             if (b.inUse()) {
                 stillVoting++;
             }
-            peopleLeft = boothQ.getLeft() + tableOne.getVoterQ() + tableTwo.getVoterQ() + stillVoting;
             for (double time : b.getCompletedTimes()) {
                 avgVoteTime += time;
             }
-            votingLineQ = boothQ.getMaxQlength();
         }
+        votingLineQ = boothQ.getMaxQlength();
+        throughput = produce.getAllThrougPut();
+        peopleLeft = boothQ.getLeft() + tableOne.getVoterQ() + tableTwo.getVoterQ() + stillVoting;
         avgVoteTime = avgVoteTime / (totalTimeSec / nextPerson);
+        addStatistics();
     }
 
-    private void showDataGraphically() {
+    private void addStatistics() {
+        Statistics.addStatistic("avgVoteTime", avgVoteTime);
+        Statistics.addStatistic("votingLineQ", votingLineQ);
+        Statistics.addStatistic("throughput", throughput);
+        Statistics.addStatistic("peopleLeft", peopleLeft);
+        Statistics.addStatistic("avgVoteTime", avgVoteTime);
+        Statistics.addStatistic("maxVoters", (totalTimeSec / nextPerson));
+        Statistics.addStatistic("normalTotal", produce.getNormalVoters().size());
+        Statistics.addStatistic("limitedTotal", produce.getLimitedVoters().size());
+        Statistics.addStatistic("specialTotal", produce.getSpecialVoters().size());
+        Statistics.addStatistic("totalTotal", produce.getNormalVoters().size() + produce.getLimitedVoters().size() + produce.getSpecialVoters().size());
+    }
+
+    @FXML
+    private void showMoreData() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/GraphicalData.fxml"));
             Scene scene = new Scene(root);
             Stage newStage = new Stage();
 
             newStage.setScene(scene);
-            newStage.setTitle("Graphical Data");
+            newStage.setTitle("More Data");
             newStage.setResizable(false);
             newStage.show();
         } catch (Exception e) {
