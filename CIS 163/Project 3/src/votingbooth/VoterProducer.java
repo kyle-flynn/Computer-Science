@@ -17,6 +17,7 @@ public class VoterProducer implements ClockListener {
     private ArrayList<Voter> normalVoters;
     private ArrayList<Voter> limitedVoters;
     private ArrayList<Voter> specialVoters;
+    private ArrayList<Voter> voters;
 
     private Integer maxNormalVoters;
     private Integer maxLimitedVoters;
@@ -37,6 +38,7 @@ public class VoterProducer implements ClockListener {
         this.normalVoters = new ArrayList<>();
         this.limitedVoters = new ArrayList<>();
         this.specialVoters = new ArrayList<>();
+        this.voters = new ArrayList<>();
         this.maxNormalVoters = ((Double)(totalPeople.doubleValue() * 0.7)).intValue();
         this.maxLimitedVoters = ((Double)(totalPeople.doubleValue() * 0.2)).intValue();
         this.maxSpecialVoters = ((Double)(totalPeople.doubleValue() * 0.1)).intValue();
@@ -63,6 +65,7 @@ public class VoterProducer implements ClockListener {
                 normalVoters.add(person);
             }
 
+            voters.add(person);
             count++;
 
             person.setID(count);
@@ -83,6 +86,7 @@ public class VoterProducer implements ClockListener {
                 }
             }
 
+            person.setCheckedIn(false);
             person.setVoted(false);
             person.setPissed(false);
             person.setStatus(VoterStatus.CHECKING_IN);
@@ -111,6 +115,10 @@ public class VoterProducer implements ClockListener {
 
     public ArrayList<Voter> getSpecialVoters() {
         return specialVoters;
+    }
+
+    public ArrayList<Voter> getVoters() {
+        return voters;
     }
 
 }

@@ -64,6 +64,7 @@ public class CheckInTable implements ClockListener {
             checkInTime--;
             if (checkInTime <= 0) {
                 current.setStatus(VoterStatus.WAITING_FOR_BOOTH);
+                current.setCheckedIn(true);
                 boothQ.addVoter(current);
                 checkedIn++;
                 inUse = false;

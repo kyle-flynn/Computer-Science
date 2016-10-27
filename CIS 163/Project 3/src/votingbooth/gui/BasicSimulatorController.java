@@ -70,9 +70,10 @@ public class BasicSimulatorController implements Initializable {
     private int avgLimitedVoteTime;
     private int avgSpecialVoteTime;
     private int avgNormalVoteTime;
-    private int avgLimitedCheckInTime;
-    private int avgSpecialCheckInTime;
-    private int avgNormalCheckInTime;
+    private double avgLimitedCheckInTime;
+    private double avgSpecialCheckInTime;
+    private double avgNormalCheckInTime;
+    private double avgTotalCheckInTime;
 
     private VoterProducer produce;
 
@@ -146,6 +147,9 @@ public class BasicSimulatorController implements Initializable {
 
             clk.run(totalTimeSec);
 
+            resetStatistics();
+            calculateStatistics();
+            addStatistics();
             outputInformation();
         } catch (NumberFormatException nfe) {
             System.out.println("Can't convert.");
@@ -166,7 +170,6 @@ public class BasicSimulatorController implements Initializable {
      * @return void
      *********************************************/
     private void outputInformation() {
-        calculateStatistics();
         throughPut.setText(Statistics.getStatistic("throughput") + " people with Max = " + Statistics.getStatistic("maxVoters"));
         peopleInLine.setText(Statistics.getStatistic("peopleLeft") + "");
         avgTotalVoteTime.setText(Statistics.getStatistic("avgVoteTime") + " seconds");
@@ -181,8 +184,6 @@ public class BasicSimulatorController implements Initializable {
      * @return void
      ******************************************/
     private void calculateStatistics() {
-        resetStatistics();
-
         for (Booth b : booths) {
             if (b.inUse()) {
                 stillVoting++;
@@ -191,37 +192,46 @@ public class BasicSimulatorController implements Initializable {
                 avgVoteTime += time;
             }
         }
-        for (Voter v : produce.getNormalVoters()) {
-            if (v.isPissed()) {
-                normalPissed++;
-            }
-            if (v.hasVoted()) {
-                normalVoted++;
+        for (Voter v : produce.getVoters()) {
+            if (v instanceof LimitedTimeVoter) {
+                if (v.isPissed()) {
+                    limitedPissed++;
+                }
+                if (v.hasVoted()) {
+                    limitedVoted++;
+                }
+                if (v.hasCheckedIn()) {
+                    avgLimitedCheckInTime+= v.getCheckInTime();
+                }
+            } else if (v instanceof SpecialNeedsVoter) {
+                if (v.isPissed()) {
+                    specialPissed++;
+                }
+                if (v.hasVoted()) {
+                    specialVoted++;
+                }
+                if (v.hasCheckedIn()) {
+                    avgSpecialCheckInTime+= v.getCheckInTime();
+                }
+            } else {
+                if (v.isPissed()) {
+                    normalPissed++;
+                }
+                if (v.hasVoted()) {
+                    normalVoted++;
+                }
+                if (v.hasCheckedIn()) {
+                    avgNormalCheckInTime+= v.getCheckInTime();
+                }
             }
         }
-        for (Voter v : produce.getLimitedVoters()) {
-            if (v.isPissed()) {
-                limitedPissed++;
-            }
-            if (v.hasVoted()) {
-                limitedVoted++;
-            }
-        }
-        for (Voter v : produce.getSpecialVoters()) {
-            if (v.isPissed()) {
-                specialPissed++;
-            }
-            if (v.hasVoted()) {
-                specialVoted++;
-            }
-        }
+        avgTotalCheckInTime = (avgNormalCheckInTime + avgLimitedCheckInTime + avgSpecialCheckInTime)/(totalTimeSec / nextPerson);
         totalPissed = normalPissed + limitedPissed + specialPissed;
         totalVoted = normalVoted + limitedVoted + specialVoted;
         votingLineQ = boothQ.getMaxQlength();
         throughput = produce.getAllThrougPut();
         peopleLeft = boothQ.getLeft() + tableOne.getVoterQ() + tableTwo.getVoterQ() + stillVoting;
-        avgVoteTime = avgVoteTime / (totalTimeSec / nextPerson);
-        addStatistics();
+        avgVoteTime = avgVoteTime / totalVoted;
     }
 
     private void resetStatistics() {
@@ -235,6 +245,10 @@ public class BasicSimulatorController implements Initializable {
         limitedVoted = 0;
         specialVoted = 0;
         totalVoted = 0;
+        avgNormalCheckInTime = 0;
+        avgLimitedCheckInTime = 0;
+        avgSpecialCheckInTime = 0;
+        avgTotalCheckInTime = 0;
     }
 
     private void addStatistics() {
@@ -256,6 +270,10 @@ public class BasicSimulatorController implements Initializable {
         Statistics.addStatistic("limitedPissed", limitedPissed);
         Statistics.addStatistic("specialPissed", specialPissed);
         Statistics.addStatistic("totalPissed", totalPissed);
+        Statistics.addStatistic("normalCheckIn", avgNormalCheckInTime / produce.getNormalVoters().size());
+        Statistics.addStatistic("limitedCheckIn", avgLimitedCheckInTime / produce.getLimitedVoters().size());
+        Statistics.addStatistic("specialCheckIn", avgSpecialCheckInTime / produce.getSpecialVoters().size());
+        Statistics.addStatistic("totalCheckIn", avgTotalCheckInTime);
     }
 
     @FXML

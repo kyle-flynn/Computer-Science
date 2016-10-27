@@ -33,7 +33,7 @@ public class Booth implements ClockListener {
         timeToVote = person.getBoothTime().intValue();
     }
 
-    public void event (int tick) {
+    public void event(int tick) {
         if (inUse) {
             person.addTime(1);
             timeToVote--;
@@ -41,6 +41,7 @@ public class Booth implements ClockListener {
                 person.setStatus(VoterStatus.DONE);
                 person.setVoted(true);
                 totalTimes.add(person.getTimeSpent());
+                System.out.println(person.getTimeSpent());
                 completed++;
                 inUse = false;
             }

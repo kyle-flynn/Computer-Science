@@ -12,6 +12,7 @@ public class Voter {
     private int tolerance;
     private boolean isPissed;
     private boolean hasVoted;
+    private boolean hasCheckedIn;
 
     public void setID(int voterID) {
         this.voterID = voterID;
@@ -45,12 +46,20 @@ public class Voter {
         this.hasVoted = hasVoted;
     }
 
+    public void setCheckedIn(boolean hasCheckedIn) {
+        this.hasCheckedIn = hasCheckedIn;
+    }
+
     public boolean isPissed() {
         return isPissed;
     }
 
     public boolean hasVoted() {
         return hasVoted;
+    }
+
+    public boolean hasCheckedIn() {
+        return hasCheckedIn;
     }
 
     public int getTolerance() {

@@ -43,18 +43,26 @@
             <Label text="Voters Voted" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Label text="Voters Voted" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Label text="Voters Voted" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <TextField fx:id="normalVoted" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="limitedVoted" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <TextField fx:id="specialVoted" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <TextField fx:id="totalVoted" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <TextField fx:id="normalPissed" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="limitedPissed" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <TextField fx:id="specialPissed" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <TextField fx:id="totalPissed" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <TextField fx:id="normalVoted" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="limitedVoted" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="specialVoted" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="totalVoted" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <TextField fx:id="normalPissed" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="limitedPissed" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="specialPissed" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <TextField fx:id="totalPissed" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="3" />
             <Label text="Voters That Left" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Label text="Voters That Left" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Label text="Voters That Left" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Label text="Voters That Left" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label text="Avg. Check In Time" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Label text="Avg. Check In Time" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Label text="Avg. Check In Time" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Label text="Avg. Check In Time" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <TextField fx:id="normalCheckIn" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="limitedCheckIn" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField fx:id="specialCheckIn" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <TextField fx:id="totalCheckIn" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>

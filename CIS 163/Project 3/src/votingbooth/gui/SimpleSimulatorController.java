@@ -26,6 +26,10 @@ public class SimpleSimulatorController implements Initializable {
     @FXML private TextField limitedPissed;
     @FXML private TextField specialPissed;
     @FXML private TextField totalPissed;
+    @FXML private TextField normalCheckIn;
+    @FXML private TextField limitedCheckIn;
+    @FXML private TextField specialCheckIn;
+    @FXML private TextField totalCheckIn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -45,6 +49,10 @@ public class SimpleSimulatorController implements Initializable {
         limitedPissed.setText(Statistics.getStatistic("limitedPissed") + "");
         specialPissed.setText(Statistics.getStatistic("specialPissed") + "");
         totalPissed.setText(Statistics.getStatistic("totalPissed") + "");
+        normalCheckIn.setText(Statistics.getStatistic("normalCheckIn") + "");
+        limitedCheckIn.setText(Statistics.getStatistic("limitedCheckIn") + "");
+        specialCheckIn.setText(Statistics.getStatistic("specialCheckIn") + "");
+        totalCheckIn.setText(Statistics.getStatistic("totalCheckIn") + "");
     }
 
 }
