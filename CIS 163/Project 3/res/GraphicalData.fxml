@@ -4,7 +4,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="votingbooth.gui.SimpleSimulatorController">
    <children>
       <GridPane prefHeight="400.0" prefWidth="700.0">
@@ -32,14 +31,30 @@
             <Label text="Limited Time Voters" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
             <Label prefHeight="17.0" prefWidth="113.0" text="Special Needs Voters" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
             <Label text="Total Voters" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
-            <Label text="Total Voters" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label text="Total Voters" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label text="Total Voters" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label text="Total Voters" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label text="Voters Generated" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label text="Voters Generated" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label text="Voters Generated" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label text="Voters Generated" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <TextField fx:id="normalTotal" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="limitedTotal" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <TextField fx:id="totalTotal" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="1" />
             <TextField fx:id="specialTotal" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label text="Voters Voted" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label text="Voters Voted" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label text="Voters Voted" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label text="Voters Voted" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <TextField fx:id="normalVoted" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="limitedVoted" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="specialVoted" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="totalVoted" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <TextField fx:id="normalPissed" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="limitedPissed" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="specialPissed" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <TextField fx:id="totalPissed" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Label text="Voters That Left" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label text="Voters That Left" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label text="Voters That Left" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label text="Voters That Left" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>

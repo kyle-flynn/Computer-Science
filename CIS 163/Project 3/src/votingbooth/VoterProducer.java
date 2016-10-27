@@ -82,6 +82,9 @@ public class VoterProducer implements ClockListener {
                     }
                 }
             }
+
+            person.setVoted(false);
+            person.setPissed(false);
             person.setStatus(VoterStatus.CHECKING_IN);
         }
     }

@@ -59,10 +59,14 @@ public class BasicSimulatorController implements Initializable {
     private int stillVoting;
 
     // TODO - Implement the following statistics
-    private int peoplePissed;
-    private int limitedVoters;
-    private int specialVoters;
-    private int normalVoters;
+    private int normalPissed;
+    private int limitedPissed;
+    private int specialPissed;
+    private int totalPissed;
+    private int normalVoted;
+    private int limitedVoted;
+    private int specialVoted;
+    private int totalVoted;
     private int avgLimitedVoteTime;
     private int avgSpecialVoteTime;
     private int avgNormalVoteTime;
@@ -177,8 +181,8 @@ public class BasicSimulatorController implements Initializable {
      * @return void
      ******************************************/
     private void calculateStatistics() {
-        stillVoting = 0;
-        avgVoteTime = 0;
+        resetStatistics();
+
         for (Booth b : booths) {
             if (b.inUse()) {
                 stillVoting++;
@@ -187,11 +191,50 @@ public class BasicSimulatorController implements Initializable {
                 avgVoteTime += time;
             }
         }
+        for (Voter v : produce.getNormalVoters()) {
+            if (v.isPissed()) {
+                normalPissed++;
+            }
+            if (v.hasVoted()) {
+                normalVoted++;
+            }
+        }
+        for (Voter v : produce.getLimitedVoters()) {
+            if (v.isPissed()) {
+                limitedPissed++;
+            }
+            if (v.hasVoted()) {
+                limitedVoted++;
+            }
+        }
+        for (Voter v : produce.getSpecialVoters()) {
+            if (v.isPissed()) {
+                specialPissed++;
+            }
+            if (v.hasVoted()) {
+                specialVoted++;
+            }
+        }
+        totalPissed = normalPissed + limitedPissed + specialPissed;
+        totalVoted = normalVoted + limitedVoted + specialVoted;
         votingLineQ = boothQ.getMaxQlength();
         throughput = produce.getAllThrougPut();
         peopleLeft = boothQ.getLeft() + tableOne.getVoterQ() + tableTwo.getVoterQ() + stillVoting;
         avgVoteTime = avgVoteTime / (totalTimeSec / nextPerson);
         addStatistics();
+    }
+
+    private void resetStatistics() {
+        stillVoting = 0;
+        avgVoteTime = 0;
+        normalPissed = 0;
+        limitedPissed = 0;
+        specialPissed = 0;
+        totalPissed = 0;
+        normalVoted = 0;
+        limitedVoted = 0;
+        specialVoted = 0;
+        totalVoted = 0;
     }
 
     private void addStatistics() {
@@ -205,6 +248,14 @@ public class BasicSimulatorController implements Initializable {
         Statistics.addStatistic("limitedTotal", produce.getLimitedVoters().size());
         Statistics.addStatistic("specialTotal", produce.getSpecialVoters().size());
         Statistics.addStatistic("totalTotal", produce.getNormalVoters().size() + produce.getLimitedVoters().size() + produce.getSpecialVoters().size());
+        Statistics.addStatistic("normalVoted", normalVoted);
+        Statistics.addStatistic("limitedVoted", limitedVoted);
+        Statistics.addStatistic("specialVoted", specialVoted);
+        Statistics.addStatistic("totalVoted", totalVoted);
+        Statistics.addStatistic("normalPissed", normalPissed);
+        Statistics.addStatistic("limitedPissed", limitedPissed);
+        Statistics.addStatistic("specialPissed", specialPissed);
+        Statistics.addStatistic("totalPissed", totalPissed);
     }
 
     @FXML

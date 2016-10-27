@@ -10,6 +10,8 @@ public class Voter {
     private Double checkInTime;
     private Double boothTime;
     private int tolerance;
+    private boolean isPissed;
+    private boolean hasVoted;
 
     public void setID(int voterID) {
         this.voterID = voterID;
@@ -17,6 +19,42 @@ public class Voter {
 
     public void addTime(double time) {
         this.timeSpent += time;
+    }
+
+    public void setBoothTime(Double boothTime) {
+        this.boothTime = boothTime;
+    }
+
+    public void setCheckInTime(Double checkInTime) {
+        this.checkInTime = checkInTime;
+    }
+
+    public void setStatus(VoterStatus status) {
+        this.status = status;
+    }
+
+    public void setTolerance(int tolerance) {
+        this.tolerance = tolerance;
+    }
+
+    public void setPissed(boolean isPissed) {
+        this.isPissed = isPissed;
+    }
+
+    public void setVoted(boolean hasVoted) {
+        this.hasVoted = hasVoted;
+    }
+
+    public boolean isPissed() {
+        return isPissed;
+    }
+
+    public boolean hasVoted() {
+        return hasVoted;
+    }
+
+    public int getTolerance() {
+        return tolerance;
     }
 
     public Double getBoothTime() {
@@ -37,26 +75,6 @@ public class Voter {
 
     public VoterStatus getStatus() {
         return status;
-    }
-
-    public void setBoothTime(Double boothTime) {
-        this.boothTime = boothTime;
-    }
-
-    public void setCheckInTime(Double checkInTime) {
-        this.checkInTime = checkInTime;
-    }
-
-    public void setStatus(VoterStatus status) {
-        this.status = status;
-    }
-
-    public void setTolerance(int tolerance) {
-        this.tolerance = tolerance;
-    }
-
-    public int getTolerance() {
-        return tolerance;
     }
 
 }
