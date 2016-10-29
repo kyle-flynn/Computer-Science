@@ -30,9 +30,14 @@ public class BoothLine implements ClockListener {
             for (int i = 0; i < Q.size(); i++) {
                 Q.get(i).addTime(1);
                 if (Q.get(i).getTimeSpent() >= Q.get(i).getTolerance()) {
+<<<<<<< HEAD
                     // fuck this shit im out
                     System.out.println("Voter " + Q.get(i).getVoterID() + ": FUCK THIS");
                     peoplePissed(Q.remove(i));
+=======
+                    Q.get(i).setPissed(true);
+                    Q.remove(i);
+>>>>>>> origin/master
                 }
             }
         }

@@ -26,6 +26,9 @@ public class Voter {
 
     private Double boothTime;
     private int tolerance;
+    private boolean isPissed;
+    private boolean hasVoted;
+    private boolean hasCheckedIn;
 
 
     public void setID(int voterID) {
@@ -34,30 +37,6 @@ public class Voter {
 
     public void addTime(double time) {
         this.timeSpent += time;
-    }
-
-    public Double getBoothTime() {
-        return boothTime;
-    }
-
-    public Double getCheckInTime() {
-        return checkInTime;
-    }
-
-    public int getVoterID() {
-        return voterID;
-    }
-
-    public int leaveTime(){
-        return basicController.secondsBeforeLeaves;
-    }
-
-    public double getTimeSpent() {
-        return timeSpent;
-    }
-
-    public VoterStatus getStatus() {
-        return status;
     }
 
     public void setBoothTime(Double boothTime) {
@@ -72,12 +51,65 @@ public class Voter {
         this.status = status;
     }
 
+<<<<<<< HEAD
+    public int leaveTime(){
+        return basicController.secondsBeforeLeaves;
+    }
+
+    public double getTimeSpent() {
+        return timeSpent;
+=======
     public void setTolerance(int tolerance) {
         this.tolerance = tolerance;
+>>>>>>> origin/master
+    }
+
+    public void setPissed(boolean isPissed) {
+        this.isPissed = isPissed;
+    }
+
+    public void setVoted(boolean hasVoted) {
+        this.hasVoted = hasVoted;
+    }
+
+    public void setCheckedIn(boolean hasCheckedIn) {
+        this.hasCheckedIn = hasCheckedIn;
+    }
+
+    public boolean isPissed() {
+        return isPissed;
+    }
+
+    public boolean hasVoted() {
+        return hasVoted;
+    }
+
+    public boolean hasCheckedIn() {
+        return hasCheckedIn;
     }
 
     public int getTolerance() {
         return tolerance;
+    }
+
+    public Double getBoothTime() {
+        return boothTime;
+    }
+
+    public Double getCheckInTime() {
+        return checkInTime;
+    }
+
+    public int getVoterID() {
+        return voterID;
+    }
+
+    public double getTimeSpent() {
+        return timeSpent;
+    }
+
+    public VoterStatus getStatus() {
+        return status;
     }
 
 }
