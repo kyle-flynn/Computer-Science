@@ -3,6 +3,7 @@ package votingbooth;
 /**
  * Created by Jarred on 10/17/16.
  */
+
 public class SpecialNeedsVoter extends Voter {
 
     public Double getBoothTime() {
@@ -16,4 +17,5 @@ public class SpecialNeedsVoter extends Voter {
     public int getTolerance() {
         return tolerance * 2;
     }
+
 }

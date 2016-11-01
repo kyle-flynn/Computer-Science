@@ -1,6 +1,5 @@
 package votingbooth;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +12,6 @@ public class VoterProducer implements ClockListener {
     private Booth[] booths;
     private int numOfTicksNextPerson;
     private int toleranceTime;
-    private int totalPeople;
 
     private ArrayList<CheckInTable> tables;
     private ArrayList<Voter> normalVoters;
@@ -37,8 +35,8 @@ public class VoterProducer implements ClockListener {
         this.booths = booths;
         this.numOfTicksNextPerson = numOfTicksNextPerson;
         this.toleranceTime = toleranceTime;
-        this.totalPeople = totalPeople;
         this.tables = new ArrayList<>();
+
         this.normalVoters = new ArrayList<>();
         this.limitedVoters = new ArrayList<>();
         this.specialVoters = new ArrayList<>();

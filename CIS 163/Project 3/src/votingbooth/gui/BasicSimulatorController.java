@@ -44,12 +44,13 @@ public class BasicSimulatorController implements Initializable {
     private CheckInTable tableTwo;
 
     // Data inputs from the top text fields
-    private int nextPerson = 0;
-    private int avgSecondsCheckIn = 0;
-    private int totalTimeSec = 0;
-    private int avgSecToVote = 0;
-    private int secondsBeforeLeaves = 0;
-    private int boothNum = 0;
+    //10/19 - JP Updated these to public, if this causes problems FIX THIS
+    public int nextPerson = 0;
+    public int avgSecondsCheckIn = 0;
+    public int totalTimeSec = 0;
+    public int avgSecToVote = 0;
+    public int secondsBeforeLeaves = 0;
+    public int boothNum = 0;
 
     // Statistics
     private int throughput;

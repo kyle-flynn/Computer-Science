@@ -8,6 +8,7 @@ import java.util.Random;
  */
 public class CheckInTable implements ClockListener {
 
+    private ArrayList<Voter> pissed;
     private ArrayList<Voter> Q;
     private BoothLine boothQ;
     private Voter current;
@@ -27,6 +28,7 @@ public class CheckInTable implements ClockListener {
         this.Q = new ArrayList<>();
         this.inUse = false;
         this.current = null;
+        this.pissed = new ArrayList<>();
     }
 
     public void addVoter(Voter person) {
@@ -50,9 +52,11 @@ public class CheckInTable implements ClockListener {
                 inUse = true;
             }
 
+
             for (int i = 0; i < Q.size(); i++) {
                 Q.get(i).addTime(1);
                 if (Q.get(i).getTimeSpent() >= Q.get(i).getTolerance()) {
+                    System.out.println("Voter " + Q.get(i).getVoterID() + ": FUCK THIS");
                     Q.get(i).setPissed(true);
                     Q.remove(i);
                 }

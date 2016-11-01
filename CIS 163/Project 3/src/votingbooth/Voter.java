@@ -1,5 +1,7 @@
 package votingbooth;
 
+import votingbooth.gui.BasicSimulatorController;
+
 /**
  * @author   Roger Ferguson
  */
@@ -13,6 +15,7 @@ public class Voter {
     private boolean isPissed;
     private boolean hasVoted;
     private boolean hasCheckedIn;
+
 
     public void setID(int voterID) {
         this.voterID = voterID;
