@@ -7,7 +7,6 @@ import java.util.ArrayList;
  */
 public class BoothLine implements ClockListener {
 
-    private ArrayList<Voter> pissed;
     private ArrayList<Voter> Q;
     private Booth[] booths;
     private int maxQlength;
@@ -30,24 +29,23 @@ public class BoothLine implements ClockListener {
             for (int i = 0; i < Q.size(); i++) {
                 Q.get(i).addTime(1);
                 if (Q.get(i).getTimeSpent() >= Q.get(i).getTolerance()) {
-                    System.out.println("Voter " + Q.get(i).getVoterID() + ": FUCK THIS");
                     Q.get(i).setPissed(true);
                     Q.remove(i);
                 }
             }
-        }
-        for (Booth b : booths) {
-            if (!b.inUse()) {
-                if (Q.get(0).getStatus() == VoterStatus.WAITING_FOR_BOOTH) {
-                    Voter person = Q.remove(0);
-                    b.add(person);
-                    break;
+
+            for (Booth b : booths) {
+                if (!b.inUse()) {
+                    if (Q.get(0).getStatus() == VoterStatus.WAITING_FOR_BOOTH) {
+                        Voter person = Q.remove(0);
+                        b.add(person);
+                        break;
+                    }
                 }
             }
+
         }
     }
-
-
 
     public void setBooths(Booth[] booths) {
         this.booths = new Booth[booths.length];
