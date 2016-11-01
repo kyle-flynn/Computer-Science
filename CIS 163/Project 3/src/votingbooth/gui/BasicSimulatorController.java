@@ -58,7 +58,6 @@ public class BasicSimulatorController implements Initializable {
     private int votingLineQ;
     private int stillVoting;
 
-    // TODO - Implement the following statistics
     private int normalPissed;
     private int limitedPissed;
     private int specialPissed;
@@ -145,7 +144,7 @@ public class BasicSimulatorController implements Initializable {
             clk.add(tableTwo);
             clk.add(boothQ);
 
-            clk.run(totalTimeSec);
+            clk.start(totalTimeSec);
 
             resetStatistics();
             calculateStatistics();
@@ -199,6 +198,7 @@ public class BasicSimulatorController implements Initializable {
                 }
                 if (v.hasVoted()) {
                     limitedVoted++;
+                    avgLimitedVoteTime += v.getBoothTime();
                 }
                 if (v.hasCheckedIn()) {
                     avgLimitedCheckInTime+= v.getCheckInTime();
@@ -209,6 +209,7 @@ public class BasicSimulatorController implements Initializable {
                 }
                 if (v.hasVoted()) {
                     specialVoted++;
+                    avgSpecialVoteTime+= v.getBoothTime();
                 }
                 if (v.hasCheckedIn()) {
                     avgSpecialCheckInTime+= v.getCheckInTime();
@@ -219,6 +220,7 @@ public class BasicSimulatorController implements Initializable {
                 }
                 if (v.hasVoted()) {
                     normalVoted++;
+                    avgNormalVoteTime+= v.getBoothTime();
                 }
                 if (v.hasCheckedIn()) {
                     avgNormalCheckInTime+= v.getCheckInTime();
@@ -232,6 +234,9 @@ public class BasicSimulatorController implements Initializable {
         throughput = produce.getAllThrougPut();
         peopleLeft = boothQ.getLeft() + tableOne.getVoterQ() + tableTwo.getVoterQ() + stillVoting;
         avgVoteTime = avgVoteTime / totalVoted;
+        avgLimitedVoteTime = avgLimitedVoteTime / limitedVoted;
+        avgSpecialVoteTime = avgLimitedVoteTime / specialVoted;
+        avgNormalVoteTime = avgNormalVoteTime / normalVoted;
     }
 
     private void resetStatistics() {
@@ -257,6 +262,9 @@ public class BasicSimulatorController implements Initializable {
         Statistics.addStatistic("throughput", throughput);
         Statistics.addStatistic("peopleLeft", peopleLeft);
         Statistics.addStatistic("avgVoteTime", avgVoteTime);
+        Statistics.addStatistic("avgNormalVoteTime", avgNormalVoteTime);
+        Statistics.addStatistic("avgLimitedVoteTime", avgLimitedVoteTime);
+        Statistics.addStatistic("avgSpecialVoteTime", avgSpecialVoteTime);
         Statistics.addStatistic("maxVoters", (totalTimeSec / nextPerson));
         Statistics.addStatistic("normalTotal", produce.getNormalVoters().size());
         Statistics.addStatistic("limitedTotal", produce.getLimitedVoters().size());

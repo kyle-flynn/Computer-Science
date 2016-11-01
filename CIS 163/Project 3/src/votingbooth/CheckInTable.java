@@ -15,7 +15,6 @@ public class CheckInTable implements ClockListener {
     private Integer avgCheckInTime;
     private Integer checkInTime;
     private int checkedIn;
-    private int nextEvent;
     private boolean inUse;
 
     private Random r = new Random();
@@ -24,7 +23,6 @@ public class CheckInTable implements ClockListener {
         this.avgCheckInTime = avgCheckInTime;
         this.checkInTime = 0;
         this.checkedIn = 0;
-        this.nextEvent = 0;
         this.boothQ = boothQ;
         this.Q = new ArrayList<>();
         this.inUse = false;
@@ -73,8 +71,16 @@ public class CheckInTable implements ClockListener {
         }
     }
 
+    public void setBoothQ(BoothLine boothQ) {
+        this.boothQ = boothQ;
+    }
+
     public int getVoterQ() {
         return Q.size();
+    }
+
+    public int getCheckedIn() {
+        return checkedIn;
     }
 
 }

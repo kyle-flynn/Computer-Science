@@ -47,6 +47,13 @@ public class BoothLine implements ClockListener {
         }
     }
 
+    public void setBooths(Booth[] booths) {
+        this.booths = new Booth[booths.length];
+        for (int i = 0; i < booths.length; i++) {
+            this.booths[i] = booths[i];
+        }
+    }
+
     public int getMaxQlength() {
         return maxQlength;
     }

@@ -7,9 +7,9 @@ public class Voter {
     private double timeSpent;
     private VoterStatus status;
     private int voterID;
-    private Double checkInTime;
-    private Double boothTime;
-    private int tolerance;
+    protected Double checkInTime;
+    protected Double boothTime;
+    protected int tolerance;
     private boolean isPissed;
     private boolean hasVoted;
     private boolean hasCheckedIn;

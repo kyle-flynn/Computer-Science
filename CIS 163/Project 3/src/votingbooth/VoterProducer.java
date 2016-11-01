@@ -1,6 +1,8 @@
 package votingbooth;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Roger Ferguson
@@ -17,11 +19,13 @@ public class VoterProducer implements ClockListener {
     private ArrayList<Voter> normalVoters;
     private ArrayList<Voter> limitedVoters;
     private ArrayList<Voter> specialVoters;
+    private ArrayList<Voter> superSpecialVoters;
     private ArrayList<Voter> voters;
 
     private Integer maxNormalVoters;
     private Integer maxLimitedVoters;
     private Integer maxSpecialVoters;
+    private Integer maxSuperSpecialVoters;
 
     private int count;
 
@@ -38,10 +42,12 @@ public class VoterProducer implements ClockListener {
         this.normalVoters = new ArrayList<>();
         this.limitedVoters = new ArrayList<>();
         this.specialVoters = new ArrayList<>();
+        this.superSpecialVoters = new ArrayList<>();
         this.voters = new ArrayList<>();
         this.maxNormalVoters = ((Double)(totalPeople.doubleValue() * 0.7)).intValue();
         this.maxLimitedVoters = ((Double)(totalPeople.doubleValue() * 0.2)).intValue();
-        this.maxSpecialVoters = ((Double)(totalPeople.doubleValue() * 0.1)).intValue();
+        this.maxSpecialVoters = ((Double)(totalPeople.doubleValue() * 0.05)).intValue();
+        this.maxSuperSpecialVoters = ((Double)(totalPeople.doubleValue() * 0.05)).intValue();
         this.count = 0;
     }
 
@@ -60,6 +66,9 @@ public class VoterProducer implements ClockListener {
             } else if (specialVoters.size() < maxSpecialVoters) {
                 person = new SpecialNeedsVoter();
                 specialVoters.add(person);
+            } else if (superSpecialVoters.size() < maxSuperSpecialVoters) {
+                person = new SuperSpecialNeedsVoter();
+                superSpecialVoters.add(person);
             } else {
                 person = new Voter();
                 normalVoters.add(person);
@@ -93,6 +102,20 @@ public class VoterProducer implements ClockListener {
         }
     }
 
+    public void setBooths(Booth[] booths) {
+        this.booths = new Booth[booths.length];
+        for (int i = 0; i < booths.length; i++) {
+            this.booths[i] = booths[i];
+        }
+    }
+
+    public void setTables(List<CheckInTable> newTables) {
+        tables.clear();
+        for (CheckInTable table : newTables) {
+            tables.add(table);
+        }
+    }
+
     public void addTable(CheckInTable table) {
         tables.add(table);
     }
@@ -115,6 +138,10 @@ public class VoterProducer implements ClockListener {
 
     public ArrayList<Voter> getSpecialVoters() {
         return specialVoters;
+    }
+
+    public ArrayList<Voter> getSuperSpecialVoters() {
+        return superSpecialVoters;
     }
 
     public ArrayList<Voter> getVoters() {
