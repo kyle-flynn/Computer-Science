@@ -378,8 +378,6 @@ public class ComplexSimulatorController implements Initializable {
             peopleLeft+= table.getVoterQ();
         }
 
-        System.out.println(limitedVoted + " limited voters");
-
         avgTotalCheckInTime = (avgNormalCheckInTime + avgLimitedCheckInTime + avgSpecialCheckInTime + avgSuperCheckInTime) / producer.getVoters().size();
         totalPissed = normalPissed + limitedPissed + specialPissed + superPissed;
         totalVoted = normalVoted + limitedVoted + specialVoted + superVoted;
