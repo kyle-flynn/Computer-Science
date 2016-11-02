@@ -47,6 +47,10 @@ public class Booth implements ClockListener {
         }
     }
 
+    public void setAverageBoothTime(int time) {
+        this.averageBoothTime = time;
+    }
+
     public ArrayList<Double> getCompletedTimes() {
         return totalTimes;
     }

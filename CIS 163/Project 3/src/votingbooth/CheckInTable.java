@@ -71,6 +71,10 @@ public class CheckInTable implements ClockListener {
         }
     }
 
+    public void setAvgCheckInTime(int time) {
+        this.avgCheckInTime = time;
+    }
+
     public void setBoothQ(BoothLine boothQ) {
         this.boothQ = boothQ;
     }

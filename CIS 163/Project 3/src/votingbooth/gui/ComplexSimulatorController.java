@@ -31,6 +31,7 @@ public class ComplexSimulatorController implements Initializable {
     @FXML private Label boothText;
     @FXML private Button outputBtn;
     @FXML private Button statisticsBtn;
+    @FXML private Button runBtn;
 
     private int voterGenTime;
     private int avgVoterCheckIn;
@@ -105,6 +106,7 @@ public class ComplexSimulatorController implements Initializable {
 
         outputBtn.setDisable(true);
         statisticsBtn.setDisable(true);
+        runBtn.setDisable(false);
     }
 
     private Booth[] getBoothsAsArray() {
@@ -122,10 +124,12 @@ public class ComplexSimulatorController implements Initializable {
             producer = new VoterProducer(getBoothsAsArray(), voterGenTime, avgVoterTolerance, (maxTime / voterGenTime));
 
             for (Booth booth : booths) {
+                booth.setAverageBoothTime(avgVoterVoting);
                 clk.add(booth);
             }
 
             for (CheckInTable table : tables) {
+                table.setAvgCheckInTime(avgVoterCheckIn);
                 producer.addTable(table);
                 clk.add(table);
             }
@@ -142,6 +146,7 @@ public class ComplexSimulatorController implements Initializable {
 
             outputBtn.setDisable(false);
             statisticsBtn.setDisable(false);
+            runBtn.setDisable(true);
         } else {
             // Show error dialog!
         }
@@ -156,6 +161,7 @@ public class ComplexSimulatorController implements Initializable {
         clk.reset();
         outputBtn.setDisable(true);
         statisticsBtn.setDisable(true);
+        runBtn.setDisable(false);
     }
 
     @FXML
@@ -291,6 +297,9 @@ public class ComplexSimulatorController implements Initializable {
             avgVoterTolerance = Integer.parseInt(voterLeave.getText());
             maxTime = Integer.parseInt(maxSimulationTime.getText());
             if (booths.size() < 1 || tables.size() < 1) {
+                return false;
+            }
+            if (!validBoothTime() || !validCheckInTime()) {
                 return false;
             }
             return true;
@@ -469,6 +478,9 @@ public class ComplexSimulatorController implements Initializable {
         Statistics.addStatistic("specialComplete", specialComplete);
         Statistics.addStatistic("superComplete", superComplete);
         Statistics.addStatistic("totalComplete", totalComplete);
+        Statistics.addStatistic("booths", booths);
+        Statistics.addStatistic("tables", tables);
+        Statistics.addStatistic("leftInLine", boothQ.getLeft());
     }
 
     private void resetStatistics() {

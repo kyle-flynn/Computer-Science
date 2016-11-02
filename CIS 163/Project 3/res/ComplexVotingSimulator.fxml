@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="votingbooth.gui.ComplexSimulatorController">
    <children>
       <GridPane layoutX="10.0" prefHeight="390.0" prefWidth="430.0">
@@ -64,7 +63,7 @@
                </children>
             </GridPane>
             <Label text="Add Time Manually (seconds)" GridPane.rowIndex="9" />
-            <Button mnemonicParsing="false" onAction="#runSimulation" text="Run Simulation" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+            <Button fx:id="runBtn" mnemonicParsing="false" onAction="#runSimulation" text="Run Simulation" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
             <Button mnemonicParsing="false" onAction="#reset" text="Clear Memory" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
             <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
               <columnConstraints>

@@ -102,6 +102,14 @@ public class VoterProducer implements ClockListener {
         }
     }
 
+    public void setToleranceTime(int time) {
+        this.toleranceTime = time;
+    }
+
+    public void setNumOfTicksNextPerson(int ticks) {
+        this.numOfTicksNextPerson = ticks;
+    }
+
     public void setBooths(Booth[] booths) {
         this.booths = new Booth[booths.length];
         for (int i = 0; i < booths.length; i++) {
