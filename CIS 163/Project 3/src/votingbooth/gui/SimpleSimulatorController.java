@@ -39,6 +39,11 @@ public class SimpleSimulatorController implements Initializable {
     @FXML private TextField specialVoteTime;
     @FXML private TextField superVoteTime;
     @FXML private TextField totalVoteTime;
+    @FXML private TextField normalComplete;
+    @FXML private TextField limitedComplete;
+    @FXML private TextField specialComplete;
+    @FXML private TextField superComplete;
+    @FXML private TextField totalComplete;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -71,6 +76,11 @@ public class SimpleSimulatorController implements Initializable {
         specialVoteTime.setText(Statistics.getStatistic("avgSpecialVoteTime") + "");
         superVoteTime.setText(Statistics.getStatistic("avgSuperVoteTime") + "");
         totalVoteTime.setText(Statistics.getStatistic("avgTotalVoteTime") + "");
+        normalComplete.setText(Statistics.getStatistic("normalComplete") + "");
+        limitedComplete.setText(Statistics.getStatistic("limitedComplete") + "");
+        specialComplete.setText(Statistics.getStatistic("specialComplete") + "");
+        superComplete.setText(Statistics.getStatistic("superComplete") + "");
+        totalComplete.setText(Statistics.getStatistic("totalComplete") + "");
     }
 
 }

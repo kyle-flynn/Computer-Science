@@ -12,8 +12,6 @@ import javafx.stage.Stage;
 import votingbooth.*;
 
 import java.net.URL;
-import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
@@ -37,7 +35,7 @@ public class ComplexSimulatorController implements Initializable {
     private int voterGenTime;
     private int avgVoterCheckIn;
     private int avgVoterVoting;
-    private int avgVoterTolerannce;
+    private int avgVoterTolerance;
     private int maxTime;
     private int curTime;
     private int timeToAdd;
@@ -76,9 +74,13 @@ public class ComplexSimulatorController implements Initializable {
     private double avgSuperCheckInTime;
     private double avgNormalCheckInTime;
     private double avgTotalCheckInTime;
+    private double normalComplete;
+    private double limitedComplete;
+    private double specialComplete;
+    private double superComplete;
+    private double totalComplete;
 
     private boolean memoryCleared;
-    private boolean simulationStarted;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -100,7 +102,6 @@ public class ComplexSimulatorController implements Initializable {
         addTable();
 
         memoryCleared = true;
-        simulationStarted = false;
 
         outputBtn.setDisable(true);
         statisticsBtn.setDisable(true);
@@ -118,7 +119,7 @@ public class ComplexSimulatorController implements Initializable {
     public void runSimulation() {
         if (validInputs() && memoryCleared) {
             boothQ.setBooths(getBoothsAsArray());
-            producer = new VoterProducer(getBoothsAsArray(), voterGenTime, avgVoterTolerannce, (maxTime / voterGenTime));
+            producer = new VoterProducer(getBoothsAsArray(), voterGenTime, avgVoterTolerance, (maxTime / voterGenTime));
 
             for (Booth booth : booths) {
                 clk.add(booth);
@@ -138,7 +139,6 @@ public class ComplexSimulatorController implements Initializable {
             addStatistics();
 
             memoryCleared = false;
-            simulationStarted = true;
 
             outputBtn.setDisable(false);
             statisticsBtn.setDisable(false);
@@ -160,7 +160,18 @@ public class ComplexSimulatorController implements Initializable {
 
     @FXML
     public void showOutput() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/ComplexOutput.fxml"));
+            Scene scene = new Scene(root);
+            Stage newStage = new Stage();
 
+            newStage.setScene(scene);
+            newStage.setTitle("Simulation Output");
+            newStage.setResizable(false);
+            newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -187,7 +198,7 @@ public class ComplexSimulatorController implements Initializable {
                     boothQ.setBooths(getBoothsAsArray());
 
                     if (producer == null) {
-                        producer = new VoterProducer(getBoothsAsArray(), voterGenTime, avgVoterTolerannce, (maxTime / voterGenTime));
+                        producer = new VoterProducer(getBoothsAsArray(), voterGenTime, avgVoterTolerance, (maxTime / voterGenTime));
                     } else {
                         producer.setBooths(getBoothsAsArray());
                         producer.setTables(tables);
@@ -213,7 +224,6 @@ public class ComplexSimulatorController implements Initializable {
                     addStatistics();
 
                     memoryCleared = false;
-                    simulationStarted = true;
 
                     outputBtn.setDisable(false);
                     statisticsBtn.setDisable(false);
@@ -278,7 +288,7 @@ public class ComplexSimulatorController implements Initializable {
     private boolean validInputs() {
         try {
             voterGenTime = Integer.parseInt(voterGen.getText());
-            avgVoterTolerannce = Integer.parseInt(voterLeave.getText());
+            avgVoterTolerance = Integer.parseInt(voterLeave.getText());
             maxTime = Integer.parseInt(maxSimulationTime.getText());
             if (booths.size() < 1 || tables.size() < 1) {
                 return false;
@@ -333,6 +343,7 @@ public class ComplexSimulatorController implements Initializable {
                 if (v.hasVoted()) {
                     limitedVoted++;
                     avgLimitedVoteTime += v.getBoothTime();
+                    limitedComplete += v.getTimeSpent();
                 }
                 if (v.hasCheckedIn()) {
                     avgLimitedCheckInTime+= v.getCheckInTime();
@@ -345,6 +356,7 @@ public class ComplexSimulatorController implements Initializable {
                     if (v.hasVoted()) {
                         superVoted++;
                         avgSuperVoteTime+= v.getBoothTime();
+                        superComplete += v.getTimeSpent();
                     }
                     if (v.hasCheckedIn()) {
                         avgSuperCheckInTime+= v.getCheckInTime();
@@ -356,6 +368,7 @@ public class ComplexSimulatorController implements Initializable {
                     if (v.hasVoted()) {
                         specialVoted++;
                         avgSpecialVoteTime+= v.getBoothTime();
+                        specialComplete += v.getTimeSpent();
                     }
                     if (v.hasCheckedIn()) {
                         avgSpecialCheckInTime+= v.getCheckInTime();
@@ -368,6 +381,7 @@ public class ComplexSimulatorController implements Initializable {
                 if (v.hasVoted()) {
                     normalVoted++;
                     avgNormalVoteTime+= v.getBoothTime();
+                    normalComplete += v.getTimeSpent();
                 }
                 if (v.hasCheckedIn()) {
                     avgNormalCheckInTime+= v.getCheckInTime();
@@ -384,29 +398,34 @@ public class ComplexSimulatorController implements Initializable {
         votingLineQ = boothQ.getMaxQlength();
         throughput = producer.getAllThrougPut();
         peopleLeft += boothQ.getLeft() + stillVoting;
-        avgTotalVoteTime = (avgLimitedVoteTime + avgSpecialVoteTime + avgNormalVoteTime + avgSuperVoteTime) / 4;
         if (totalVoted != 0) {
             avgVoteTime = avgVoteTime / totalVoted;
+            avgTotalVoteTime = (avgLimitedVoteTime + avgSpecialVoteTime + avgNormalVoteTime + avgSuperVoteTime) / totalVoted;
+            totalComplete = (limitedComplete + specialComplete + normalComplete + superComplete) / totalVoted;
         } else {
             avgVoteTime = 0;
         }
         if (limitedVoted != 0) {
             avgLimitedVoteTime = avgLimitedVoteTime / limitedVoted;
+            limitedComplete = limitedComplete / limitedVoted;
         } else {
             avgLimitedVoteTime = 0;
         }
         if (specialVoted != 0) {
             avgSpecialVoteTime = avgSpecialVoteTime / specialVoted;
+            specialComplete = specialComplete / specialVoted;
         } else {
             avgSpecialVoteTime = 0;
         }
         if (normalVoted != 0) {
             avgNormalVoteTime = avgNormalVoteTime / normalVoted;
+            normalComplete = normalComplete / normalVoted;
         } else {
             avgNormalVoteTime = 0;
         }
         if (superVoted != 0) {
             avgSuperVoteTime = avgSuperVoteTime / superVoted;
+            superComplete = superComplete / superVoted;
         } else {
             avgSuperVoteTime = 0;
         }
@@ -445,6 +464,11 @@ public class ComplexSimulatorController implements Initializable {
         Statistics.addStatistic("specialCheckIn", avgSpecialCheckInTime / producer.getSpecialVoters().size());
         Statistics.addStatistic("superCheckIn", avgSuperCheckInTime / producer.getSuperSpecialVoters().size());
         Statistics.addStatistic("totalCheckIn", avgTotalCheckInTime);
+        Statistics.addStatistic("normalComplete", normalComplete);
+        Statistics.addStatistic("limitedComplete", limitedComplete);
+        Statistics.addStatistic("specialComplete", specialComplete);
+        Statistics.addStatistic("superComplete", superComplete);
+        Statistics.addStatistic("totalComplete", totalComplete);
     }
 
     private void resetStatistics() {
