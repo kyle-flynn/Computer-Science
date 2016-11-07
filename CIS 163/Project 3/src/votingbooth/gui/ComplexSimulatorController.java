@@ -506,6 +506,7 @@ public class ComplexSimulatorController implements Initializable {
         avgSpecialVoteTime = 0;
         avgSuperVoteTime = 0;
         avgTotalVoteTime = 0;
+        peopleLeft = 0;
     }
 
 }

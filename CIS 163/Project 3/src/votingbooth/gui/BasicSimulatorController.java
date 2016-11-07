@@ -1,6 +1,5 @@
 package votingbooth.gui;
 
-import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,6 +10,7 @@ import javafx.stage.Stage;
 import votingbooth.*;
 
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 /**
@@ -29,7 +29,7 @@ public class BasicSimulatorController implements Initializable {
     // Bottom-half of the text field variables
     @FXML private TextField throughPut;
     @FXML private TextField peopleInLine;
-    @FXML private TextField avgTotalVoteTime;
+    @FXML private TextField voterVoteTime;
     @FXML private TextField checkInOne;
     @FXML private TextField checkInTwo;
     @FXML private TextField votingBoothQ;
@@ -42,6 +42,8 @@ public class BasicSimulatorController implements Initializable {
     // Right now, we control the amount of check-in tables
     private CheckInTable tableOne;
     private CheckInTable tableTwo;
+
+    private LinkedList<CheckInTable> tables;
 
     // Data inputs from the top text fields
     private int nextPerson = 0;
@@ -61,18 +63,28 @@ public class BasicSimulatorController implements Initializable {
     private int normalPissed;
     private int limitedPissed;
     private int specialPissed;
+    private int superPissed;
     private int totalPissed;
     private int normalVoted;
     private int limitedVoted;
     private int specialVoted;
+    private int superVoted;
     private int totalVoted;
     private int avgLimitedVoteTime;
     private int avgSpecialVoteTime;
     private int avgNormalVoteTime;
+    private int avgSuperVoteTime;
+    private int avgTotalVoteTime;
     private double avgLimitedCheckInTime;
     private double avgSpecialCheckInTime;
+    private double avgSuperCheckInTime;
     private double avgNormalCheckInTime;
     private double avgTotalCheckInTime;
+    private double normalComplete;
+    private double limitedComplete;
+    private double specialComplete;
+    private double superComplete;
+    private double totalComplete;
 
     private VoterProducer produce;
 
@@ -136,6 +148,11 @@ public class BasicSimulatorController implements Initializable {
             tableTwo = new CheckInTable(avgSecondsCheckIn, boothQ);
             produce = new VoterProducer(booths, nextPerson, secondsBeforeLeaves, (totalTimeSec / nextPerson));
 
+            tables = new LinkedList<>();
+
+            tables.add(tableOne);
+            tables.add(tableTwo);
+
             produce.addTable(tableOne);
             produce.addTable(tableTwo);
 
@@ -171,17 +188,12 @@ public class BasicSimulatorController implements Initializable {
     private void outputInformation() {
         throughPut.setText(Statistics.getStatistic("throughput") + " people with Max = " + Statistics.getStatistic("maxVoters"));
         peopleInLine.setText(Statistics.getStatistic("peopleLeft") + "");
-        avgTotalVoteTime.setText(Statistics.getStatistic("avgVoteTime") + " seconds");
+        voterVoteTime.setText(Statistics.getStatistic("avgVoteTime") + " seconds");
         checkInOne.setText(tableOne.getMaxQlength() + "");
         checkInTwo.setText(tableTwo.getMaxQlength() + "");
         votingBoothQ.setText(Statistics.getStatistic("votingLineQ") + "");
 	}
 
-    /*******************************************
-     * Calculate the statistics and store them for
-     * output
-     * @return void
-     ******************************************/
     private void calculateStatistics() {
         for (Booth b : booths) {
             if (b.inUse()) {
@@ -199,20 +211,36 @@ public class BasicSimulatorController implements Initializable {
                 if (v.hasVoted()) {
                     limitedVoted++;
                     avgLimitedVoteTime += v.getBoothTime();
+                    limitedComplete += v.getTimeSpent();
                 }
                 if (v.hasCheckedIn()) {
                     avgLimitedCheckInTime+= v.getCheckInTime();
                 }
             } else if (v instanceof SpecialNeedsVoter) {
-                if (v.isPissed()) {
-                    specialPissed++;
-                }
-                if (v.hasVoted()) {
-                    specialVoted++;
-                    avgSpecialVoteTime+= v.getBoothTime();
-                }
-                if (v.hasCheckedIn()) {
-                    avgSpecialCheckInTime+= v.getCheckInTime();
+                if (v instanceof SuperSpecialNeedsVoter) {
+                    if (v.isPissed()) {
+                        superPissed++;
+                    }
+                    if (v.hasVoted()) {
+                        superVoted++;
+                        avgSuperVoteTime+= v.getBoothTime();
+                        superComplete += v.getTimeSpent();
+                    }
+                    if (v.hasCheckedIn()) {
+                        avgSuperCheckInTime+= v.getCheckInTime();
+                    }
+                } else {
+                    if (v.isPissed()) {
+                        specialPissed++;
+                    }
+                    if (v.hasVoted()) {
+                        specialVoted++;
+                        avgSpecialVoteTime+= v.getBoothTime();
+                        specialComplete += v.getTimeSpent();
+                    }
+                    if (v.hasCheckedIn()) {
+                        avgSpecialCheckInTime+= v.getCheckInTime();
+                    }
                 }
             } else {
                 if (v.isPissed()) {
@@ -221,42 +249,57 @@ public class BasicSimulatorController implements Initializable {
                 if (v.hasVoted()) {
                     normalVoted++;
                     avgNormalVoteTime+= v.getBoothTime();
+                    normalComplete += v.getTimeSpent();
                 }
                 if (v.hasCheckedIn()) {
                     avgNormalCheckInTime+= v.getCheckInTime();
                 }
             }
         }
-        avgTotalCheckInTime = (avgNormalCheckInTime + avgLimitedCheckInTime + avgSpecialCheckInTime)/(totalTimeSec / nextPerson);
-        totalPissed = normalPissed + limitedPissed + specialPissed;
-        totalVoted = normalVoted + limitedVoted + specialVoted;
+
+        peopleLeft+= tableOne.getVoterQ() + tableTwo.getVoterQ();
+
+        avgTotalCheckInTime = (avgNormalCheckInTime + avgLimitedCheckInTime + avgSpecialCheckInTime + avgSuperCheckInTime) / produce.getVoters().size();
+        totalPissed = normalPissed + limitedPissed + specialPissed + superPissed;
+        totalVoted = normalVoted + limitedVoted + specialVoted + superVoted;
         votingLineQ = boothQ.getMaxQlength();
         throughput = produce.getAllThrougPut();
-        peopleLeft = boothQ.getLeft() + tableOne.getVoterQ() + tableTwo.getVoterQ() + stillVoting;
-        avgVoteTime = avgVoteTime / totalVoted;
-        avgLimitedVoteTime = avgLimitedVoteTime / limitedVoted;
-        avgSpecialVoteTime = avgLimitedVoteTime / specialVoted;
-        avgNormalVoteTime = avgNormalVoteTime / normalVoted;
-    }
-
-    private void resetStatistics() {
-        stillVoting = 0;
-        avgVoteTime = 0;
-        normalPissed = 0;
-        limitedPissed = 0;
-        specialPissed = 0;
-        totalPissed = 0;
-        normalVoted = 0;
-        limitedVoted = 0;
-        specialVoted = 0;
-        totalVoted = 0;
-        avgNormalCheckInTime = 0;
-        avgLimitedCheckInTime = 0;
-        avgSpecialCheckInTime = 0;
-        avgTotalCheckInTime = 0;
+        peopleLeft += boothQ.getLeft() + stillVoting;
+        if (totalVoted != 0) {
+            avgVoteTime = avgVoteTime / totalVoted;
+            avgTotalVoteTime = (avgLimitedVoteTime + avgSpecialVoteTime + avgNormalVoteTime + avgSuperVoteTime) / totalVoted;
+            totalComplete = (limitedComplete + specialComplete + normalComplete + superComplete) / totalVoted;
+        } else {
+            avgVoteTime = 0;
+        }
+        if (limitedVoted != 0) {
+            avgLimitedVoteTime = avgLimitedVoteTime / limitedVoted;
+            limitedComplete = limitedComplete / limitedVoted;
+        } else {
+            avgLimitedVoteTime = 0;
+        }
+        if (specialVoted != 0) {
+            avgSpecialVoteTime = avgSpecialVoteTime / specialVoted;
+            specialComplete = specialComplete / specialVoted;
+        } else {
+            avgSpecialVoteTime = 0;
+        }
+        if (normalVoted != 0) {
+            avgNormalVoteTime = avgNormalVoteTime / normalVoted;
+            normalComplete = normalComplete / normalVoted;
+        } else {
+            avgNormalVoteTime = 0;
+        }
+        if (superVoted != 0) {
+            avgSuperVoteTime = avgSuperVoteTime / superVoted;
+            superComplete = superComplete / superVoted;
+        } else {
+            avgSuperVoteTime = 0;
+        }
     }
 
     private void addStatistics() {
+        Statistics.clearStatistics();
         Statistics.addStatistic("avgVoteTime", avgVoteTime);
         Statistics.addStatistic("votingLineQ", votingLineQ);
         Statistics.addStatistic("throughput", throughput);
@@ -265,23 +308,63 @@ public class BasicSimulatorController implements Initializable {
         Statistics.addStatistic("avgNormalVoteTime", avgNormalVoteTime);
         Statistics.addStatistic("avgLimitedVoteTime", avgLimitedVoteTime);
         Statistics.addStatistic("avgSpecialVoteTime", avgSpecialVoteTime);
+        Statistics.addStatistic("avgSuperVoteTime", avgSuperVoteTime);
+        Statistics.addStatistic("avgTotalVoteTime", avgTotalVoteTime);
         Statistics.addStatistic("maxVoters", (totalTimeSec / nextPerson));
         Statistics.addStatistic("normalTotal", produce.getNormalVoters().size());
         Statistics.addStatistic("limitedTotal", produce.getLimitedVoters().size());
         Statistics.addStatistic("specialTotal", produce.getSpecialVoters().size());
-        Statistics.addStatistic("totalTotal", produce.getNormalVoters().size() + produce.getLimitedVoters().size() + produce.getSpecialVoters().size());
+        Statistics.addStatistic("superTotal", produce.getSuperSpecialVoters().size());
+        Statistics.addStatistic("totalTotal", produce.getNormalVoters().size() + produce.getLimitedVoters().size() + produce.getSpecialVoters().size() + produce.getSuperSpecialVoters().size());
         Statistics.addStatistic("normalVoted", normalVoted);
         Statistics.addStatistic("limitedVoted", limitedVoted);
         Statistics.addStatistic("specialVoted", specialVoted);
+        Statistics.addStatistic("superVoted", superVoted);
         Statistics.addStatistic("totalVoted", totalVoted);
         Statistics.addStatistic("normalPissed", normalPissed);
         Statistics.addStatistic("limitedPissed", limitedPissed);
         Statistics.addStatistic("specialPissed", specialPissed);
+        Statistics.addStatistic("superPissed", superPissed);
         Statistics.addStatistic("totalPissed", totalPissed);
         Statistics.addStatistic("normalCheckIn", avgNormalCheckInTime / produce.getNormalVoters().size());
         Statistics.addStatistic("limitedCheckIn", avgLimitedCheckInTime / produce.getLimitedVoters().size());
         Statistics.addStatistic("specialCheckIn", avgSpecialCheckInTime / produce.getSpecialVoters().size());
+        Statistics.addStatistic("superCheckIn", avgSuperCheckInTime / produce.getSuperSpecialVoters().size());
         Statistics.addStatistic("totalCheckIn", avgTotalCheckInTime);
+        Statistics.addStatistic("normalComplete", normalComplete);
+        Statistics.addStatistic("limitedComplete", limitedComplete);
+        Statistics.addStatistic("specialComplete", specialComplete);
+        Statistics.addStatistic("superComplete", superComplete);
+        Statistics.addStatistic("totalComplete", totalComplete);
+        Statistics.addStatistic("booths", booths);
+        Statistics.addStatistic("tables", tables);
+        Statistics.addStatistic("leftInLine", boothQ.getLeft());
+    }
+
+    private void resetStatistics() {
+        stillVoting = 0;
+        avgVoteTime = 0;
+        normalPissed = 0;
+        limitedPissed = 0;
+        specialPissed = 0;
+        superPissed = 0;
+        totalPissed = 0;
+        normalVoted = 0;
+        limitedVoted = 0;
+        specialVoted = 0;
+        superVoted = 0;
+        totalVoted = 0;
+        avgNormalCheckInTime = 0;
+        avgLimitedCheckInTime = 0;
+        avgSpecialCheckInTime = 0;
+        avgTotalCheckInTime = 0;
+        avgSuperCheckInTime = 0;
+        avgNormalVoteTime = 0;
+        avgLimitedVoteTime = 0;
+        avgSpecialVoteTime = 0;
+        avgSuperVoteTime = 0;
+        avgTotalVoteTime = 0;
+        peopleLeft = 0;
     }
 
     @FXML
