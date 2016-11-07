@@ -14,7 +14,7 @@ public class VoterProducer implements ClockListener {
     /** Controls when the next voter should be produced */
     private int nextPerson;
 
-    /** Contains the amount of booths in the simulation as a 2d array */
+    /** Contains the amount of booths in the simulation as an array */
     private Booth[] booths;
 
     /** Contains the time on average to produce a voter */
@@ -62,7 +62,7 @@ public class VoterProducer implements ClockListener {
 
     /*****************************************************************
     Default constructor that initializes all of the needed variables.
-    @param booths The 2d array of Booth objects in the simulation.
+    @param booths The array of Booth objects in the simulation.
     @param numOfTicksNextPerson The amount of ticks between voters.
     @param toleranceTime The avg time before a voter leaves the sim.
     *****************************************************************/
@@ -187,9 +187,9 @@ public class VoterProducer implements ClockListener {
     }
 
     /*****************************************************************
-    Method that sets the 'this' booth array to an outside 2d Booth
+    Method that sets the 'this' booth array to an outside Booth
     object array.
-    @param booths Other Booth 2d array to set equal to.
+    @param booths Other Booth array to set equal to.
     *****************************************************************/
     public void setBooths(Booth[] booths) {
 

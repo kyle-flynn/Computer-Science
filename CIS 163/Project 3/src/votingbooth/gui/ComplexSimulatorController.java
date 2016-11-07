@@ -47,8 +47,6 @@ public class ComplexSimulatorController implements Initializable {
     private LinkedList<Booth> booths;
     private LinkedList<CheckInTable> tables;
 
-    // Stats
-    // Statistics
     private int throughput;
     private double avgVoteTime;
     private int peopleLeft;
