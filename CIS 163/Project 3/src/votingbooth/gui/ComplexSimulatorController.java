@@ -11,13 +11,18 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import votingbooth.*;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
-/**
- * Created by kylef_000 on 10/31/2016.
- */
+/*****************************************************************
+Complex Simulator Controller class. Responsible for linking the
+front-end code to the back-end, and run the simulation. This
+fulfills the requirements for part 'A'.
+@author Kyle Flynn
+@version 1.0
+*****************************************************************/
 public class ComplexSimulatorController implements Initializable {
 
     @FXML private TextField voterGen;
@@ -146,7 +151,7 @@ public class ComplexSimulatorController implements Initializable {
             statisticsBtn.setDisable(false);
             runBtn.setDisable(true);
         } else {
-            // Show error dialog!
+            showError("Error validating inputs. Did you fill them out correctly?");
         }
     }
 
@@ -235,11 +240,11 @@ public class ComplexSimulatorController implements Initializable {
                     curTime += timeToAdd;
                     curSimulationTime.setText(curTime + "");
                 } else {
-                    // Show error dialog!
+                    showError("Error validating inputs. Did you fill them out correctly?");
                 }
             }
         } else {
-            // Show error dialog!
+            showError("Your time to add must be valid.");
         }
     }
 
@@ -253,7 +258,7 @@ public class ComplexSimulatorController implements Initializable {
                 boothQ.setBooths(getBoothsAsArray());
             }
         } else {
-            // Show error dialog!
+            showError("Invalid Average Booth Time for Voters.");
         }
     }
 
@@ -267,7 +272,7 @@ public class ComplexSimulatorController implements Initializable {
                 producer.addTable(newTable);
             }
         } else {
-            // Show error dialog!
+            showError("Invalid Average Check In Time for Voters.");
         }
     }
 
@@ -277,7 +282,7 @@ public class ComplexSimulatorController implements Initializable {
             booths.removeLast();
             boothText.setText("Number of Booths (" + booths.size() + ")");
         } else {
-            // Show error dialog!
+            showError("You must have at least 1 Booth");
         }
     }
 
@@ -286,6 +291,8 @@ public class ComplexSimulatorController implements Initializable {
         if (tables.size() > 1) {
             tables.removeLast();
             checkInText.setText("Number of Check In Tables (" + tables.size() + ")");
+        } else {
+            showError("You must have at least 1 CheckInTable");
         }
     }
 
@@ -331,6 +338,10 @@ public class ComplexSimulatorController implements Initializable {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    private void showError(String message) {
+        JOptionPane.showMessageDialog(null, message);
     }
 
     private void calculateStatistics() {

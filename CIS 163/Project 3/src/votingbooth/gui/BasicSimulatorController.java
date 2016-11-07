@@ -13,9 +13,13 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
-/**
- * Created by kylef_000 on 10/12/2016.
- */
+/*****************************************************************
+Complex Simulator Controller class. Responsible for linking the
+front-end code to the back-end, and run the simulation. This
+fulfills the requirements for part 'C' and 'B'.
+@author Kyle Flynn
+@version 1.0
+*****************************************************************/
 public class BasicSimulatorController implements Initializable {
 
     // Top-half of the text field variables

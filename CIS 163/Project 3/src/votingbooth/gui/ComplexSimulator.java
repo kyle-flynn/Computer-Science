@@ -6,22 +6,41 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by kylef_000 on 10/31/2016.
- */
+/*****************************************************************
+Basic Simulator launcher class. Responsible for launching the 'C'
+and 'B' parts of the assignment. This is done using JavaFX and FXML.
+@author Kyle Flynn
+@version 1.0
+*****************************************************************/
 public class ComplexSimulator extends Application {
 
+    /*****************************************************************
+    Overriden method that is called by JavaFX when an application is
+    started.
+    @throws Exception Thrown whenever there is an error loading the FXML
+    file, or generating a new scene.
+    @param primaryStage The stage that the program starts with. JavaFX
+    handles this part.
+    *****************************************************************/
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/ComplexVotingSimulator.fxml"));
 
+            /* This is the main 'parent' element of the entire
+            application. */
+            Parent root = FXMLLoader.load(
+                    getClass().getResource("/ComplexVotingSimulator.fxml"));
+
+            /* This is responsible for containing the current scene of
+            the application. */
             Scene scene = new Scene(root);
 
+            /* Setting properties of the stage. */
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Complex Voting Simulator v100000000.013");
+            primaryStage.setTitle("Complex Voting Simulator");
             primaryStage.setResizable(false);
             primaryStage.show();
 
@@ -30,15 +49,12 @@ public class ComplexSimulator extends Application {
         }
     }
 
+    /*****************************************************************
+    Main method used by every single Java program. Uses the static
+    launch method to start the JavaFX program.
+    @param args The program's launch arguments.
+    *****************************************************************/
     public static void main(String[] args) {
-        // IDEAS:
-        /*
-        * Main GUI is very simple, and only takes in booths, tables, etc.
-        * It shows two buttons: Show Output, and Show Statistics
-        * Show output will show people in lines
-        * Show statistics will display shit loads of statistics
-        *  -For statistics, show the highest and lowest times
-        */
         launch(args);
     }
 
