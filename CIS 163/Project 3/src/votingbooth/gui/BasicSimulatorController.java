@@ -22,122 +22,205 @@ fulfills the requirements for part 'C' and 'B'.
 *****************************************************************/
 public class BasicSimulatorController implements Initializable {
 
-    // Top-half of the text field variables
+    /** TextField that contains the time between voter generations. */
     @FXML private TextField secondsToNext;
+
+    /** TextField that contains the avg time to check in. */
     @FXML private TextField avgCheckInTime;
+
+    /** TextField that contains the maximum simulation time. */
     @FXML private TextField totalTime;
+
+    /** TextField that contains the avg time to vote. */
     @FXML private TextField avgVotingTime;
+
+    /** TextField that contains the avg time before voter leaves. */
     @FXML private TextField secondsBeforeLeave;
+
+    /** TextField that contains the number of booths for the sim. */
     @FXML private TextField boothCount;
 
-    // Bottom-half of the text field variables
+    /** Statistic that displays the number of completed voters. */
     @FXML private TextField throughPut;
+
+    /** Statistic that displays the amount of people left in the sim. */
     @FXML private TextField peopleInLine;
+
+    /** Statistic that displays the avg time to vote for voters. */
     @FXML private TextField voterVoteTime;
+
+    /** Statistic that displays the avg check in time for table one. */
     @FXML private TextField checkInOne;
+
+    /** Statistic that displays the avg check in time for table two. */
     @FXML private TextField checkInTwo;
+
+    /** Statistic that displays the record for people in line. */
     @FXML private TextField votingBoothQ;
 
-    // Back-end logic
+    /** Master clock instance */
     private Clock clk;
+
+    /** Instance of the BoothLine that stores voters. */
     private BoothLine boothQ;
+
+    /** Array that contains the number of Booth objects in the sim.  */
     private Booth[] booths;
 
-    // Right now, we control the amount of check-in tables
+    /** Checkin Table for last names A-L */
     private CheckInTable tableOne;
+
+    /** Checkin Table for last names M-Z */
     private CheckInTable tableTwo;
 
-    private LinkedList<CheckInTable> tables;
-
-    // Data inputs from the top text fields
-    private int nextPerson = 0;
-    private int avgSecondsCheckIn = 0;
-    private int totalTimeSec = 0;
-    private int avgSecToVote = 0;
-    private int secondsBeforeLeaves = 0;
-    private int boothNum = 0;
-
-    // Statistics
-    private int throughput;
-    private double avgVoteTime;
-    private int peopleLeft;
-    private int votingLineQ;
-    private int stillVoting;
-
-    private int normalPissed;
-    private int limitedPissed;
-    private int specialPissed;
-    private int superPissed;
-    private int totalPissed;
-    private int normalVoted;
-    private int limitedVoted;
-    private int specialVoted;
-    private int superVoted;
-    private int totalVoted;
-    private int avgLimitedVoteTime;
-    private int avgSpecialVoteTime;
-    private int avgNormalVoteTime;
-    private int avgSuperVoteTime;
-    private int avgTotalVoteTime;
-    private double avgLimitedCheckInTime;
-    private double avgSpecialCheckInTime;
-    private double avgSuperCheckInTime;
-    private double avgNormalCheckInTime;
-    private double avgTotalCheckInTime;
-    private double normalComplete;
-    private double limitedComplete;
-    private double specialComplete;
-    private double superComplete;
-    private double totalComplete;
-
+    /** Main VoterProducer object that produces voters. */
     private VoterProducer produce;
 
-    // EDIT THESE METHODS. THEY SHOULD NEVER BE LESS THAN 0
-    private int validateVoterGen(int value) {
-        return value;
-    }
+    /** LinkedList of CheckInTable objects. We use LinkedList because it
+    is better for adding/subtracting data. We will not be modifying. */
+    private LinkedList<CheckInTable> tables;
 
-    private int validateCheckIn(int value) {
-        return value;
-    }
+    /** Obtained from text field - time between voters */
+    private int nextPerson;
 
-    private int validateTotalTime(int value) {
-        return value;
-    }
+    /** Obtained from text field - avg time to check in. */
+    private int avgSecondsCheckIn;
 
-    private int validateVoteTime(int value) {
-        return value;
-    }
+    /** Obtained from text field - maximum simulation time. */
+    private int totalTimeSec;
 
-    private int validateLeaveTime(int value) {
-        return value;
-    }
+    /** Obtained from text field - avg time to vote. */
+    private int avgSecToVote;
 
-    private int validateBoothNum(int value) {
-        return value;
-    }
-    // END METHODS YOU'RE SUPPOSED TO EDIT
+    /** Obtained from text field - avg time before voter leaves. */
+    private int secondsBeforeLeaves;
 
+    /** Obtained from text field - number of booths for the sim. */
+    private int boothNum;
+
+    /** Statistic that gets number of completed voters. */
+    private int throughput;
+
+    /** Statistic that gets the avg time to vote for voters. */
+    private double avgVoteTime;
+
+    /** Statistic that gets the amount of people left in the sim. */
+    private int peopleLeft;
+
+    /** Statistic that gets the amount of people left in the boothQ. */
+    private int votingLineQ;
+
+    /** Statistic that gets the amount of people still in a booth. */
+    private int stillVoting;
+
+    /** Statistic for normal voters who left the sim. */
+    private int normalPissed;
+
+    /** Statistic for limited time voters who left the sim. */
+    private int limitedPissed;
+
+    /** Statistic for special needs voters who left the sim. */
+    private int specialPissed;
+
+    /** Statistic for super special needs voters who left the sim. */
+    private int superPissed;
+
+    /** Statistic for total voters who left the sim. */
+    private int totalPissed;
+
+    /** Statistic for normal voters who successfully voted. */
+    private int normalVoted;
+
+    /** Statistic for limited time voters who successfully voted. */
+    private int limitedVoted;
+
+    /** Statistic for special needs voters who successfully voted. */
+    private int specialVoted;
+
+    /** Statistic for super special needs voters who successfully voted. */
+    private int superVoted;
+
+    /** Statistic for total voters who successfully voted. */
+    private int totalVoted;
+
+    /** Statistic for limited time voters avg time to vote. */
+    private int avgLimitedVoteTime;
+
+    /** Statistic for special needs voters avg time to vote. */
+    private int avgSpecialVoteTime;
+
+    /** Statistic for normal voters avg time to vote. */
+    private int avgNormalVoteTime;
+
+    /** Statistic for super special needs voters avg time to vote. */
+    private int avgSuperVoteTime;
+
+    /** Statistic for total voters avg time to vote. */
+    private int avgTotalVoteTime;
+
+    /** Statistic for limited time voters avg check in time. */
+    private double avgLimitedCheckInTime;
+
+    /** Statistic for special needs voters avg check in time. */
+    private double avgSpecialCheckInTime;
+
+    /** Statistic for super special needs voters avg check in time. */
+    private double avgSuperCheckInTime;
+
+    /** Statistic for normal voters avg check in time. */
+    private double avgNormalCheckInTime;
+
+    /** Statistic for total voters avg check in time. */
+    private double avgTotalCheckInTime;
+
+    /** Statistic for normal voters total time in the sim. */
+    private double normalComplete;
+
+    /** Statistic for limited time voters total time in the sim. */
+    private double limitedComplete;
+
+    /** Statistic for special needs voters total time in the sim. */
+    private double specialComplete;
+
+    /** Statistic for super special needs voters total time in the sim. */
+    private double superComplete;
+
+    /** Statistic for total voters total time in the sim. */
+    private double totalComplete;
+
+    /*****************************************************************
+    Overriden method that occurs when the application has loaded, and
+    is ready to run code.
+    @param location The location of the application. Handled by JavaFX.
+    @param resources The ResourceBundle of the application. Handled by
+    JavaFX.
+    *****************************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        /* Initializing our declared variables. */
+        nextPerson = 0;
+        avgSecondsCheckIn = 0;
+        totalTimeSec = 0;
+        avgSecToVote = 0;
+        secondsBeforeLeaves = 0;
+        boothNum = 0;
     }
 
-    /***********************************************
-     * This will link the Start Button to the Logic in the back end
-     * For this we are re-assigning the variables to what is
-     * stored in the text fields
-     * @return void
-     ***********************************************/
+    /*****************************************************************
+    Method that runs whenever the run button is pressed (handled in FX)
+    and completely runs the simulation.
+    *****************************************************************/
     @FXML
     public void startSimulation(){
 
         try {
-            nextPerson = validateVoterGen(Integer.parseInt(secondsToNext.getText()));
-            avgSecondsCheckIn = validateCheckIn(Integer.parseInt(avgCheckInTime.getText()));
-            totalTimeSec = validateTotalTime(Integer.parseInt(totalTime.getText()));
-            avgSecToVote = validateVoteTime(Integer.parseInt(avgVotingTime.getText()));
-            secondsBeforeLeaves = validateLeaveTime(Integer.parseInt(secondsBeforeLeave.getText()));
-            boothNum = validateBoothNum(Integer.parseInt(boothCount.getText()));
+            nextPerson = (Integer.parseInt(secondsToNext.getText()));
+            avgSecondsCheckIn = (Integer.parseInt(avgCheckInTime.getText()));
+            totalTimeSec = (Integer.parseInt(totalTime.getText()));
+            avgSecToVote = (Integer.parseInt(avgVotingTime.getText()));
+            secondsBeforeLeaves = (Integer.parseInt(secondsBeforeLeave.getText()));
+            boothNum = (Integer.parseInt(boothCount.getText()));
 
             clk = new Clock();
             booths = new Booth[boothNum];
@@ -176,19 +259,19 @@ public class BasicSimulatorController implements Initializable {
         }
     }
 
-    /*********************************************
-     * Quits the simulator, this is linked to the FXML GUI button
-     * @return void
-     *********************************************/
+    /*****************************************************************
+    Method that runs whenever the quit simulation button is pressed.
+    This simply exits the application.
+    *****************************************************************/
     @FXML
-    private void quitSimulation() {
+    public void quitSimulation() {
         System.exit(0);
     }
 
-    /**********************************************
-     * Prints the output information
-     * @return void
-     *********************************************/
+    /*****************************************************************
+    Private helper method that sets the TextField's text to the basic
+    statistics required for part 'C'.
+    *****************************************************************/
     private void outputInformation() {
         throughPut.setText(Statistics.getStatistic("throughput") + " people with Max = " + Statistics.getStatistic("maxVoters"));
         peopleInLine.setText(Statistics.getStatistic("peopleLeft") + "");
@@ -198,6 +281,10 @@ public class BasicSimulatorController implements Initializable {
         votingBoothQ.setText(Statistics.getStatistic("votingLineQ") + "");
 	}
 
+    /*****************************************************************
+     Private helper method that calculates all of our necessary
+     statistics.
+     *****************************************************************/
     private void calculateStatistics() {
         for (Booth b : booths) {
             if (b.inUse()) {
@@ -207,6 +294,10 @@ public class BasicSimulatorController implements Initializable {
                 avgVoteTime += time;
             }
         }
+
+        /* We check which statistic to calculate for each type of
+        voter by checking which voter is an instanceof the voter
+        we're looking for. Most of it is self-explanatory. */
         for (Voter v : produce.getVoters()) {
             if (v instanceof LimitedTimeVoter) {
                 if (v.isPissed()) {
@@ -260,19 +351,33 @@ public class BasicSimulatorController implements Initializable {
                 }
             }
         }
+        for (CheckInTable table : tables) {
+            peopleLeft+= table.getVoterQ();
+        }
 
-        peopleLeft+= tableOne.getVoterQ() + tableTwo.getVoterQ();
-
-        avgTotalCheckInTime = (avgNormalCheckInTime + avgLimitedCheckInTime + avgSpecialCheckInTime + avgSuperCheckInTime) / produce.getVoters().size();
-        totalPissed = normalPissed + limitedPissed + specialPissed + superPissed;
-        totalVoted = normalVoted + limitedVoted + specialVoted + superVoted;
+        avgTotalCheckInTime = (avgNormalCheckInTime
+                + avgLimitedCheckInTime
+                + avgSpecialCheckInTime
+                + avgSuperCheckInTime)
+                / produce.getVoters().size();
+        totalPissed = normalPissed + limitedPissed +
+                specialPissed + superPissed;
+        totalVoted = normalVoted + limitedVoted +
+                specialVoted + superVoted;
         votingLineQ = boothQ.getMaxQlength();
         throughput = produce.getAllThrougPut();
         peopleLeft += boothQ.getLeft() + stillVoting;
         if (totalVoted != 0) {
             avgVoteTime = avgVoteTime / totalVoted;
-            avgTotalVoteTime = (avgLimitedVoteTime + avgSpecialVoteTime + avgNormalVoteTime + avgSuperVoteTime) / totalVoted;
-            totalComplete = (limitedComplete + specialComplete + normalComplete + superComplete) / totalVoted;
+            avgTotalVoteTime = (avgLimitedVoteTime +
+                    avgSpecialVoteTime +
+                    avgNormalVoteTime +
+                    avgSuperVoteTime) /
+                    totalVoted;
+            totalComplete = (limitedComplete +
+                    specialComplete +
+                    normalComplete +
+                    superComplete) / totalVoted;
         } else {
             avgVoteTime = 0;
         }
@@ -302,8 +407,17 @@ public class BasicSimulatorController implements Initializable {
         }
     }
 
+    /*****************************************************************
+     Private helper method that adds all of our statistics to the stats
+     class. This is so that our other applications can use this data
+     as they please.
+     *****************************************************************/
     private void addStatistics() {
+
+        /* Clear the stats HashMap first. */
         Statistics.clearStatistics();
+
+        /* Now adding all of our statistics using a key/value. */
         Statistics.addStatistic("avgVoteTime", avgVoteTime);
         Statistics.addStatistic("votingLineQ", votingLineQ);
         Statistics.addStatistic("throughput", throughput);
@@ -319,7 +433,10 @@ public class BasicSimulatorController implements Initializable {
         Statistics.addStatistic("limitedTotal", produce.getLimitedVoters().size());
         Statistics.addStatistic("specialTotal", produce.getSpecialVoters().size());
         Statistics.addStatistic("superTotal", produce.getSuperSpecialVoters().size());
-        Statistics.addStatistic("totalTotal", produce.getNormalVoters().size() + produce.getLimitedVoters().size() + produce.getSpecialVoters().size() + produce.getSuperSpecialVoters().size());
+        Statistics.addStatistic("totalTotal", produce.getNormalVoters().size() +
+                produce.getLimitedVoters().size() +
+                produce.getSpecialVoters().size() +
+                produce.getSuperSpecialVoters().size());
         Statistics.addStatistic("normalVoted", normalVoted);
         Statistics.addStatistic("limitedVoted", limitedVoted);
         Statistics.addStatistic("specialVoted", specialVoted);
@@ -330,10 +447,14 @@ public class BasicSimulatorController implements Initializable {
         Statistics.addStatistic("specialPissed", specialPissed);
         Statistics.addStatistic("superPissed", superPissed);
         Statistics.addStatistic("totalPissed", totalPissed);
-        Statistics.addStatistic("normalCheckIn", avgNormalCheckInTime / produce.getNormalVoters().size());
-        Statistics.addStatistic("limitedCheckIn", avgLimitedCheckInTime / produce.getLimitedVoters().size());
-        Statistics.addStatistic("specialCheckIn", avgSpecialCheckInTime / produce.getSpecialVoters().size());
-        Statistics.addStatistic("superCheckIn", avgSuperCheckInTime / produce.getSuperSpecialVoters().size());
+        Statistics.addStatistic("normalCheckIn", avgNormalCheckInTime
+                / produce.getNormalVoters().size());
+        Statistics.addStatistic("limitedCheckIn", avgLimitedCheckInTime
+                / produce.getLimitedVoters().size());
+        Statistics.addStatistic("specialCheckIn", avgSpecialCheckInTime
+                / produce.getSpecialVoters().size());
+        Statistics.addStatistic("superCheckIn", avgSuperCheckInTime
+                / produce.getSuperSpecialVoters().size());
         Statistics.addStatistic("totalCheckIn", avgTotalCheckInTime);
         Statistics.addStatistic("normalComplete", normalComplete);
         Statistics.addStatistic("limitedComplete", limitedComplete);
@@ -345,6 +466,11 @@ public class BasicSimulatorController implements Initializable {
         Statistics.addStatistic("leftInLine", boothQ.getLeft());
     }
 
+    /*****************************************************************
+    Private helper method that resets the class-specific statistic
+    variables. This is to assist in stat-bleeding where statistics
+    blend into each other or keep appending when they should be reset.
+    *****************************************************************/
     private void resetStatistics() {
         stillVoting = 0;
         avgVoteTime = 0;
@@ -371,15 +497,32 @@ public class BasicSimulatorController implements Initializable {
         peopleLeft = 0;
     }
 
+    /*****************************************************************
+    Method that runs whenever the show more data button is pressed. It
+    opens a new application and loads the statistics from this run of
+    the simulation.
+    @throws Exception Thrown if the FXML file cannot be found, or there
+    was an error producing the application.
+    *****************************************************************/
     @FXML
-    private void showMoreData() {
+    public void showMoreData() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/GraphicalData.fxml"));
+
+            /* This is the main 'parent' element of the new
+            application. */
+            Parent root = FXMLLoader.load(
+                    getClass().getResource("/GraphicalData.fxml"));
+
+            /* This is responsible for containing the current scene of
+            the new application. */
             Scene scene = new Scene(root);
+
+            /* The new stage required for the new application. */
             Stage newStage = new Stage();
 
+            /* Setting the stage properties. */
             newStage.setScene(scene);
-            newStage.setTitle("More Data");
+            newStage.setTitle("WOW SO MANY STATS MAN");
             newStage.setResizable(false);
             newStage.show();
         } catch (Exception e) {

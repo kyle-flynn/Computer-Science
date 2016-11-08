@@ -529,6 +529,9 @@ public class ComplexSimulatorController implements Initializable {
             if (!validBoothTime() || !validCheckInTime()) {
                 return false;
             }
+            if (voterGenTime < 1 || avgVoterTolerance < 1 || maxTime < 1) {
+                return false;
+            }
             return true;
         } catch(NumberFormatException e) {
             return false;
@@ -545,6 +548,9 @@ public class ComplexSimulatorController implements Initializable {
     private boolean validTime() {
         try {
             timeToAdd = Integer.parseInt(simulationTime.getText());
+            if (timeToAdd < 1) {
+                return false;
+            }
             return true;
         } catch(NumberFormatException e) {
             return false;
@@ -561,6 +567,9 @@ public class ComplexSimulatorController implements Initializable {
     private boolean validBoothTime() {
         try {
             avgVoterVoting = Integer.parseInt(voterVoting.getText());
+            if (avgVoterVoting < 1) {
+                return false;
+            }
             return true;
         } catch(NumberFormatException e) {
             return false;
@@ -577,6 +586,9 @@ public class ComplexSimulatorController implements Initializable {
     private boolean validCheckInTime() {
         try {
             avgVoterCheckIn = Integer.parseInt(voterCheckIn.getText());
+            if (avgVoterCheckIn < 1) {
+                return false;
+            }
             return true;
         } catch (NumberFormatException e) {
             return false;
