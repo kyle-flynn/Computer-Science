@@ -53,7 +53,9 @@ public class Booth implements ClockListener {
         /* Setting the new current voter. */
         person = voter;
         inUse = true;
-        person.setBoothTime(averageBoothTime*0.1*r.nextGaussian() + averageBoothTime);
+        person.setBoothTime(
+                averageBoothTime*0.1*r.nextGaussian()
+                        + averageBoothTime);
         person.setStatus(VoterStatus.VOTING);
         timeToVote = person.getBoothTime().intValue();
     }

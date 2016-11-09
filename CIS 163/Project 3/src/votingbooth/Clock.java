@@ -34,9 +34,9 @@ public class Clock {
     @param ticksToGo The time to run the sim.
     *****************************************************************/
     public void run(int ticksToGo) {
-        for (int currentTime = 0; currentTime <= ticksToGo; currentTime++) {
+        for (int time = 0; time <= ticksToGo; time++) {
             for (int j = 0; j < numListeners; j++) {
-                myListeners[j].event(currentTime + currentTick);
+                myListeners[j].event(time + currentTick);
             }
         }
 
@@ -50,9 +50,9 @@ public class Clock {
     @param endingTime The time at which the sim ends.
     *****************************************************************/
     public void start(int endingTime) {
-        for (int currentTime = currentTick; currentTime <= endingTime; currentTime++) {
+        for (int time = currentTick; time <= endingTime; time++) {
             for (int j = 0; j < numListeners; j++) {
-                myListeners[j].event(currentTime);
+                myListeners[j].event(time);
             }
         }
     }

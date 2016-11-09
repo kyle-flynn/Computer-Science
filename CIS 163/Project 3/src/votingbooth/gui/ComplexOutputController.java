@@ -130,7 +130,8 @@ public class ComplexOutputController implements Initializable {
 
             /* Initializing labels from the array at the current index. */
             boothFields[boothID] = new Label();
-            boothFields[boothID].setText(voters + "Voters that voted in booth " + boothID + ": " + b.getThroughPut());
+            boothFields[boothID].setText(voters + "Voters that voted in booth "
+                    + boothID + ": " + b.getThroughPut());
 
             /* Setting location of the label. We use some math to
             determine the y-axis value. */

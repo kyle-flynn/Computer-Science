@@ -3,9 +3,10 @@ package votingbooth;
 import java.util.HashMap;
 
 /*****************************************************************
-Statistics helper class that essentially acts a database with a key
-and value search/receive response. We need this class so that other
-classes may access the data without creating new instances of it.
+Statistics helper class that essentially acts as a database with a
+key and value search/receive response. We need this class so that
+other classes may access the data without creating new instances
+of it.
 @author Kyle Flynn
 @version 1.0
 *****************************************************************/

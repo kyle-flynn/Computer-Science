@@ -13,6 +13,7 @@ public class SpecialNeedsVoter extends Voter {
     by 3.0.
     @return the voter's booth time as a Double object.
     *****************************************************************/
+    @Override
     public Double getBoothTime() {
         return boothTime * 3.0;
     }
@@ -22,15 +23,17 @@ public class SpecialNeedsVoter extends Voter {
     by 1.5.
     @return the voter's check in time as a Double object.
     *****************************************************************/
+    @Override
     public Double getCheckInTime() {
         return checkInTime * 1.5;
     }
 
     /*****************************************************************
-    Getter that returns the tolerance time of the voter, but multiples it
-    by 2.
+    Getter that returns the tolerance time of the voter, but multiples
+    it by 2.
     @return the voter's booth time as an int.
     *****************************************************************/
+    @Override
     public int getTolerance() {
         return tolerance * 2;
     }

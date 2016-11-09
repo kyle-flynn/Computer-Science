@@ -68,7 +68,8 @@ public class CheckInTable implements ClockListener {
     public void addVoter(Voter person) {
 
         /* Setting the desired mean for the avg check in time. */
-        person.setCheckInTime(avgCheckInTime.doubleValue()*0.1*r.nextGaussian() + avgCheckInTime);
+        person.setCheckInTime(
+                avgCheckInTime.doubleValue()*0.1*r.nextGaussian() + avgCheckInTime);
         Q.add(person);
         if (Q.size() > maxQlength) {
             maxQlength = Q.size();

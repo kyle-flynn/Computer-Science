@@ -437,7 +437,8 @@ public class ComplexSimulatorController implements Initializable {
                     curTime += timeToAdd;
                     curSimulationTime.setText(curTime + "");
                 } else {
-                    showError("Error validating inputs. Did you fill them out correctly?");
+                    showError("Error validating inputs. " +
+                            "Did you fill them out correctly?");
                 }
             }
         } else {
@@ -472,7 +473,8 @@ public class ComplexSimulatorController implements Initializable {
         if (validCheckInTime()) {
             CheckInTable newTable = new CheckInTable(avgVoterCheckIn, boothQ);
             tables.add(newTable);
-            checkInText.setText("Number of Check In Tables (" + tables.size() + ")");
+            checkInText.setText("Number of Check In Tables (" +
+                    tables.size() + ")");
             if (producer != null) {
                 producer.addTable(newTable);
             }
@@ -505,7 +507,8 @@ public class ComplexSimulatorController implements Initializable {
     public void removeTable() {
         if (tables.size() > 1) {
             tables.removeLast();
-            checkInText.setText("Number of Check In Tables (" + tables.size() + ")");
+            checkInText.setText("Number of Check In Tables ("
+                    + tables.size() + ")");
         } else {
             showError("You must have at least 1 CheckInTable");
         }

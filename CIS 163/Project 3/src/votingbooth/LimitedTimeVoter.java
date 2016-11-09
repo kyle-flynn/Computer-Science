@@ -13,6 +13,7 @@ public class LimitedTimeVoter extends Voter {
     by 0.5.
     @return the voter's booth time as a Double object.
     *****************************************************************/
+    @Override
     public Double getBoothTime() {
         return boothTime * 0.5;
     }

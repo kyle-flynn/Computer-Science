@@ -233,7 +233,8 @@ public class BasicSimulatorController implements Initializable {
             boothQ = new BoothLine(booths);
             tableOne = new CheckInTable(avgSecondsCheckIn, boothQ);
             tableTwo = new CheckInTable(avgSecondsCheckIn, boothQ);
-            produce = new VoterProducer(booths, nextPerson, secondsBeforeLeaves, (totalTimeSec / nextPerson));
+            produce = new VoterProducer(booths, nextPerson, secondsBeforeLeaves,
+                    (totalTimeSec / nextPerson));
 
             tables = new LinkedList<>();
 
@@ -273,7 +274,8 @@ public class BasicSimulatorController implements Initializable {
     statistics required for part 'C'.
     *****************************************************************/
     private void outputInformation() {
-        throughPut.setText(Statistics.getStatistic("throughput") + " people with Max = " + Statistics.getStatistic("maxVoters"));
+        throughPut.setText(Statistics.getStatistic("throughput")
+                + " people with Max = " + Statistics.getStatistic("maxVoters"));
         peopleInLine.setText(Statistics.getStatistic("peopleLeft") + "");
         voterVoteTime.setText(Statistics.getStatistic("avgVoteTime") + " seconds");
         checkInOne.setText(tableOne.getMaxQlength() + "");
