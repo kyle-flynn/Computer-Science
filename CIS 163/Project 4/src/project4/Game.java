@@ -10,7 +10,7 @@ public class Game extends DVD {
 
 	public double getCost(GregorianCalendar dat) {
 		int compare = dat.compareTo(this.getDueBack());
-		return compare > 0 ? 5 : 10;
+		return compare < 0 ? 5 : 10;
 	}
 
 	public Game() {

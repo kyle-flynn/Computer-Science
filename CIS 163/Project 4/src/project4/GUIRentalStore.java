@@ -149,8 +149,9 @@ public class GUIRentalStore implements ActionListener {
             int index = jListArea.getSelectedIndex();
             if (index != -1) {
             	GregorianCalendar dat = new GregorianCalendar();
-				
+
 				DVD unit = dList.remove(index);
+
 				JOptionPane.showMessageDialog(null, "Thanks " + unit.getNameOfRenter() + 
 						"\n for returning " + unit.getTitle() + ", you owe: " + unit.getCost(dat) +
 						" dollars");
