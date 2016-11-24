@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class SimpleNode<GenericValue> implements Serializable {
 
     private GenericValue value;
-    private SimpleNode nextNode;
+    private SimpleNode<GenericValue> nextNode;
 
     public SimpleNode(GenericValue value) {
         this.value = value;
@@ -27,7 +27,7 @@ public class SimpleNode<GenericValue> implements Serializable {
         return value;
     }
 
-    public SimpleNode getNextNode() {
+    public SimpleNode<GenericValue> getNextNode() {
         return nextNode;
     }
 

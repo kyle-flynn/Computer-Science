@@ -9,22 +9,22 @@ import java.util.*;
 
 public class ListEngine extends AbstractListModel {	
 
-	private LinkedList<DVD> listDVDs;
+	private SimpleLinkedList<DVD> listDVDs;
 
 	public ListEngine() {
 		super();
-		listDVDs = new LinkedList<DVD>();
+		listDVDs = new SimpleLinkedList<DVD>();
 	}
 
 	public DVD remove(int i) {
 		DVD unit = listDVDs.remove(i);
-		fireIntervalRemoved(this, 0, listDVDs.size());
+		fireIntervalRemoved(this, 0, listDVDs.getSize());
 		return unit;
 	}
 
 	public void add (DVD a) {
 		listDVDs.add(a);
-		fireIntervalAdded(this, 0, listDVDs.size());
+		fireIntervalAdded(this, 0, listDVDs.getSize());
 	}
 
 	public DVD get (int i) {
@@ -57,7 +57,7 @@ public class ListEngine extends AbstractListModel {
 	}
 
 	public int getSize() {
-		return listDVDs.size();
+		return listDVDs.getSize();
 	}
 
 	// not used.... but interesting and it does work
@@ -83,8 +83,8 @@ public class ListEngine extends AbstractListModel {
 			FileInputStream fis = new FileInputStream(filename);
 			ObjectInputStream is = new ObjectInputStream(fis);
 
-			listDVDs = (LinkedList<DVD>) is.readObject();
-			fireIntervalAdded(this, 0, listDVDs.size() - 1);
+			listDVDs = (SimpleLinkedList<DVD>) is.readObject();
+			fireIntervalAdded(this, 0, listDVDs.getSize() - 1);
 			is.close();
 		} catch (Exception ex) {
 			JOptionPane.showMessageDialog(null,"Error in loading db");
@@ -100,8 +100,8 @@ public class ListEngine extends AbstractListModel {
 		try {
 			PrintWriter out = new PrintWriter(new BufferedWriter(
 					new FileWriter(filename)));
-			out.println(listDVDs.size());
-			for (int i = 0; i < listDVDs.size(); i++) {
+			out.println(listDVDs.getSize());
+			for (int i = 0; i < listDVDs.getSize(); i++) {
 				DVD dvdUnit = listDVDs.get(i);
 				out.println(dvdUnit.getClass().getName());
 				out.println(DateFormat.getDateInstance(DateFormat.SHORT)

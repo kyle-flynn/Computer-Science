@@ -22,6 +22,14 @@ public class LinkedListTest {
         System.out.println(names.toString());
         names.pop();
         System.out.println(names.toString());
+        names.push("Travis");
+        System.out.println(names.toString());
+        names.remove(0);
+        System.out.println(names.toString());
+        names.push("Connor");
+        System.out.println(names.toString());
+        System.out.println(names.getSize());
+        System.out.println(names.get(2));
     }
 
 }
