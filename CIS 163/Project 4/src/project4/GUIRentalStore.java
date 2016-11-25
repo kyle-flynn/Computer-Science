@@ -1,6 +1,7 @@
 package project4;
 
 import javax.swing.*;
+import javax.swing.table.TableColumn;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,10 +28,8 @@ public class GUIRentalStore implements ActionListener {
     private JMenuItem rentDvdItem;
     private JMenuItem rentGameItem;
     private JMenuItem returnItem;
-    boolean filter;
 
-
-    private JList jListArea;
+    private JTable jTableArea;
 
     private ListEngine dList;
 
@@ -52,7 +51,8 @@ public class GUIRentalStore implements ActionListener {
 
         menus = new JMenuBar();
         dList = new ListEngine();
-        jListArea = new JList(dList);
+
+        jTableArea = new JTable(dList);
     }
 
     public void init() {
@@ -84,7 +84,7 @@ public class GUIRentalStore implements ActionListener {
         menus.add(actionMenu);
 
         frame.setJMenuBar(menus);
-        frame.add(jListArea);
+        frame.add(new JScrollPane(jTableArea));
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(800, 400));
@@ -137,7 +137,6 @@ public class GUIRentalStore implements ActionListener {
                 dList.add(dvd);
         }
 
-
         if (rentGameItem == comp) {
             Game game = new Game();
             DialogRentGame x = new DialogRentGame(frame, game);
@@ -146,13 +145,13 @@ public class GUIRentalStore implements ActionListener {
         }
 
         if (returnItem == e.getSource()) {
-            int index = jListArea.getSelectedIndex();
+            int index = jTableArea.getSelectedRow();
             if (index != -1) {
             	GregorianCalendar dat = new GregorianCalendar();
 
 				DVD unit = dList.remove(index);
 
-				JOptionPane.showMessageDialog(null, "Thanks " + unit.getNameOfRenter() + 
+				JOptionPane.showMessageDialog(null, "Thanks " + unit.getNameOfRenter() +
 						"\n for returning " + unit.getTitle() + ", you owe: " + unit.getCost(dat) +
 						" dollars");
 

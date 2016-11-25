@@ -1,59 +1,39 @@
 package project4;
 
 import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
 import java.io.*;
 import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
-public class ListEngine extends AbstractListModel {	
+public class ListEngine extends AbstractTableModel {
 
 	private SimpleLinkedList<DVD> listDVDs;
+
+	private final int MAX_COLUMNS = 5;
+
+    private String[] columnNames;
 
 	public ListEngine() {
 		super();
 		listDVDs = new SimpleLinkedList<DVD>();
+        columnNames = new String[] {"Name", "Title", "Player", "Rented On", "Due Back"};
 	}
 
 	public DVD remove(int i) {
 		DVD unit = listDVDs.remove(i);
-		fireIntervalRemoved(this, 0, listDVDs.getSize());
+//		fireIntervalRemoved(this, 0, listDVDs.getSize());
+        fireTableRowsDeleted(listDVDs.getSize(), listDVDs.getSize());
 		return unit;
 	}
 
 	public void add (DVD a) {
 		listDVDs.add(a);
-		fireIntervalAdded(this, 0, listDVDs.getSize());
+//		fireIntervalAdded(this, 0, listDVDs.getSize());
+        fireTableRowsInserted(listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
 	}
 
 	public DVD get (int i) {
 		return listDVDs.get(i);
-	}
-
-	public Object getElementAt(int arg0) {	
-
-		//	return "Happy";
-
-		DVD unit = listDVDs.get(arg0);
-
-		//return unit; //.getNameOfRenter();
-
-		String dueDateStr = DateFormat.getDateInstance(DateFormat.SHORT)
-				.format(unit.getDueBack().getTime());
-
-		String rentedOnDateStr = DateFormat.getDateInstance(DateFormat.SHORT)
-				.format(unit.getRentedOn().getTime());
-
-		String line = "Name: " + " " + listDVDs.get(arg0).getNameOfRenter() +
-				",  Title: " + listDVDs.get(arg0).title +
-				",  rentedOn on: " + rentedOnDateStr +
-				",  Due back on: " + dueDateStr;
-
-		if (unit instanceof Game)
-			line += ", Game Player: " + ((Game)unit).getPlayer();
-
-		return line;
 	}
 
 	public int getSize() {
@@ -84,7 +64,7 @@ public class ListEngine extends AbstractListModel {
 			ObjectInputStream is = new ObjectInputStream(fis);
 
 			listDVDs = (SimpleLinkedList<DVD>) is.readObject();
-			fireIntervalAdded(this, 0, listDVDs.getSize() - 1);
+//			fireIntervalAdded(this, 0, listDVDs.getSize() - 1);
 			is.close();
 		} catch (Exception ex) {
 			JOptionPane.showMessageDialog(null,"Error in loading db");
@@ -123,6 +103,47 @@ public class ListEngine extends AbstractListModel {
 	}
 
 	public void loadFromText(String filename) {
+
+	}
+
+	@Override
+    public String getColumnName(int columnIndex) {
+        return columnNames[columnIndex];
+    }
+
+	@Override
+	public int getRowCount() {
+		return listDVDs.getSize();
+	}
+
+	@Override
+	public int getColumnCount() {
+		return MAX_COLUMNS;
+	}
+
+	@Override
+	public Object getValueAt(int rowIndex, int columnIndex) {
+        DVD unit = listDVDs.get(rowIndex);
+
+        if (columnIndex == 0) {
+            return unit.getNameOfRenter();
+        } else if (columnIndex == 1) {
+            return unit.getTitle();
+        } else if (columnIndex == 2) {
+            if (unit instanceof Game) {
+                return ((Game) unit).getPlayer();
+            } else {
+                return "DVD";
+            }
+        } else if (columnIndex == 3) {
+            return DateFormat.getDateInstance(DateFormat.SHORT)
+                    .format(unit.getRentedOn().getTime());
+        } else if (columnIndex == 4) {
+            return DateFormat.getDateInstance(DateFormat.SHORT)
+                    .format(unit.getDueBack().getTime());
+        } else {
+            return null;
+        }
 
 	}
 }
