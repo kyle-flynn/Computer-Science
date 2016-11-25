@@ -85,7 +85,7 @@ public class GUIRentalStore implements ActionListener {
 
         frame.setJMenuBar(menus);
         frame.add(new JScrollPane(jTableArea));
-
+        frame.setTitle("Blue Box Rental System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(800, 400));
         frame.pack();

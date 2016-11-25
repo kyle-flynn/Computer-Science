@@ -4,6 +4,9 @@ import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.io.*;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class ListEngine extends AbstractTableModel {
 
@@ -21,26 +24,22 @@ public class ListEngine extends AbstractTableModel {
 
 	public DVD remove(int i) {
 		DVD unit = listDVDs.remove(i);
-//		fireIntervalRemoved(this, 0, listDVDs.getSize());
         fireTableRowsDeleted(listDVDs.getSize(), listDVDs.getSize());
 		return unit;
 	}
 
 	public void add (DVD a) {
 		listDVDs.add(a);
-//		fireIntervalAdded(this, 0, listDVDs.getSize());
         fireTableRowsInserted(listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
 	}
 
-	public DVD get (int i) {
+	public DVD get(int i) {
 		return listDVDs.get(i);
 	}
 
 	public int getSize() {
 		return listDVDs.getSize();
 	}
-
-	// not used.... but interesting and it does work
 
 	public void saveDatabase(String filename) {
 		try {
@@ -64,7 +63,7 @@ public class ListEngine extends AbstractTableModel {
 			ObjectInputStream is = new ObjectInputStream(fis);
 
 			listDVDs = (SimpleLinkedList<DVD>) is.readObject();
-//			fireIntervalAdded(this, 0, listDVDs.getSize() - 1);
+			fireTableRowsInserted(listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
 			is.close();
 		} catch (Exception ex) {
 			JOptionPane.showMessageDialog(null,"Error in loading db");
@@ -80,20 +79,24 @@ public class ListEngine extends AbstractTableModel {
 		try {
 			PrintWriter out = new PrintWriter(new BufferedWriter(
 					new FileWriter(filename)));
-			out.println(listDVDs.getSize());
 			for (int i = 0; i < listDVDs.getSize(); i++) {
-				DVD dvdUnit = listDVDs.get(i);
-				out.println(dvdUnit.getClass().getName());
-				out.println(DateFormat.getDateInstance(DateFormat.SHORT)
-						.format(dvdUnit.getRentedOn().getTime()));
-				out.println(DateFormat.getDateInstance(DateFormat.SHORT)
-						.format(dvdUnit.getDueBack().getTime()));
-				out.println(dvdUnit.getNameOfRenter());
-				out.println(dvdUnit.getTitle());
+                DVD dvdUnit = listDVDs.get(i);
 
-				if (dvdUnit instanceof Game)
-					out.println(((Game)dvdUnit).getPlayer());
+                String entry = "";
 
+                entry += dvdUnit.getNameOfRenter() + ",";
+                entry += dvdUnit.getTitle() + ",";
+
+                if (dvdUnit instanceof Game) {
+                    entry += ((Game)dvdUnit).getPlayer() + ",";
+                }
+
+                entry += DateFormat.getDateInstance(DateFormat.SHORT)
+                        .format(dvdUnit.getRentedOn().getTime()) + ",";
+                entry += DateFormat.getDateInstance(DateFormat.SHORT)
+                        .format(dvdUnit.getDueBack().getTime()) + "";
+
+				out.println(entry);
 			}
 			out.close();
 			return true;
@@ -103,8 +106,51 @@ public class ListEngine extends AbstractTableModel {
 	}
 
 	public void loadFromText(String filename) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
 
-	}
+            String line = "";
+            int row = 0;
+
+            while ((line = reader.readLine()) != null) {
+
+                String[] columns = line.split(",");
+                DVD unit;
+
+                String renter = columns[0];
+                String title = columns[1];
+                SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+                GregorianCalendar dateRented = new GregorianCalendar();
+                GregorianCalendar dateDue = new GregorianCalendar();
+
+                if (columns.length > MAX_COLUMNS - 1) {
+                    PlayerType player = PlayerType.valueOf(columns[2]);
+                    Date rented = df.parse(columns[3]);
+                    Date due = df.parse(columns[4]);
+                    dateRented.setTime(rented);
+                    dateDue.setTime(due);
+
+                    unit = new Game(dateRented, dateDue, title, renter, player);
+                } else {
+                    Date rented = df.parse(columns[2]);
+                    Date due = df.parse(columns[3]);
+                    dateRented.setTime(rented);
+                    dateDue.setTime(due);
+
+                    unit = new DVD(dateRented, dateDue, title, renter);
+                }
+
+                listDVDs.add(unit);
+
+                row++;
+            }
+
+            fireTableRowsInserted(listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error in loading db");
+        }
+    }
 
 	@Override
     public String getColumnName(int columnIndex) {
