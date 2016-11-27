@@ -33,14 +33,6 @@ public class ListEngine extends AbstractTableModel {
         fireTableRowsInserted(listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
 	}
 
-	public DVD get(int i) {
-		return listDVDs.get(i);
-	}
-
-	public int getSize() {
-		return listDVDs.getSize();
-	}
-
 	public void saveDatabase(String filename) {
 		try {
 			FileOutputStream fos = new FileOutputStream(filename);
@@ -110,7 +102,6 @@ public class ListEngine extends AbstractTableModel {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
 
             String line = "";
-            int row = 0;
 
             while ((line = reader.readLine()) != null) {
 
@@ -142,7 +133,6 @@ public class ListEngine extends AbstractTableModel {
 
                 listDVDs.add(unit);
 
-                row++;
             }
 
             fireTableRowsInserted(listDVDs.getSize() - 1 , listDVDs.getSize() - 1);

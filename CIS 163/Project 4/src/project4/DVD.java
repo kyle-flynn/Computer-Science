@@ -15,7 +15,8 @@ public class DVD implements Serializable {
 	 	
 	public double getCost(GregorianCalendar dat) {
 		int compare = dat.compareTo(this.getDueBack());
-		return compare < 0 ? 1.2 : 2;
+        System.out.println("DATE RENTED: " + dat.getTime() + " | DATE DUE: " + getDueBack().getTime());
+		return compare <= 0 ? 1.2 : 2;
 	}
 	
 	public DVD() {

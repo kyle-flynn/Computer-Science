@@ -29,7 +29,7 @@ public class DialogRentDvd  extends JDialog implements ActionListener {
 		 user to provide data and click on a button.
 
 		 @param parent reference to the JFrame application
-		 @param m an instantiated object to be filled with data
+		 @param d an instantiated object to be filled with data
 	 *********************************************************/
 
 	public DialogRentDvd(JFrame parent, DVD d) {

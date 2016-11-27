@@ -10,7 +10,8 @@ public class Game extends DVD {
 
 	public double getCost(GregorianCalendar dat) {
 		int compare = dat.compareTo(this.getDueBack());
-		return compare < 0 ? 5 : 10;
+		System.out.println("DATE RENTED: " + dat.getTime() + " | DATE DUE: " + getDueBack().getTime());
+		return compare <= 0 ? 5 : 10;
 	}
 
 	public Game() {

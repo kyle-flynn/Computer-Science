@@ -1,7 +1,6 @@
 package project4;
 
 import javax.swing.*;
-import javax.swing.table.TableColumn;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -103,18 +102,21 @@ public class GUIRentalStore implements ActionListener {
 
         JComponent comp = (JComponent) e.getSource();
 
-        if (exitItem == comp)
+        if (exitItem == comp) {
             System.exit(0);
+        }
 
         if (openSerItem == comp || openTextItem == comp) {
             JFileChooser chooser = new JFileChooser();
             int status = chooser.showOpenDialog(null);
             if (status == JFileChooser.APPROVE_OPTION) {
                 String filename = chooser.getSelectedFile().getAbsolutePath();
-                if (openSerItem == comp)
+                if (openSerItem == comp) {
                     dList.loadDatabase(filename);
-                if (openTextItem == e.getSource())
+                }
+                if (openTextItem == e.getSource()) {
                     dList.loadFromText(filename);
+                }
             }
         }
 
@@ -123,25 +125,29 @@ public class GUIRentalStore implements ActionListener {
             int status = chooser.showSaveDialog(null);
             if (status == JFileChooser.APPROVE_OPTION) {
                 String filename = chooser.getSelectedFile().getAbsolutePath();
-                if (saveSerItem == e.getSource())
+                if (saveSerItem == e.getSource()) {
                     dList.saveDatabase(filename);
-                if (saveTextItem == e.getSource())
+                }
+                if (saveTextItem == e.getSource()) {
                     dList.saveAsText(filename);
+                }
             }
         }
 
         if (rentDvdItem == comp) {
             DVD dvd = new DVD();
             DialogRentDvd x = new DialogRentDvd(frame, dvd);
-            if (x.closeOK())
+            if (x.closeOK()) {
                 dList.add(dvd);
+            }
         }
 
         if (rentGameItem == comp) {
             Game game = new Game();
             DialogRentGame x = new DialogRentGame(frame, game);
-            if (x.closeOK())
+            if (x.closeOK()) {
                 dList.add(game);
+            }
         }
 
         if (returnItem == e.getSource()) {
