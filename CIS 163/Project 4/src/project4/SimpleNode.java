@@ -26,7 +26,7 @@ public class SimpleNode<GenericValue> implements Serializable {
     }
 
     public void setPrevNode(SimpleNode prevValue) {
-        this.prevNode = prevNode;
+        this.prevNode = prevValue;
     }
 
     public GenericValue getValue() {

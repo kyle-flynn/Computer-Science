@@ -25,6 +25,7 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         if (head == null || tail == null) {
             head = tail = newHead;
         } else {
+
             // Our previous head must now link forward to the new head
             head.setNextNode(newHead);
 
@@ -58,8 +59,27 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
 
                 // Finally, delete that node, and re-align the other nodes
                 removedNode = currentObj;
-                currentObj.getNextNode().setPrevNode(removedNode.getPrevNode());
-                currentObj.getPrevNode().setNextNode(removedNode.getNextNode());
+
+                if (head == tail) {
+                    clear();
+                    return currentObj.getValue();
+                }
+
+                // The only way the previous node can be null is if we are working with the tail
+                if (removedNode.getPrevNode() == null) {
+                    currentObj.getNextNode().setPrevNode(null);
+                    tail = currentObj.getNextNode();
+                } else {
+                    currentObj.getPrevNode().setNextNode(removedNode.getNextNode());
+                }
+
+                // The only way the next node can be null is if we are working with the tail
+                if (removedNode.getNextNode() == null) {
+                    currentObj.getPrevNode().setNextNode(null);
+                    head = currentObj.getPrevNode();
+                } else {
+                    currentObj.getNextNode().setPrevNode(removedNode.getPrevNode());
+                }
 
                 // Decrease the list size
                 size--;
@@ -74,67 +94,15 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         return null;
     }
 
-    public GenericObject oldRemove(GenericObject obj) {
-
-        /** The node that is removed, it may be null */
-        SimpleNode<GenericObject> removedNode = null;
-
-        // First, we check the first node in the list
-        if (tail.getValue().equals(obj)) {
-
-            removedNode = tail;
-
-            // If our list size is greater than 1, then re-assign the tail
-            if (tail.getNextNode() != null) {
-                tail = tail.getNextNode();
-            } else {
-
-                // If our list is exactly one item, now it is empty
-                tail = null;
-            }
-
-            // Decrease the list size
-            size--;
-
-            return removedNode.getValue();
-
-        } else {
-
-            /** In order to remove an obj, we must traverse through the entire
-               list to see whether ot not there is a match */
-            SimpleNode<GenericObject> currentObj = tail;
-
-            // Now we iterate through each node's next pointer
-            while (currentObj.getNextNode() != null) {
-
-                // Now we check if the value of the current node equals the object
-                if (currentObj.getNextNode().getValue().equals(obj)) {
-
-                    // Finally, delete that node, and re-align the other nodes
-                    removedNode = currentObj.getNextNode();
-                    currentObj.setNextNode(removedNode.getNextNode());
-
-                    // Decrease the list size
-                    size--;
-
-                    return removedNode.getValue();
-                }
-
-                currentObj = currentObj.getNextNode();
-            }
-
-        }
-
-        // Return null if element was not removed, otherwise return the removed node
-        return removedNode.getValue();
-    }
-
     public GenericObject remove(int index) {
 
         if (index > size || index < 0) {
             // Throw exception!
             return null;
         } else {
+
+            /** The node that is removed, it may be null */
+            SimpleNode<GenericObject> removedNode = null;
 
             /** In order to remove an obj at an index, we must traverse through the entire
              list to see whether ot not there is a match */
@@ -143,8 +111,35 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
             while (currentObj != null) {
 
                 if (index == 0) {
-                    remove(currentObj.getValue());
-                    return currentObj.getValue();
+
+                    // Finally, delete that node, and re-align the other nodes
+                    removedNode = currentObj;
+
+                    if (head == tail) {
+                        clear();
+                        return currentObj.getValue();
+                    }
+
+                    // The only way the previous node can be null is if we are working with the tail
+                    if (removedNode.getPrevNode() == null) {
+                        currentObj.getNextNode().setPrevNode(null);
+                        tail = currentObj.getNextNode();
+                    } else {
+                        currentObj.getPrevNode().setNextNode(removedNode.getNextNode());
+                    }
+
+                    // The only way the next node can be null is if we are working with the tail
+                    if (removedNode.getNextNode() == null) {
+                        currentObj.getPrevNode().setNextNode(null);
+                        head = currentObj.getPrevNode();
+                    } else {
+                        currentObj.getNextNode().setPrevNode(removedNode.getPrevNode());
+                    }
+
+                    // Decrease the list size
+                    size--;
+
+                    return removedNode.getValue();
                 } else {
                     currentObj = currentObj.getNextNode();
                     index--;
@@ -178,33 +173,6 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         return null;
     }
 
-    public GenericObject newGet(GenericObject obj) {
-        // First, we check the first node in the list
-        if (tail.getValue().equals(obj)) {
-            return tail.getValue();
-        } else {
-
-            /** In order to get an obj, we must traverse through the entire
-               list to see whether ot not there is a match */
-            SimpleNode<GenericObject> currentObj = tail;
-
-            // Now we iterate through each node's next pointer
-            while (currentObj.getNextNode() != null) {
-
-                // Now we check if the value of the current node equals the object
-                if (currentObj.getNextNode().getValue().equals(obj)) {
-                    return currentObj.getNextNode().getValue();
-                }
-
-                currentObj = currentObj.getNextNode();
-            }
-
-        }
-
-        // Return null if element was not removed, otherwise return the removed node
-        return null;
-    }
-
     public GenericObject get(int index) {
         if (index > size) {
             return null;
@@ -217,7 +185,6 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
             while (currentObj != null) {
 
                 if (index == 0) {
-                    get(currentObj.getValue());
                     return currentObj.getValue();
                 } else {
                     currentObj = currentObj.getNextNode();
@@ -238,12 +205,13 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         /** Reference to the old tail */
         SimpleNode<GenericObject> oldTail = tail;
 
-        // Our new tail must now point to the old tail
-        newTail.setPrevNode(tail);
+        // Assign it's next node to the old tail
+        newTail.setNextNode(oldTail);
 
-        // Assign a new tail, and assign it's next node to the old tail
+        oldTail.setPrevNode(newTail);
+
+        // Our new tail is the new tail
         tail = newTail;
-        tail.setNextNode(oldTail);
 
         size++;
 
@@ -288,27 +256,17 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
             clear();
         } else {
 
-            /* In order to pop an obj off the list, we must traverse through the entire
-               list, and then assign the node before the head, as the head. */
-            SimpleNode<GenericObject> currentObj = tail;
+            /** The new head is the previous node of the old head */
+            SimpleNode<GenericObject> newHead = head.getPrevNode();
 
-            // Now we iterate through each node's next pointer
-            while (currentObj.getNextNode() != null) {
+            // The next node is now null
+            newHead.setNextNode(null);
 
-                // Now we check if the next node equals the head
-                if (currentObj.getNextNode() == head) {
-                    head = currentObj;
-                    head.setNextNode(null);
+            // And we have our new head!
+            head = newHead;
 
-                    // Decrease the list size
-                    size--;
-
-                    // It is crucial that we return here, so that the loop stops
-                    return oldHead.getValue();
-                }
-
-                currentObj = currentObj.getNextNode();
-            }
+            // Decrease the list size
+            size--;
 
         }
 

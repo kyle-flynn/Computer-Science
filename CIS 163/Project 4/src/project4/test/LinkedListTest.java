@@ -24,7 +24,7 @@ public class LinkedListTest {
         System.out.println(names.toString());
         names.push("Travis");
         System.out.println(names.toString());
-        names.remove(0);
+        names.remove(2);
         System.out.println(names.toString());
         names.push("Connor");
         System.out.println(names.toString());
