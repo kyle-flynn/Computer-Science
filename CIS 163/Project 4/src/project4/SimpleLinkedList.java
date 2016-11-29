@@ -2,20 +2,35 @@ package project4;
 
 import java.io.Serializable;
 
-/**
- * Created by Kyle Flynn on 11/23/2016.
- */
+/*****************************************************************
+ Simple Doubly Linked List class. Has a multitude of functions that
+ aren't even used in the current program, but are there anyways!
+ @author Kyle Flynn
+ @version 1.0
+ *****************************************************************/
 public class SimpleLinkedList<GenericObject> implements Serializable {
 
+    /** Reference to the head of the list */
     private SimpleNode<GenericObject> head;
+
+    /** Reference to the tail of the list */
     private SimpleNode<GenericObject> tail;
+
+    /** Contains the current size of elements in the list. */
     private int size;
 
+    /*****************************************************************
+     Default constructor that initializes the null state of the list.
+     *****************************************************************/
     public SimpleLinkedList() {
         head = tail = null;
         size = 0;
     }
 
+    /*****************************************************************
+     Method that adds the generic to the linked list.
+     @return The Generic object that was added to the list.
+     *****************************************************************/
     public GenericObject add(GenericObject obj) {
 
         /** This is our new current head of the linked list */
@@ -42,7 +57,18 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         return newHead.getValue();
     }
 
-    public GenericObject remove(GenericObject obj) {
+    /*****************************************************************
+     Method that removes the desired object.
+     @return The Generic object that was removed from the list.
+     @throws LinkedListEmptyException if the linked list is empty.
+     *****************************************************************/
+    public GenericObject remove(GenericObject obj) throws LinkedListEmptyException {
+
+        /* Throw an exception is the size of the list is 0, therefore
+         we can't remove any elements. */
+        if (size == 0) {
+            throw new LinkedListEmptyException();
+        }
 
         /** The node that is removed, it may be null */
         SimpleNode<GenericObject> removedNode = null;
@@ -94,11 +120,23 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         return null;
     }
 
-    public GenericObject remove(int index) {
+    /*****************************************************************
+     Method that removes the generic object at the specified index.
+     @return The Generic object that was removed from the list.
+     @throws LinkedListOutOfBoundsException if a specified index is not
+     within the list's size, or less than 0.
+     @throws LinkedListEmptyException if the linked list is empty.
+     *****************************************************************/
+    public GenericObject remove(int index) throws LinkedListOutOfBoundsException, LinkedListEmptyException {
+
+        /* Throw an exception is the size of the list is 0, therefore
+         we can't remove any elements. */
+        if (size == 0) {
+            throw new LinkedListEmptyException();
+        }
 
         if (index > size || index < 0) {
-            // Throw exception!
-            return null;
+            throw new LinkedListOutOfBoundsException();
         } else {
 
             /** The node that is removed, it may be null */
@@ -152,6 +190,10 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
 
     }
 
+    /*****************************************************************
+     Method that gets the desired object.
+     @return The Generic object that was queried from the list.
+     *****************************************************************/
     public GenericObject get(GenericObject obj) {
 
         /** In order to get an obj, we must traverse through the entire
@@ -173,9 +215,15 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         return null;
     }
 
-    public GenericObject get(int index) {
-        if (index > size) {
-            return null;
+    /*****************************************************************
+     Method that gets the desired object from a specified index.
+     @return The Generic object that was queried from the list.
+     @throws LinkedListOutOfBoundsException if a specified index is not
+     within the list's size, or less than 0.
+     *****************************************************************/
+    public GenericObject get(int index) throws LinkedListOutOfBoundsException {
+        if (index > size || index < 0) {
+            throw new LinkedListOutOfBoundsException();
         } else {
 
             /** In order to get an obj at an index, we must traverse through the entire
@@ -197,6 +245,10 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         return null;
     }
 
+    /*****************************************************************
+     Method that adds a given object to the tail of the list.
+     @return The Generic object that is to be pushed to the list.
+     *****************************************************************/
     public GenericObject push(GenericObject obj) {
 
         /** Reference to the new node that is created */
@@ -218,6 +270,11 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         return tail.getValue();
     }
 
+    /*****************************************************************
+     Overriden method that returns the String value of the list.
+     @return The list's elements as a string (invokes their toString()
+     method)
+     *****************************************************************/
     @Override
     public String toString() {
 
@@ -244,6 +301,10 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         return items;
     }
 
+    /*****************************************************************
+     Method that takes the last item of the list and removes it.
+     @return The element that was removed from the list.
+     *****************************************************************/
     public GenericObject pop() {
 
         /** Reference to the old head that was just popped off */
@@ -273,11 +334,18 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
         return oldHead.getValue();
     }
 
+    /*****************************************************************
+     Method that resets the linked list and it's size.
+     *****************************************************************/
     public void clear() {
         head = tail = null;
         size = 0;
     }
 
+    /*****************************************************************
+     Getter method that returns the current size of the list as an int.
+     @return The size of the array as an int.
+     *****************************************************************/
     public int getSize() {
         return size;
     }
