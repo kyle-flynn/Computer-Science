@@ -91,6 +91,15 @@ public class Booth implements ClockListener {
     }
 
     /*****************************************************************
+    Method that resets the local statistics for this class.
+    *****************************************************************/
+    public void reset() {
+        this.completed = 0;
+        this.inUse = false;
+        this.totalTimes= new ArrayList<>();
+    }
+
+    /*****************************************************************
     Getter that returns all completion times for each voter that voted.
     @return The Double ArrayList that contains each voter's times.
     *****************************************************************/

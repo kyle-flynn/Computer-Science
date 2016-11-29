@@ -28,6 +28,9 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
             // Our previous head must now link forward to the new head
             head.setNextNode(newHead);
 
+            // Our new node must now link to the new previous node
+            newHead.setPrevNode(head);
+
             // Our class head element must now be equal to the new head we created
             head = newHead;
         }
@@ -39,6 +42,39 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
     }
 
     public GenericObject remove(GenericObject obj) {
+
+        /** The node that is removed, it may be null */
+        SimpleNode<GenericObject> removedNode = null;
+
+        /** In order to remove an obj, we must traverse through the entire
+         list to see whether ot not there is a match */
+        SimpleNode<GenericObject> currentObj = tail;
+
+        // Now we iterate through each node's next pointer
+        while (currentObj != null) {
+
+            // Now we check if the value of the current node equals the object
+            if (currentObj.getValue().equals(obj)) {
+
+                // Finally, delete that node, and re-align the other nodes
+                removedNode = currentObj;
+                currentObj.getNextNode().setPrevNode(removedNode.getPrevNode());
+                currentObj.getPrevNode().setNextNode(removedNode.getNextNode());
+
+                // Decrease the list size
+                size--;
+
+                return removedNode.getValue();
+            }
+
+            // Traverse through the list by going to the next node
+            currentObj = currentObj.getNextNode();
+        }
+
+        return null;
+    }
+
+    public GenericObject oldRemove(GenericObject obj) {
 
         /** The node that is removed, it may be null */
         SimpleNode<GenericObject> removedNode = null;
@@ -95,7 +131,7 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
 
     public GenericObject remove(int index) {
 
-        if (index > size) {
+        if (index > size || index < 0) {
             // Throw exception!
             return null;
         } else {
@@ -122,6 +158,27 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
     }
 
     public GenericObject get(GenericObject obj) {
+
+        /** In order to get an obj, we must traverse through the entire
+         list to see whether ot not there is a match */
+        SimpleNode<GenericObject> currentObj = tail;
+
+        while (currentObj != null) {
+
+            // Now we check if the value of the current node equals the object
+            if (currentObj.getValue().equals(obj)) {
+                return currentObj.getValue();
+            }
+
+            // Now traverse by going to the next node
+            currentObj = currentObj.getNextNode();
+        }
+
+        // Return null if element was not removed, otherwise return the removed node
+        return null;
+    }
+
+    public GenericObject newGet(GenericObject obj) {
         // First, we check the first node in the list
         if (tail.getValue().equals(obj)) {
             return tail.getValue();
@@ -180,6 +237,9 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
 
         /** Reference to the old tail */
         SimpleNode<GenericObject> oldTail = tail;
+
+        // Our new tail must now point to the old tail
+        newTail.setPrevNode(tail);
 
         // Assign a new tail, and assign it's next node to the old tail
         tail = newTail;

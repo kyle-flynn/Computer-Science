@@ -1,8 +1,6 @@
 package project4;
 
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class DVD implements Serializable {
@@ -14,9 +12,7 @@ public class DVD implements Serializable {
 	protected String nameOfRenter; 
 	 	
 	public double getCost(GregorianCalendar dat) {
-		int compare = dat.compareTo(this.getDueBack());
-        System.out.println("DATE RENTED: " + dat.getTime() + " | DATE DUE: " + getDueBack().getTime());
-		return compare <= 0 ? 1.2 : 2;
+		return !isLate(dat) ? 1.2 : 2;
 	}
 	
 	public DVD() {
@@ -58,4 +54,34 @@ public class DVD implements Serializable {
 	public void setNameOfRenter(String nameOfRenter) {
 		this.nameOfRenter = nameOfRenter;
 	}
+
+	public boolean isLate(GregorianCalendar today) {
+		int yearDue = getDueBack().get(GregorianCalendar.YEAR);
+		int monthDue = getDueBack().get(GregorianCalendar.MONTH) + 1;
+		int dayDue = getDueBack().get(GregorianCalendar.DAY_OF_MONTH);
+
+        String yearTodayRaw = today.get(GregorianCalendar.YEAR) + "";
+        int yearToday = Integer.parseInt(yearTodayRaw.substring(2));
+        int monthToday = today.get(GregorianCalendar.MONTH) + 1;
+        int dayToday = today.get(GregorianCalendar.DAY_OF_MONTH);
+
+        if (yearToday > yearDue) {
+            return true;
+        }
+
+        if (monthToday > monthDue) {
+            return true;
+        }
+
+        if (dayToday > dayDue) {
+            return true;
+        }
+
+        if (yearToday == yearDue && monthToday == monthDue && dayToday == dayDue) {
+            return false;
+        }
+
+        return false;
+	}
+
 }

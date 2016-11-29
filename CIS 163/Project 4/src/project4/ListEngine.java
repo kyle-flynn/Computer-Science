@@ -50,6 +50,7 @@ public class ListEngine extends AbstractTableModel {
 	 * @param filename name of the file to load from.
 	 */
 	public void loadDatabase(String filename) {
+        clearTable();
 		try {
 			FileInputStream fis = new FileInputStream(filename);
 			ObjectInputStream is = new ObjectInputStream(fis);
@@ -98,6 +99,7 @@ public class ListEngine extends AbstractTableModel {
 	}
 
 	public void loadFromText(String filename) {
+        clearTable();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
 
@@ -140,6 +142,13 @@ public class ListEngine extends AbstractTableModel {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error in loading db");
         }
+    }
+
+    private void clearTable() {
+        for (int i = 0; i < this.getRowCount(); i++) {
+            remove(i);
+        }
+        listDVDs.clear();
     }
 
 	@Override

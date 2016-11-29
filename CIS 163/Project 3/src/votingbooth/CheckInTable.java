@@ -130,6 +130,17 @@ public class CheckInTable implements ClockListener {
     }
 
     /*****************************************************************
+    Method that resets the local statistics for this class.
+    *****************************************************************/
+    public void reset() {
+        this.checkInTime = 0;
+        this.checkedIn = 0;
+        this.Q = new ArrayList<>();
+        this.inUse = false;
+        this.current = null;
+    }
+
+    /*****************************************************************
     Getter that returns the record for the maximum amount of voters
     in the queue.
     @return The record for the maximum amount of voters in the queue

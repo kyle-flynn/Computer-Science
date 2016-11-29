@@ -29,7 +29,7 @@ public class LinkedListTest {
         names.push("Connor");
         System.out.println(names.toString());
         System.out.println(names.getSize());
-        System.out.println(names.get(2));
+        System.out.println(names.get(1));
     }
 
 }

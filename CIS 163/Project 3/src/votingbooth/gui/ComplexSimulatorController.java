@@ -303,14 +303,38 @@ public class ComplexSimulatorController implements Initializable {
     *****************************************************************/
     @FXML
     public void reset() {
-        memoryCleared = true;
+        /* Initializing our declared variables */
+        booths = new LinkedList<>();
+        tables = new LinkedList<>();
+
+        /* Setting default values */
+        voterGen.setText("20");
+        voterCheckIn.setText("20");
+        voterVoting.setText("60");
+        voterLeave.setText("900");
+        maxSimulationTime.setText("10000");
         curTime = 0;
         curSimulationTime.setText(curTime + "");
-        resetStatistics();
-        clk.reset();
+
+        clk = new Clock();
+
+        /* What's a voting simulator without a table and a booth? */
+        addBooth();
+        boothQ = new BoothLine(getBoothsAsArray());
+        addTable();
+
+        /* Controls which buttons are grayed out. */
+        memoryCleared = true;
+
+        /* Disable our output buttons, but show the run btn. */
         outputBtn.setDisable(true);
         statisticsBtn.setDisable(true);
         runBtn.setDisable(false);
+        producer = new VoterProducer(
+                getBoothsAsArray(),
+                voterGenTime,
+                avgVoterTolerance,
+                (maxTime / voterGenTime));
     }
 
     /*****************************************************************
@@ -798,6 +822,8 @@ public class ComplexSimulatorController implements Initializable {
     blend into each other or keep appending when they should be reset.
     *****************************************************************/
     private void resetStatistics() {
+
+        /* Now setting our local statistic variables to 0. */
         stillVoting = 0;
         avgVoteTime = 0;
         normalPissed = 0;

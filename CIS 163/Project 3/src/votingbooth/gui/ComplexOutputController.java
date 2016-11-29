@@ -78,7 +78,6 @@ public class ComplexOutputController implements Initializable {
             /* If there are no problems getting the data, display it. */
             displayData();
         } catch(Exception e) {
-            // Show error dialog!
             e.printStackTrace();
         }
     }

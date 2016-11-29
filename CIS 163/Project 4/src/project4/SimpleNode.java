@@ -9,10 +9,12 @@ public class SimpleNode<GenericValue> implements Serializable {
 
     private GenericValue value;
     private SimpleNode<GenericValue> nextNode;
+    private SimpleNode<GenericValue> prevNode;
 
     public SimpleNode(GenericValue value) {
         this.value = value;
         this.nextNode = null;
+        this.prevNode = null;
     }
 
     public void setValue(GenericValue value) {
@@ -23,12 +25,20 @@ public class SimpleNode<GenericValue> implements Serializable {
         this.nextNode = nextValue;
     }
 
+    public void setPrevNode(SimpleNode prevValue) {
+        this.prevNode = prevNode;
+    }
+
     public GenericValue getValue() {
         return value;
     }
 
     public SimpleNode<GenericValue> getNextNode() {
         return nextNode;
+    }
+
+    public SimpleNode<GenericValue> getPrevNode() {
+        return prevNode;
     }
 
 }
