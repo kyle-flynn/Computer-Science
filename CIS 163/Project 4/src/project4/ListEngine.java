@@ -31,7 +31,8 @@ public class ListEngine extends AbstractTableModel {
 	public ListEngine() {
 		super();
 		listDVDs = new SimpleLinkedList<DVD>();
-        columnNames = new String[] {"Name", "Title", "Player", "Rented On", "Due Back"};
+        columnNames = new String[]
+                {"Name", "Title", "Player", "Rented On", "Due Back"};
 	}
 
     /*****************************************************************
@@ -66,7 +67,8 @@ public class ListEngine extends AbstractTableModel {
 		listDVDs.add(a);
 
         // This line if code is responsible for updating the JTable.
-        fireTableRowsInserted(listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
+        fireTableRowsInserted(
+                listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
 	}
 
     /*****************************************************************
@@ -110,7 +112,8 @@ public class ListEngine extends AbstractTableModel {
 			listDVDs = (SimpleLinkedList<DVD>) is.readObject();
 
             // Update the JTable.
-            fireTableRowsInserted(listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
+            fireTableRowsInserted(
+                    listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
 
             // Close the file stream.
             is.close();
@@ -216,7 +219,8 @@ public class ListEngine extends AbstractTableModel {
             }
 
             // Update the JTable.
-            fireTableRowsInserted(listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
+            fireTableRowsInserted(
+                    listDVDs.getSize() - 1 , listDVDs.getSize() - 1);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error in loading db");
@@ -278,7 +282,6 @@ public class ListEngine extends AbstractTableModel {
         } catch (LinkedListOutOfBoundsException e) {
             e.printStackTrace();
         }
-
         // Return the desired object based on the column index.
         if (columnIndex == 0) {
             return unit.getNameOfRenter();
@@ -291,11 +294,14 @@ public class ListEngine extends AbstractTableModel {
                 return "DVD";
             }
         } else if (columnIndex == 3) {
-            return DateFormat.getDateInstance(DateFormat.SHORT)
-                    .format(unit.getRentedOn().getTime());
+
+            /** Correctly format the date */
+            SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+            return df.format(unit.getRentedOn().getTime());
         } else if (columnIndex == 4) {
-            return DateFormat.getDateInstance(DateFormat.SHORT)
-                    .format(unit.getDueBack().getTime());
+            /** Correctly format the date */
+            SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+            return df.format(unit.getDueBack().getTime());
         } else {
             return null;
         }

@@ -1,6 +1,10 @@
 package project4;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 /*****************************************************************
@@ -33,7 +37,8 @@ public class DVD implements Serializable {
      Constructor that intializes a DVD with all of the specified
      parameters.
      *****************************************************************/
-	public DVD(GregorianCalendar rentedOn, GregorianCalendar dueBack, String title, String name) {
+	public DVD(GregorianCalendar rentedOn, GregorianCalendar dueBack,
+               String title, String name) {
 		super();
 		this.rentedOn = rentedOn;
 		this.dueBack = dueBack;
@@ -117,34 +122,46 @@ public class DVD implements Serializable {
      *****************************************************************/
 	protected boolean isLate(GregorianCalendar today) {
 
-        /** Variables that get the year, month, and day of the due date. */
-		int yearDue = getDueBack().get(GregorianCalendar.YEAR);
-		int monthDue = getDueBack().get(GregorianCalendar.MONTH) + 1;
-		int dayDue = getDueBack().get(GregorianCalendar.DAY_OF_MONTH);
+        /** Creating date objects that have time reset so that we can
+         compare their month, day, and year only. */
+        Date todayDate = zeroOutTime(today.getTime());
+        Date dueDate = zeroOutTime(getDueBack().getTime());
 
-        /** Variables that get the year, month, and day of today's date. */
-        String yearTodayRaw = today.get(GregorianCalendar.YEAR) + "";
-        int yearToday = Integer.parseInt(yearTodayRaw.substring(2));
-        int monthToday = today.get(GregorianCalendar.MONTH) + 1;
-        int dayToday = today.get(GregorianCalendar.DAY_OF_MONTH);
+        /** Storing our compared result into an integer. */
+        int result = todayDate.compareTo(dueDate);
 
-        if (yearToday > yearDue) {
+        System.out.println("COMPARING DATES: " + todayDate.compareTo(dueDate));
+
+        /* If the result is 1, then today's date is greater than the
+        due date, therefor the return is late. */
+        if (result == 1) {
             return true;
-        }
-
-        if (monthToday > monthDue) {
-            return true;
-        }
-
-        if (dayToday > dayDue) {
-            return true;
-        }
-
-        if (yearToday == yearDue && monthToday == monthDue && dayToday == dayDue) {
+        } else {
             return false;
         }
-
-        return false;
 	}
+
+    /*****************************************************************
+     Private helper method that zeros out the time of a given date. We
+     zero our the time so that we properly compare the year, month, and
+     day of a given date.
+     @param date The date that will be edited to have no time.
+     @return The modified date with a zeroed-out time.
+     *****************************************************************/
+    private Date zeroOutTime(Date date) {
+
+        /** Creating an instance of a calendar. */
+        Calendar calendar = Calendar.getInstance();
+
+        // Setting the calendar's time, and resetting it's parameters.
+        calendar.setTime(date);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+
+        // Return the calendar's time as a Date object.
+        return calendar.getTime();
+    }
 
 }

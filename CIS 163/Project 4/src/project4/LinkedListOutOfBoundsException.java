@@ -21,7 +21,7 @@ public class LinkedListOutOfBoundsException extends Exception {
      out of bounds.
      *****************************************************************/
     public LinkedListOutOfBoundsException() {
-        super("Trying to access data outside of the list size.");
+        super("Trying to access data outside of the list boundaries.");
     }
 
 }

@@ -151,7 +151,8 @@ public class GUIRentalStore implements ActionListener {
             if (status == JFileChooser.APPROVE_OPTION) {
 
                 /** File name of the file that was just loaded. */
-                String filename = chooser.getSelectedFile().getAbsolutePath();
+                String filename =
+                        chooser.getSelectedFile().getAbsolutePath();
                 if (openSerItem == comp) {
                     dList.loadDatabase(filename);
                 }
@@ -216,12 +217,15 @@ public class GUIRentalStore implements ActionListener {
                 /** Instance of the current date (today's date). */
             	GregorianCalendar dat = new GregorianCalendar();
 
-                /** Instance of the DVD that we are removing based on the selection index. */
+                /** Instance of the DVD that we are removing
+                 based on the selection index. */
 				DVD unit = dList.remove(index);
 
                 // Display information on the returned DVD.
-				JOptionPane.showMessageDialog(null, "Thanks " + unit.getNameOfRenter() +
-						"\n for returning " + unit.getTitle() + ", you owe: " + unit.getCost(dat) +
+				JOptionPane.showMessageDialog(null, "Thanks " +
+                        unit.getNameOfRenter() +
+						"\n for returning " + unit.getTitle() +
+                        ", you owe: " + unit.getCost(dat) +
 						" dollars");
 
             }
