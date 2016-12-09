@@ -29,7 +29,6 @@ public class Game extends DVD {
 		this.player = player;
 	}
 
-
     /*****************************************************************
      Constructor that creates a DVD and initializes only the player
      type.

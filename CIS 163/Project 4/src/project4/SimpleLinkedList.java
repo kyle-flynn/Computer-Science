@@ -65,7 +65,7 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
     public GenericObject remove(GenericObject obj)
             throws LinkedListEmptyException {
 
-        /* Throw an exception is the size of the list is 0, therefore
+        /* Throw an exception if the size of the list is 0, therefore
          we can't remove any elements. */
         if (size == 0) {
             throw new LinkedListEmptyException();
@@ -135,7 +135,7 @@ public class SimpleLinkedList<GenericObject> implements Serializable {
     public GenericObject remove(int index)
             throws LinkedListOutOfBoundsException, LinkedListEmptyException {
 
-        /* Throw an exception is the size of the list is 0, therefore
+        /* Throw an exception if the size of the list is 0, therefore
          we can't remove any elements. */
         if (size == 0) {
             throw new LinkedListEmptyException();
