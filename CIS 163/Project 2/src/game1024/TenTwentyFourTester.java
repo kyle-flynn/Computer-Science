@@ -98,10 +98,13 @@ public class TenTwentyFourTester {
     @Test
     public void randomValueShallBePlacedOnEmptySpot() {
         final int N = NROWS * NCOLS;
+        System.out.println(gameLogic.getNonEmptyTiles().size() + " TOTAL CELLS OUT OF " + N);
+        int i = 0;
         for (int k = 0; k < N - 1; k++) {
             int oldCount = gameLogic.getNonEmptyTiles().size();
             gameLogic.placeRandomValue();
             int newCount = gameLogic.getNonEmptyTiles().size();
+            System.out.println("TOTAL CELLS PLACED: " + newCount);
             assertTrue (newCount == oldCount + 1);
         }
         gameLogic.placeRandomValue();

@@ -313,8 +313,8 @@ public class GamePanel extends JPanel {
         }
 
         /** Sets the text of our scores */
-        score.setText("" + game.getScore());
-        highScore.setText("" + game.getHighScore());
+//        score.setText("" + game.getScore());
+//        highScore.setText("" + game.getHighScore());
 
         /** Check to see the status of our game */
         checkStatus();
@@ -349,7 +349,7 @@ public class GamePanel extends JPanel {
 
             /** Exit if 'no' is pressed, continue if 'Yes' is pressed. */
             if (option == 1) {
-                game.saveHighScore();
+//                game.saveHighScore();
                 System.exit(0);
             } else {
                 reset();
@@ -481,7 +481,7 @@ public class GamePanel extends JPanel {
 
                 /** Exit if 'no' is pressed, continue if 'Yes' is pressed. */
                 if (option == 1) {
-                    game.saveHighScore();
+//                    game.saveHighScore();
                     System.exit(0);
                 } else {
                     reset();

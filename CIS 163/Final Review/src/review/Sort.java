@@ -5,6 +5,6 @@ package review;
  */
 public interface Sort {
 
-    void Sort(int[] array);
+    void sort(int[] array, int start, int end);
 
 }
