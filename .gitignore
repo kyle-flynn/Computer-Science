@@ -2,6 +2,8 @@
 *.xml
 *.iml
 *.cmake
+*.bin
+*.name
 CIS 163/Project 1/out
 CIS 163/Project 2/out
 CIS 163/Project 3/out
@@ -11,5 +13,7 @@ CIS 163/Project 3/.idea
 CIS 163/Project 3/.classpath
 CIS 263/Hello World/.idea
 CIS 263/Hello World/cmake-build-debug
+CIS 263/HW #1/.idea
+CIS 263/HW #1/cmake-build-debug
 
 CIS 163/Project 3/.project
