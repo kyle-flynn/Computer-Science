@@ -11,38 +11,38 @@ const int SimpleDate::DAYS_IN_MONTH[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 
 const int SimpleDate::DAYS_THUS_FAR[] = {0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
 
 SimpleDate::SimpleDate(int month, int day, int year) {
-    SimpleDate::month = month;
-    SimpleDate::day = day;
-    SimpleDate::year = year;
+    this->month = month;
+    this->day = day;
+    this->year = year;
 
-    if (!SimpleDate::isValidDate(month, day, year)) {
+    if (!this->isValidDate(month, day, year)) {
         throw std::invalid_argument ("invalid values for fields");
     }
 }
 
-int SimpleDate::getDay() {
-    return SimpleDate::day;
+int SimpleDate::getDay() const {
+    return this->day;
 }
 
-int SimpleDate::getMonth() {
-    return SimpleDate::month;
+int SimpleDate::getMonth() const {
+    return this->month;
 }
 
-int SimpleDate::getYear() {
-    return SimpleDate::year;
+int SimpleDate::getYear() const {
+    return this->year;
 }
 
 int SimpleDate::compareTo(SimpleDate other) {
 
-    if (SimpleDate::year != other.year) {
-        return SimpleDate::year - other.year;
+    if (this->year != other.year) {
+        return this->year - other.year;
     }
 
-    if (SimpleDate::month != other.month) {
-        return SimpleDate::month - other.month;
+    if (this->month != other.month) {
+        return this->month - other.month;
     }
 
-    return SimpleDate::day - other.day;
+    return this->day - other.day;
 
 }
 
@@ -50,30 +50,30 @@ int SimpleDate::dayOfWeek() {
 
     int daysElapsed = 0;
 
-    for (int year = MIN_YEAR; year < SimpleDate::year; year++) {
-        daysElapsed += SimpleDate::daysInYear(year);
+    for (int year = MIN_YEAR; year < this->year; year++) {
+        daysElapsed += this->daysInYear(year);
     }
 
-    daysElapsed += SimpleDate::ordinalDate();
+    daysElapsed += this->ordinalDate();
 
     return daysElapsed % 7;
 }
 
 int SimpleDate::daysInYear(int year) {
-    return SimpleDate::isLeapYear(year) ? 366 : 365;
+    return this->isLeapYear(year) ? 366 : 365;
 }
 
 SimpleDate SimpleDate::daysFromNow(int n) {
 
     if (n == 0) {
-        return SimpleDate (SimpleDate::month, SimpleDate::day, SimpleDate::year);
+        return SimpleDate (this->month, this->day, this->year);
     }
 
     if (n < 0) {
         throw std::invalid_argument ("n can't be negative");
     }
 
-    SimpleDate date = SimpleDate::nextDate();
+    SimpleDate date = this->nextDate();
 
     for (int i = 1; i < n; i++) {
         date = date.nextDate();
@@ -88,7 +88,7 @@ SimpleDate SimpleDate::daysFromNow(int n) {
 }
 
 bool SimpleDate::isLeapYear() {
-    return SimpleDate::isLeapYear(SimpleDate::year);
+    return this->isLeapYear(SimpleDate::year);
 }
 
 bool SimpleDate::isLeapYear(int year) {
@@ -99,7 +99,7 @@ int SimpleDate::ordinalDate() {
 
     int answer = DAYS_THUS_FAR[month] + day;
 
-    if (SimpleDate::isLeapYear() && month > 2) {
+    if (this->isLeapYear() && month > 2) {
         answer++;
     }
 

@@ -10,9 +10,9 @@ class SimpleDate {
 public:
     SimpleDate (int month, int day, int year);
     SimpleDate daysFromNow (int n);
-    int getMonth ();
-    int getDay ();
-    int getYear ();
+    int getMonth () const;
+    int getDay () const;
+    int getYear () const;
     int compareTo (SimpleDate other);
     int dayOfWeek ();
     int ordinalDate ();
