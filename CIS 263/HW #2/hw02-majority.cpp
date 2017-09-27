@@ -1,13 +1,3 @@
-/**
- *
- * a) The recursion terminates when the array size is 1, or if both sides of the
- * array are both a majority.
- * b) If N is odd, then one array is even and the other is odd. The algorithm still performs.
- * c) O(NlogN)
- * d) You can avoid using a second array by just using the address of the vector.
- *
- */
-
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -76,7 +66,7 @@ int majority (vector<int> a) {
 
 }
 
-int main2(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
     //Use clog for your debugging output
     clog << "This program runs from " << argv[0] << endl;
     if (argc < 2) {

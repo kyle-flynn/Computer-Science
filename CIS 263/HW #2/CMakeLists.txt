@@ -3,5 +3,5 @@ project(HW__2)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp hw02-majority.cpp)
+set(SOURCE_FILES hw02-maxvalue.cpp hw02-majority.cpp)
 add_executable(HW__2 ${SOURCE_FILES})

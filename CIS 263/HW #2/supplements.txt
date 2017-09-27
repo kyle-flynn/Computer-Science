@@ -1,0 +1,6 @@
+a) The recursion terminates when the vector size is 1, or if both sides of the array show the same majority. Otherwise, it counts the occurrances of the majority element in each
+side of the vector.
+b) If N is odd, then one array is even and the other is odd. The algorithm still performs like it should.
+c) O(NlogN)
+d) You can avoid using a second array by scanning pairs of elements and searching for a duplicate, however this will not always yield the correct answer.
+ 211d6a45-8085-4fcd-a0c0-21e7a48d8f31.
