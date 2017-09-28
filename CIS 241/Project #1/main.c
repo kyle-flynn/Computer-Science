@@ -28,9 +28,9 @@ int main(int argc, char* argv[]) {
                 writeFile(argv[4], output);
                 break;
             default:
-                printf("----------------------------------------------------------------------------\n");
+                printf("-------------------------------------\n");
                 printf("Correct usage of this program is...\np1 e|d  key input_file output_file\n");
-                printf("----------------------------------------------------------------------------\n");
+                printf("-------------------------------------\n");
         }
     }
 
