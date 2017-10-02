@@ -11,9 +11,10 @@ char* ascii  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 char* cipher = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
 
 char* makeSet(char* input) {
-    char* output = malloc(strlen(input));
+    char* output = malloc(strlen(input)+1);
     int output_index = 0;
-    for (int i = 0; i < strlen(input); i++) {
+    int i = 0;
+    for (i = 0; i < strlen(input); i++) {
         char* result = strchr(output, input[i]);
         int index = (int) (result - output);
         if (index < 0) {
@@ -28,7 +29,7 @@ char* makeSet(char* input) {
 }
 
 char* makeCipher() {
-    char* str = malloc(strlen(key) + strlen(cipher));
+    char* str = malloc(strlen(key) + strlen(cipher)+2);
     strcpy(str, key);
     strcat(str, cipher);
     return makeSet(str);
@@ -38,12 +39,12 @@ char* encrypt(char input[]) {
 
     // Make our cipher
     char* currentCipher = makeCipher();
-
-    char* output = malloc(strlen(input));
-
-    for (int i = 0; i < strlen(input); i++) {
+        
+    char output[strlen(input)-1];
+    int i = 0;
+    for (i = 0; i < strlen(input); i++) {
         int asciiVal = input[i];
-        if (asciiVal != 32) {
+        if (asciiVal != 32 && (asciiVal-65) >= 0) {
             // 65 - 90 are our ASCII values
             output[i] = currentCipher[asciiVal-65];
         } else {
@@ -52,19 +53,20 @@ char* encrypt(char input[]) {
     }
     int sizeDiff = strlen(output)-strlen(input);
     output[strlen(output)-sizeDiff] = '\0';
-    return output;
+    strcpy(input, output);
+    return input;
 }
 
 char* decrypt(char input[]) {
 
     // Make our cipher
     char* currentCipher = makeCipher();
-
-    char* output = malloc(strlen(input));
-
-    for (int i = 0; i < strlen(input); i++) {
+    
+    char output[strlen(input)-1];
+    int i = 0;
+    for (i = 0; i < strlen(input); i++) {
         int asciiVal = input[i];
-        if (asciiVal != 32) {
+        if (asciiVal != 32 && (asciiVal-65) >= 0) {
             char* result = strchr(currentCipher, input[i]);
             int index = (int) (result - currentCipher);
             output[i] = ascii[index];
@@ -75,7 +77,8 @@ char* decrypt(char input[]) {
 
     int sizeDiff = strlen(output)-strlen(input);
     output[strlen(output)-sizeDiff] = '\0';
-    return output;
+    strcpy(input, output);
+    return input;
 }
 
 char* readFile(char file[]) {
