@@ -101,6 +101,6 @@ void writeFile(char file[], char text[]) {
         exit(1);
     }
 
-    fprintf(outFile, text);
+    fprintf(outFile, "%s", text);
     fclose(outFile);
 }
