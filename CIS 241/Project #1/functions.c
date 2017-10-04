@@ -44,6 +44,7 @@ char* encrypt(char input[]) {
     int i = 0;
     for (i = 0; i < strlen(input); i++) {
         int asciiVal = input[i];
+        printf("LOCATION: %d\n", asciiVal-65);
         if (asciiVal != 32 && (asciiVal-65) >= 0) {
             // 65 - 90 are our ASCII values
             output[i] = currentCipher[asciiVal-65];
@@ -54,6 +55,7 @@ char* encrypt(char input[]) {
     int sizeDiff = strlen(output)-strlen(input);
     output[strlen(output)-sizeDiff] = '\0';
     strcpy(input, output);
+    printf("DIFFERENCE: %d\n", sizeof(input));
     return input;
 }
 
@@ -66,6 +68,7 @@ char* decrypt(char input[]) {
     int i = 0;
     for (i = 0; i < strlen(input); i++) {
         int asciiVal = input[i];
+        printf("LOCATION: %d\n", asciiVal-65);
         if (asciiVal != 32 && (asciiVal-65) >= 0) {
             char* result = strchr(currentCipher, input[i]);
             int index = (int) (result - currentCipher);
@@ -78,6 +81,7 @@ char* decrypt(char input[]) {
     int sizeDiff = strlen(output)-strlen(input);
     output[strlen(output)-sizeDiff] = '\0';
     strcpy(input, output);
+    printf("DIFFERENCE: %d\n", sizeof(input));
     return input;
 }
 
@@ -101,6 +105,6 @@ void writeFile(char file[], char text[]) {
         exit(1);
     }
 
-    fprintf(outFile, text);
+    fprintf(outFile, "%s", text);
     fclose(outFile);
 }
