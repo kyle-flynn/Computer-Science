@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         latTwo.setText(null);
         lonOne.setText(null);
         lonTwo.setText(null);
-        distance.setText(null);
-        bearing.setText(null);
+        distance.setText("Distance ");
+        bearing.setText("Bearing ");
     }
 
     @Override
