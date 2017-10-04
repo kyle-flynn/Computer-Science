@@ -1,5 +1,7 @@
 package edu.gvsu.cis357.geocalculatorapp;
 
+import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     Button calculate, clear;
     TextView distance, bearing;
 
+    Intent settingsIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         calculate.setOnClickListener(click -> calculateCoords());
         clear.setOnClickListener(click -> clearFields());
+
+        settingsIntent = new Intent(this, Settings.class);
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -85,11 +91,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openSettings() {
-        Intent intent = new Intent(this, Settings.class);
 //        EditText editText = (EditText) findViewById(R.id.editText);
 //        String message = editText.getText().toString();
 //        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        startActivityForResult(settingsIntent, 1);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String dist = data.getStringExtra("Distance");
+                String bear = data.getStringExtra("Bearing");
+                System.out.println(dist + " | " + bear);
+            }
+        }
     }
 
 }
