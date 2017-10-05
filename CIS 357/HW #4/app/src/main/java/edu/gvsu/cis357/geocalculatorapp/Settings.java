@@ -39,8 +39,8 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
         milesOptions.add("Kilometers");
         milesOptions.add("Miles");
 
-        degreeOptions.add("Mils");
         degreeOptions.add("Degrees");
+        degreeOptions.add("Mils");
 
         ArrayAdapter<String> milesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, milesOptions);
         ArrayAdapter<String> degreesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, degreeOptions);
@@ -51,8 +51,7 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
         miles.setAdapter(milesAdapter);
         degrees.setAdapter(degreesAdapter);
 
-
-         returnIntent = new Intent();
+        returnIntent = new Intent();
     }
 
     @Override
