@@ -1,21 +1,9 @@
 #include <stdio.h>
-
-void swap(int* var1, int* var2) {
-
-    int* temp = var1;
-
-    *var1 = *var2;
-    *var2 = *temp;
-
-}
+#include <string.h>
 
 int main() {
-
-    int i = 5;
-    int j = 10;
-
-    swap(&i, &j);
-    printf("The value of i is now %d, and the value of j is now %d", i, j);
-
+    char str[] = "system", *p;
+    p = str;
+    printf("\n%c %s %s %d %d\n", *p, str, p + 1, strlen(str), sizeof(str));
     return 0;
 }

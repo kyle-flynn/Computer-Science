@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/BinarySearchTree/binary_search_tree.cpp
+binary_search_tree.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/BinarySearchTree/binary_search_tree.h
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/BinarySearchTree/binary_search_tree.h
+leaf_node.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/BinarySearchTree/leaf_node.h
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/BinarySearchTree/leaf_node.cpp
+leaf_node.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/BinarySearchTree/leaf_node.h
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/BinarySearchTree/leaf_node.h
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/BinarySearchTree/main.cpp
+iostream
+-
+string
+-
+
