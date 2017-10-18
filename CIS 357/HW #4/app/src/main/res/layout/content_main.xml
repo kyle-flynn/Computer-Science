@@ -10,55 +10,58 @@
 
     <EditText
         android:id="@+id/textLatOne"
-        android:layout_width="163dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:hint="Enter latitude for p1"
         android:inputType="numberDecimal"
-        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/textLonOne"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <EditText
         android:id="@+id/textLonOne"
-        android:layout_width="176dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Enter longitude for p1"
         android:inputType="numberDecimal"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
 
     <EditText
         android:id="@+id/textLatTwo"
-        android:layout_width="165dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
         android:hint="Enter latitude for p2"
         android:inputType="numberDecimal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/textLonTwo"
-        app:layout_constraintTop_toBottomOf="@+id/textLatOne" />
+        android:layout_marginStart="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textLatOne"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintRight_toRightOf="@+id/textLatOne"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textLatOne"
+        app:layout_constraintHorizontal_bias="0.50" />
 
     <EditText
         android:id="@+id/textLonTwo"
-        android:layout_width="179dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:hint="Enter longitude for p2"
         android:inputType="numberDecimal"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/textLonOne"
+        app:layout_constraintLeft_toLeftOf="@+id/textLonOne"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/textLonOne" />
 
     <Button
@@ -66,41 +69,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calculate"
-        app:layout_constraintRight_toLeftOf="@+id/clearBtn"
-        android:layout_marginRight="28dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/textLatTwo"
-        app:layout_constraintHorizontal_bias="0.053" />
+        app:layout_constraintLeft_toLeftOf="@+id/textLatOne" />
 
     <Button
         android:id="@+id/clearBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Clear"
-        android:layout_marginRight="10dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textLonTwo" />
+        app:layout_constraintTop_toBottomOf="@+id/textLonTwo"
+        app:layout_constraintRight_toRightOf="@+id/textLonOne" />
 
     <TextView
         android:id="@+id/textBear"
-        android:layout_width="156dp"
+        android:layout_width="0dp"
         android:layout_height="18dp"
         android:text="Bearing"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/textLatOne"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textDist" />
+        app:layout_constraintTop_toBottomOf="@+id/textDist"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintRight_toRightOf="@+id/textLonOne" />
 
     <TextView
         android:id="@+id/textDist"
-        android:layout_width="156dp"
+        android:layout_width="0dp"
         android:layout_height="18dp"
         android:text="Distance"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/calculateBtn" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/calculateBtn"
+        app:layout_constraintLeft_toLeftOf="@+id/textLatOne"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintRight_toRightOf="@+id/textLonOne"
+        app:layout_constraintHorizontal_bias="0.502" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
 </android.support.constraint.ConstraintLayout>
