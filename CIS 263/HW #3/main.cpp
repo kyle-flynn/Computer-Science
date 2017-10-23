@@ -36,5 +36,14 @@ int main() {
     // This should print nothing because our binary tree is now empty.
     me.printTree();
 
+    me.insert(10);
+    me.insert(20);
+    me.printTree();
+
+    empty = me.isEmpty();
+
+    cout << endl;
+    cout << "Empty: " << empty << endl;
+
     return 0;
 }
