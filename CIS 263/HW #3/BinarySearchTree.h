@@ -29,35 +29,35 @@ public:
         insert (item, root);
     }
 
-    void printTree(ostream& out = cout) {
+    void printTree(ostream& out = cout) const {
         print (out, root);
 
-        remove(-2, root);
-        shared_ptr<Node> min = findMin(root);
-        shared_ptr<Node> max = findMax(root);
-        bool isThere = contains(-2, root);
-        bool empty = isEmpty(root);
+//        cout << endl;
+//        cout << findMax(root)->data << endl;
+    }
 
+    const E & findMin() const {
+        return findMin(root)->data;
+    }
 
-        cout << endl;
-        cout << "Min: " << min->data << endl;
-        cout << "Min: " << max->data << endl;
-        cout << "-2: " << isThere << endl;
-        cout << "Empty: " << empty << endl;
+    const E & findMax() const {
+        return findMax(root)->data;
+    }
 
+    bool contains(E item) const {
+        return contains(item, root);
+    }
+
+    bool isEmpty() const {
+        return isEmpty(root);
+    }
+
+    void makeEmpty() {
         makeEmpty(root);
+    }
 
-        cout << "makeEmpty()" << endl;
-
-        empty = isEmpty(root);
-
-        cout << "Empty: " << empty << endl;
-
-        print (out, root);
-
-//        cout << "Min: " << findMin(root)->data << endl;
-//        cout << "Max: " << findMax(root)->data << endl;
-
+    void remove(E item) {
+        remove(item, root);
     }
 
     /* TODO: add the following public functions (lines 10-19, page 133 of textbook) .
@@ -142,18 +142,18 @@ private:
     }
 
     bool isEmpty(shared_ptr<Node> root) const {
-        return (root->left == nullptr && root->right == nullptr);
+        return (root == nullptr);
     }
 
-    void makeEmpty(shared_ptr<Node>& root) const {
+    void makeEmpty(shared_ptr<Node>& root) {
         if (root != nullptr) {
             makeEmpty(root->left);
             makeEmpty(root->right);
+            remove(root->data, root);
         }
-        root.reset(new Node);
     }
 
-    void remove(E item, shared_ptr<Node>& root) const {
+    void remove(E item, shared_ptr<Node>& root) {
         if (root == nullptr) {
             return;
         }
