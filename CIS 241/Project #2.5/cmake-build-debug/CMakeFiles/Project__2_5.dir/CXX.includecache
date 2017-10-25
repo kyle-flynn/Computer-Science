@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2.5/LinkedList.h
+iostream
+-
+string
+-
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2.5/main.cpp
+iostream
+-
+LinkedList.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2.5/LinkedList.h
+
