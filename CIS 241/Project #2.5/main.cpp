@@ -14,8 +14,18 @@ int main() {
     Product milk;
     milk.name = "Milk";
 
+    Product eggs;
+    eggs.name = "Eggs";
+
     list.add(cheese);
     list.add(milk);
+    list.add(eggs);
+
+    list.print();
+
+    list.remove(eggs);
+
+    cout << endl;
 
     list.print();
 
