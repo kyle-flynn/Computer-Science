@@ -19,7 +19,7 @@ void unpack(unsigned short empId) {
     short gNum = empId & gNumMask;
 
     printf("G-Num: %d\n", gNum);
-    printf("Gender: ");
+    printf("Gender: (%d) ", gender);
 
     switch (gender) {
         case 0:
@@ -35,7 +35,7 @@ void unpack(unsigned short empId) {
             printf("Not telling\n");
     }
 
-    printf("Position: ");
+    printf("Position: (%d) ", position);
 
     switch (position) {
         case 0:
@@ -66,7 +66,7 @@ void unpack(unsigned short empId) {
             printf("Unknown\n");
     }
 
-    printf("JobType: ");
+    printf("JobType: (%d) ", jobType);
 
     switch (jobType) {
         case 0:
@@ -76,7 +76,7 @@ void unpack(unsigned short empId) {
             printf("Part time\n");
             break;
         default:
-            printf("Unemployed");
+            printf("Unemployed\n");
     }
 }
 
