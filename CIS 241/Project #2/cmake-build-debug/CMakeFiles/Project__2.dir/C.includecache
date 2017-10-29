@@ -6,11 +6,19 @@
 
 #IncludeRegexTransform: 
 
-Z:/Coding/Repositories/Computer-Science/CIS 241/Project #2/LinkedList.c
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/GroceryStore.c
 LinkedList.h
-Z:/Coding/Repositories/Computer-Science/CIS 241/Project #2/LinkedList.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/LinkedList.h
 
-Z:/Coding/Repositories/Computer-Science/CIS 241/Project #2/LinkedList.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/GroceryStore.h
+LinkedList.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/LinkedList.h
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/LinkedList.c
+LinkedList.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/LinkedList.h
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/LinkedList.h
 stdio.h
 -
 stdlib.h
@@ -18,9 +26,11 @@ stdlib.h
 string.h
 -
 
-Z:/Coding/Repositories/Computer-Science/CIS 241/Project #2/main.c
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/main.c
 stdio.h
 -
-LinkedList.h
-Z:/Coding/Repositories/Computer-Science/CIS 241/Project #2/LinkedList.h
+stdlib.h
+-
+GroceryStore.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/GroceryStore.h
 
