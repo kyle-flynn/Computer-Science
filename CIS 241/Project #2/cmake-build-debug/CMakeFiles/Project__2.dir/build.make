@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.2.1\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.2.2\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2017.2.1\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2017.2.2\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2"
+CMAKE_SOURCE_DIR = "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Project__2.dir/depend.make
@@ -58,16 +58,16 @@ include CMakeFiles/Project__2.dir/flags.make
 
 CMakeFiles/Project__2.dir/main.c.obj: CMakeFiles/Project__2.dir/flags.make
 CMakeFiles/Project__2.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Project__2.dir/main.c.obj"
-	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Project__2.dir\main.c.obj   -c "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Project__2.dir/main.c.obj"
+	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Project__2.dir\main.c.obj   -c "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\main.c"
 
 CMakeFiles/Project__2.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project__2.dir/main.c.i"
-	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\main.c" > CMakeFiles\Project__2.dir\main.c.i
+	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\main.c" > CMakeFiles\Project__2.dir\main.c.i
 
 CMakeFiles/Project__2.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project__2.dir/main.c.s"
-	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\main.c" -o CMakeFiles\Project__2.dir\main.c.s
+	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\main.c" -o CMakeFiles\Project__2.dir\main.c.s
 
 CMakeFiles/Project__2.dir/main.c.obj.requires:
 
@@ -82,16 +82,16 @@ CMakeFiles/Project__2.dir/main.c.obj.provides.build: CMakeFiles/Project__2.dir/m
 
 CMakeFiles/Project__2.dir/LinkedList.c.obj: CMakeFiles/Project__2.dir/flags.make
 CMakeFiles/Project__2.dir/LinkedList.c.obj: ../LinkedList.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Project__2.dir/LinkedList.c.obj"
-	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Project__2.dir\LinkedList.c.obj   -c "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\LinkedList.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Project__2.dir/LinkedList.c.obj"
+	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Project__2.dir\LinkedList.c.obj   -c "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\LinkedList.c"
 
 CMakeFiles/Project__2.dir/LinkedList.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project__2.dir/LinkedList.c.i"
-	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\LinkedList.c" > CMakeFiles\Project__2.dir\LinkedList.c.i
+	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\LinkedList.c" > CMakeFiles\Project__2.dir\LinkedList.c.i
 
 CMakeFiles/Project__2.dir/LinkedList.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project__2.dir/LinkedList.c.s"
-	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\LinkedList.c" -o CMakeFiles\Project__2.dir\LinkedList.c.s
+	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\LinkedList.c" -o CMakeFiles\Project__2.dir\LinkedList.c.s
 
 CMakeFiles/Project__2.dir/LinkedList.c.obj.requires:
 
@@ -106,16 +106,16 @@ CMakeFiles/Project__2.dir/LinkedList.c.obj.provides.build: CMakeFiles/Project__2
 
 CMakeFiles/Project__2.dir/GroceryStore.c.obj: CMakeFiles/Project__2.dir/flags.make
 CMakeFiles/Project__2.dir/GroceryStore.c.obj: ../GroceryStore.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Project__2.dir/GroceryStore.c.obj"
-	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Project__2.dir\GroceryStore.c.obj   -c "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\GroceryStore.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Project__2.dir/GroceryStore.c.obj"
+	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Project__2.dir\GroceryStore.c.obj   -c "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\GroceryStore.c"
 
 CMakeFiles/Project__2.dir/GroceryStore.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project__2.dir/GroceryStore.c.i"
-	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\GroceryStore.c" > CMakeFiles\Project__2.dir\GroceryStore.c.i
+	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\GroceryStore.c" > CMakeFiles\Project__2.dir\GroceryStore.c.i
 
 CMakeFiles/Project__2.dir/GroceryStore.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project__2.dir/GroceryStore.c.s"
-	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\GroceryStore.c" -o CMakeFiles\Project__2.dir\GroceryStore.c.s
+	C:\MinGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\GroceryStore.c" -o CMakeFiles\Project__2.dir\GroceryStore.c.s
 
 CMakeFiles/Project__2.dir/GroceryStore.c.obj.requires:
 
@@ -144,7 +144,7 @@ Project__2.exe: CMakeFiles/Project__2.dir/build.make
 Project__2.exe: CMakeFiles/Project__2.dir/linklibs.rsp
 Project__2.exe: CMakeFiles/Project__2.dir/objects1.rsp
 Project__2.exe: CMakeFiles/Project__2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable Project__2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable Project__2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project__2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -163,6 +163,6 @@ CMakeFiles/Project__2.dir/clean:
 .PHONY : CMakeFiles/Project__2.dir/clean
 
 CMakeFiles/Project__2.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2" "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2" "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\cmake-build-debug" "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\cmake-build-debug" "Z:\Coding\Repositories\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles\Project__2.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2" "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2" "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\cmake-build-debug" "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\cmake-build-debug" "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 241\Project #2\cmake-build-debug\CMakeFiles\Project__2.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Project__2.dir/depend
 

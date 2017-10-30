@@ -49,8 +49,8 @@ void purchaseProduct() {
 
         if (quantity <= p->quantity_value) {
             float newQuantity = p->quantity_value - quantity;
-            p->quantity_value = newQuantity;
             printf("Successfully purchased %f %s of %s\n", p->quantity_value, p->quantity_unit, p->name);
+            p->quantity_value = newQuantity;
         } else {
             printf("You cannot purchase more than available from inventory!");
         }
@@ -105,4 +105,77 @@ void removeProduct() {
     } else {
         printf("Could not find that product. Make sure you check the inventory!\n");
     }
+}
+
+void printProduct() {
+    printf("Which product would you like to know about?\n");
+
+    char name[20];
+    scanf(" %s", name);
+
+    struct product* p = get(name);
+
+    if (p != NULL) {
+        printf("Product: %s\n", p->name);
+        printf("Quantity: %f %s\n", p->quantity_value, p->quantity_unit);
+        printf("Price: %f %s\n\n", p->price_value, p->price_unit);
+    } else {
+        printf("Could not find that product. Make sure you check the inventory!\n");
+    }
+}
+
+void loadStore() {
+    FILE *f = fopen("store.txt", "r");
+    if (f == NULL) {
+        printf("Error saving file!\n");
+        exit(1);
+    }
+
+    char line[20];
+
+    struct product p;
+
+    int i = 0;
+
+    while (fgets(line, sizeof(line), f)) {
+        line[strlen(line)-1] = '\0';
+        if (i == 0) {
+            strcpy(p.name, line);
+        } else if (i == 1) {
+            strcpy(p.quantity_unit, line);
+        } else if (i == 2) {
+            strcpy(p.price_unit, line);
+        } else if (i == 3) {
+            p.quantity_value = strtof(line, NULL);
+        } else if (i == 4) {
+            p.price_value = strtof(line, NULL);
+            i = -1;
+            add(&p);
+        }
+
+        i++;
+    }
+
+    fclose(f);
+}
+
+void saveStore() {
+    FILE *f = fopen("store.txt", "w");
+    if (f == NULL) {
+        printf("Error saving file!\n");
+        exit(1);
+    }
+
+    struct product* current = list;
+
+    while (current != NULL) {
+        fprintf(f, "%s\n", current->name);
+        fprintf(f, "%s\n", current->quantity_unit);
+        fprintf(f, "%s\n", current->price_unit);
+        fprintf(f, "%f\n", current->quantity_value);
+        fprintf(f, "%f\n", current->price_value);
+        current = current->next;
+    }
+
+    fclose(f);
 }

@@ -8,6 +8,9 @@
 #define PROJECT_2_GROCERYSTORE_H
 
 void addProduct();
+void purchaseProduct();
+void printPrice();
 void printInventory();
+void removeProduct();
 
 #endif //PROJECT_2_GROCERYSTORE_H

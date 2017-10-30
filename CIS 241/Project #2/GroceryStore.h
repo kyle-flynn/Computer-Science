@@ -12,5 +12,9 @@ void purchaseProduct();
 void printPrice();
 void printInventory();
 void removeProduct();
+void printProduct();
+
+void loadStore();
+void saveStore();
 
 #endif //PROJECT_2_GROCERYSTORE_H

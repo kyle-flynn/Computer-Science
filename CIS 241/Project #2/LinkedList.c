@@ -40,32 +40,26 @@ void add(struct product* p) {
 }
 
 void delete(struct product* p) {
-    if (size <= 1) {
-        list = createProduct();
-        list->next = NULL;
-        size = 0;
-    } else {
-        struct product* current;
-        current = list;
+    struct product* current;
+    current = list;
 
-        if (strcmp(current->name, p->name) == 0) {
-            list = current->next;
-        } else {
-            while (current->next != NULL) {
-                if (strcmp(current->next->name, p->name) == 0) {
-                    struct product* removed = current->next;
-                    if (removed->next != NULL) {
-                        current->next = removed->next;
-                    } else {
-                        current->next = NULL;
-                    }
-                    break;
+    if (strcmp(current->name, p->name) == 0) {
+        list = current->next;
+    } else {
+        while (current->next != NULL) {
+            if (strcmp(current->next->name, p->name) == 0) {
+                struct product* removed = current->next;
+                if (removed->next != NULL) {
+                    current->next = removed->next;
+                } else {
+                    current->next = NULL;
                 }
-                current = current->next;
+                break;
             }
+            current = current->next;
         }
-        size = size - 1;
     }
+    size = size - 1;
 }
 
 struct product* get(char name[N]) {
@@ -87,27 +81,4 @@ struct product* get(char name[N]) {
         }
     }
     return NULL;
-}
-
-struct product* update(struct product* p) {
-    struct product* prod = get(p->name);
-
-    if (prod != NULL) {
-        prod = p;
-        return prod;
-    } else {
-        return NULL;
-    }
-}
-
-void print() {
-
-    struct product* current;
-    current = list;
-
-    while (current != NULL) {
-        product p = *current;
-        printf("Product: %s\n", p.name);
-        current = current->next;
-    }
 }

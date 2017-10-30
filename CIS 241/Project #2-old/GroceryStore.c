@@ -16,21 +16,63 @@ void addProduct() {
     printf("What is the price value?\n");
     scanf(" %s", price_unit);
     printf("How much quantity is there?\n");
-    scanf(" %d", quantity_value);
+    scanf(" %f", &quantity_value);
     printf("How much is the price?\n");
-    scanf(" %d", price_value);
+    scanf(" %f", &price_value);
 
-    struct product p = {
-            .name = name,
-            .quantity_unit = quantity_unit,
-            .price_unit = price_unit,
-            .quantity_value = quantity_value,
-            .price_value = price_value
-    };
+    struct product p;
+
+    strcpy(p.name, name);
+    strcpy(p.quantity_unit, quantity_unit);
+    strcpy(p.price_unit, price_unit);
+    p.quantity_value = quantity_value;
+    p.price_value = price_value;
 
     add(&p);
 
     printf("Added product %s\n", p.name);
+}
+
+void purchaseProduct() {
+    printInventory();
+
+    char name[20];
+    float quantity;
+
+    printf("What product would you like to purchase?\n");
+    scanf(" %s", name);
+    struct product* p = get(name);
+
+    if (p != NULL) {
+        printf("How much of this product would you like to purchase?\n");
+        scanf(" %f", &quantity);
+
+        if (quantity <= p->quantity_value) {
+            float newQuantity = p->quantity_value - quantity;
+            p->quantity_value = newQuantity;
+            printf("Successfully purchased %f %s of %s\n", p->quantity_value, p->quantity_unit, p->name);
+        } else {
+            printf("You cannot purchase more than available from inventory!");
+        }
+
+    } else {
+        printf("Could not find that product. Make sure you check the inventory!\n");
+    }
+
+}
+
+void printPrice() {
+    char name[20];
+
+    printf("What product do you want to check the price of?\n");
+    scanf(" %s", name);
+
+    struct product* p = get(name);
+    if (p != NULL) {
+        printf("The price for %s is %f %s.\n", name, p->price_value, p->price_unit);
+    } else {
+        printf("Did not find a name for that product.\n");
+    }
 }
 
 void printInventory() {
@@ -46,5 +88,21 @@ void printInventory() {
         printf("Price: %f %s\n\n", p.price_value, p.price_unit);
 
         current = current->next;
+    }
+}
+
+void removeProduct() {
+    printInventory();
+    printf("Which product would you like to remove?\n");
+
+    char name[20];
+    scanf(" %s", name);
+
+    struct product* p = get(name);
+    if (p != NULL) {
+        printf("Deleting product %s from inventory...\n", p->name);
+        delete(p);
+    } else {
+        printf("Could not find that product. Make sure you check the inventory!\n");
     }
 }

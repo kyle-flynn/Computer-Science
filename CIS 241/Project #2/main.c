@@ -26,6 +26,8 @@ int main() {
 
     char input = '0';
 
+    loadStore();
+
     while (input != '8') {
 
         printInfo(1);
@@ -54,9 +56,14 @@ int main() {
                 break;
             case '6':
                 printInfo(0);
+                printProduct();
                 break;
             case '7':
                 printInfo(0);
+                printInventory();
+                break;
+            case '8':
+                saveStore();
                 break;
             default:
                 printf("Invalid command. Try using a number 1-8.\n");
