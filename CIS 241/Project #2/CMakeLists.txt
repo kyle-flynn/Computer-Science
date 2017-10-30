@@ -3,5 +3,5 @@ project(Project__2)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES main.c LinkedList.h LinkedList.c GroceryStore.h GroceryStore.c)
+set(SOURCE_FILES main.c GroceryStore.h LinkedList.h LinkedList.c GroceryStore.c)
 add_executable(Project__2 ${SOURCE_FILES})

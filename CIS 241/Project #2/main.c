@@ -38,9 +38,11 @@ int main() {
                 break;
             case '2':
                 printInfo(0);
+                purchaseProduct();
                 break;
             case '3':
                 printInfo(0);
+                printPrice();
                 break;
             case '4':
                 printInfo(0);
@@ -48,6 +50,7 @@ int main() {
                 break;
             case '5':
                 printInfo(0);
+                removeProduct();
                 break;
             case '6':
                 printInfo(0);

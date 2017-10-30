@@ -10,7 +10,7 @@
 #define PROJECT_2_LINKEDLIST_H
 
 #define N 20
-struct product {
+extern struct product {
     char name[N];
     float quantity_value;
     char quantity_unit[N];
@@ -27,6 +27,8 @@ int size;
 void init();
 void add(struct product* p);
 void delete(struct product* p);
+struct product* get(char name[N]);
+struct product* update(struct product* p);
 void print();
 
 #endif //PROJECT_2_LINKEDLIST_H
