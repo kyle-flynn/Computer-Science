@@ -10,7 +10,7 @@ void printInfo(int b) {
         printf("Enter the correct number for the desired action as specified below.\n");
         printf("====================================================================\n");
         printf("1: Add a product to inventory            2: Purchase a product\n");
-        printf("3: Check a product's price               4: Show current inventory\n");
+        printf("3: Check a product's price               4: Show current products\n");
         printf("5: Remove a product from inventory       6: Find a product\n");
         printf("7: Inventory                             8: Exit program\n");
         printf("====================================================================\n");

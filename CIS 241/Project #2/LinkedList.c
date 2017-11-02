@@ -21,6 +21,7 @@ void add(struct product* p) {
     strcpy(prod->price_unit, p->price_unit);
     prod->quantity_value = p->quantity_value;
     prod->price_value = p->price_value;
+    prod->profits = p->profits;
 
     if (list == NULL || size == 0) {
         list = prod;

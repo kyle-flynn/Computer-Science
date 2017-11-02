@@ -16,6 +16,7 @@ extern struct product {
     char quantity_unit[N];
     float price_value;
     char price_unit[N];
+    float profits;
     struct product* next;
 };
 
