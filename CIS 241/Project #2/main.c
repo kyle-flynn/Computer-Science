@@ -4,7 +4,7 @@
 
 void printInfo(int b) {
     if (b == 0) {
-        system("cls");
+        system("clear");
 
         printf("Welcome to the GVSU Super Store created by Kyle Flynn!\n");
         printf("Enter the correct number for the desired action as specified below.\n");

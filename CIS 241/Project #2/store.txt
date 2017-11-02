@@ -1,0 +1,12 @@
+milk
+bottles
+dollars-per-bottle
+10.000000
+4.000000
+0.000000
+goldfish
+bags
+dollars-per-bag
+10.000000
+2.000000
+40.000000
