@@ -19,7 +19,11 @@ CIS 241/Testing
 CIS 241/Project #1/.idea
 CIS 241/Project #1/cmake-build
 CIS 241/Project #1/cmake-build-debug
-CIS 241/Project #1/Practice
+CIS 241/Project #1/
+CIS 241/Project #2/.idea
+CIS 241/Project #2/cmake-build
+CIS 241/Project #2/cmake-build-debug
+CIS 241/Project #2/cmake-build-debug/CMakeCache.txt
 CIS 263/Hello World/.idea
 CIS 263/Hello World/cmake-build-debug
 CIS 263/HW #1/.idea
@@ -33,3 +37,4 @@ CIS 263/HakimiHavel/cmake-build-debug
 
 CIS 163/Project 3/.project
 
+CIS 241/Project #2/cmake-build-debug/CMakeCache.txt

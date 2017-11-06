@@ -4,13 +4,13 @@
 
 void printInfo(int b) {
     if (b == 0) {
-        system("cls");
+        system("clear");
 
         printf("Welcome to the GVSU Super Store created by Kyle Flynn!\n");
         printf("Enter the correct number for the desired action as specified below.\n");
         printf("====================================================================\n");
         printf("1: Add a product to inventory            2: Purchase a product\n");
-        printf("3: Check a product's price               4: Show current inventory\n");
+        printf("3: Check a product's price               4: Show current products\n");
         printf("5: Remove a product from inventory       6: Find a product\n");
         printf("7: Inventory                             8: Exit program\n");
         printf("====================================================================\n");
@@ -25,6 +25,8 @@ int main() {
     printInfo(0);
 
     char input = '0';
+
+    loadStore();
 
     while (input != '8') {
 
@@ -54,9 +56,14 @@ int main() {
                 break;
             case '6':
                 printInfo(0);
+                printProduct();
                 break;
             case '7':
                 printInfo(0);
+                printInventory();
+                break;
+            case '8':
+                saveStore();
                 break;
             default:
                 printf("Invalid command. Try using a number 1-8.\n");
