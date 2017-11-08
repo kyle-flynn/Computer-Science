@@ -1,0 +1,2299 @@
+Project Gutenberg Etext Extracts from the Diary of William Bray
+by William Bray
+
+
+Copyright laws are changing all over the world, be sure to check
+the copyright laws for your country before posting these files!!
+
+Please take a look at the important information in this header.
+We encourage you to keep this file on your own disk, keeping an
+electronic path open for the next readers.  Do not remove this.
+
+
+**Welcome To The World of Free Plain Vanilla Electronic Texts**
+
+**Etexts Readable By Both Humans and By Computers, Since 1971**
+
+*These Etexts Prepared By Hundreds of Volunteers and Donations*
+
+Information on contacting Project Gutenberg to get Etexts, and
+further information is included below.  We need your donations.
+
+
+Extracts from the Diary of William Bray, Esq. 1760-1800
+
+by William Bray
+
+April, 2000 [Etext #2140]
+
+
+Project Gutenberg Etext Extracts from the Diary of William Bray
+*****This file should be named drbry10.txt or drbry10.zip******
+
+Corrected EDITIONS of our etexts get a new NUMBER, drbry11.txt
+VERSIONS based on separate sources get new LETTER, drbry10a.txt
+
+
+This etext was prepared by David Price, email ccx074@coventry.ac.uk
+from the 1876 Spottiswoode & Co. edition.
+
+Project Gutenberg Etexts are usually created from multiple editions,
+all of which are in the Public Domain in the United States, unless a
+copyright notice is included.  Therefore, we do usually do NOT! keep
+these books in compliance with any particular paper edition.
+
+
+We are now trying to release all our books one month in advance
+of the official release dates, leaving time for better editing.
+
+Please note:  neither this list nor its contents are final till
+midnight of the last day of the month of any such announcement.
+The official release date of all Project Gutenberg Etexts is at
+Midnight, Central Time, of the last day of the stated month.  A
+preliminary version may often be posted for suggestion, comment
+and editing by those who wish to do so.  To be sure you have an
+up to date first edition [xxxxx10x.xxx] please check file sizes
+in the first week of the next month.  Since our ftp program has
+a bug in it that scrambles the date [tried to fix and failed] a
+look at the file size will have to do, but we will try to see a
+new copy has at least one byte more or less.
+
+
+Information about Project Gutenberg (one page)
+
+We produce about two million dollars for each hour we work.  The
+time it takes us, a rather conservative estimate, is fifty hours
+to get any etext selected, entered, proofread, edited, copyright
+searched and analyzed, the copyright letters written, etc.  This
+projected audience is one hundred million readers.  If our value
+per text is nominally estimated at one dollar then we produce $2
+million dollars per hour this year as we release thirty-six text
+files per month, or 432 more Etexts in 1999 for a total of 2000+
+If these reach just 10% of the computerized population, then the
+total should reach over 200 billion Etexts given away this year.
+
+The Goal of Project Gutenberg is to Give Away One Trillion Etext
+Files by December 31, 2001.  [10,000 x 100,000,000 = 1 Trillion]
+This is ten thousand titles each to one hundred million readers,
+which is only ~5% of the present number of computer users.
+
+At our revised rates of production, we will reach only one-third
+of that goal by the end of 2001, or about 3,333 Etexts unless we
+manage to get some real funding; currently our funding is mostly
+from Michael Hart's salary at Carnegie-Mellon University, and an
+assortment of sporadic gifts; this salary is only good for a few
+more years, so we are looking for something to replace it, as we
+don't want Project Gutenberg to be so dependent on one person.
+
+We need your donations more than ever!
+
+
+All donations should be made to "Project Gutenberg/CMU": and are
+tax deductible to the extent allowable by law.  (CMU = Carnegie-
+Mellon University).
+
+For these and other matters, please mail to:
+
+Project Gutenberg
+P. O. Box  2782
+Champaign, IL 61825
+
+When all other email fails. . .try our Executive Director:
+Michael S. Hart <hart@pobox.com>
+hart@pobox.com forwards to hart@prairienet.org and archive.org
+if your mail bounces from archive.org, I will still see it, if
+it bounces from prairienet.org, better resend later on. . . .
+
+We would prefer to send you this information by email.
+
+******
+
+To access Project Gutenberg etexts, use any Web browser
+to view http://promo.net/pg.  This site lists Etexts by
+author and by title, and includes information about how
+to get involved with Project Gutenberg.  You could also
+download our past Newsletters, or subscribe here.  This
+is one of our major sites, please email hart@pobox.com,
+for a more complete list of our various sites.
+
+To go directly to the etext collections, use FTP or any
+Web browser to visit a Project Gutenberg mirror (mirror
+sites are available on 7 continents; mirrors are listed
+at http://promo.net/pg).
+
+Mac users, do NOT point and click, typing works better.
+
+Example FTP session:
+
+ftp sunsite.unc.edu
+login: anonymous
+password: your@login
+cd pub/docs/books/gutenberg
+cd etext90 through etext99
+dir [to see files]
+get or mget [to get files. . .set bin for zip files]
+GET GUTINDEX.??  [to get a year's listing of books, e.g., GUTINDEX.99]
+GET GUTINDEX.ALL [to get a listing of ALL books]
+
+***
+
+**Information prepared by the Project Gutenberg legal advisor**
+
+(Three Pages)
+
+
+***START**THE SMALL PRINT!**FOR PUBLIC DOMAIN ETEXTS**START***
+Why is this "Small Print!" statement here?  You know: lawyers.
+They tell us you might sue us if there is something wrong with
+your copy of this etext, even if you got it for free from
+someone other than us, and even if what's wrong is not our
+fault.  So, among other things, this "Small Print!" statement
+disclaims most of our liability to you.  It also tells you how
+you can distribute copies of this etext if you want to.
+
+*BEFORE!* YOU USE OR READ THIS ETEXT
+By using or reading any part of this PROJECT GUTENBERG-tm
+etext, you indicate that you understand, agree to and accept
+this "Small Print!" statement.  If you do not, you can receive
+a refund of the money (if any) you paid for this etext by
+sending a request within 30 days of receiving it to the person
+you got it from.  If you received this etext on a physical
+medium (such as a disk), you must return it with your request.
+
+ABOUT PROJECT GUTENBERG-TM ETEXTS
+This PROJECT GUTENBERG-tm etext, like most PROJECT GUTENBERG-
+tm etexts, is a "public domain" work distributed by Professor
+Michael S. Hart through the Project Gutenberg Association at
+Carnegie-Mellon University (the "Project").  Among other
+things, this means that no one owns a United States copyright
+on or for this work, so the Project (and you!) can copy and
+distribute it in the United States without permission and
+without paying copyright royalties.  Special rules, set forth
+below, apply if you wish to copy and distribute this etext
+under the Project's "PROJECT GUTENBERG" trademark.
+
+To create these etexts, the Project expends considerable
+efforts to identify, transcribe and proofread public domain
+works.  Despite these efforts, the Project's etexts and any
+medium they may be on may contain "Defects".  Among other
+things, Defects may take the form of incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged
+disk or other etext medium, a computer virus, or computer
+codes that damage or cannot be read by your equipment.
+
+LIMITED WARRANTY; DISCLAIMER OF DAMAGES
+But for the "Right of Replacement or Refund" described below,
+[1] the Project (and any other party you may receive this
+etext from as a PROJECT GUTENBERG-tm etext) disclaims all
+liability to you for damages, costs and expenses, including
+legal fees, and [2] YOU HAVE NO REMEDIES FOR NEGLIGENCE OR
+UNDER STRICT LIABILITY, OR FOR BREACH OF WARRANTY OR CONTRACT,
+INCLUDING BUT NOT LIMITED TO INDIRECT, CONSEQUENTIAL, PUNITIVE
+OR INCIDENTAL DAMAGES, EVEN IF YOU GIVE NOTICE OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+If you discover a Defect in this etext within 90 days of
+receiving it, you can receive a refund of the money (if any)
+you paid for it by sending an explanatory note within that
+time to the person you received it from.  If you received it
+on a physical medium, you must return it with your note, and
+such person may choose to alternatively give you a replacement
+copy.  If you received it electronically, such person may
+choose to alternatively give you a second opportunity to
+receive it electronically.
+
+THIS ETEXT IS OTHERWISE PROVIDED TO YOU "AS-IS".  NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, ARE MADE TO YOU AS
+TO THE ETEXT OR ANY MEDIUM IT MAY BE ON, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE.
+
+Some states do not allow disclaimers of implied warranties or
+the exclusion or limitation of consequential damages, so the
+above disclaimers and exclusions may not apply to you, and you
+may have other legal rights.
+
+INDEMNITY
+You will indemnify and hold the Project, its directors,
+officers, members and agents harmless from all liability, cost
+and expense, including legal fees, that arise directly or
+indirectly from any of the following that you do or cause:
+[1] distribution of this etext, [2] alteration, modification,
+or addition to the etext, or [3] any Defect.
+
+DISTRIBUTION UNDER "PROJECT GUTENBERG-tm"
+You may distribute copies of this etext electronically, or by
+disk, book or any other medium if you either delete this
+"Small Print!" and all other references to Project Gutenberg,
+or:
+
+[1]  Only give exact copies of it.  Among other things, this
+     requires that you do not remove, alter or modify the
+     etext or this "small print!" statement.  You may however,
+     if you wish, distribute this etext in machine readable
+     binary, compressed, mark-up, or proprietary form,
+     including any form resulting from conversion by word pro-
+     cessing or hypertext software, but only so long as
+     *EITHER*:
+
+     [*]  The etext, when displayed, is clearly readable, and
+          does *not* contain characters other than those
+          intended by the author of the work, although tilde
+          (~), asterisk (*) and underline (_) characters may
+          be used to convey punctuation intended by the
+          author, and additional characters may be used to
+          indicate hypertext links; OR
+
+     [*]  The etext may be readily converted by the reader at
+          no expense into plain ASCII, EBCDIC or equivalent
+          form by the program that displays the etext (as is
+          the case, for instance, with most word processors);
+          OR
+
+     [*]  You provide, or agree to also provide on request at
+          no additional cost, fee or expense, a copy of the
+          etext in its original plain ASCII form (or in EBCDIC
+          or other equivalent proprietary form).
+
+[2]  Honor the etext refund and replacement provisions of this
+     "Small Print!" statement.
+
+[3]  Pay a trademark license fee to the Project of 20% of the
+     net profits you derive calculated using the method you
+     already use to calculate your applicable taxes.  If you
+     don't derive profits, no royalty is due.  Royalties are
+     payable to "Project Gutenberg Association/Carnegie-Mellon
+     University" within the 60 days following each
+     date you prepare (or were legally required to prepare)
+     your annual (or equivalent periodic) tax return.
+
+WHAT IF YOU *WANT* TO SEND MONEY EVEN IF YOU DON'T HAVE TO?
+The Project gratefully accepts contributions in money, time,
+scanning machines, OCR software, public domain etexts, royalty
+free copyright licenses, and every other sort of contribution
+you can think of.  Money should be paid to "Project Gutenberg
+Association / Carnegie-Mellon University".
+
+*END*THE SMALL PRINT! FOR PUBLIC DOMAIN ETEXTS*Ver.04.29.93*END*
+
+
+
+
+
+This etext was prepared by David Price, email ccx074@coventry.ac.uk
+from the 1876 Spottiswoode & Co. edition.
+
+
+
+
+
+EXTRACTS FROM THE DIARY OF WILLIAM BRAY
+
+by William Bray
+
+
+
+
+These extracts are printed for the gratification of Mr. Bray's
+descendants; who will see in them a remarkable instance of a life
+of sociability and amusement, combined with great and successful
+industry.
+
+More extracts would have only shewn the same activity and pursuits.
+
+
+
+MEMOIR
+
+
+
+Mr. Bray was born at Shere, on the 15th of November, 1736.  He was
+the youngest of the three sons who survived their father Edward
+Bray, Esq.  George the eldest, who was in the Church, and the
+second son Edward, who was in the Army, both died unmarried; and,
+on the death of George the survivor, in 1803, Mr. Bray succeeded to
+the possession of the Manors of Shere and Gumshall, which had
+belonged to his ancestors from the reign of Henry the Eighth.  When
+ten years old he was placed at Rugby, where he remained until he
+was articled to Mr. Martyr, an Attorney of Guildford.  In 1761, he
+was appointed a Clerk of the Board of Green Cloth, at St. James's,
+through the patronage of Sir John Evelyn.  His attendance at the
+Board did not prevent his practising as an Attorney, and it
+introduced him to many clients.  In 1777, he published a 'Tour in
+Derbyshire and Yorkshire,' and a second edition of it in 1783.  In
+1797, he was chosen one of the Council, and a few years afterwards
+Treasurer, of the Society of Antiquaries, many of his
+communications to which are printed in the 'Archaeologia.'  In
+1801, on the death of the Revd. Mr. Manning, who had been engaged
+for some years in compiling the 'History of Surrey,' Mr. Bray
+undertook to complete the work.  The first volume was published in
+1804, the second in 1809, and the third in 1814.  His next and last
+literary undertaking was the editing of the 'Evelyn Memoirs,' which
+he completed in 1817. {1}  Although in his 80th year, he
+transcribed in his own handwriting nearly the whole of Mr. Evelyn's
+Journal.
+
+He died from weakness, and without any disorder, on the 21st of
+December, 1832, having entered his 97th year on the 15th of the
+preceding month.
+
+His habits before marriage did not promise either an industrious or
+a very long life.  He spent almost every night at cards, and many
+of his mornings in other amusements.  After his marriage he became
+more attentive to his professional business; but he continued for
+many years to live more like a bachelor than a married man,
+spending most of his evenings in the society of his numerous
+friends, or at a coffee-house.  He was very hospitable both in bed
+and board, but in the plainest way.  His surplus income was laid
+out in purchases at Shere and in planting, and he left no personal
+property except his life insurances.  The family estate devolved on
+his death to his grandson Edward, who lived at Shere, and died in
+1866, at the age of 72.
+
+
+
+EXTRACTS
+
+
+
+1756, Jan. 1st.--Called on Miss Stevens {2} this morning.  With Mr.
+Boughton and Shotter to Mr. Shrubb's at Shalford, to spend the
+evening.  We played at loo, came home a little after 11.
+
+7th.--Drank tea at Mrs. Westbrook's.  Mr. and Mrs. Fortery there:
+they played at quadrille.  I went home for an hour, and went again,
+played and supped there.  Home a little before 12.
+
+9th.--Carried Mr. Haydon his appointment as a Trustee of the
+Turnpike; he gave me 5s.  After the meeting the trustees went to
+Mr. P. Flutter's; {3} they sent for me about 8, to play at cards.
+{4}  I played at whisk with Mr. Flutter, Mr. J. Martyr, and Mrs.
+Flutter:  won every game.  Home about one; won 3s. 6d.
+
+10th.--Mr. Duncumb {5} dined here.  He and I went to Mrs.
+Wilpley's, {6} but she not being at home, we went to the 'White
+Hart' and spent the evening, and supped there.
+
+12th.--With Mr. Martyr in his postchaise to London, to Clare, and
+drank tea with him.  To Drury Lane playhouse, but could not get in,
+so we went to the Robin Hood Society, and stayed till after 10.
+The question was, whether the increase of unmarried people was
+owing to the men's greater bashfulness, or women's greater coyness,
+than formerly.
+
+13th.--Went to Drury Lane house:  'Tancred and Sigismunda.'
+Garrick, Tancred; Mrs. Cibber, Sigismunda.
+
+14th.--To Covent Garden, 'Orpheus and Euridice.'
+
+15th.--Drank tea at Mrs. Emily's {7}; played at cards.  Home at 11.
+
+16th.--Came home with Mr. Martyr in his new chaise by 6.
+
+18th.--Dined at Mr. P. Flutter's; walked up Berry Field with Miss
+Flutter's, Miss Nancy Steere, and Miss Parson.
+
+22nd.--To Mr. Bullen's to dinner, played at quadrille.  Came home
+about 1.
+
+24th.--Between 6 and 7 with Mr. Duncumb and Mr. Wakeford, to the
+'Tuns' to drink a glass of wine.  Mr. Punter, came in afterwards,
+Mr. Hallamby, Mr. Stovold and Harry Stovold.  Home at 10.
+
+29th.--To the Assembly, but there not being enough to dance, Miss
+Sally Flutter, Miss Parson, Mr. Ford and I sat down to loo, till
+between 11 and 12.
+
+31st.--A man having taken a shop in Stoke, sometime ago, and
+selling goods vastly under the usual price, Mr. Haydon set up a
+shop against him, of whom I bought this morning four pair of
+gloves, at 7d. a pair; riding gloves, 9d.; and a pair of other
+gloves, 8d.
+
+Feb. 2nd.--An hour after dinner, Miss Stevens came in.
+
+6th.--This day being appointed for a public Fast on account of the
+great earthquake at Lisbon, to Middle Church.
+
+9th.--I was bled this morning for the first time.  Mrs. Martyr
+being about to inoculate Master Jacky, {8} and I intended to be
+inoculated at the same time.  Drank tea with Mrs. Wilpley, and read
+the new farce of 'The Apprentice' to her.  Gave Mr. Haydon for
+three pair of white silk stockings, 7s. 6d. a pair, being 4s. a
+pair cheaper than common.
+
+12th.--Turnpike meeting.  We all dined and spent the evening at Mr.
+Flutter's.  Played at Pope Joan till 12.
+
+27th.--This is evening, I, Master Jacky, and the maid were
+inoculated. {9}
+
+March 5th.--Master Jacky was taken with the symptoms, and did not
+come out of his chamber for a week.
+
+7th.--I was quite easy this morning, when the smallpox began
+appearing; a restless night, a slight fever.
+
+12th.--I was blind to-day, and continued so till the 16th.
+
+April 2nd.--Master Jacky and I went for an airing round the course,
+in the chaise, to-day.
+
+17th.--To Bramley, breakfasted at the 'Jolly Farmer,' paid for
+breakfast, 6d.
+
+21st.--Walked with Miss Molly Flutter and Miss Parson, beyond Cross
+Lanes.
+
+29th.--Drank tea at Mrs. Leeves', with Miss Lavant and Miss More.
+Walked with them and Miss Leeves up Warwick's Bench and part of
+Velvet Walk; then played at quadrille.  Home 11.
+
+May 1st.--Drank tea there again.  Quadrille.
+
+20th.--Richard the man went for a week to the Peasemarch to be
+aired; he catched the smallpox coming to us.  Paid for a cheesecake
+for Jacky, 1d.
+
+22nd.--War with France proclaimed at Guildford; the soldiers drawn
+up in arms, and with music went before the Mayor, &c.  Went to see
+the wire-dancer; he tossed the straw very well, he laid a board on
+the wire and sat on it himself with three children and a dog in
+full swing; on the whole quite silly.
+
+23rd, Sunday.--To Stoke Church, afterwards to the Bowling-green,
+and had a syllabub with Rawlins, Ford, Mellersh, Mersing, W.
+Parson, Hallomby, and Elkins.  Walked up the Velvet Walk with them.
+
+25th.--Sir Charles Howard reviewed his regiment in the Artillery
+Ground.  With Parvish to the 'White Hart,' and gave him a bottle of
+wine, which I owed him for teaching me on the flute.
+
+June 6th, Sunday.--To Lower Church; to the 'White Hart,' with
+Stares, Harbroe and Mellersh, had some cold tankard.  Mellersh and
+I walked up Warwick Bench; and in the hop-ground at the bottom of
+Velvet Walk, met Rawlins and Ford, who went with us.
+
+9th.--To the Assembly.  Danced with Miss Fanny Yalden, who dances
+very well.  Paid Assembly 2s. 6d.; negus, 1s.
+
+10th.--Lost at bowls, 6d.  Called on Miss Yalden, at Miss Roker's.
+Paid for a lobster for my supper, 3d.
+
+21st.--Went a fishing, with Mr. Adderley and Mr. Mellersh; Miss
+Sally Flutter went with us; little sport.  I got none out of the
+water.
+
+26th.--Drank tea and supper at Mrs. Leeves'.  Played at whisk; I
+won every game.
+
+28th.--To the Bowling-green.  Played seven games.  Paid for a
+scarlet waistcoat, 1 pound 1s.
+
+July 11th.--To Shalford Church.  Afterwards a syllabub.  Miss
+Flutter, Miss Gardner and I walked to Woodbridge.
+
+Aug. 2nd.--After dinner, asked Miss Jeale and Miss Westbrooks to
+come and drink a syllabub with me, (Mr. and Mrs. Martyr were gone
+to Chichester{10}), but afterwards Miss Jeale sent me word they
+could not come, and I must go thither; I did and played at
+quadrille.
+
+15th, Sunday.--To the Lower Church.  Afterwards walked with
+Mellersh and Ford, Miss Molly and Sally Flutter, and Miss Parson,
+up Catherine Hill, opposite Mr. Arnold's; then came back, went up
+town, Mr. Mersing met us, and walked with us as far as Ganghill
+Common.
+
+Aug. 29th, Sunday.--To Middle Church.  Afterwards to Mr. Weston's,
+at West Horsley, to dinner.  Gave Mr. Weston's servants, 2s.
+
+Sept. 3rd.--Mr. Martyr set out at 8 this morning for London.
+Walked with Miss Molly Flutter and Miss Parson to Chilworth, and
+fished there.  Mrs. Street made us a syllabub.
+
+22nd.--To Mr. Street's at Chilworth, with Miss Molly and Sally
+Flutter to dinner.  They finished their hopping to-day.  About six
+we began dancing, two Miss Grenville's, Miss Betsey Smallpeice,
+Miss Hall, two Stovolds's, and young Hall, Mr. Street and us; there
+being one woman too many, we changed our partners, and one woman
+always sat down.  We danced till 3 or 4.  All lay there.
+
+23rd.--Went to see the paper-mills.  Dined at Mr. Flutter's.
+Between 3 and 4 to Mrs. Wilpley's; played at cards till 12.
+
+28th.--A Turnpike meeting.  Dined there with Mr. Edwards, Mr.
+Skrine, Mr. Fullerton, Mr. John Vincent, Mr. Henry Flutter and Mr.
+Pinkney.
+
+29th.--Dined at Mr. Mabanke's.  Played at Pope Joan till 12.
+
+Oct. 8th.--Miss Flutters, Miss Parson, Ford and Mellersh supped
+with me.  Very merry till 11, had punch, Miss Molly brought rum.
+
+13th.--Drank tea at Mr. Jeale's (the Rector), and Mr. and Mrs.
+Sibthorp there.  Played at whist till 11.
+
+19th.--Went to see Farnham Castle, which is very badly furnished,
+the Bishop never being there.
+
+29th.--Walked, with Miss Sally and Fanny Whitehead, to Ganghill
+Common.
+
+22nd.--At 7, went with Ford, Mellersh and H. Parson to the Mayor's
+(Savage's) to drink the King's health.  We were too late for any
+place, but by the door.  Paid 1s.
+
+Nov. 14th, Sunday.--To Middle Church.  Then to the coffee-house for
+half an hour.  Paid at coffee-house, 1d.
+
+21st.--General Blakeney landed yesterday at Portsmouth, and came
+this evening to the 'White Hart.'  A bonfire and illuminations.
+The mayor and magistrates went to pay their respects to him.  I
+went into the room with them, and had two glasses of claret.
+Afterwards sat in the next room with Mellersh, Harbroe, Shotter,
+Horsenell, Elkins, Clifton, H. Parson, and Buckle, to drink his
+health, from 8 to half-past 10.  Paid reckoning, 1s. 6d.  Bonfire,
+1d.
+
+23rd.--To London with Mr. Martyr.  To Covent Garden Theatre; in the
+pit, paid 3s.
+
+24th.--To Covent Garden Theatre:  'Henry IV.'--Falstaff, Mr.
+Shuter; Hotspur, Barry.
+
+26th.--Set out at 6 in the Guildford Machine.  Breakfasted at
+Cobham; in about 2.  Breakfast, 1s. 1d.  Gave the coachman, 6d,
+
+Dec. 22nd.--Byng went through the town this morning on his way to
+Portsmouth to take his trial.  They tolled the bell, and burnt his
+effigy on the churchyard-steps.
+
+1757, Jan. 27th.--Rode the black horse to London.  Covent Garden
+Theatre:  'Richard the Third,' Barry.  Could not get in at Drury
+Lane.
+
+Feb. 11th.--A Fast:  no breakfast.  To Middle Church.
+
+17th.--Mr. Ford and Miss Sally Flutter were married this morning.
+
+18th.--Mr. and Mrs. Ford dined here.
+
+24th.--Dined at Mr. Ford's with all the Flutters.
+
+27th.--To Middle Church.  Mrs. Ford made her appearance.
+
+28th.--To the Artillery Ground, to see the Hessians {11} exercise,
+and one of them run the gauntlet.
+
+May 7th.--Some people got together at Petworth and thereabouts, and
+seized some corn belonging to engrossers.
+
+11th.--Wheat 20 pounds 15s. a load.
+
+June 21st.--Paid for half-a-pint of strawberries for Master Jacky
+and myself, 1.5d.
+
+Aug. 6th.--Wheat, under 10 pounds.
+
+Sept. 11th, Sunday.--A brief for the repair of the groins at
+Brighthelmstone; paid 6d.
+
+27th.--Miss Molly Flutter married to Mr. Chandler. {12}
+
+Oct. 6th.--Miss Jeale married to Mr. Maxhill.
+
+Nov. 7th.--Paid earnest of coach, {13} 2s. 6d.  Wine at the 'White
+Hart,' 6d.
+
+10th.--Paid remainder for coach, 2s. 6d., coachman, 6d.; dinner at
+chop-house, 10d.; breakfast on the road, 9d.; coffee in the
+afternoon, 4d.
+
+12th.--To Drury Lane Theatre:  'King Lear,' by Garrick.  Agreed
+with the barber for shaving me at 6s. a quarter.
+
+14th.--To the theatre:  Garrick as Don Felix, in 'The Wonder.'
+
+23rd.--At 4 to Drury Lane; the King being there to-night, very much
+crowded.  Miss Gunning and her two sisters and a number of people
+of quality.  'The Tempest,' and 'Harlequin Ranger'; both very
+foolish to see.  Home at 10.
+
+28th.--I was sworn in to-day in the King's Bench as an Attorney of
+that Court.  Paid Judges' clerk, when I went to be examined, 7s.;
+servant, 1s.  Admission on stamp, 6 pounds 6s.  At 8 with Jenkins
+and James {14} to the Robin Hood Society.  Stayed there till past
+9, then went into a room below and stayed till 11.
+
+30th.--Paid 10s. 6d. for entering as a pupil of Mons. Prieur, a
+French master. {15}
+
+Dec. 1st.--To Covent Garden Theatre.  Paid for a fortnight's board
+and lodging, 1 pound 4s.; for a bushel of coals, 1s. 2d.  Tea at
+Prosser's coffee-house, 4d.; wine after dinner, 3d.; a pound of
+candles, 7d.
+
+7th.--To chambers (Mr. Adderley's) till near 7, then James came
+home with me.  At whist till 11.
+
+9th.--To chambers.  Home to dinner.  At 4 to Drury Lane Theatre:
+'The Careless Husband'--Lord Chalkstone, Mr. Garrick.
+
+10th.--To Mr. Adderley's till dinner.  Thither in the afternoon.
+At 6 drank tea with Jenkins.
+
+11th.--To chambers; after dinner there again.  Home at 7; at 9,
+Jenkins, James, and Mersing, at whist till 11.
+
+Dec. 12th.--To chambers.  Paid for cyder with James, after dinner,
+3d.; wine with Mersing at night, 3d.
+
+14th.--At whist with Jenkins, James, and Mersing.
+
+17th.--Jenkins and James came home with me at 7; played at draughts
+with Jenkins.  Afterwards Boughton came and took us to his
+lodgings; at whist till 11.
+
+21st.--With Boughton and James; mobbed it for the first row of the
+upper gallery at Drury Lane, which we got.
+
+22nd.--To Drury Lane; an old play of Shirley's, 'The Gamesters,'
+revived.
+
+23rd.--To chambers; after dinner to d0.  At 7, home; Jenkins,
+James, and Boughton, to whist till 11.
+
+25th.--To the Temple Chapel, at the Sacrament.  In the afternoon
+with James and Boughton to the Romish Chapel in Lincoln's Inn
+Fields; then to Mrs. Emily's and drank tea.  Home at 8.
+
+27th.--With Boughton to St. Michael's Church, Cornhill, and heard
+part of a sermon; afterwards to St. Mildred's, and heard part of
+the prayers.  At whist with Sibthorpe, Boughton, and Jenkins till
+near 11.
+
+28th.--To an auction of books {16} at the 'Robin Hood.'
+
+31st.--Between 9 and 10 Mrs. Mouling sent for me, to play at whist
+with her son and daughter till 11.
+
+1758, Jan. 2nd.--To chambers at 4 till past 7; then home; Boughton,
+Daniel, and Mersing came, and played at whist till 12.
+
+The following is written on a slip of paper:- 'Jan. 1st, 1758.--In
+my pocket, 1 pound 5s. 5d.; purse, 17 pounds 9s. 6d.; money laid
+out for my brother, &c. 2 pounds 7s. 7.5d.; due from my mother at
+Christmas, 2 pounds 2s.; in my card purse, {17} 12s. 2d.; Bank 3
+per cent.  Reduced Annuities, 100 pounds.
+
+'Of wife and children, debts and taxes clear, 123 pounds 16s.
+8.5d.'
+
+Jan. 29th, Sunday.--Between 2 and 3 to the Speaker's to dinner; sat
+an hour before dinner; paid the servant, 2s.
+
+Feb. 19th, Sunday.--To St. Dunstan's Church.  After dinner called
+on Mr. Maxwell; then to church at St. Andrew's, Holborn; called on
+Mersing; soon after 4 Sam Ford came in; I stayed with him till past
+7; then went home and got my fire lighted, and at 9 they came and
+stayed till 12.
+
+21st.--Took a place in the Godalming Machine.
+
+22nd.--To the 'New Inn,' Western Bridge, soon after 6; waited till
+7; there being eight passengers, they sent a chaise in which I and
+a gentleman came; stopped at Cobham; arrived at Guildford {18}
+between 3 and 4.  Paid coach, 5s.; breakfast at Cobham, 18.
+coachman, 1s.
+
+April 17th.--At 6 set out in the coach for London.  Dined at
+Kingston; in about 5.  With James and Jenkins to Mr. Boughton's; at
+whist till 11.  Paid coach and man, 5s. 6d.; dinner, 2s.
+
+18th.--To the play:  'The Provoked Husband,' Mr. Garrick.
+
+19th.--Breakfasted with James at Johnstone's Coffee House, Charing
+Cross.  Paid for chocolate and muffin, 2.5d.
+
+23rd, Sunday.--To St. Dunstan's Church; walked in Lincoln's Inn
+Gardens; to Mr. Emily's to dinner; to the chapel in Russell Court;
+walked in the Park; at Slaughter's Coffee House for half-an-hour;
+at 8 called on Boughton.
+
+25th.--To Don Saltero's at Chelsea; paid for breakfast there,
+13.5d.; to Marylebone, played at bowls there; at 5, Ford came; he
+stayed till 7; then I went to the 'Crown and Rolls.'  Home about
+12.
+
+May 1st.--I catched a great cold yesterday; James and I went home
+with Jenkins; at cribbage till 11.
+
+8th.--Dined in Butcher Row, 9d.; went to hear Green, the Methodist,
+dispute in Fetter Lane--shameful.  With Jenkins at cribbage till
+past 11.
+
+10th.--Breakfasted with Mr. Street; at 11 to the Bank, and sold 25
+pounds stock; {19} at 4 dined with Mr. Adderley at the 'White
+Lion,' in Wych Street; drank tea with Clare; between 7 and 8 Gordon
+and I went to Covent Garden:  'Miss in her teens,' &c.  Fribble,
+Mr. Shuter.
+
+11th.--With Jenkins to Marylebone Bowling green, at bowls.  Home at
+9; then an hour at the 'Bell.'
+
+18th.--Breakfasted at home; James dined here; he fetched a pigeon
+pye; afterwards to Prosser's, where Pitts came to me; at 6 Emily
+came; we took boat at the Temple, landed at Lambeth, and walked to
+Vauxhall; supped there.  Home about 12; very pleasant evening; paid
+for supper at Vauxhall, 2s.; going in, 1s.
+
+19th.--Breakfasted at New Exchange Coffee House; dined at Betty's
+with Mr. Gordon; then to Drury Lane--'The Rehearsal,' Bayes, Mr.
+Garrick; paid for breakfast, 6d.; a letter, 3d.; dinner and wine,
+1s. 4d.
+
+20th.--Jenkins, James, and I walked to Marylebone; at bowls till 8;
+then we went to the 'Sugar Loaf' in Bell Yard; wine at Marylebone,
+6d.; supper, 4.5d.
+
+22nd.--Boughton, James, and I to Islington, to a bowling-green
+there; paid for cyder, ham, &c. 7.5d.
+
+26th.--Dined with Mr. Adderley at the 'White Lion,' there till 6.
+
+27th.--To the Bowling-green beyond the Foundling Hospital.
+
+29th.--James and I walked to Marylebone, bowls there; between 4 and
+5 we went to see 'Hamlet,' by Mr. Garrick.
+
+June 6th.--Got up between 4 and 5; Jenkins and James breakfasted
+with me at the 'Angel'; at 6, set out in the coach for Guildford;
+stopped at Kingston; dined at Cobham; in about 4; to Miss Stevens'.
+
+7th.--To the Bowling-green; to Miss Stevens'. {20}
+
+9th.--Walked with Miss Stevens up Marrow Lane.
+
+July 10th.--Miss Stevens and I drank tea at Mrs. Greenley's; sat in
+her pavilion.
+
+Aug. 24th.--Dined with my uncle, Duncumb, at Shere; at 5 to Sir
+John Evelyn's, drank tea there; paid my uncle's servant, 1s.; Sir
+John's, 1s.
+
+28th.--Dined with the Mayor at the 'White Hart.'  A great many
+gentlemen from all parts of the country; there till 6; received of
+Mr. Fawkes, making his will, 3s. 6d.
+
+Sept. 2nd.--Dined at the 'Tuns,' paid 9d.; drank tea and supped
+with Miss Stevens; Mrs. Ford came in, and afterwards Miss Adee {21}
+and Miss Patty.
+
+7th.--Walked with Miss Stevens to Mr. Emily's at Clandon; dined
+there, cards in the evening.
+
+8th.--To Mr. Engelstoft's; Mr. Cunningham and Mr. Mellersh there;
+at whist till 12.
+
+12th.--To Sir John Evelyn's, to breakfast.
+
+17th.--Between 4 and 5 to the Green; played three games, lost two;
+between 7 and 8 sat down to whist there with Mr. Englestoft, Mr.
+Mellersh, and Mr. Hunt.  Home before 11.
+
+18th.--To the Artillery Ground, to see a pony race; to Mrs.
+Wilpley's for half an hour; at 7 to the Bowling-green, Mellersh,
+Gorman, and Engelstoft there; at whist till 11.
+
+19th.--The Militia sworn in quietly; soldiers ready, but no
+occasion; to Mr. Engelstoft's, played at backgammon; then to Mrs.
+Wilpley's; fetched Miss Stevens at 4; at quadrille till near 8.
+
+20th.--To Middle Church {22}; to Mr. Shrubb's; their home, at whist
+till near 1.
+
+21st.--To Busbridge, Mr. Webb {23} not at home; sat an hour with
+Mrs. and young Mr. Webb; cards at Mr. Brewer's till past 9.
+
+22nd.--The Visitation; at 7 to Miss Stevens.
+
+23rd.--Dined at the 'White Lion,' paid 1s. {24}; between 3 and 4 to
+Miss Stevens; Mrs. Wright came in; at quadrille till 9.
+
+24th, Sunday.--To Middle Church.  (He did not visit Miss Stevens
+this day).
+
+25th.--Walked to Mr. Emily's at Clandon; called on Mrs. Wilpley;
+between 7 and 8 to Miss Stevens.
+
+26th.--To Mr. Brewer's, Mr. Thomas there; after tea at Pope Joan
+till 7; then to Miss Stevens.
+
+27th.--Mr. Brewer came at 10 with a licence; Mr. Martyr bound with
+me to Mr. Burdett; walked to Mr. Stevens' at Worplesdon, he not at
+home, back between 5 and 6; called on Mr. Ralph Ford to bespeak his
+attendance to-morrow; between 7 and 8 to Mrs. Norwood's, Betsy
+Stevens there.
+
+28th.--At 8 went to Mrs. Norwood's, Miss Adee and Betsy Stevens
+breakfasted there; they went down the backway to Mr. Brewer's; I
+went home and down town; was married; {25} sent Mr. Brewer's man
+for a chaise and came away directly; went afterwards to Mr.
+Brewer's and drank chocolate; dined at Epsom; to Mrs. C.'s {26} at
+5; I walked to Hatton Garden and with Mr. Boughton to Lincoln's Inn
+Coffee House; then home; at quadrille before supper. {27}
+
+1758, Sept. 29th.--Called on Adderley; dined at home.  Clare and
+Jenkins came at 5, stayed till 7; at quadrille till 8.
+
+30th.--We went to New Bond Street to the milliner; home to dinner.
+I drank tea with Mr. Potts, Clare, and Marshall, then home at 8.
+
+Oct. 1st.--To Lothbury Church.  Mr. and Mrs. Barrow drank tea with
+us.
+
+3rd.--Drank tea with Clare, home to supper; after supper quadrille.
+
+4th.--Bolton called; with him to the Antigallican Coffee House till
+10.
+
+5th.--Set out in a chaise for Guildford at 1; arrived between 6 and
+7.
+
+16th, Monday.--Lady Martha and Mrs. Fitzgerald, Mrs. Spooner, Mrs.
+and Mr. Burdett drank tea with us. {28}
+
+Nov. 6th.--Set out at 8 in the Godalming Machine; dined at Esher;
+in at 5.  Called on Mersing; Boughton there; then to Jenkins', and
+played at whist till near 11.  Coach and man, 5s. 6d.; a glass of
+capillair, 3d.
+
+8th.--Dined at Prosser's Coffee House; between 4 and 5 to the play-
+-'Zara,' Lusignan, Mr. Garrick.
+
+9th.--With Mersing and Jenkins to the 'Feathers' Tavern, where we
+supped; home at 11.
+
+10th.--Set out at 7 in the Godalming coach; home at 5.
+
+15th.--To the Bowling-green between 6 and 7; at whist there till 10
+{29}; then home.  Won 4s. 6d.; paid reckoning at the green, 1s.
+
+17th.--To Mrs. Emily's to dinner; played at quadrille before
+dinner; home at 5; then went after my wife and Mrs. Norwood to Mr.
+Shrubb's at Shalford; then to the Bowling-green.
+
+1759, Feb. 21st.--To Middle Church.  My wife and I walked with Dr.
+and Mrs. Mitchell in their garden till past 1.  At 6 Mr. Ford, Mr.
+Gorman, and Mr. Mellersh came; at whist till 12.
+
+March 21st.--On Stephens's horse to London; met Mersing and
+Jenkins; dined at Betty's.  To Covent Garden--'The Busybody,'
+Marplot, Shuter. {30}  At 10 to the 'Angel,' where I lay.  Mersing
+and Jenkins came; we drank one bottle.  They went a little after
+12.
+
+April 9th.--Having a cold, with a difficulty of breathing, I was
+bleeded this morning, and found benefit by night.
+
+10th.--At whist till past 11.
+
+May 7th.--On Stephens's horse to London.  To Mr. Adderley's; at 5
+with him to the 'Feathers' Tavern, and dined.  Away at 8; at 9
+Jenkins, Mersing, and Boughton came to me at the 'Angel' and stayed
+till past 12; paid for dinner and wine, 2s. 6d.
+
+9th.--Walked about; called on Adderley; dined with Jenkins; home by
+Epsom; paid for breakfast at the 'Angel,' 8d.; two nights' lodging,
+1s. 6d. maid, 1s.; horse and hostler, 3s. 2d.; turnpike, 4.5d.
+horse hire, 6s.
+
+June 13th.--On Stephens's horse to Chertsey; breakfasted with Ford,
+Heath, and wife; to Ascot Races.
+
+22nd.--To the green, and thence with Mr. Russell to the 'Tuns' to
+drink the King's health; paid drinking, 1s.
+
+27th.--To London; called on Adderley.  With him to Clement's Coffee
+House till 10; then to the 'Angel.'  Jenkins came at 11, stayed
+till 1.
+
+July 6th.--To Sir John Evelyn, at Wotton.  Paid horse hire, 2s.
+{31}
+
+23rd.--To Sir John Evelyn, with him Colonel Evelyn and young Mr.
+Budgen. {32}  To the 'Hatch' to dinner; Mr. Evelyn, Mr. Godschall,
+{33} Mr. Bridges, Mr. Steere, Mr. Spence, {34} Mr. Courtenay, and
+Mr. Walsh there; left at 7; paid for dinner and wine, 4s. 6d.
+
+Aug. 6th.--To Wotton Hatch to dinner.  Mr. Evelyn, Mr. Bisshop, Mr.
+Godschall, Mr. Deane, Mr. Carr, Mr. Spence, Mr. Courtenay, Mr.
+Walsh, and Mr. Hull. {35}
+
+9th.--To see the fireworks on the good news:  Russians and French
+defeated.  The Judges came in the evening.
+
+11th.--The assizes finished.
+
+13th.--To Mr. Brewer's; at whist; home by 10; won 7s. 6d.
+
+14th.--My wife brought to bed this morning, about five of a boy.
+Paid Mr. Burdett, 10s. 6d.; midwife and nurse, 10s.
+
+20th.--To Wotton Hatch. {36}  Mr. Talbot, Mr. Spooner, Mr. Bridges,
+Mr. Walsh, and Mr. Spence.  Home about 8.
+
+Sept. 3rd.--Being wet, did not go to Wotton Hatch.
+
+10th.--My wife sat up for company.
+
+11th.--Company again.
+
+Oct.  1st.--To Wotton Hatch:  Mr. Budgen, {37} Mr. Godschall, Mr.
+Tucker, {38} Mr. Talbot, Mr. Dormer, Mr. Steere, Mr. Courtenay, Mr.
+Kerr, Mr. Spence, and Mr. Spooner.
+
+22nd.--With Sir John Evelyn to Milton Court:  held court there.
+Mr. Evelyn with us.  To Wotton at 6; danced till past 10.  Colonel
+Evelyn, Mr. Harcourt, the butler, Miss Mary Evelyn, Miss Clark,
+Miss Duncumb, and three maids.  I danced with Miss C. and Miss D.
+
+28th.--Paid for a thing to hang my wig on, 1s. 2d.; a hutch for the
+child, 8s.
+
+Nov. 26th.--Went to town; spent the evening at Mr. Adderley's
+chambers with him and Miss A.
+
+27th.--Jenkins came, and stayed till 12.
+
+28th.--With Boughton and Jenkins; they stayed till 1.
+
+29th.--Home in the Portsmouth fly.  Thanksgiving for taking
+Quebeck.
+
+Dec. 1st.--Illumination for Sir Edward Hawke beating Conflans.
+
+13th.--Ford, Mellersh, and Vincent the clergyman sent for me to the
+'White Hart' to play at whist.
+
+1760, Jan. 14th.--At 6 to the 'Red Lion':  Mr. Cunningham, Mr.
+Russell, Mellersh, and Ford.; home at 11.
+
+15th.--Lord Onslow sent for me to dinner; home at 8.  Paid Mr.
+Wilpley bleeding my wife, 2s. 6d.
+
+Feb.  11th.--On Upperton's mare to London; dined with Adderley at
+the 'Feathers.'  At 5 to Covent Garden, 'Comus,' singing by Miss
+Brent.  To Clare's for half-an-hour; then to the 'Angel'; Jenkins
+came at 10, stayed till 12.
+
+April 13th.--Paid a man going beyond Ripley to get some leeches to
+bleed the child.  A labourer in the garden one day, 1s. 3d.
+
+July 7th.--To the Club at Wotton Hatch; reckoning, 4s. 6d.
+
+28th.--Mrs. Norwood and my wife drank tea with Mrs. Hole.  I went
+to the Green till past 8.  Englestoft came after; played backgammon
+till near 11.
+
+Nov. 14th.--Between 6 and 7 to the 'White Lion' by invitation from
+the Mayor on the King of Prussia's success.  Stayed till past 11.
+
+17th.--To London; called on Jenkins, dined with him; drank tea with
+Clare, then to the 'Angel.'  Jenkins came and stayed till 1.
+
+19th.--In a coach to the Speaker's; dined at Dr. Adee's; drank tea
+with Clare, then to the 'Angel.'  Jenkins came and stayed till 12.
+
+Dec. 15th.--Mr. Robert Austen {39} drank tea here, and at 6 went
+with me to the 'Red Lion':  Mr. Russell, Mr. Ford, Captain and Mr.
+C., and Mr. Webb; cards; home at 11. {40}
+
+June 8th.--Mr. Lane {41} and Mr. Godschall made a cricket match to-
+day on Albury Heath.  Mrs. Skurray and my wife went in a
+postchaise, and dined with my mother, and then went to see it.  I
+walked.  We drank tea in Mr. Godschall's tent, Mr. Lane, Mr. King,
+Mr. Vincent, Mr. Dickinson, Lord Ossory, &c.
+
+July 19th, Sunday.--On Upperton's horse to London.  Dined at Dr.
+Adee's.  In the afternoon, walked, with Mr. Adderley, Miss Sally
+Adderley and Miss Williams, to the 'White Conduit House.'  Jenkins
+spent the evening with me at the 'Angel' till 12.
+
+20th.--Breakfasted with Dr. Adee, dined and drank tea with
+Adderley; with him and Jenkins to Vauxhall; they supped with me at
+the 'Angel,' and did not go till near 2.
+
+27th.--To Wotton Hatch Club.  Paid, 5s. 6d.
+
+Sept. 22nd.--The Coronation.  To the Green, played four games.  At
+7 to the 'Red Lion,' to drink the King's health.  To the Mayor at
+the 'Tuns.'  Home at 12.
+
+28th.--To Wotton Hatch.  Home between 7 and 8.
+
+Oct. 2nd.--To London, to talk with Mr. Evelyn {42}; called on
+Jenkins.
+
+3rd.--Breakfasted with Mr. Evelyn.
+
+9th.--Bleeded to-day.
+
+27th.--To London, with Mr. Evelyn to the Board of Green Cloth.
+There till 3, dined at Clifton's Chop House.  Paid for dinner, 1s.
+
+28th.--Breakfasted at Dr. Adee's.  The Miss Adee's walked with me
+to look for a house.  Mr. Jenkins supped with me.
+
+29th.--To the Green Cloth at 11; at 3 to the 'Angel,' and dined
+there.  To Covent Garden Theatre, but could not get in.  Drank tea
+at Adderley's; quadrille.  Paid for dinner, 1s. 6d.; rum, 1s. 2d.;
+orange chips, 3d.; cakes, 2d.
+
+1762, Jan. 18th.--Queen's Birth-day.  We all dined at St. James's.
+At 11 home in a chaise; paid for chaise, 1s. 6d.
+
+March 12th.--The General Fast.  My wife brought to bed of a boy.
+{43}
+
+April 24th.--Much out of order with a cold.
+
+25th.--Bled this morning.
+
+26th.--Mr. Stephenson and I, with Mr. Selwyn, at 2, to the
+Exhibition.  Paid for catalogue, 6d.
+
+27th.--At home this morning, taking Jessop's water.  In the
+afternoon drank tea with Jenkins.  Home at 8.
+
+July 29th.--Dined at the 'King's Head,' Dorking, paid for dinner
+and wine, 2s.; Lord Midleton's man for venison, 2s. 6d.
+
+Aug. 21st.--To St. James's with Mrs. Norwood, and three Miss Adee's
+to drink caudle. {44}  Went into Kensington Gardens; gave the boy
+who let us in, 2d.
+
+Sept. 1st.--To Mr. Walters, {45} called on Mr. Malthus; {46} dined
+at Mr. Evelyn's.  Home at 6.
+
+Oct. 2nd.--Dined and lay at Lord Midleton's; at quadrille, from 4
+in the afternoon.  Paid servants in the house, 5s.
+
+Nov. 5th.--In the Guildford coach to Guildford.  Went to the 'Tuns'
+to drink the King's health.  Home at 12; paid at the 'Tuns,' 1s.;
+coach and man, 6s.
+
+13th.--Dined at Mr. Burdett's; at whist won 6 rubbers out of 7; won
+15s.  Home past 12.
+
+1766, Sept. 6th.--Paid for a horse, bought of a Welchman, 6 pounds
+6s. 0d.; saddle, bridle, and cloth, 1 pounds 17s. 6d.
+
+Oct. 4th.--With Mrs. N. and Miss Kerr to Drury Lane; 'Romeo and
+Juliet.'
+
+5th.--Sunday to Church.  To the Coffee-house for half-an-hour.
+Paid for wine, 6d.
+
+6th.--To Mundy's Coffee-house, and supped.
+
+7th.--Drank tea with Jenkins.
+
+10th.--With Mrs. Kerr to Drury Lane:  'Provoked Husband' and 'Devil
+to Pay:' Mr. Garrick.
+
+11th.--Drank tea with Adderley.  To the Coffee-house for half-an-
+hour.
+
+12th.--Drank tea at Dr. Adee's.
+
+13th.--With Jenkins to Mundy's Coffee-house.  Paid reckoning, 2s.
+6d.
+
+14th.--To the Coffee-house half-an-hour; wine, 6d.
+
+15th.--Drank tea at Mrs. Emily's, at quadrille.
+
+1767, March 18th.--It pleased God to release my William from his
+sufferings, when half a year old he was seized with convulsions
+which never left him.
+
+June 9th.--With Mr. Hollingworth to the Downs Guildford Races.  Sir
+John Evelyn being taken ill, went off the Downs to Wotton.
+
+19th.--Jack was taken with the smallpox, and on the 28th the dear
+soul died.  Polly was taken on the 1st of July, I sent for Mr. Kerr
+who gave her Sutton's powders, and she recovered.
+
+Dec. 22nd.--With Mr. Waddington to Drury Lane:  'Suspicious
+Husband,' Mr. Garrick.
+
+23rd.--Mr. Jenkins dined.  Coffee-house half-an-hour.  Paid for
+wine, 6d.
+
+24th.--Coffee-house, wine, 6d.; 25th, do.; 26th, do.
+
+1768, Jan. 30th.--My wife brought to bed of a boy. {47}
+
+Feb. 24th.--Dined at Penneck's, Mr. Astle, Col. Webb, Dr. Solander,
+&c.
+
+March 1st.--Mr. Penneck, Dr. Solander and Col. Webb, dined here.
+{48}
+
+31st.--To Captain Brodrick's, {49} and dined; Lady Midleton's, and
+Sir Francis Vincent there.
+
+1768, Sept. 9th.--To Neville Court, and had the nerve in both ears
+cut for the toothache, and received relief in an hour.
+
+1769, Oct. 11th.--To New Inn {50} till dinner; at 4 again till 6.
+
+19th, Sunday.--To Church; to the Buffalo Coffee House for an hour;
+paid for wine, 6d.
+
+22nd.--Sir Joseph Ayloffe, Dr. Ducarrell, and Mr. Astle dined here.
+
+March 7th.--To the House of Commons till 3.
+
+10th.--To the House of Commons till 4.
+
+May 15th.--Dined at Lord Onslow's; to the race. {51}  I paid his
+servants, 4s.
+
+16th.--With Mr. Powell, curate of Abinger, to the race.
+
+July 30th, Sunday.--Mr. Woods came to tell me that Mr. Sturt {52}
+died yesterday.  To Dorking to Mr. Budgen, Mr. Talbot, and Mr.
+Scawen.
+
+Aug. 28th.--Meeting of Mr. Smith's trustees.  I was appointed clerk
+and treasurer, in the place of Mr. Sturt.
+
+Oct. 16th.--In a chaise with Mr. Jenkins to Reading. {53}
+
+1770, July 27th.--Mr. Jenkins, Mr. Adderley, and Mr. Pacey dined
+with me.  To the Percy Coffee House for an hour; won 15s. {54}
+
+Aug. 4th.--We set out at 6 with Mr. Jenkins and Mr. Adderley to
+Shere; dined at Cobham; saw Claremont and Painshill.
+
+5th, Sunday.--To Church; afterwards by Lonesome {55} to Leith Hill.
+
+6th.--To Lord Aylesford's house and garden (Albury Park).
+
+Sept. 6th.--Lord Talbot, at the request of Mr. Gray and Mr. Sacker,
+gave me the place of Clerk of the Verge.  I was sworn in this day.
+
+Nov. 19th.--To New Inn:  to Mundy's Coffee House; {56} reckoning,
+3s.
+
+20th.--At 6 with Ford to the Turk's Head Coffee House; whist; home
+at 2; reckoning, 6s.; won 10s.
+
+21st.--Mr. and Mrs. Ford drank tea and supped here; Jenkins and
+Mersey supped; whist, won 2s. 6d.
+
+23rd.--To the Percy Coffee House; home at 10; reckoning, 1s, 9d.;
+won, 15s.
+
+30th.--To the Percy Coffee House; reckoning, 2s. won 18s.
+
+1771, Jan. 1st.--At Shere {57}; drank tea and supped at Mr.
+Botham's.
+
+3rd.--Dined at Mr. Godschall's.
+
+6th.--Walked to Sir Frederick Evelyn's, and dined.
+
+April 12th.--To Wood Street to see a horse; rode the horse to
+Islington; paid for it, 25 pounds 4s. {58}
+
+Nov. 5th.--Dined at the Percy Coffee House, and stayed till 10;
+whist; lost 1 pounds 3s. 6d.
+
+Dec. 2nd.--To the Percy till 10; won 18s.
+
+1772, Jan. 23rd.--Paid admission fee at the Antiquary Society, 5
+pounds 5s.
+
+Feb. 28th.--Dined at Mr. Penneck's {59}:  Sir Joshua Reynolds, Dr.
+Stebbing, Mr. Lort, and Mr. Astle.  At half-past 5, with Mr.
+Adderley, to Drury Lane:  'Much Ado about Nothing,' Mr. Garrick.
+
+April 6th.--With Jerkins to the meeting of the Laudable Society;
+dined there; dinner, 5s.
+
+Aug. 24th.--Set out with Mr. Jenkins in a postchaise for Wales.
+
+27th.--Being the races at Hereford, could get no chaise, but got
+horses, and rode to Monmouth.
+
+31st.--To Llandilo, an excellent inn, and dined; and Mr. Pennoyre
+Watkins telling us the ford at Llandovery was dangerous, lay there.
+Whist with him; won 12s.
+
+1773, July 24th.--Rode to the Downs; saw part of a great cricket
+match.
+
+26th.--Dined at Mr. Godschall's:  General and Mrs. Evelyn and
+Colonel Molyneux there; drank tea with Mr. Berwick.
+
+Oct. 31st, Sunday.--To Church; to Mr. Talbot (of Chart Park), and
+dined; drank tea at Mr. Tucker's {60}; lay at Mr. Kerr's.
+
+Nov. 13th.--With Jenkins to Covent Garden:  Macklin played Macbeth.
+
+1774, June 7th.--Rode with Mr. Jenkins by Highgate, &c.
+
+9th.--Rode with Mr. Jenkins by Stamford Hill, &c.
+
+10th.--Rode with Dr. Osborn to Dr. Price, {61} Newington Green.
+
+24th.--Rode with Mr. Penneck and Mr. Austen to Mr. Walpole's,
+Strawberry Hill; saw that; {62} dined at the 'Toy,' Hampton.
+
+Dec. 7th.--Dr. Solander and Omiah, the native of Otaheite, Mr.
+Pennock, and Mr. Planta {63} dined and drank tea here.
+
+8th.--To Drury Lane:  'The Country Girl.'
+
+1775, Sept. 28th.--To the 'King's Head' at Derby, {64} and lay.
+
+1776, April 3rd.--Paid subscription to the Laudable Society, 2
+pounds 12s. 6d. {65}
+
+May 3rd.--Paid for a grey horse, five years old, 15 guineas.
+
+27th.--Paid labourers planting firs in the Hurtwood, 1 pound 12s.
+3d.; stakes, &c., for fencing, 2 pounds 17s. 3d. {66}
+
+Aug. 23rd.--To Loughborough, with Mr. Jenkins.
+
+1777, Oct. 30th.--To Loseley to breakfast; to East Horsley, and
+dined at Mr. Fox's; supped at Mr. Duncumb's.
+
+31st.--General Evelyn and Mr. Lomax dined.
+
+Nov. 19th.--Paid Mr. Chaubert, for monument in Shere Church, 6
+guineas. {67}
+
+Dec. 21st.--Paid Mr. Lomax, for half an acre of land, 7 pounds {68}
+
+1778, Jan. 16th.--To Leicester; dined with Mr. Parr, {69} and
+supped; whist; lost 3s.
+
+Feb. 26th..--To the play with Miss Catherine Adee and Kitty:
+'School for Scandal' and 'The Quaker.'
+
+March 19th.--Antiquary Society; supped at the 'White Hart,' with
+Mr. Gough, Mr. Lort, Mr. Grose, and Mr. Topham. {70}
+
+April 25th.--Lord Midleton came; rode with him to Pitland Street;
+he and Mr. Lomax dined.
+
+June 8th.--Mr. Jenkins and Mr. J. Martyr {71} dined.
+
+9th.--To Guildford; dined at Mr. Martyr's; Mr. Jenkins and Mr.
+Hawes there; to the horse race.
+
+10th.--General Evelyn, Mr. Dyson, and Captain Williams dined; to
+the course.
+
+July 19th, Sunday.--To Church; walked in the Museum Gardens with
+Mr. Austen.
+
+26th, Sunday.--To Church at Shere; dined at Mr. Duncumb's; drank
+tea at Mr. Godschall's.  Lord and Lady Onslow and Mr. and Mrs.
+Onslow there.
+
+1780, Jan. 16th.--In a chaise to the Speaker at Wonersh, and dined;
+to Loseley in the evening.
+
+27th.--Antiquary Society, supped with Mr. Waddilove at Mundy's
+Coffee House in Maiden Lane; paid 1s.
+
+Feb. 8th.--To Drury Lane, with Mrs. Gardiner and Polly, 'Plain
+Dealer' and 'Fortunatus.'
+
+March 28th.--To General Evelyn's, and breakfasted; to Turnpike
+meeting at Guildford; dined at the 'White Hart,' with Mr. Page and
+Captain Onslow; to Loseley and lay.
+
+April 2nd.--Dined at Mr. Lomax's.
+
+15th.--Breakfasted at Mr. Lomax's; rode with him to the Hurtwood.
+
+17th.--To the race.
+
+18th.--Do.
+
+June 6th.--Lord Mansfield's house burnt, up all night.
+
+Nov. 22nd.--Drank tea with Mr. Jenkins.  To the Rolls Coffee House,
+and supped; quadrille.
+
+Dec. 11th.--Mr. and Mrs. Eyre and Mr. and Mrs. Meux supped here;
+quadrille.
+
+1781, Jan. 8th.--Edward went to the Guildford Ball.
+
+11th. -To the first meeting of the Antiquary Society in Somerset
+House; supped at Coffee House, with Mr. Gough, Mr. Topham, &c.
+
+March 22nd.--To Kingston Assizes; dined with the Grand Jury; Mr.
+Budgen's cause tried.
+
+May 11th.--Supped at Mr. Meux's; whist, won 9s.
+
+June 16th.--To Sir Edward Evelyn in Piccadilly, and with him in his
+phaeton to Leatherhead.
+
+July 2nd.--With Dr. Osborne in his coach to Mr. Rice at Tooting,
+and dined.
+
+Aug. 3rd.--To Mr. James at Enfield, and lay.
+
+4th.--Rode to Mr. Jenkins, at Hampstead.
+
+16th.--Mr. Manning supped and lay here.
+
+17th.--With Mr. Manning {72} to Ansted Camp; he dined and lay here.
+
+18th.--Dined at Mr. Pollen's; drank tea at Mr. Polhill's (Albury).
+
+23rd.--Mr. and Mrs. Shaw and Mr. Polhill drank tea here.
+
+24th.--To Colonel Clarke at Stanestreet, and breakfasted; dined and
+supped at Mr. Duncumb's.
+
+25th.--To Loseley, and breakfasted; dined at the 'White Hart' with
+the Club.
+
+Sept. 14th.--To Mr. Page {73} at Cobham to breakfast; to Shere to
+dinner.
+
+15th.--General Evelyn, Mr. and Mrs. Lomax, and Mr. Duncumb dined
+with us. {74}
+
+16th, Sunday.--Dined at Mr. Godschall's.
+
+17th.--Breakfasted at Wotton; dined at the 'King's Head,' Epsom.
+
+1782, Feb. 10th.--Walked to Hampstead; dined at Mr. Jenkins's;
+thence walked home with him. {75}
+
+March 31st.--My brother and I drank tea at Capt. Finch's (Albury
+Park).
+
+Sept. 15th.--Breakfasted at Lord Grantley's; dined at Mr.
+Shurlock's; drank tea with my brother; to Wotton, and lay at Sir
+Frederick's.
+
+1783, June 7th.--Set out at 7 for Shere; breakfasted at Epsom;
+dined at the 'White Horse,' Dorking {76}; paid for breakfast, 1s.;
+barber, 6d.; horses, 10d.; at Dorking, dinner and wine, 3s. 8d.;
+horses, 1s.
+
+July 3rd.--To Harrow speeches {77}; breakfasted at the 'King's
+Head,' dined with Dr. Heath.
+
+Dec. 30th.--Mrs. Evelyn and Hugh dined here.
+
+1784, March 11th.--To the Antiquary Society; supped at Holylands
+Coffee House, with Mr. Gough {78}, Mr. Ord, Mr. Turner, Dr.
+Hamilton, Mr. Grose, Dr. Nash, and others.
+
+22nd.--To Bath by coach, set out at 4, arrived at 8.
+
+July 24th.--Rode with Mr. Topham {79} to Tunbridge Wells; Mr.
+Gough, Mr. Ord, and Mr. Brooke, in a chaise; we all saw Knowle, and
+dined at the 'White Hart,' Sevenoaks.
+
+Aug. 19th.--Dined at the Club at Dorking; Duke of Norfolk, Sir Wm.
+Gray, &c.
+
+Dec. 26th.--At home; physick. {80}
+
+1785, Jan. 3rd.--Mr. and Mrs. Polhill and nephew, Mr. and Mrs.
+Duncumb and John Duncumb dined here.
+
+4th.--Edward and I rode to Sir Fredk. Evelyn's; dined at Mr.
+Godschall's.
+
+5th.--The tenants dined here.
+
+6th.--Edward and I rode to Mr. Polhill's, and dined.
+
+7th.--Edward and I dined at Captn. Finch's; Lady Aylesford and two
+daughters, Captn. Edward Finch, and Mr. Morden there.
+
+Feb. 19th.--To Drury Lane; 'Macbeth' Mrs. Siddons.
+
+June 26th (Sunday).--Edward and I walked to Albury Church; dined at
+Mr. Polhill's; with him in his chaise to Shere Church; {81} went to
+Captn. Pitt's; {82} drank tea at Sir Frederick's.
+
+July 13th.--Attended the Sessions; dined with the Justices at the
+'White Hart;' lay at Loseley.
+
+14th.--Breakfasted with Mr. Mellersh; dined at Loseley; drank tea
+at Mr. Shurlock's.
+
+1786, Jan. 7th.--Edward and I rode to Guildford, and then in a
+chaise to Pepperharrow, and lay there.  To Church at Pepperharrow.
+Chaise came.  I dined at Mr. Webb's; drank tea at Mr. Manning's,
+and lay at the 'White Hart,' Guildford; Mr. Mellersh supped with
+me.
+
+June 6th.--Guildford races.  Very unwell; did not go up to the
+Downs.
+
+July 14th. -To Tooting, and held a court; dined and drank tea at
+Mr. Rice's. {83}
+
+Aug. 2nd.--To Eaton Bray. {84}
+
+31st.--To Canterbury.
+
+Dec. 28th.--Dined and lay at Mrs. Tucker's, Sir Henry and Lady St.
+John; {85} whist, won 9s.
+
+1787, Jan. 10th.--To Quarter Sessions in Borough; dined with the
+Justices; whist, Sir Joseph Mawbey, {86} Pardon, Lawson, and
+others, till 10, won 10s. 6d.
+
+Aug. 28th.--Dined at home.  Miss Malthus, and Miss Menzies, Mr. R.
+Malthus, {87} and Mr. John Duncumb, drank tea.
+
+29th.--Dined at Mr. Godschall's; Mr. and Mrs. Polhill and Mr.
+Wollaston there; whist till 10; won 8s.
+
+30th.--Dined at the Club at Dorking, Sir Fredk. Evelyn, &c.; paid
+for dinner, 4s. 6d.
+
+31st.--Set out at 6; breakfasted at Epsom; home at 1; paid for
+breakfast, 1s.; bait of horses, 1s.
+
+Oct. 26th.--Dined at Mr. Godschall's, between 8 and 9; received by
+express Mrs. Oglethorpe's death; sent for a chaise from Dorking;
+set out at 2, got to Russell Street past 7 {88}; breakfasted; to
+Mr. Sharp {89}, with him to Cranham.
+
+1788, June 9th.--Drank tea at Mr. Ruding's. {90}
+
+10th.--With Miss Adees, Mary and Caroline, to Vauxhall; home at 12.
+
+Aug. 25th. {91}--Mr. and Mrs. Shurlock dined.
+
+26th.--Dined at Mr. Taylor's.
+
+27th.--Mr. Godschall dined with us.
+
+28th.--To Mrs. Haynes, and dined.
+
+29th.--Mr. Prickett, Mr. Woodroffe; and Mr. T.  Duncumb dined with
+us.
+
+30th.--To Reigate, and lay at the 'White Hart.'
+
+31st.--Dined with Mr. Barnes; to Mr. Fanshawe, {92} and lay.
+
+Oct. 24th.--We all dined and supped at Mrs. Malthus's; whist, won
+3s. 6d.
+
+1789, Feb. 10th.--Council at the Society of Antiquaries; {93} to
+the House of Commons.
+
+April 28th.--Drank tea at Mr. Malthus's.
+
+29th.--Drank tea at Mr. Shurlock's.
+
+30th.--Dined at Mr. Webb's. {94}
+
+May 1st.--To Mr. Leech, at Witley; lay at Mr. Webb's.
+
+2nd.--After breakfast, to Mr. Manning; dined at Mr. Mellersh's.
+
+3rd.--Dined at Mr. Duncumb's; to Mr. Malthus; drank tea at Mr.
+Godschall's.
+
+14th.--Miss Adees, Mr. Robert Malthus, and Mr. Martyr, dined with
+us; supped at Lincoln's Inn Coffee House (with his antiquary
+friends).
+
+June 18th.--Dined with the Duke of Norfolk; {95} home at 8.
+
+July 3rd.--Called at Mr. Eckersall's; {96} drank tea at Dorking.
+
+Aug. 10th.--To Hazlegrove; lay there (Sir Hy. St John Mildmay's).
+
+Nov. 7th.--To Sir H. Mildmay, at Dogmersfield, and lay.
+
+Dec. 25th.--My dear daughter Caroline died this morning, after a
+fever of a few days. {97}
+
+1790, July 24th.--Dined at Sir Fredk. Evelyn's.
+
+25th, Sunday.--Dined at Captn. Finch's; drank tea at Mr. Malthus's.
+
+26th.--Dined at Mr. Duncumb's.
+
+27th.--Mr. R. Malthus and the Misses dined here, with Cath. and Mr.
+and Mrs. Polhill, and Mr. S. Godschall.
+
+28th.--Dined at Mr. Shurlock's.
+
+29th.--Dined at Mr. Thompson's.
+
+30th.--Mr. Duncumb and Mr. Thos. and Robt. Duncumb supped here.
+
+31st.--Drank tea at Mr. Malthus's. {98}
+
+Sept. 1st.--To Mr. Jenkins', at Putney, and dined; home at 8.
+
+3rd.--Took up Mr. Clutton, at Walworth, and went with him to Sir
+Peter Burrell's, {99} at Beckenham.
+
+1791, June 9th.--Dined at Sir Charles Gould's, with the directors
+of the Equitable Society.  Supped at the Coffee House, Brand,
+Turner, and others.
+
+Sept. 29th.--Dined at Sir Wm.  Hillman's, Lord Say and Sele, Mr.
+Jenkinson, Mr. Fanshawe, sen.; drank tea at Mrs. Molyneux's.
+
+30th.--Sir William Hillman, Mr. Willis, Mr. Jenkinson, and Mr.
+Saml. Dyson, dined here.
+
+Oct. 16th, Sunday.--Dined at Captn. Finch's, Mr. Onslow there.
+
+23rd, Sunday.--Dined at Capt. Finch's.
+
+1792, Jan. 2nd.--Set out ground to widen Sherborne Lane.  In the
+evening rode to Capt. Onslow's, at Ripley, and lay there.
+
+3rd.--Breakfasted there, and to town in the Godalming coach.
+
+Feb. 8th.--Dined at Edward's, with Mr. Malthus and family; child
+christened; whist, won 3s.; paid nurse, &c., 3 pounds 3s.
+
+18th.--To Lord Sydney, and with him to Frognal, and lay there.
+
+19th, Sunday.--Returned at 2.
+
+March 1st.--Mr. Willis dined here; with him to the Antiquary
+Society; supped at the Coffee House, Lord Leicester, &c., there.
+
+April 12th.--To Mr. Strode, at Loseley, and dined; to Mr. Webb, at
+Milford, and lay.
+
+1796, Dec. 14th.--My wife died about 5 in the afternoon; the most
+affectionate of wives, tenderest of parents, and most sincere of
+Christians; to her great prudence and discretion I owe the
+prosperity with which God has blessed me.
+
+24th.--Very hard frost. {100}
+
+1797, Feb. 25th.--Dined at Edward's, Mr. Godschall, senior, &c.;
+Reginald christened; paid Edward Duncumb for a drawing of Combe
+Bottom, 2 pounds 2s.;  frame and glass, 10s. 6d.
+
+March 21st.--Dined at the 'Crown and Anchor' (Antiquaries' Club),
+Dr. Hamilton, Sir Wm. Musgrave, Mr. Charles Townshend, Mr. Weston,
+Seward, Brand, Ord, Lysons; tea at the Coffee House (Holyland's)
+paid, for dinner, 2s.; tea, 11d.
+
+Aug. 14th.--In Southampton long coach to town at 6; breakfasted at
+Alton; dined at 'Catherine Wheel,' at Egham; drank tea at
+Hatchett's.
+
+24th.--Rode with Edward to Mr. Jenkins's, at Putney, dined and
+drank tea.  Home at 8.
+
+Oct. 13th.--To Leatherhead to Mr. Cooper's; to Shere; no dinner.
+
+14th.--Dined at the 'White Hart,' Guildford; drank tea at Mr.
+Polhill's (Albury).
+
+15th, Sunday.--To Albury Church; dined at Mr. Malthus's.
+
+22nd.--To Mr. Currie at East Horsley; dined and lay there.
+
+Nov. 3rd.--To Mr. Austen's; he died about 9.
+
+11th.--With Mr. Halsey and Dr. Benamore at 1; from Mr. Austen's
+house with the funeral; dined at Kingston; lay at the 'White Lion,'
+Cobham.
+
+12th.--Mr. Coussmaher and Mr. Martyr met us at the 'Green Man'; got
+to Shalford by 1.
+
+16th.--With Master Austen to Harrow.
+
+Dec. 16th.--To Guildford; dined at the Club; whist; paid 5s.; won
+3s.
+
+17th.--Dined and lay at Mr. Martyr's.
+
+20th.--With Edward in coach to Lord Grantley's, in Sloane Street,
+and dined; paid coach and turnpike, 4s. 2d.
+
+1798, Jan. 19th.--To Lord Grenville, the Duke of Portland, {101}
+&c.; dined at Mr. Harrison's.
+
+23rd.--Dined at the 'Crown and Anchor' with the Antiquaries' Club,
+Dr. Hamilton, Sir Wm. Musgrave, Dr. Halifax, Topham, Brand, Lysons,
+Charles Townshend, &c.
+
+30th.--Dined with the Antiquaries' Club, Weston, Townley, &c.
+
+Feb. 18th.--Inflammation in the eye; paid for golden ointment, 1s.
+9d.
+
+March 4th, Sunday.--To Church; Mr. Bayley {102} and Mr. Baxendale
+called.
+
+1799, Jan. 14th.--Supped at Mr. Baxendale's; whist.
+
+15th.--Dined at Mr. Ord's, Brand, Sabine, &c.
+
+16th.--Mr. Hogarth and Mr. and Mrs. Harrison dined here.
+
+17th.--Dined at General Rainsford's, Sir George Osborn, Colonel
+Sloane, and Mr. Rose Fuller.
+
+Feb. 19th.--Dined at the 'Crown and Anchor,' Sir Joseph Banks,
+Lysons, &c.
+
+July 2nd.--Mr. Waddilove {103} and Salter dined here.
+
+3rd.--Mr. Peach, Dealtry, {104} Brand, and Mrs. Davis dined here.
+
+4th.--Drank tea at Mrs. Austen's.
+
+5th.--Dined at Mr. Dealtry's, Mr. James Farrar, Mr. Blake, &c.
+
+6th.--To Mr. Ruding's (at Maldon), and breakfasted; dined at Mr.
+Filewood's; drank tea at Dr. Taylor's.
+
+12th.--Mr. and Mrs. Duncumb and Mr. T. Duncumb dined here.
+
+13th.--Breakfasted with Mr. Currie; dined and lay at Sir John
+Frederick's.
+
+14th, Sunday.--After breakfast, to Peto, {105} at Stoke D'Abernon,
+and to Church there; dined and drank tea at Mr. Cooke's.
+
+31st.--Drank tea at Mr. Malthus's; walked through his coppices,
+Miss Dalton there.
+
+Sept. 19th.--To Lord Sydney (in Grosvenor Square), and dined; drank
+tea at Mr. Andrewes's. {106}
+
+Nov. 17th, Sunday.--To Church; Dr. Willis and Serjeant Bayley
+called.
+
+19th.--Mr. Jebb dined here.
+
+20th.--Charity School Meeting.
+
+21st.--Major Molyneux, Captain Vincent, Mr. Fanshawe, Mr. Willis,
+Mr. Andrewes, and Mr. Ruding dined here.
+
+22nd.--Mr. and Mrs. Godschall dined here; paid for lottery tickets,
+8 pounds 4s.
+
+23rd.--Dined and supped at Mrs. Davis's, Sir Nash Grose, &c.;
+whist.
+
+24th.--To Church; Dr. Willis, Mr. Penneck, and Mr. Baxendale
+called.
+
+Dec. 22.--Not well. {107}
+
+Mr. Bray left notes of his travels bound together, and making a
+large book.  Most of the houses he saw are fully described.  He was
+never on the Continent or in Ireland.
+
+His first excursion after his tour in Wales in 1769, was in 1774,
+into Leicestershire and the adjoining counties, when he visited the
+Field of Bosworth, where it is said that Sir Reginald Bray picked
+up King Richard's crown, and gave it to Lord Stanley, who presented
+it to the Duke.
+
+In the same year 1774, he went twice to the Lakes.  Number of miles
+travelled, 703 and 657.
+
+1775.--The tour of which he published an account.
+
+1776.--Gloucestershire, &c., 506 miles.
+
+1777.--Northamptonshire, Leicestershire.
+
+1778.--Wales, 637 miles.
+
+1779.--Matlock, Buxton.
+
+1780.--Nottinghamshire.
+
+1781.--The Peak.
+
+1782.--Bath, Worcester, Malvern, 406 miles.
+
+1783.--Hastings, Tunbridge Wells, Isle of Wight, 659 miles.
+
+1784.--Brighton, 225 miles.
+
+1785.--Bristol, 302 miles.
+
+1786.--Cambridge, Dover, Ramsgate.
+
+1787.--Essex, 410 miles.
+
+1788.--Luton, Dunstable, 346 miles.
+
+1789.--Glastonbury, Weymouth, Lyme, 520 miles.
+
+1790.--Winchester.
+
+1792.--Oxford.
+
+1793.--Colchester, Lowestoft, 312 miles.  Woburn, Eton, Bray,
+Wales.
+
+1794.--Yorkshire.
+
+1795.--Arundel, Petworth.
+
+1796.--Ross, Ledbury, 392 miles.
+
+1797.--Shrewsbury, Dovedale, 614 miles.
+
+1798.--Norwich, Ipswich, 285 miles.
+
+1799.--Brecon, Llandovery, 441 miles.
+
+
+
+MEMORANDA
+
+
+
+1806, Nov. 15th.--This day, I completed my 70th year, without
+having ever met with any accident of consequence and with very
+little interruption to my health, except in January last, when I
+had a very serious attack by an inflammation in my lungs, but from
+which I am perfectly recovered.  My eyesight is so good that I can
+and generally do use my eyes in reading or writing from the time of
+getting up in the morning till 10 at night.  My hearing is in no
+way impaired.  I have not lost one front tooth and very few others.
+I am able to walk or ride 4 or 5 hours together, but I do not ride
+fast.  My memory is perhaps not so good as it has been.  On the
+whole I seem to be in a perfect good state of health, thanks be to
+God.
+
+1808, Nov. 15th.--This day I completed my 72nd year; and thanks to
+God's mercies I find myself in as perfect health as I ever enjoyed
+in my life, and the only perceivable difference in any of my senses
+that I am aware of is a little degree of deafness in my right ear,
+but as the other is perfect, I do pretty well.  My left eye I think
+has not perfectly recovered the severe inflammation which I had two
+or three years ago, but the other being sound, I read and write as
+well and as much as ever.  My teeth remain perfect in front and
+without any additional loss to those which decayed some years ago.
+
+1810, April 5th.--I quitted the Board of Green Cloth, after having
+had a place there for 49 years and a half.  I was put on the
+superannuation list at my request, the Lord Steward having kindly
+procured leave for it.  He also, unsolicited, gave me leave to
+resign my place of Clerk of the Verge to my son.
+
+Nov. 14th.--After dinner, I found a giddiness in my head making me
+unable to walk, and a kind of dumb confusion in my head.  I wrote
+to Mr. Heaviside to come, which he did and ordered immediate
+cupping. {108}  The next morning my complaint was gone.
+
+1814, May 30th.--Received from Mr. Sydenham Malthus the melancholy
+news of my son's death at Exmouth, from the rupture of a blood-
+vessel in the lungs.
+
+1817, Feb. 15th.--My grandson Henry died this morning.
+
+1826, June 16th.--In chaise to Guildford, the County election,
+voted for Mr. Sumner and Mr. Denison. {109}
+
+Sept. 19th.--With Mary and Miss Davis, in a chaise, by Horsham and
+Henfold to the 'Albion' at Brighton.  Dined and lay there; walked
+on the Chain Pier.
+
+20th.--To Seaford, Eastbourne.  Dined and lay at the 'Hope' in the
+Sea-houses.
+
+21st.--To the Castle Hotel, Hastings; through Winchelsea to Rye;
+New Romney, dined and lay there.
+
+22nd.--To Hythe, through Folkestone to Dover; saw the harbour;
+returned to Hythe, the 'Sun,' dined there.  To Ashford, and lay
+there.
+
+Sept. 23rd.--To Lenham 'Star' at Maidstone; Wrotham Heath;
+Sevenoaks; Godstone to Reigate; Called on Mr. Glover; Dorking;
+Shere before 7. {110}
+
+1828, Dec. 24th.--Such has been the decay in my eyesight the whole
+of this year that I have not been able to read either print or MS.,
+though I have continued to write letters, as I am writing on this
+24th of December.  I cannot read it when written.  I have also lost
+my hearing in one ear in a great degree; subject to this, my bodily
+health has been what may be called good.  I have been obliged to
+pay more than 1,100 pounds by the treachery of a clerk, and the
+malice of one who had been long attempting, and at last effected a
+loss of long friendship with Mrs. Wigzell. {111}
+
+1832, July 5th.--Mr. Linnell, a portrait painter was sent by my
+grandson Reginald to paint a portrait of me.  I had five sittings.
+
+Oct, 18th.--I sent my curious MS. of the Bishops' estates seized
+and sold by Cromwell to Mr. Ellis, {112} to be presented to the
+Trustees of the British Museum.
+
+
+
+MR. BRAY'S LAST MEMORANDUM
+
+
+
+Dec. 17th.--A little rain; at home.  Paid Higgins {113} 8s. 3d.
+
+
+
+Footnotes:
+
+{1}  It appears from his account of the Evelyn Family, in the
+second volume of the 'History of Surrey,' that he had read these
+Memoirs as long before as 1809.
+
+{2}  Whom he afterwards married.  She was the daughter of Mr.
+Stevens, of Perry Hill, Worplesdon, and lived with her aunt, Mrs.
+Norwood, at Guildford.  She was two years older than Mr. Bray, who
+was then only two months past 19.
+
+{3}  Mr. Flutter and his brother were Mayors of Guildford more than
+once, and the name of Flutter appears twice in the list of Mayors
+in the reign of Charles II.
+
+{4}  A lad of nineteen.
+
+{5}  Mr. Duncumb was Rector of Shere.  His father had purchased the
+advowson from Mr. Edward Bray, and was a connexion by marriage.
+
+{6}  Mr. Wilpley was what was then called an Apothecary.
+
+{7}  Mr. Emily was his cousin, their grandfathers having married
+the daughters of Vincent Randyll, of Chilworth.
+
+{8}  Jacky was Mr. Martyr's son.  He was called to the Bar, and
+lived at Guildford to an advanced age.
+
+{9}  The medical charge for the inoculation was 4 pounds 4s.
+
+{10}  He had very little to do at Mr. Martyr's.  In the summer he
+was often at the Bowling-green, and took long walks with his
+friends, male and female.  It was not required that any married
+lady should join the walking parties.
+
+{11}  A Hessian regiment was quartered at Guildford for some time.
+Their band was a great attraction.
+
+{12}  An attorney at Guildford.  Grandfather of the Rev. John
+Chandler.
+
+{13}  Being of age and out of his articles to Mr. Martyr, he went
+to London, and took lodgings there.  Mr. Adderley, of New Inn,
+received him in his chambers for instruction in his profession, but
+his attendance there was not regular.
+
+{14}  Mr. Jenkins was in Mr. Adderley's office, and afterwards
+entered into partnership with Mr. Bray.  Mr. James was also in the
+same office.
+
+{15}  He went to his French master for some months, an hour at a
+time; not regularly.
+
+{16}  About this time he bought many books, all at low prices, at
+stalls and auctions.
+
+{17}  Playing at cards almost every night, and always for coin, he
+had a purse on purpose.
+
+{18}  Whilst at Guildford he lodged at Baptist's for 7s. a week.
+He dined at the 'White Hart,' for 10d.
+
+{19}  He sold this stock to pay 23 pounds 12s. 6d. for Viner's
+'Abridgment of the Law.'
+
+{20}  He visited Miss Stevens almost every day, but he was not much
+less in other society than formerly, and he was seldom alone at any
+time of the day or evening.
+
+{21}  Daughters of Dr. Adee, a physician, who afterwards went to
+Oxford and practised there.
+
+{22}  He went to the morning service on Wednesdays in most weeks,
+usually to the Middle Church.
+
+{23}  Mr. Webb was Solicitor to the Treasury.  This appointment is
+now given to barristers.
+
+{24}  He only paid 10d. for his dinners (without wine) at the
+'White Hart' and the 'Tuns,' and 6s. a week for his lodgings in the
+town.
+
+{25}  Miss Adee and Betsy Stevens were the bridesmaids.
+
+{26}  Mrs. C.'s was the lodging Mr. Jenkins had taken for him in
+Lothbury.
+
+{27}  He left a particular account of his expenses on his marriage.
+The following are some of them:-
+
+                         Pounds s. d.
+Licence                       1 11 6
+Pair of gloves                0  1 0
+Mr. Burdett's fee             1  1 0
+The clerk                     O 10 6
+Mrs. Norwood's maid           O  7 6
+Middle Parish ringers         1  1 0
+Dinner at Epsom               O  5 6
+Chaise from Epsom to
+London                        O 14 O
+Driver and hostler            O  2 O
+Two bottles of Lisbon
+at the 'White Hart'           O  3 4
+For fifty oysters             O  O 7.5
+A pound of cheese             O  O 3.5
+A pound and a half of salmon  0  1 0
+Paid Jenkins for the ring     O  6 6
+[Jenkins got the ring and
+sent it to him with a
+humourous letter.]
+Mr. Shrubb for a tabby
+nightgown                     7 14 O
+Ear-rings and necklace        O 14 O
+Coffee with Boughton
+at the Lincoln's Inn
+Coffee House (on the
+afternoon of his wedding)     O  O 5
+
+{28}  They received friends to tea every evening this week.  They
+lived in a house with a garden, in which Mr. Bray planted fruit
+trees and shrubs, but where it was does not appear in the Diary.
+
+{29}  He went to the Bowling-green to play at whist in the winter,
+and at howls in the summer.
+
+{30}  He had been the first performance of Marplot by Garrick.
+
+{31}  When he took the horse as far as Dorking it was 2s. 6d.
+
+{32}  The son of the Member for the County.
+
+{33}  Mr.  Godschall, of Weston House, Albury.  An accomplished
+gentleman, LL.D. of Oxford, cousin of Lady Palmerston, the mother
+of the late Lord Palmerston.
+
+{34}  Of Parkhurst, where Rousseau was his guest for some time.
+
+{35}   Who built the Leith Hill Tower, and was buried there.
+
+{36}  It is remarkable that a young attorney of 22 should have been
+invited to the social meetings of elderly and middle-aged gentlemen
+of the highest position in the neighbourhood.  His grandson, the
+late Mr. Edward Bray, inherited his companionable qualities, and
+was welcome in every house he visited.
+
+{37}  The Member for the County.
+
+{38}  Of Betchworth Castle.  The author of 'The Light of Nature.'
+
+{39}  The father of the late Sir Henry Austen.  He had been
+articled, as well as Mr. Bray, to Mr. Martyr.  He afterwards
+purchased a Clerkship in the Six Clerks' Office in Chancery.
+
+{40}  Mr. Bray's marriage made little difference in his habits this
+year.  He was almost every night with his friends at cards or
+backgammon; in the summer evenings at bowls; frequently at the
+morning services on week days at the Middle Church.  He had very
+little to do at this time in his profession.
+
+{41}  Mr. Lane, of East Horsley Park.
+
+{42}  Mr. Evelyn, afterwards Sir John, then M.P. for Helstone, had
+offered him an appointment at the Board of Green Cloth, which he at
+first, by the wish of his wife, declined to accept; but a few days
+afterwards, being better advised, he was glad to find that he could
+still have it.  The following note was among the Memoranda which he
+left of his early life.--'Nothing could be pleasanter than our
+situation at the Board of Green Cloth.  The Principals were all
+members of the House of Commons.  We sat in the same room, at the
+same green cloth table, with them, by whom we were treated rather
+as associates than as clerks.'  Mr. Bray was at first only an
+assistant, together with Mr. Selwyn, a barrister, afterwards in
+large practice; Mr. Blenman, also of the Bar, and Mr. Fanshawe, but
+they rose to be chief clerks.  His usual attendance was from 11 to
+3.  He took a house in Holles Street, and settled there December
+14th, but in the following year he moved to Great Russell Street.
+
+{43}  This child died in July,
+
+{44} After a Royal birth caudle was given to the Clerks of the
+Green Cloth and others in office at St. James's.
+
+{45}  Of Bury Hill, now Mr. Barclay's.
+
+{46}  Of the Rookery, now Mr. Fuller's.  His son, Thomas Robert
+Malthus, was the great writer on Population.  His youngest daughter
+married Mr. Bray's son Edward.
+
+{47}  His son Edward, who married Miss Malthus, and left a large
+family.  His other sons died in childhood.  Mr. Bray had no
+collateral relations of his name after the death of his uncle and
+brothers within many generations.  His ancestor, Sir Edward Bray,
+was the heir male of Edmund, Lord Bray, and succeeded to the family
+estates; but the title descended to Lord Bray's daughters, and was
+in abeyance until obtained by the late Baroness Bray.  Mr. Bray was
+one of the few descendants then living of Sir Thomas More, whose
+granddaughter, the daughter of Margaret Roper, married Sir Edward
+Bray.  His two daughters, Mary and Catherine, were not married.
+
+{48}  He was now getting into the society of literary men.
+
+{49}  Afterwards Admiral Brodrick.
+
+{50}  He had entered into partnership with his friend Mr. Jenkins,
+whose chambers were in New Inn.
+
+{51}  The Guildford Races were then in May.
+
+{52}  Mr. Sturt was a barrister, and a relation of Mr. Bray's.  Mr.
+Budgen, Mr. Talbot, and Mr. Scawen, were trustees of the charity.
+
+{53}  A tour with Mr. Jenkins to Oxford, Bath, Gloucester,
+Salisbury, Blenheim, Fonthill, Longleat, Chepstow, &c.  They hired
+a carriage and horses for the journey; and, in a rhyming letter to
+his wife, he writes:-
+
+
+'We hired from friend Bryant a very good chaise,
+Intending thus travelling quite at our ease.
+James was mounted behind on a fine prancing steed,
+To take care of the baggage and help us if need.'
+
+
+Mr. Bray wrote a particular description of Fonthill, Stourton, and
+other houses visited.
+
+{54}  Some of his intimate friends dined with him every week.  The
+dinner was over at 5 or 6, and he often went afterwards to a
+coffee-house.  He also went frequently to the theatres, and
+sometimes in the summer to Vauxhall.  His mornings were spent at
+the Board of Green Cloth or in New Inn.
+
+{55}  The house which Mr. Jacobson built, called 'Lonesome,' has
+been pulled down.
+
+{56}  Mr. Bray went to many different coffee-houses, but most
+frequently to the Percy and Mundy's.  On Sundays he went for an
+hour to the Buffalo.
+
+{57}  He had a house at Shere, which his mother lived in, and made
+a home for him during his frequent visits, and at little expense,
+for riding round in the neighbourhood he got his dinner at one
+house and tea at another.  To general information he could now add
+the gossip of St. James's, and he was welcome wherever he went.
+
+{58}  He kept what he called a chaise or whisky, and two horses.
+
+{59}  Mr. Penneck was Keeper of the Reading-room at the British
+Museum and Rector of Abinger.
+
+{60}  Betchworth Castle.
+
+{61}  He had become acquainted with Dr. Osborn and Dr. Price on the
+institution of the Equitable Assurance Office, of which he was a
+director.  He frequently rode with his friends, sometimes a party
+of six.
+
+{62}  He wrote a most particular description of it.
+
+{63}  Mr. Planta, Principal Librarian at the British Museum.
+
+{64}  This was the tour that he published an account of.  He rode
+on horseback 1,800 miles this year.
+
+{65}  This was a society which met at St. Paul's Coffee House.  The
+subscription was five guineas a year.
+
+{66}  This plantation sowed all the fir trees between the Windmill
+and Pislake.  Another plantation adjoining to the West Churt, sowed
+all the ground west of the road to Cranley.
+
+{67}  This was for his father.
+
+{68}  For a piece of land at the top of the plantation of beeches
+above Picket's Hole.
+
+{69}  Dr. Parr.
+
+{70}  Distinguished Antiquaries.
+
+{71}  Formerly Jacky.
+
+{72}  The Rev. Mr. Manning, who began the 'History of Surrey.'
+
+{73}  Mr. Page had bought the Manor of Cobham, and lived at
+Pointers.
+
+{74}  When he was in the country he seldom dined at home unless he
+had friends with him.
+
+{75}  His partnership with Mr. Jenkins was dissolved in 1774, but
+without any interruption of their friendship.
+
+{76}  To near the end of his life he would often stop to dine, and
+sometimes to sleep, at the inn at Dorking, or Guildford, instead of
+going home to Shere.
+
+{77}  His only surviving son Edward was at Harrow.
+
+{78}  These were all eminent antiquaries.
+
+{79}  He was one of the Trustees of the British Museum.
+
+{80}  He was subject all his life to inflammatory disorder, and
+frequently took physic.
+
+{81}  He went to Church every Sunday, but he did not think it wrong
+to use his carriage and horses, or to travel on that day.  Mr.
+Polhill, the Rector of Albury, used to go to church in his
+carriage.
+
+{82}  Abinger Hall.  Afterwards Lady Donegal's.
+
+{83}  Mr. Rice was lord of the Manor of Tooting.
+
+{84}  The Eaten Bray estate was inherited by Mr. Bray's ancestor,
+Sir Edward Bray, as heir male of Lord Bray, and sold by him.
+
+{85}  They became clients, and the family have remained among the
+best clients of Mr. Bray's firm.
+
+{86}  Sir Joseph Mawbey was member for Surrey;made a fortune by a
+distillery.  Mr. Briscoe derived the manor of Epsom from his
+daughter.
+
+{87}  Mr. Malthus had left the Rookery, and was living at Albury,
+in the house afterwards Colonel Clive's.
+
+{88}  An instance of Mr. Bray's activity.
+
+{89}  Granville Sharp.  General Oglethorpe lived for some years at
+Westbrook, Godalming.
+
+{90}  The author of 'The Coinage of Great Britain.'
+
+{91}  His engagements for a week.
+
+{92}  Of Shabden, father of the Miss Fanshawes.
+
+{93}  He had been chosen one of the Council.
+
+{94}  One of his usual rounds of visiting.
+
+{95}  The dinner hour in London was getting later.
+
+{96}  Of Burford Bridge.
+
+{97}  For the following nine days there is no entry but 'At home.'
+
+{98}  These eight consecutive days were spent in society.  When in
+London he dined every week at the 'Crown and Anchor' with his
+antiquary friends, and often received them to dinner.  He played at
+whist still, but not so often.
+
+{99}  Sir Peter Burrell married the Baroness Willoughby of Eresby,
+and was made Lord Gwydir.  He and his descendants were among the
+best clients of Mr. Bray's office.
+
+{100}  The thermometer fell one and a half degree below zero.
+
+{101}  As one of the Clerks at the Board of Green Cloth he had to
+collect the land tax from the Officers of State.  He received 520
+pounds from Lord Grenville for four quarters' land tax, at 4s. in
+the pound; from the Duke of Portland, 923 pounds; Mr. Pitt, two
+quarters, 456 pounds 15s.; Lord Thurlow, do., 1,425 pounds 17s.
+9.75d.
+
+{102}  Afterwards a Judge and a Baronet.  He was a very frequent
+Sunday visitor, as well as Mr. Baxendale.
+
+{103}  Afterwards Dean of Ripon.
+
+{104}  Rector of Clapham.
+
+{105}  Father of the great builder.
+
+{106}  Afterwards Dean of Canterbury.
+
+{107}  He was confined to the house for more than a week by a bad
+cold, which was followed by inflammation in one of his eyes.  The
+inflammation was subdued with difficulty by the great oculist Mr.
+Phipps, afterwards Sir Watken Waller.  The eye affected became
+gradually weaker, and the sight of it was entirely gone for some
+years before his death, although exactly when he did not notice.
+At the beginning of the 19th century he was 64; and his son's
+attention to the business of the office in Great Russell Street
+enabled him to live more at Shere, but when in London his habits
+were little changed.  He dined with the Antiquaries' Club almost
+every week during the season until he was 90.  He did not so
+frequently take his meals at the houses of his friends, but at his
+own table they were always welcome, and many came.
+
+{108}  He was frequently bled according to the usual practice in
+those days.  He was bled the last time when he was 84.
+
+{109}  Mr. Bray cared very little for politics, but he was not a
+Tory, and would not have voted for Mr. Summer if he had not
+represented the county for many years and been much respected.
+
+{110}  Mr. Bray was within a few weeks of 90.  He took no servant
+with him.
+
+{111}  After this shameful affair, neither Mr. Taylor his clerk,
+nor Mr. Wigzell had any communications with Mr. Bray or his
+partners; but as a mark of repentance Mrs. Wigzell left Mr. Bray's
+grandson a legacy of 100 pounds, and Mr. Taylor left 100 pounds to
+the firm of Bray and Warren.
+
+{112}  Principal Librarian at the British Museum; afterwards Sir
+Henry Ellis.  He was Mr. Bray's oldest friend then living.  He died
+in 1868 at a very advanced age, having during his long life
+rendered most valuable services to the public, and particularly by
+his contributions to English history.
+
+{113}  Mr. Higgins was employed by Mr. Bray in writing for him.
+His last guest at Shere was his old friend Mr. Carlisle, one of the
+Secretaries of the Antiquary Society, who came to Shere on
+Saturday, the 28th of October, and remained till Monday.  His
+grandson Reginald was with him for a day or two every week, and
+played at piquette with him three days before his death, which took
+place on the 21st.
+
+
+
+
+
+End of the Project Gutenberg eText Extracts from the Diary of William Bray
+

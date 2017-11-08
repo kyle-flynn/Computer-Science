@@ -22,9 +22,11 @@ class WordSearch {
 private:
     unordered_set<string> ignored_words;
     /* TODO: declare additional data structures as needed */
-    unsigned long total_words;
     map<string, int> word_occurrances;
-    set<string> words;
+    map<string, map<string, int>> words_after_word;
+
+    unsigned long words_total;
+
     void read_words (const string& file_name);
     void load_ignored_words(const string& file_name);
 public:

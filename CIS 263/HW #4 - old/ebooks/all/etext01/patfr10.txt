@@ -1,0 +1,1283 @@
+**This is a COPYRIGHTED Project Gutenberg Etext, Details Below**
+
+
+Poems and Tales from Romania, by Simona Sumanaru and Michael Hart
+(C) 1999-2000 by Simona Sumanaru and Michael Hart
+
+These poems and stories were originally composed in Romania, and
+will be presented in both English and Romanian. . .though many of
+them were originally written in each language.
+
+This is the English version.
+
+Please take a look at the important information in this header.
+We encourage you to keep this file on your own disk, keeping an
+electronic path open for the next readers.  Do not remove this.
+
+
+**Welcome To The World of Free Plain Vanilla Electronic Texts**
+
+**Etexts Readable By Both Humans and By Computers, Since 1971**
+
+*These Etexts Prepared By Hundreds of Volunteers and Donations*
+
+Information on contacting Project Gutenberg to get Etexts, and
+further information is included below.  We need your donations.
+
+
+Poems and Tales from Romania, by Simona Sumanaru and Michael Hart
+(C) 1999-2000 by Simona Sumanaru and Michael Hart
+
+January, 1999  [Etext #2538]
+
+
+Poems and Tales from Romania, by Simona Sumanaru and Michael Hart
+******This file should be named patfr10.txt or patfr10.zip******
+
+Corrected EDITIONS of our etexts get a new NUMBER, patfr11.txt
+VERSIONS based on separate sources get new LETTER, patfr10a.txt
+
+
+We are now trying to release all our books one month in advance
+of the official release dates, for time for better editing.
+
+Please note:  neither this list nor its contents are final till
+midnight of the last day of the month of any such announcement.
+The official release date of all Project Gutenberg Etexts is at
+Midnight, Central Time, of the last day of the stated month.  A
+preliminary version may often be posted for suggestion, comment
+and editing by those who wish to do so.  To be sure you have an
+up to date first edition [xxxxx10x.xxx] please check file sizes
+in the first week of the next month.  Since our ftp program has
+a bug in it that scrambles the date [tried to fix and failed] a
+look at the file size will have to do, but we will try to see a
+new copy has at least one byte more or less.
+
+
+Information about Project Gutenberg (one page)
+
+We produce about two million dollars for each hour we work.  The
+fifty hours is one conservative estimate for how long it we take
+to get any etext selected, entered, proofread, edited, copyright
+searched and analyzed, the copyright letters written, etc.  This
+projected audience is one hundred million readers.  If our value
+per text is nominally estimated at one dollar then we produce $2
+million dollars per hour this year as we release thirty-two text
+files per month, or 384 more Etexts in 1998 for a total of 1500+
+If these reach just 10% of the computerized population, then the
+total should reach over 150 billion Etexts given away.
+
+The Goal of Project Gutenberg is to Give Away One Trillion Etext
+Files by the December 31, 2001.  [10,000 x 100,000,000=Trillion]
+This is ten thousand titles each to one hundred million readers,
+which is only 10% of the present number of computer users.  2001
+should have at least twice as many computer users as that, so it
+will require us reaching less than 5% of the users in 2001.
+
+
+We need your donations more than ever!
+
+
+All donations should be made to "Project Gutenberg/CMU": and are
+tax deductible to the extent allowable by law.  (CMU = Carnegie-
+Mellon University).
+
+For these and other matters, please mail to:
+
+Project Gutenberg
+P. O. Box  2782
+Champaign, IL 61825
+
+When all other email fails try our Executive Director:
+Michael S. Hart <hart@pobox.com>
+
+We would prefer to send you this information by email
+(Internet, Bitnet, Compuserve, ATTMAIL or MCImail).
+
+******
+If you have an FTP program (or emulator), please
+FTP directly to the Project Gutenberg archives:
+[Mac users, do NOT point and click. . .type]
+
+ftp uiarchive.cso.uiuc.edu
+login:  anonymous
+password:  your@login
+cd etext/etext90 through /etext96
+or cd etext/articles [get suggest gut for more information]
+dir [to see files]
+get or mget [to get files. . .set bin for zip files]
+GET INDEX?00.GUT
+for a list of books
+and
+GET NEW GUT for general information
+and
+MGET GUT* for newsletters.
+
+
+**Information prepared by the Project Gutenberg legal advisor**
+(Three Pages)
+
+***START** SMALL PRINT! for COPYRIGHT PROTECTED ETEXTS ***
+TITLE AND COPYRIGHT NOTICE:
+
+Poems and Tales from Romania, by Simona Sumanaru and Michael Hart
+(C) 1999-2000 by Simona Sumanaru and Michael Hart
+
+This etext is distributed by Professor Michael S. Hart through
+the Project Gutenberg Association at Carnegie-Mellon University
+(the "Project") under the Project's "Project Gutenberg" trademark
+and with the permission of the etext's copyright owner.
+
+LICENSE
+You can (and are encouraged!) to copy and distribute this
+Project Gutenberg-tm etext.  Since, unlike many other of the
+Project's etexts, it is copyright protected, and since the
+materials and methods you use will effect the Project's
+reputation,
+your right to copy and distribute it is limited by the copyright
+laws and by the conditions of this "Small Print!" statement.
+
+  [A]  ALL COPIES: The Project permits you to distribute
+copies of this etext electronically or on any machine readable
+medium now known or hereafter discovered so long as you:
+
+     (1)  Honor the refund and replacement provisions of this
+"Small Print!" statement; and
+
+     (2)  Pay a royalty to the Project of 20% of the net
+profits you derive calculated using the method you already use
+to calculate your applicable taxes.  If you don't derive
+profits, no royalty is due.  Royalties are payable to "Project
+Gutenberg Association/Carnegie Mellon-University" within
+the 60 days following each date you prepare (or were legally
+required to prepare) your annual (or equivalent periodic) tax
+return.
+
+  [B]  EXACT AND MODIFIED COPIES: The copies you distribute
+must either be exact copies of this etext, including this
+Small Print statement, or can be in binary, compressed, mark-
+up, or proprietary form (including any form resulting from
+word processing or hypertext software), so long as *EITHER*:
+
+     (1)  The etext, when displayed, is clearly readable, and
+does *not* contain characters other than those intended by the
+author of the work, although tilde (~), asterisk (*) and
+underline (_) characters may be used to convey punctuation
+intended by the author, and additional characters may be used
+to indicate hypertext links; OR
+
+     (2)  The etext is readily convertible by the reader at no
+expense into plain ASCII, EBCDIC or equivalent form by the
+program that displays the etext (as is the case, for instance,
+with most word processors); OR
+
+     (3)  You provide or agree to provide on request at no
+additional cost, fee or expense, a copy of the etext in plain
+ASCII.
+
+LIMITED WARRANTY; DISCLAIMER OF DAMAGES
+This etext may contain a "Defect" in the form of incomplete,
+inaccurate or corrupt data, transcription errors, a copyright
+or other infringement, a defective or damaged disk, computer
+virus, or codes that damage or cannot be read by your
+equipment.  But for the "Right of Replacement or Refund"
+described below, the Project (and any other party you may
+receive this etext from as a PROJECT GUTENBERG-tm etext)
+disclaims all liability to you for damages, costs and
+expenses, including legal fees, and YOU HAVE NO REMEDIES FOR
+NEGLIGENCE OR UNDER STRICT LIABILITY, OR FOR BREACH OF
+WARRANTY OR CONTRACT, INCLUDING BUT NOT LIMITED TO INDIRECT,
+CONSEQUENTIAL, PUNITIVE OR INCIDENTAL DAMAGES, EVEN IF YOU
+GIVE NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.
+
+If you discover a Defect in this etext within 90 days of
+receiving it, you can receive a refund of the money (if any)
+you paid for it by sending an explanatory note within that
+time to the person you received it from.  If you received it
+on a physical medium, you must return it with your note, and
+such person may choose to alternatively give you a replacement
+copy.  If you received it electronically, such person may
+choose to alternatively give you a second opportunity to
+receive it electronically.
+
+THIS ETEXT IS OTHERWISE PROVIDED TO YOU "AS-IS".  NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, ARE MADE TO YOU AS
+TO THE ETEXT OR ANY MEDIUM IT MAY BE ON, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE.  Some states do not allow disclaimers of
+implied warranties or the exclusion or limitation of
+consequential damages, so the above disclaimers and exclusions
+may not apply to you, and you may have other legal rights.
+
+INDEMNITY
+You will indemnify and hold the Project, its directors,
+officers, members and agents harmless from all liability, cost
+and expense, including legal fees, that arise directly or
+indirectly from any of the following that you do or cause:
+[1] distribution of this etext, [2] alteration, modification,
+or addition to the etext, or [3] any Defect.
+
+WHAT IF YOU *WANT* TO SEND MONEY EVEN IF YOU DON'T HAVE TO?
+Project Gutenberg is dedicated to increasing the number of
+public domain and licensed works that can be freely distributed
+in machine readable form.  The Project gratefully accepts
+contributions in money, time, scanning machines, OCR software,
+public domain etexts, royalty free copyright licenses,
+and whatever else you can think of.  Money should be paid to
+"Project Gutenberg Association/Carnegie-Mellon University".
+
+*SMALL PRINT! Ver.04.29.93 FOR COPYRIGHT PROTECTED ETEXTS*END*
+
+We are planning on making some changes in our donation structure
+in 2000, so you might want to email me, hart@pobox.com beforehand.
+
+Poems and Tales from Romania, by Simona Sumanaru and Michael Hart
+(C) 1999-2000 by Simona Sumanaru and Michael Hart
+
+
+
+
+
+
+**This is a COPYRIGHTED Project Gutenberg Etext, Details Above**
+
+
+Poem #1
+
+
+Broken Flights
+
+The broken wing
+Has become a tear,
+As a home
+It finds refuge
+Under one eye. . .
+
+The broken wings
+Have become tears
+As a home
+They have found refuge
+Under both eyes. . . .
+
+Flights, flights,
+Broken flights
+Now become refugees
+Under tear filled eyes. . .
+
+There is nothing
+Left of sight.
+
+
+***
+
+
+
+Story #1
+
+
+
+BEDTIME WORRIES
+
+*
+
+The Story
+
+
+
+I was born and raised in an orchard known by the name of Eden,
+16th orange tree on the left, and all my future hopes had been
+Left there with the Ultimate Orange.
+
+From what I can tell now, in this position of a painter detached
+from his painting, there was nothing that you have not already
+seen or built yourself about the way the orchard was structured,
+ruled or taken care of. It was just a world, though I recollect
+within the Garden there was a center of energetic emanation, in
+the shape of a circle of a small diameter, having the made-up
+features of a human Fun Fair and which they called, given its
+conceptual schema, the Wheel of Fortune. It had been designed
+long before I was born, and before most of the people I know of
+or inherited something from were born as well. Seen from the
+outside, the whole gizmo was looking like the clearing of a
+forest or like a woman's heart, at once shiny and shadowy, open
+and hidden behind her instinctual veils. Surrounded by a range
+of tall grown apple-trees, the Park was the Big Attraction for
+each of us, Eden inhabitants.
+
+By the time I learned how to walk, so you can guess my steps
+were being haltingly taken my mind and my feet always tended to
+go towards the apple trees, green and inviting as they were,
+projecting their leafy silhouettes on the frowned face of the
+fall sky. I say "frowned face" because the sky was crying a lot
+that specific fall, and I could see its eyebrows of clouds
+turning purple or maybe violet, and then dark blue. But who
+could tell exactly how an angry face changes color, name the
+boundaries between serenity and gloom, since all you distinctly
+perceive with your inner eye is the anger...?
+
+The majestic apple-trees were unanimously loved, much more loved
+than the nut-trees for instance, because people didn't have the
+required patience to crack the nutshells open and taste the
+fruit. Only the crows knew how to do that artistically with a
+dance of their beaks, but what a pity, they were designed to be
+birds. Dark birds. Therefore, the people of Eden always went for
+the apples with their mysterious perfume and shiny skin,
+beautifully polished by the autumn rain. Usually at sunset,
+while the sleepy birds were having their mystical ritual of
+initiation in Phoenix's art of rebirth, the Garden's human
+inhabitants -less artistic but more hungry than the dark crows
+themselves were silently heading for the circle of apple-trees,
+perfectly rendered on the canvas of the twilight, their leafy
+crowns in the shape of an arch. Any resemblance with a circus
+bolt could be significant.
+
+The inhabitants of Eden, as highly ambitious and responsible
+persons, were constantly looking for shadows, willing to give it
+a shot in finding their shattered dreams abandoned somehow in
+the games of the past and now supposed to dwell in the merry-go-
+round, the Wheel of Fortune, the Circus. They were doing it, to
+quote them: "Just for fun in our world's Fun Fair, like a bedtime
+loisir."
+
+Beneath the dark and orange shadows which can be somehow
+reproduced by the color range of the fireworks you bathe in today
+the earth was utterly alive and breathing. The numerous families
+of ants, known as hardworking and also, in situations of
+necessity, fellow-devouring creatures  were putting their young
+to sleep with a prayer for grains and shiny days. Some wonder
+nowadays who on earth or in the skies could listen to the
+minuscule prayers of an ant. I let them wonder.
+
+The life of the Garden in its small size was not at all
+minimized for people with binocular vision. These endowed people
+managed to understand that the same earth who had once breathed
+us out through its lungs had also breathed ants through its
+pores. Thus we got to count small hearts and big hearts, small
+hopes and big hopes and people that were in between, insectlike
+molded instinctual to paroxysm in situations of necessity
+therefore half human. The scientists of Eden called them the-
+half-blind-half-awake-half-hearted-half-humans, a made-up
+qualificative and pretty hard to memorize since no name has been
+invented yet for things that were struggling in the middle of
+what we held as the Being Humane Scale. Statisticians, in their
+turn, noted down in their papers the unprecedented discovery of
+an astonishingly complete population of the above-mentioned
+category.
+
+Life went through its normal range of heart-perceived phases in
+the Garden where I was born. The full meaning of the cycle
+light-darkness was heard echoing even in the pulsations of the
+fungi attached to the trunks of the trees. And yes, there were
+parasites, the concept of parasitism (or there was symbiosis, if
+you wish) in the Garden of Eden. As for me, I was always lonely,
+never found a friend because friends showed up when I wasn't
+looking and disappeared quickly when I turned around. All by
+myself night and day, I found these petty pleasures which were my
+major concerns and top 10 on my personal Being Humane Scale. Thus
+I loved to watch the ritual of metamorphosing our reality into
+the reality of dreams overnight, and having read some Freud, I
+was always wondering who fell asleep first, the tree or the
+fungus, the host or the ghost. I loved to watch the world change
+coordinates with the Silent Heaven of the Angels, in the sense
+that nothing mean could be said while people's minds were half-
+alive, that is deeply asleep to the eyes of this world.
+
+Most of the women who inhabited the Garden of Eden were getting
+pregnant in fall, because they were taught the earth was
+gestating with fruits and their womb was like the earth. This
+way the population increased rapidly and the hunger grew with
+the same speed. The earthy hunger, that is, a disease much more
+dangerous and mind-attacking than the learned doctors could even
+dare to predict. Yet the Garden was ignorantly sleeping every
+night and the women's wombs, like the earth, grew heavy with
+fruits, gestating full-season.
+
+Beneath the branches rich with green unearthy smell, in their yet
+earthy beds of grass from where the snakes of sin were lurking,
+the young boys of the Eden's mothers were growing to become Abel
+and Cain, or only Abel, or only Cain. A matter to be decided
+upon at midnight, by Eve, the wanderer and the mistress of
+heart-dictated directions.
+
+Eve was a beautiful young woman by then. An all-loving mother of
+all the wombs and all their fruits. One time I saw her in the
+distance, wandering in the Park. That's when she became part of
+my painting. She looked so unprotectedly naked and so shiny
+beneath the apple trees' arch, yet it could have been my eyes. A
+statue carved in flesh maybe Rodin's while thinking of Camille
+her skin the color of the sand, so young and shiny like the rays
+of the New Moon. I had been told she was the Wife, the Given One.
+I tacitly embraced her much gossiped idealism and dreamed of her
+blue eyes, the deep blue eyes of what they called a Gift. Yet to
+her, from what I perceived, she was only the rib, penetrating the
+flesh and longing for a duplication into Something Else.
+Something Tasty. Eve had an insatiable heart; she was always
+hungry for the unborn Adams with their unborn loves and poems
+hiding in the shadows of the Park. Through her, the rib aimed
+high, so high that the final goal could not be guessed by the
+mind, only perceived by the senses. Eve had been born a lonely
+woman and stayed like that since the Adam in her bed got so bored
+of loving himself. Life at home was like dying of hope
+suffocation, keeping the claustrophobic indoors and telling him
+that you are out and doing fine.
+
+The Fun Fair was the place where something was always happening,
+a bird would sing, an ant would die, a leaf would fall young and
+very green. Good things and bad things. Plus the Fun Fair's
+keeper was speaking in rhymes and the power of his words- a
+melody- kept on resounding in Eve's ears:
+
+
+
+Looking for the Ultimate Satisfaction?
+
+
+
+We have Forbidden Mellow Apple Biting at your discretion!
+
+People presumed (and I see they still presume) that that was why
+Eve had all those terrible bedtime worries she was continuously
+complaining about. She called them heart-migraines and flesh
+insomnias. Some thought she had gone crazy with no real husband
+at home, some thought she was sane when she said that the apple-
+trees of beauty were having nightmares too, and that their leafy
+crowns were giving her the whispered messages from the Honey
+Moon. So people listened for hours, for days, for weeks and no
+distinct sound could be heard coming from the apple-trees. They
+tried harder, some of them got inspired and composed beautiful
+music, and at the changing of the year they all felt older, much
+more older than a year older and scared, much more scared than
+they had been of the things they had used to know before as being
+terrible.
+
+Eve felt lonely again, this time with no refuge in the refugee
+camp. In an imagined dialogue with her, I would have asked her:
+"Why don't you write what you feel? Why don't you write about
+your spiritual wanderings?" "I don't master the punctuation
+marks well," she would have said. "People say that in life they
+don't know what's coming next. I don't know what is coming next
+either, but I know what is NOT coming next in my life here, so
+my dots become exclamation points and I say Beware Eve, as moles
+can't see but know how to dig, people can't feel but know how to
+hurt."
+
+Three years later, yet don't count on the date since our
+calendar is relative, a tormented Eve, naked but not cold, wrote
+these in a state of deep hunger. The Adam in her bed had gone
+hunting. And, like a beauty sign on the face of the sky, the
+Honey Moon was singing, "How does the poet feel in front of you,
+inhabitants of Eden? Naked, she is completely naked in her
+irrepressible nakedness, she feels naaaked..."
+
+
+*
+
+What We Call Bedtime Worries
+
+
+They are some sort of feelings, thoughts or just figments of
+ideas that some people cannot sleep on.
+
+
+
+
+***
+
+The following poems are connected to the above story.
+
+
+
+
+	*
+A Poem To Eve
+
+Open Doors
+
+A windy hallway. Me, wearing a raincoat
+And grabbing your Arm, Umbrella. A boat.
+Parallel visions: sunshine in my right eye
+Where the Emperor is bleeding: O, Helios, don't die!
+Sunbeams in my fair hair. A Feast of Light.
+I am soaked in my sweat. A Flesh Delight.
+While baking in my own juicy despair.
+
+I am a mellow Apple: O, Eve
+To feel is to believe.
+To give is to receive.
+Go take that bite...and live!
+
+Dark forest in my left eye. The hidden sky.
+My hair is the dying fuse the waters reject.
+A blue forget-me-not. A thought.
+I am fading. I am raining. No complaining.
+Prodigy of Love flowing
+Through my rivers of sweat.
+My skin is wet.
+
+I have lost Direction in Time's Incineration.
+Black Waves and Wavering. Digression.
+I ask Fate about keylocks while striving for Choices.
+Where am I, Tower? Blind Doubt rejoices.
+Am I the heiress of Shiver? My fingers quiver.
+I'm crawling on the ivy of Frustration.
+
+You, manly power, go build your home right there.
+Don't move within my world. Don't steal my perfumed air.
+Hush...I'm thinking now...The history's repeating.
+Strange body alchemy: three words and Chemistry.
+It has to do with angles. And soul geometry.
+Flesh tapestry. The cycle is completing...
+
+Death is resurrection. Circle of Perfection.
+
+Now man go round the corner - walk on tiptoe -
+Don't burn my lawn - sleepy at dawn.
+Don't step, but fly. Don't ever lie.
+You must have high precision
+With my gangrened indecision
+This is a psychic Soul incision.
+Tower of Babel - babbling hearts -
+I am your Queen. The queen of Spleen.
+
+The Apple grows black velvet sin
+beneath its shiny skin.
+
+Postpone my quickening: O, Love
+I know a language in which pain
+Does not rhyme with rain. Hold back.
+I praise my brain. Let the earth drain.
+The sun is bleeding on a sunny day
+I pray. I pray. I pray. Three times.
+One single way.
+
+O, Eve
+The slaughter of the faithful daughter.
+
+I say here today I am the proof
+of your dwelling in me. The bay
+tied with a golden sand leash to the sea.
+My flying fish. Your wings vanish...sh...
+I stay aloof...so die in me. Obey.
+And yet I cannot be. My sea is energy.
+My warmth is life. I am designed to be the Wife.
+
+My Destiny's mutinies.
+Someone close at least one door
+To my soul. My life: a hole.
+You are my earth. I am the blindness of your mole.
+
+
+
+*
+Eve to the Honey Moon
+
+When the Moon sleeps
+I die
+I'm the Moon's
+Open Eye
+
+
+
+*
+Eve to the Apple-Trees
+
+All the friends I got
+are trees
+All the birds they got
+are hopes
+All the hopes they got
+are songs
+All the songs they sing
+I write
+
+
+
+*
+Eve to the Honey Moon Again
+
+Be patient with me, Sister Moon
+All the doors to the Convent are closed
+Someone left me locked outside
+In this world.
+
+
+
+*
+The Impassioned Eve
+
+I am fire-haired
+I am flower-hearted
+Now in bloom
+I am love-possessed
+
+
+
+*
+Eve To Her God
+
+You gave me locusts of desire
+You gave me mountains of fire
+
+Godly gifts
+
+I burnt my rotten fruits
+On Cain's altar.
+
+
+
+*
+Eve To The Dark
+
+You are the horns I grow
+You are the thorns I hide
+You are the secret Call
+You made me fall.
+
+
+
+*
+Eve's Fear
+
+I'm not afraid of the dirt
+I am afraid of the Great Unwashed
+And I want to wash my fears away
+With their tears.
+
+
+
+*
+Eve's Desire
+
+I want you to be the prisoner of my quick sands
+
+
+
+*
+The Promises Of Eve
+
+I will shape your dreams
+I will kiss your fears
+I will drink your tears
+After-Moon...
+
+
+
+*
+Eve About Her Poetry
+
+My poem is one second long.
+Like a breath.
+To its beat I belong.
+The rest is death.
+
+
+
+
+***
+
+Story #2
+
+
+The Story of Lake Dimbovitsa
+
+[The Wonderlanders]
+
+
+This is a story whose roots are lost deep in the recesses of time,
+before such stories were actually written down, but rather passed,
+a generation at a time, sometimes even skipping entire generations
+that either were not interested, or who merely forgot, as time was
+quite different in those days, generations were shorter, and lives
+were shorter, too:  as a person approaching middle age today would
+be said, at the same age back then, to have already led a complete
+and total lifespan, as likely as not with both grand-children, AND
+great-grandchildren.
+
+Thus you can see that this story is populated by very young people
+. . .and such people do not often leave much of a mark on society,
+other than in stories. . .such as The Little Boy At The Dike, such
+as The Boy Who Cried Wolf [which may or may not be true] and other
+such stories of this nature.
+
+But this story centers around a girl, and not a girl who has magic
+inflicted upon her, as in The Red Shoes, but a girl who rather has
+inflicted her magic upon society, and then chooses preservation of
+self or preservation of society, when her magic proves very strong
+. . .very strong, indeed. . .only it may not have been magic. . .
+
+This story takes place in Europe, before Columbus, but not so long
+before. . .and it may be the reason that ice-skating is dated back
+to the time it is. . . .
+
+This is also the ballet, Les Patinagees, from the same story, with
+various changes, as is usually the case with ballets.
+
+This is not solely a side-comment as this kind of artistic licence
+. . .as it were. . .is the true subject of our story.
+
+Whether Lake Dimbovitsa is really named after the main character--
+or vice versa--has been argued by historians, inteligensia and the
+literati of generations. . .I'm not taking sides. . . .
+
+***
+
+Dimbovitsa was a lovely girl, in an neighborhood of where the girls
+were usually lovely. . .and she was no exception. . .at least for a
+decade or so. . .but then came a series of long winters. . .not the
+harsh kind that fill us with cold and fear of winter, but just long
+. . .starting with some early freezes in October, nothing that kept
+the crops from being harvested or brought to market, in fact a good
+many said those years produced some of the finest fall crops of all
+time. . .and the most beautiful fall colours.
+
+These winters also held on an extra month before letting go into an
+awe-inspiring set of springs, as well.  The ice not melting from an
+assortment of shaded ponds until well into May. . .but again. . .it
+was not enough to keep the fields from being plowed and planted and
+the Springs of that decade also must admittedly go down as a lovely
+addition to the nicest and most beautiful springs of all history.
+
+The summers, though perhaps a bit shorter, were also lacking in the
+heat and dust that make summers sometimes unbearable, and. . .as it
+happened, all in all, these were among the finest years ever.
+
+But our story is a Wintertime story, not of harsh storms and snows,
+but mostly of ice. . .and of ice. . .skating. . . .
+
+As Dimbovitsa and her generation grew up, they skated more than had
+and generation before, and possible since.  The skated at least the
+half of the year. . .skating in October, November, December, and in
+January, February, March, April and some still in May.
+
+Thus, skating became a part of their lives in a manner that had not
+happened before. . .and it made a difference. . . .
+
+Dimbovitsa and her generation started skating earlier in life, more
+during each year, and within a few short years had become very much
+the best skaters anyone had ever seen.
+
+A new art-form was being born. . . .
+
+Dimbovitsa and her friends, and others for miles around, were being
+hailed as true artists, and Winter Carnivals or Winter Festivals of
+her era were something as had never been seen before. . .and SO was
+the skating.
+
+The difference made in a good Winter of skating and a bad Winter of
+skating back in those days was just enormous.  In some Winters your
+skating just barely got started before it was already over. . .with
+freezes that were too quick or too short. . .and there was never an
+area of good ice for a long time to practice on.
+
+The difference now was totally amazing. . . .
+
+Kids who started skating in the first year of this decade were much
+better than anyone could ever recall. . .and after a few years more
+. . .they were truly heavenly, or magical, depending on the viewer.
+
+Each year their parts in the Winter Carnivals and Festivals grew to
+become more eagerly anticipated. . .and became larger portions of a
+new and already growing series of such events.
+
+Those skaters who were particularly proficient were invited to some
+other such events nearby, and the truly great might spend nearly an
+entire week travelling from one such even to the next as popularity
+and fame grew. . .along with the prizes, accommodations and general
+treatment of such wondrous beings.
+
+Want a "Poster Child" for skating?
+
+Just go back and pick one of these. . . .
+
+Dimbovitsa and the other skaters were very much the center of event
+after event. . .and after a year or two were, for over half of each
+year, the center of attention for the entire region.
+
+Skaters from other regions nearby heard of this marvelous weather--
+and soon a migration was on--but the natives had had a head start--
+and were more at home, more comfortable, and thus were skating more
+and better than everyone else.
+
+People began taking their lunches with them, out to the places such
+skaters would practice, and eventually quite a crowd would show up,
+complete with vendors so that you didn't even have to bring a lunch
+. . .you could be sure to find something there.  The vendors had so
+much business, and were so thankful for it, that they could feed on
+the skaters, so to speak, that they fed the skaters for free. . .in
+return. . .and were glad of the opportunity.
+
+So for a few more years things continued to grow at this rate. . .a
+rate that would have been totally impossible under other conditions
+. . .in other times. . .or other places.
+
+The vendors, to insure that the skaters would come practice, made a
+sincere effort to keep the ice clear, and eventually even clean, as
+they began to bring water to cover or replace the rough spots.
+
+Some particularly far-sighted vendors took the skaters on tours, to
+see all the lakes and ponds they could find, and once in a while to
+set up a new practice area that had the right combination of things
+for skating, viewing, and travel, to attract everyone to come.
+
+Thus there were now more places to practice, and thus more time, as
+not all the skaters went to the same place any more, and the trends
+of incredible growth in ice-skating continued.
+
+However, as they say, all good things must come to an end, and this
+time it was for all the right reasons, though it didn't work out in
+quite the way anyone expected. . . .
+
+For some, the economy, you could say, was booming. . .for the other
+part of the population, you could say they were losing control, and
+not many people like losing control, once they have it, whether, or
+not, they really should have it now.
+
+Thus came the beginning of the end.
+
+The vendors wanted control, after all, they had built the places to
+do much of the skating, and had a right to know if they should plan
+on enough business to keep things going.  Thus, they wanted to know
+who was going to be skating, when, and so on, so they could prepare
+for coming days.
+
+The parents of the skaters wanted control, because even though most
+of the skaters who were passing the age of 10 when all this began--
+were, through no fault of their own--now at the age when most would
+be moving away from home.  Even though nearly all the skaters would
+always give virtually all their prize winnings to their parents all
+of the time, the parents, as parents are wont, wanted to plan ahead
+. . .just as did the vendors.
+
+And so did the mayors and burghers of the various towns, where most
+of the Winter Festivals and Carnivals were held, and so did persons
+who ran the Winter Festivals and Carnivals. . .etc., etc., etc.
+
+Except for the skaters. . . .
+
+They just wanted to skate. . . .
+
+Of course, there were SOME who desperately wanted the prizes, and a
+few of THOSE want ONLY the first place prizes, but most all of such
+skaters as these mostly want to skate, and it doesn't really matter
+as much to them that they win, as that they skate the way they want
+. . .and whether or not the judges agreed, was a different thing.
+
+So. . .as more and more "control" was placed on these events, and a
+few of the original skaters got married, had kids or moved away for
+for other reasons. . .there were also few less of those originals--
+the ones everyone KNEW would draw a big crowd, either for practice,
+or for one of the Winter Festivals and Carnivals.
+
+Which led to an even greater attempt to control them. . . .
+
+Which led to a few more of them leaving for various reasons. . . .
+
+Which led to an even greater attempt to control them. . . .
+
+and you can see how that kind of thing might lead to. . . .
+
+Some of the skaters eventually went back to practicing in locations
+of their own choosing. . .places that were either not suited to the
+vendors purposes or for other reasons not generally used.
+
+They would skate in the moonlight at night, or bring candles to set
+on the ice, and would skate around them like faeries in the forest.
+
+All in all, it was some of the most beautiful skating of all time--
+and anyone today would undoubtedly consider themselves blessed if a
+chance to see anything like it came along.  This was simply a group
+of artistic persons, freed from the pressures of society, presented
+with an extraordinary opportunity in their chosen field. . .skating
+more for themselves than for each other. . .more as team than as in
+a competition. . .just them. . .mostly for themselves. . .and a few
+friends who might come to tend the lights and ice, bring food. . .a
+group of friends. . .doing what they like to do best. . .alone.
+
+And as they grew apart from the rest of the now crowded arenas, the
+friends felt less pressure not to make mistakes, a more comfortable
+atmosphere in general, so they tried more and more things they were
+less likely to try in front of everyone, and, thus, yet another one
+of the great leaps in skating began.
+
+With this kind of unrestricted opportunity the skaters blossomed in
+all directions, inventing new leaps, jumps, spins and positions, in
+ways they only the truly artistically expressive can do.
+
+When the time came for that year's Winter Festivals and Carnivals--
+virtually every prize was won by one of the "Winter Wonderlanders,"
+as they had come to be known that year. . .those for whom a skating
+life was a joy. . .not work. . .those who wanted to skate more than
+they wanted the prizes or recognition.
+
+That year the other skaters were of course affected by such changes
+. . .some in one way. . .some in others.
+
+Some asked to be allowed to practice with the Winter Wonderlanders,
+and most of them were welcome.  A few just wanted in on the secrets
+of the Wonderlanders, to enhance their own competitive position, so
+were not so welcome.  However, the Wonderlanders were willing to do
+what they could to find nearly anyone a place to practice, and they
+appreciated anyone who wanted to practice. . .but sometimes it was,
+and still is, the motivation that makes the difference.
+
+Most anyone could come watch the Wonderlanders skate, just follow a
+few of them and you would eventually end up where they were going.
+
+And since they weren't very competitive, they didn't actively chase
+away those who wanted to see what they were trying to accomplish.
+
+Thus came yet another period of huge growth in skating as new moves
+were catapulted onto the scene every year, sometimes every month as
+progress begets progress, and the Wonderlanders skated for the love
+of skating. . .and were willing to share with everyone.
+
+But those who wanted control continued to want control yet the more
+. . .as more and more prizes, money and fame were made available.
+
+Vendors couldn't make money on practice sessions they couldn't find
+. . .and parents pretended they didn't want their kids going off in
+the woods to skate all night alone. . .when it was JUST THAT that a
+parent owed it all to. . .for that was what had created this, which
+they were now all trying to control.
+
+So the Wonderlanders found a few places no one would ever find, and
+practiced in public enough to satisfy the vendors and parents.
+
+Thus they continued to practice night and day both in public and in
+private. . .and thus continued their growth.
+
+But eventually there was just too much money involved, and practice
+sessions were too profitable, so the parents and vendors both alike
+tried even harder to control when and where practices were held.
+
+The Wonderlanders were forced to make a decision. . . .
+
+Do we skate for them. . .or for us. . . ?
+
+They tried out several possible solutions.
+
+They spent a week skating only in public.
+
+Doing exactly what everyone told them to do.
+
+It was a pretty boring week, and not much happened, other than that
+the parents and vendors had very little to complain about since the
+vast majority of them really didn't know enough about skating; they
+could not possibly have noticed the difference between inspirations
+and perspirations.
+
+Then they spent a week skating only in private.
+
+No one saw them. . .at all.
+
+They did not even come back for the weekend events.
+
+The week was not boring. . .neither for the Wonderlanders nor for a
+new set of prize winners. . .nor for the parents and vendors. . .an
+already nervous breed. . .now considering their own extinction.
+
+The Wonderlanders didn't really care about the prizes all that much
+and this way they all got to actually skate more than they could in
+the various competitions, where they actually only skated just very
+little, when it came down to it. . .a little warming up. . .a short
+skate. . .and a longer skate. . .perhaps totalling 10 minutes, then
+maybe something at the end, maybe not.
+
+Not much skating.
+
+As for the prizes. . .each of them had more prizes than they really
+could could ever hope to wear or display. . .most of the time a box
+under the bed held them all. . .not one day out of a hundred did it
+get opened. . .other than to put more prizes IN. . .not take any of
+them OUT.  It was like a black hole. . . .
+
+The next week the Wonderlanders returned and faced everyone openly.
+
+The two weeks did NOT balance out well. . . .
+
+The Wonderlanders explained that for one week they had done ALL the
+things asked of them, perfectly, without complaint, had turned over
+ALL the prizes and money to their respective families, the vendors,
+those involved with their particular events, had done very well.
+
+But no one had really thanked them very much, and no one had really
+noticed whether or not they were enjoying their skating. . .
+
+For the other week, they had simply skated. . .albeit away from the
+eyes of anyone but themselves and their friends. . .as they had for
+many days and nights before they had become so famous.  They had to
+say, for the record, that they enjoyed the second week much more.
+
+They offered to skate in public every other week, and not to keep a
+cent for themselves, just so they could skate alone for themselves.
+
+They offered to skate in public on the weekends, 9 times out of 10,
+and not to keep a cent for themselves, just so they could be alone,
+skating for themselves, or just living, the rest of the time.
+
+There was not even a mummer of approval from amongst the vendors or
+the parents. . .who wanted control virtually all of the time.
+
+And so the Wonderlanders came to a fateful decision. . . .
+
+They would skate as much in public as was expected. . .and lull the
+parents and vendors into a state of false complacency. . .while the
+time was spent perfecting their plans for a permanent escape, as it
+was now a decade since this had all begun, and every one of them in
+the group should have long since started their own life and family.
+
+They found places to skate that were several times more remote than
+their most secret places to date.  They made arrangements with some
+people near there for food and housing. . .people so far from their
+homes that they only knew of them by name. . .and they never, never
+used their real names.
+
+Their lessons of privacy were learned well. . .and over a period of
+10 years. . .yet they practiced the art of privacy even more. . .to
+spread out their sources of supplies, and the times when they would
+need them, and how many were being supplied.  They masqueraded as a
+band of wandering gypsies, working hard in the fields in summer and
+making sure they looked nothing like the pales ice-creatures all of
+the world knew them as.  They pretended to be part of a much larger
+band of gypsies, who lived even more in secret, then they would buy
+only from those who would not reveal them, and would only pay extra
+for the secrecy when they came back for supplies the next time.
+
+Finally. . .the time was right. . . .
+
+At the end of one year's run of Winter Carnivals and Festivals they
+announced they would give their own event, and invited everyone.
+
+The vendors were invited both to watch AND to profit, and they even
+hired other outside vendors to work for them so they would watch in
+even more detail.
+
+And then. . .they gave the performances of their lives. . . .
+
+They made sure EVERYONE was there, and the skated their hearts out.
+
+Moves no one had ever seen, or would ever see again, were made in a
+manner that showed months or years of heartfelt practice, and every
+such move was dedicated to a particular friend or loved-one in that
+audience that day.
+
+Every friend and family member had a move named after them that day
+. . .a day every one of them remembered all their lives.
+
+Every friend and family member, and even the vendors, were taken on
+the ice and presented with prizes and money, and told how much they
+were loved or appreciated by the Wonderlanders.
+
+And finally, when all was said and done, the Wonderlanders went out
+on the ice and set their candles down, as they had done for years--
+in private--and let everyone see how they skated for themselves.
+
+They skated the moves THEY liked best, in the ways THEY liked best.
+
+And. . .as each Wonderlander finished his or her part of this show,
+they took off their skates, put on their shoes, and picked up their
+candles, and walked out back into the forest, stating they hoped to
+be back next weekend for their next performances, but they knew the
+hope was in vain, that no one would let them skate for themselves.
+
+Because this was most likely their final public performance, effort
+was not spared, and many jumps and leaps and spins were carried out
+in ways never seen before or since.
+
+Finally, there were only a few Wonderlanders left, and these gave a
+few performances that actually told stories; one of which suggested
+that the skater was running off into the woods to live as suggested
+by the use of a Pan flute as a prop and since the skater's name was
+Peter, it is possible, given the nature of these performances, with
+the faerie-like use of the candles, that this was the origin of the
+story of Peter Pan.
+
+After Peter had flown off with his candle, there was a girl, Belle,
+who had a bell tied to her wrist, and tinkled as she skated, which,
+is certainly possible was the origin of Tinkerbell, as it was known
+she had affections for Peter, and was of a jealous nature.
+
+When Belle had tinked off into the distance, there was no one left,
+except Dimbovitsa. . .who was a different kind of skater than most,
+leaving most of the leaps and jumps to the more athletic of ability
+and inclination. . .and followed her heart more in the direction of
+art and sculpture. . .concentrating on long graceful glides over an
+expanse of ice. . .and on exquisite positioning of arm and leg in a
+graceful combination further accentuated by her motion.
+
+And she could spin. . . .
+
+Sometimes she was such a blur you would think no force on Earth may
+ever be able to stop her, trying to count the number of times round
+and round she went was as much a topic for people such as scholarly
+mathematicians and philosophers as for those who actually saw spins
+that night that actually left them dazed.
+
+Her balance that night was such that she could hold a spin from one
+position to the next, only slightly pulling in one arm or leg to do
+enough conservation of momentum to even further the illusion of the
+spinning lasting forever.
+
+Since this was the last performance of the year, temperatures would
+be naturally rising, and the sun would be rising earlier every day,
+which had been calculated by the Wonderlanders, who had now lived a
+decade or more in these woods, and could tell you to the day if the
+ice would melt or not.
+
+And today turned out to be a very special day indeed, moreso than I
+would bet any of the Wonderlanders actually knew.
+
+They had all stayed up so long, and it was so late in the Spring, a
+sure thing was that some of this audience would not be getting home
+before dawn, and most would at least see the lightening sky.
+
+But this day was special. . .for so many reasons. . . .
+
+The Wonderlanders had placed their torches and candles is just such
+a way that each of them melted most of the ice used by each of them
+in their performances, so that by the time they had waited out each
+final applause, and then taken their candle with them into the edge
+of the darkness, their own patch of ice was very much melted away.
+
+As Dimbovitsa spun and spun, she melted away each of the last edges
+of ice remaining. . .until she was spinning on the only piece left,
+and as her candle grew shorter and shorter, she took on more of the
+appearance of a faerie, apparently flying over the ground suspended
+just a little. . .by her skates.
+
+Finally she entered her last spins, designed to take her over those
+few remaining patches of ice that remained, lit only by her single,
+very low candle. . .and each set of spins reduced one more piece of
+ice to slush. . .a slush that would look like mud in the sunrise.
+
+And so. . .as she completed her performance, put on her shoes, went
+off in the darkness, it appeared the sun would be coming up shortly
+. . .so many of the audience simply waited for the sunrise to start
+their trip home. . .the Eastern sky lightened. . .but the sun would
+not appear for more than an hour. . .it was the aurora borealis, or
+the northern lights, that were lighting up the sky, and which, even
+more than the Wonderlanders had planned, made their illusion a very
+much greater success than they had planned.
+
+From inside the shade grove of their practice pond, the sky was not
+terribly visible, even in the daytime, so it is not hard to realize
+how much the northern lights looked brighter than the darkness of a
+grove of trees.
+
+By the time the sun really did come up the pond had totally melted.
+
+And the illusion was complete. . .where there had been ice skating,
+now was a lake. . .the lake they now call Lake Dimbovitsa. . .after
+the last of the Wonderlanders who skated their that night.
+
+***
+
+So many people came and went in so many directions that night and a
+period of the first few hours of the following morning, that it was
+impossible to follow any tracks a week later, when people began the
+realization that the Wonderlanders were not coming back.
+
+Lots of things were done to find them, but nearly all had been well
+prepared for, and the addition of spring rains, a quick thaw, a lot
+of mud travelled by a lot of people, made it even more impossible a
+task to find someone who had already gone to great pains not to be.
+
+Who, in a camp of gypsies might recognize that the hooks from which
+pots of stew were hanging looked something like skate blades?  Who,
+in their right might thinks of skate blades being any other than in
+bright, shiny silver?  These black sooty hooks were on all of these
+fires, all looked the same. . .just black sooty hooks.
+
+There were some efforts to follow the major bands of gypsies for an
+extra year or two, but these were in such a small band, that anyone
+would know an entire band of ice-skaters could not hide within.  It
+would have been just too obvious.  No one considered that the whole
+band of dark-skinned gypsies might be ice-skaters.  But they were.
+
+***
+
+
+
+***
+
+If you want to see where I live in Romania, just find a decent map--
+look to the upper left very near Bucharest, and there is the lake.
+
+Follow the Dimbovita [the t is really a ts] River toward town, it is
+going to go right through the middle of town.
+
+As it approaches town it turns very slightly to the right, and, then
+again very slightly to the left.
+
+Then more strongly to the right.
+
+That's it. . .don't turn to the right there. . .go just another bit,
+the same direction the river was flowing, and you should find a mark
+for a church.  Our windows look out right over that church.
+
+***
+
+In closing, back to the ballet for a moment. . . .
+
+Many of you may be familiar with this ballet under a different name:
+Giselle, or Giselle of the Willys, as it is more properly called.  A
+few changes have been made, but with anything approaching traditions
+of choreographing Giselle over the years, it is still obvious that a
+great many of the traditional postures, motions or symbolic gestures
+in Giselles throughout the years are actually the postures, motions,
+and other gestures more commonly associated with ice skating.  Quick
+reflection, even for those of you who haven't seen it for years will
+remind you that the opening sequences of the Willys are in fact some
+ice skaters out in a pond in the woods, and that they are obviously,
+and basically in a practice session for themselves. . .practicing in
+a series of long glides you only see in ice skating. . .and switched
+footings that only take place in ice skating. . .which. . .once this
+becomes obvious to you, explains the extremely awkward nature of the
+opening moves in Giselle, moves that are totally natural in skating,
+but were difficult in translation to ballet.
+
+Of course, there is the addition of a romantic theme, one which I am
+sad to say I had to leave out of the version I related above, but on
+some future occasion I may do another version that includes it.  The
+basics are that a few of the skaters are enamoured with Dimbovitsa--
+and at least one of the townspeople--most notably one of those whose
+role is to bring materials for torches to the hidden practice sites,
+and who, after watching for years, eventually makes some suggestions
+to Dimbovitsa, which lead to some of the new moves that come from an
+assortment of these practice sessions over the years.  It later came
+to her attention that these suggestions were rooted in paintings the
+boy would make of her from memory, and once she saw the paintings, a
+new respect for what the boy had in mind was born, and a new respect
+for his talent, and a dim, but growing awareness of the attention he
+paid to her, to be able to paint her in such beautiful details, from
+memory.  The paintings rarely actually showed the skates themselves,
+as he often portrayed her as a faery floating above the ice, in much
+the same ways as others imagined her, but this in more concrete form
+. . .a form that may well have been the root of the Giselle ballet.
+
+If you actually extrapolate from such paintings, it becomes obvious,
+in the extreme, that the choreography, costumes, set and setting all
+are in reality those of the practice sessions of the Wonderlanders.
+
+***
+
+One more detail. . .after years of searching for the Wonderlanders--
+the name slowly changed to Neverlanders. . .as their neighbors found
+less and less reason to hope they would ever be found.
+
+***
+
+And yet. . .so they say. . .if you go out into the woods in a Spring
+or Fall that is coming or staying late. . .they say you can see them
+. . .the Wonderlanders, Neverlanders, or Willys. . .floating above a
+wispy swamp or pond or even a small lake. . .and just think for only
+a moment of the water actually being ice. . .and. . .there they are!
+
+
+
+
+
+End of
+Poems and Tales from Romania, by Simona Sumanaru and Michael Hart
+(C) 1999-2000 by Simona Sumanaru and Michael Hart
+

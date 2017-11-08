@@ -1,24 +1,24 @@
 Detecting C [-std=c11] compiler features failed to compile with the following output:
-Change Dir: Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/MinGW/mingw32/bin/mingw32-make.exe" "cmTC_59349/fast"
-C:/MinGW/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_59349.dir\build.make CMakeFiles/cmTC_59349.dir/build
-mingw32-make.exe[1]: Entering directory 'Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp'
-mingw32-make.exe[1]: *** No rule to make target 'Z:/Coding/Repositories/Computer-Science/CIS 263/HW\', needed by 'CMakeFiles/cmTC_59349.dir/feature_tests.c.obj'.  Stop.
-mingw32-make.exe[1]: Leaving directory 'Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp'
-mingw32-make.exe: *** [Makefile:125: cmTC_59349/fast] Error 2
+Run Build Command:"C:/MinGW/mingw32/bin/mingw32-make.exe" "cmTC_c8141/fast"
+C:/MinGW/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_c8141.dir\build.make CMakeFiles/cmTC_c8141.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: *** No rule to make target 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW\', needed by 'CMakeFiles/cmTC_c8141.dir/feature_tests.c.obj'.  Stop.
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:125: cmTC_c8141/fast] Error 2
 
 
 
 Detecting CXX [-std=c++1z] compiler features failed to compile with the following output:
-Change Dir: Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/MinGW/mingw32/bin/mingw32-make.exe" "cmTC_c566b/fast"
-C:/MinGW/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_c566b.dir\build.make CMakeFiles/cmTC_c566b.dir/build
-mingw32-make.exe[1]: Entering directory 'Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp'
-mingw32-make.exe[1]: *** No rule to make target 'Z:/Coding/Repositories/Computer-Science/CIS 263/HW\', needed by 'CMakeFiles/cmTC_c566b.dir/feature_tests.cxx.obj'.  Stop.
-mingw32-make.exe[1]: Leaving directory 'Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp'
-mingw32-make.exe: *** [Makefile:125: cmTC_c566b/fast] Error 2
+Run Build Command:"C:/MinGW/mingw32/bin/mingw32-make.exe" "cmTC_f47f8/fast"
+C:/MinGW/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_f47f8.dir\build.make CMakeFiles/cmTC_f47f8.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: *** No rule to make target 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW\', needed by 'CMakeFiles/cmTC_f47f8.dir/feature_tests.cxx.obj'.  Stop.
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:125: cmTC_f47f8/fast] Error 2
 
 
 

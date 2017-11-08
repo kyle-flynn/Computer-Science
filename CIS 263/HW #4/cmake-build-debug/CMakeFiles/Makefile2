@@ -44,91 +44,91 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.2.1\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.2.2\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2017.2.1\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2017.2.2\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "Z:\Coding\Repositories\Computer-Science\CIS 263\HW #4"
+CMAKE_SOURCE_DIR = "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 263\HW #4"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "Z:\Coding\Repositories\Computer-Science\CIS 263\HW #4\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 263\HW #4\cmake-build-debug"
 
 #=============================================================================
-# Target rules for target CMakeFiles/part1.dir
+# Target rules for target CMakeFiles/part_one.dir
 
 # All Build rule for target.
-CMakeFiles/part1.dir/all:
-	$(MAKE) -f CMakeFiles\part1.dir\build.make CMakeFiles/part1.dir/depend
-	$(MAKE) -f CMakeFiles\part1.dir\build.make CMakeFiles/part1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="Z:\Coding\Repositories\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target part1"
-.PHONY : CMakeFiles/part1.dir/all
+CMakeFiles/part_one.dir/all:
+	$(MAKE) -f CMakeFiles\part_one.dir\build.make CMakeFiles/part_one.dir/depend
+	$(MAKE) -f CMakeFiles\part_one.dir\build.make CMakeFiles/part_one.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target part_one"
+.PHONY : CMakeFiles/part_one.dir/all
 
 # Include target in all.
-all: CMakeFiles/part1.dir/all
+all: CMakeFiles/part_one.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/part1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "Z:\Coding\Repositories\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" 2
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/part1.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "Z:\Coding\Repositories\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" 0
-.PHONY : CMakeFiles/part1.dir/rule
+CMakeFiles/part_one.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/part_one.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/part_one.dir/rule
 
 # Convenience name for target.
-part1: CMakeFiles/part1.dir/rule
+part_one: CMakeFiles/part_one.dir/rule
 
-.PHONY : part1
-
-# clean rule for target.
-CMakeFiles/part1.dir/clean:
-	$(MAKE) -f CMakeFiles\part1.dir\build.make CMakeFiles/part1.dir/clean
-.PHONY : CMakeFiles/part1.dir/clean
+.PHONY : part_one
 
 # clean rule for target.
-clean: CMakeFiles/part1.dir/clean
+CMakeFiles/part_one.dir/clean:
+	$(MAKE) -f CMakeFiles\part_one.dir\build.make CMakeFiles/part_one.dir/clean
+.PHONY : CMakeFiles/part_one.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/part_one.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/part2.dir
+# Target rules for target CMakeFiles/part_two.dir
 
 # All Build rule for target.
-CMakeFiles/part2.dir/all:
-	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/depend
-	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="Z:\Coding\Repositories\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" --progress-num=3,4,5,6 "Built target part2"
-.PHONY : CMakeFiles/part2.dir/all
+CMakeFiles/part_two.dir/all:
+	$(MAKE) -f CMakeFiles\part_two.dir\build.make CMakeFiles/part_two.dir/depend
+	$(MAKE) -f CMakeFiles\part_two.dir\build.make CMakeFiles/part_two.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" --progress-num=3,4,5,6 "Built target part_two"
+.PHONY : CMakeFiles/part_two.dir/all
 
 # Include target in all.
-all: CMakeFiles/part2.dir/all
+all: CMakeFiles/part_two.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/part2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "Z:\Coding\Repositories\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" 4
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/part2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "Z:\Coding\Repositories\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" 0
-.PHONY : CMakeFiles/part2.dir/rule
+CMakeFiles/part_two.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" 4
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/part_two.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Kyle Flynn\Documents\GitHub\Computer-Science\CIS 263\HW #4\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/part_two.dir/rule
 
 # Convenience name for target.
-part2: CMakeFiles/part2.dir/rule
+part_two: CMakeFiles/part_two.dir/rule
 
-.PHONY : part2
-
-# clean rule for target.
-CMakeFiles/part2.dir/clean:
-	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/clean
-.PHONY : CMakeFiles/part2.dir/clean
+.PHONY : part_two
 
 # clean rule for target.
-clean: CMakeFiles/part2.dir/clean
+CMakeFiles/part_two.dir/clean:
+	$(MAKE) -f CMakeFiles\part_two.dir\build.make CMakeFiles/part_two.dir/clean
+.PHONY : CMakeFiles/part_two.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/part_two.dir/clean
 
 .PHONY : clean
 

@@ -1,0 +1,693 @@
+The Project Gutenberg Etext of Round the Sofa by Elizabeth Gaskell
+#8 in our series by Elizabeth Gaskell
+
+Copyright laws are changing all over the world, be sure to check
+the copyright laws for your country before posting these files!!
+
+Please take a look at the important information in this header.
+We encourage you to keep this file on your own disk, keeping an
+electronic path open for the next readers.  Do not remove this.
+
+
+**Welcome To The World of Free Plain Vanilla Electronic Texts**
+
+**Etexts Readable By Both Humans and By Computers, Since 1971**
+
+*These Etexts Prepared By Hundreds of Volunteers and Donations*
+
+Information on contacting Project Gutenberg to get Etexts, and
+further information is included below.  We need your donations.
+
+
+Round the Sofa
+
+by Elizabeth Gaskell
+
+March, 2001  [Etext #2533]
+
+
+The Project Gutenberg Etext of Round the Sofa by Elizabeth Gaskell
+******This file should be named rndsf10.txt or rndsf10.zip******
+
+Corrected EDITIONS of our etexts get a new NUMBER, rndsf11.txt
+VERSIONS based on separate sources get new LETTER, rndsf10a.txt
+
+
+This etext was scanned by David Price, email ccx074@coventry.ac.uk,
+from the 1896 Smith, Elder and Co. "Lizzie Leigh and Other Tales"
+edition.  Proofing by Vanessa Mosher, Jennifer Lee, Alev Akman and
+Andy Wallace.
+
+Project Gutenberg Etexts are usually created from multiple editions,
+all of which are in the Public Domain in the United States, unless a
+copyright notice is included.  Therefore, we usually do NOT keep any
+of these books in compliance with any particular paper edition.
+
+
+We are now trying to release all our books one month in advance
+of the official release dates, leaving time for better editing.
+
+Please note:  neither this list nor its contents are final till
+midnight of the last day of the month of any such announcement.
+The official release date of all Project Gutenberg Etexts is at
+Midnight, Central Time, of the last day of the stated month.  A
+preliminary version may often be posted for suggestion, comment
+and editing by those who wish to do so.  To be sure you have an
+up to date first edition [xxxxx10x.xxx] please check file sizes
+in the first week of the next month.  Since our ftp program has
+a bug in it that scrambles the date [tried to fix and failed] a
+look at the file size will have to do, but we will try to see a
+new copy has at least one byte more or less.
+
+
+Information about Project Gutenberg (one page)
+
+We produce about two million dollars for each hour we work.  The
+time it takes us, a rather conservative estimate, is fifty hours
+to get any etext selected, entered, proofread, edited, copyright
+searched and analyzed, the copyright letters written, etc.  This
+projected audience is one hundred million readers.  If our value
+per text is nominally estimated at one dollar then we produce $2
+million dollars per hour this year as we release thirty-six text
+files per month, or 432 more Etexts in 1999 for a total of 2000+
+If these reach just 10% of the computerized population, then the
+total should reach over 200 billion Etexts given away this year.
+
+The Goal of Project Gutenberg is to Give Away One Trillion Etext
+Files by December 31, 2001.  [10,000 x 100,000,000 = 1 Trillion]
+This is ten thousand titles each to one hundred million readers,
+which is only ~5% of the present number of computer users.
+
+At our revised rates of production, we will reach only one-third
+of that goal by the end of 2001, or about 3,333 Etexts unless we
+manage to get some real funding; currently our funding is mostly
+from Michael Hart's salary at Carnegie-Mellon University, and an
+assortment of sporadic gifts; this salary is only good for a few
+more years, so we are looking for something to replace it, as we
+don't want Project Gutenberg to be so dependent on one person.
+
+We need your donations more than ever!
+
+
+All donations should be made to "Project Gutenberg/CMU": and are
+tax deductible to the extent allowable by law.  (CMU = Carnegie-
+Mellon University).
+
+For these and other matters, please mail to:
+
+Project Gutenberg
+P. O. Box  2782
+Champaign, IL 61825
+
+When all other email fails. . .try our Executive Director:
+Michael S. Hart <hart@pobox.com>
+hart@pobox.com forwards to hart@prairienet.org and archive.org
+if your mail bounces from archive.org, I will still see it, if
+it bounces from prairienet.org, better resend later on. . . .
+
+We would prefer to send you this information by email.
+
+******
+
+To access Project Gutenberg etexts, use any Web browser
+to view http://promo.net/pg.  This site lists Etexts by
+author and by title, and includes information about how
+to get involved with Project Gutenberg.  You could also
+download our past Newsletters, or subscribe here.  This
+is one of our major sites, please email hart@pobox.com,
+for a more complete list of our various sites.
+
+To go directly to the etext collections, use FTP or any
+Web browser to visit a Project Gutenberg mirror (mirror
+sites are available on 7 continents; mirrors are listed
+at http://promo.net/pg).
+
+Mac users, do NOT point and click, typing works better.
+
+Example FTP session:
+
+ftp metalab.unc.edu
+login: anonymous
+password: your@login
+cd pub/docs/books/gutenberg
+cd etext90 through etext99 etext00 and etext01
+dir [to see files]
+get or mget [to get files. . .set bin for zip files]
+GET GUTINDEX.??  [to get a year's listing of books, e.g., GUTINDEX.99]
+GET GUTINDEX.ALL [to get a listing of ALL books]
+
+***
+
+**Information prepared by the Project Gutenberg legal advisor**
+
+(Three Pages)
+
+
+***START**THE SMALL PRINT!**FOR PUBLIC DOMAIN ETEXTS**START***
+Why is this "Small Print!" statement here?  You know: lawyers.
+They tell us you might sue us if there is something wrong with
+your copy of this etext, even if you got it for free from
+someone other than us, and even if what's wrong is not our
+fault.  So, among other things, this "Small Print!" statement
+disclaims most of our liability to you.  It also tells you how
+you can distribute copies of this etext if you want to.
+
+*BEFORE!* YOU USE OR READ THIS ETEXT
+By using or reading any part of this PROJECT GUTENBERG-tm
+etext, you indicate that you understand, agree to and accept
+this "Small Print!" statement.  If you do not, you can receive
+a refund of the money (if any) you paid for this etext by
+sending a request within 30 days of receiving it to the person
+you got it from.  If you received this etext on a physical
+medium (such as a disk), you must return it with your request.
+
+ABOUT PROJECT GUTENBERG-TM ETEXTS
+This PROJECT GUTENBERG-tm etext, like most PROJECT GUTENBERG-
+tm etexts, is a "public domain" work distributed by Professor
+Michael S. Hart through the Project Gutenberg Association at
+Carnegie-Mellon University (the "Project").  Among other
+things, this means that no one owns a United States copyright
+on or for this work, so the Project (and you!) can copy and
+distribute it in the United States without permission and
+without paying copyright royalties.  Special rules, set forth
+below, apply if you wish to copy and distribute this etext
+under the Project's "PROJECT GUTENBERG" trademark.
+
+To create these etexts, the Project expends considerable
+efforts to identify, transcribe and proofread public domain
+works.  Despite these efforts, the Project's etexts and any
+medium they may be on may contain "Defects".  Among other
+things, Defects may take the form of incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged
+disk or other etext medium, a computer virus, or computer
+codes that damage or cannot be read by your equipment.
+
+LIMITED WARRANTY; DISCLAIMER OF DAMAGES
+But for the "Right of Replacement or Refund" described below,
+[1] the Project (and any other party you may receive this
+etext from as a PROJECT GUTENBERG-tm etext) disclaims all
+liability to you for damages, costs and expenses, including
+legal fees, and [2] YOU HAVE NO REMEDIES FOR NEGLIGENCE OR
+UNDER STRICT LIABILITY, OR FOR BREACH OF WARRANTY OR CONTRACT,
+INCLUDING BUT NOT LIMITED TO INDIRECT, CONSEQUENTIAL, PUNITIVE
+OR INCIDENTAL DAMAGES, EVEN IF YOU GIVE NOTICE OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+If you discover a Defect in this etext within 90 days of
+receiving it, you can receive a refund of the money (if any)
+you paid for it by sending an explanatory note within that
+time to the person you received it from.  If you received it
+on a physical medium, you must return it with your note, and
+such person may choose to alternatively give you a replacement
+copy.  If you received it electronically, such person may
+choose to alternatively give you a second opportunity to
+receive it electronically.
+
+THIS ETEXT IS OTHERWISE PROVIDED TO YOU "AS-IS".  NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, ARE MADE TO YOU AS
+TO THE ETEXT OR ANY MEDIUM IT MAY BE ON, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE.
+
+Some states do not allow disclaimers of implied warranties or
+the exclusion or limitation of consequential damages, so the
+above disclaimers and exclusions may not apply to you, and you
+may have other legal rights.
+
+INDEMNITY
+You will indemnify and hold the Project, its directors,
+officers, members and agents harmless from all liability, cost
+and expense, including legal fees, that arise directly or
+indirectly from any of the following that you do or cause:
+[1] distribution of this etext, [2] alteration, modification,
+or addition to the etext, or [3] any Defect.
+
+DISTRIBUTION UNDER "PROJECT GUTENBERG-tm"
+You may distribute copies of this etext electronically, or by
+disk, book or any other medium if you either delete this
+"Small Print!" and all other references to Project Gutenberg,
+or:
+
+[1]  Only give exact copies of it.  Among other things, this
+     requires that you do not remove, alter or modify the
+     etext or this "small print!" statement.  You may however,
+     if you wish, distribute this etext in machine readable
+     binary, compressed, mark-up, or proprietary form,
+     including any form resulting from conversion by word pro-
+     cessing or hypertext software, but only so long as
+     *EITHER*:
+
+     [*]  The etext, when displayed, is clearly readable, and
+          does *not* contain characters other than those
+          intended by the author of the work, although tilde
+          (~), asterisk (*) and underline (_) characters may
+          be used to convey punctuation intended by the
+          author, and additional characters may be used to
+          indicate hypertext links; OR
+
+     [*]  The etext may be readily converted by the reader at
+          no expense into plain ASCII, EBCDIC or equivalent
+          form by the program that displays the etext (as is
+          the case, for instance, with most word processors);
+          OR
+
+     [*]  You provide, or agree to also provide on request at
+          no additional cost, fee or expense, a copy of the
+          etext in its original plain ASCII form (or in EBCDIC
+          or other equivalent proprietary form).
+
+[2]  Honor the etext refund and replacement provisions of this
+     "Small Print!" statement.
+
+[3]  Pay a trademark license fee to the Project of 20% of the
+     net profits you derive calculated using the method you
+     already use to calculate your applicable taxes.  If you
+     don't derive profits, no royalty is due.  Royalties are
+     payable to "Project Gutenberg Association/Carnegie-Mellon
+     University" within the 60 days following each
+     date you prepare (or were legally required to prepare)
+     your annual (or equivalent periodic) tax return.
+
+WHAT IF YOU *WANT* TO SEND MONEY EVEN IF YOU DON'T HAVE TO?
+The Project gratefully accepts contributions in money, time,
+scanning machines, OCR software, public domain etexts, royalty
+free copyright licenses, and every other sort of contribution
+you can think of.  Money should be paid to "Project Gutenberg
+Association / Carnegie-Mellon University".
+
+We are planning on making some changes in our donation structure
+in 2000, so you might want to email me, hart@pobox.com beforehand.
+
+
+
+
+*END THE SMALL PRINT! FOR PUBLIC DOMAIN ETEXTS*Ver.04.29.93*END*
+
+
+
+
+ROUND THE SOFA.
+
+
+
+
+[Project Gutenberg note:  Elizabeth Gaskell wrote the following story
+to join together a number of her other, previously published, short
+stories.  Project Gutenberg has already released the other stories
+and so they are not repeated here--however, notes are given at the
+appropriate places.--DP.]
+
+Long ago I was placed by my parents under the medical treatment of a
+certain Mr. Dawson, a surgeon in Edinburgh, who had obtained a
+reputation for the cure of a particular class of diseases.  I was
+sent with my governess into lodgings near his house, in the Old Town.
+I was to combine lessons from the excellent Edinburgh masters, with
+the medicines and exercises needed for my indisposition.  It was at
+first rather dreary to leave my brothers and sisters, and to give up
+our merry out-of-doors life with our country home, for dull lodgings,
+with only poor grave Miss Duncan for a companion; and to exchange our
+romps in the garden and rambles through the fields for stiff walks in
+the streets, the decorum of which obliged me to tie my bonnet-strings
+neatly, and put on my shawl with some regard to straightness.
+
+The evenings were the worst.  It was autumn, and of course they daily
+grew longer:  they were long enough, I am sure, when we first settled
+down in those gray and drab lodgings.  For, you must know, my father
+and mother were not rich, and there were a great many of us, and the
+medical expenses to be incurred by my being placed under Mr. Dawson's
+care were expected to be considerable; therefore, one great point in
+our search after lodgings was economy.  My father, who was too true a
+gentleman to feel false shame, had named this necessity for cheapness
+to Mr. Dawson; and in return, Mr. Dawson had told him of those at No.
+6 Cromer Street, in which we were finally settled.  The house
+belonged to an old man, at one time a tutor to young men preparing
+for the University, in which capacity he had become known to Mr.
+Dawson.  But his pupils had dropped off; and when we went to lodge
+with him, I imagine that his principal support was derived from a few
+occasional lessons which he gave, and from letting the rooms that we
+took, a drawing-room opening into a bed-room, out of which a smaller
+chamber led.  His daughter was his housekeeper:  a son, whom we never
+saw, supposed to be leading the same life that his father had done
+before him, only we never saw or heard of any pupils; and there was
+one hard-working, honest little Scottish maiden, square, stumpy,
+neat, and plain, who might have been any age from eighteen to forty.
+
+Looking back on the household now, there was perhaps much to admire
+in their quiet endurance of decent poverty; but at this time, their
+poverty grated against many of my tastes, for I could not recognize
+the fact, that in a town the simple graces of fresh flowers, clean
+white muslin curtains, pretty bright chintzes, all cost money, which
+is saved by the adoption of dust-coloured moreen, and mud-coloured
+carpets.  There was not a penny spent on mere elegance in that room;
+yet there was everything considered necessary to comfort:  but after
+all, such mere pretences of comfort! a hard, slippery, black horse-
+hair sofa, which was no place of rest; an old piano, serving as a
+sideboard; a grate, narrowed by an inner supplement, till it hardly
+held a handful of the small coal which could scarcely ever be stirred
+up into a genial blaze.  But there were two evils worse than even
+this coldness and bareness of the rooms:  one was that we were
+provided with a latch-key, which allowed us to open the front door
+whenever we came home from a walk, and go upstairs without meeting
+any face of welcome, or hearing the sound of a human voice in the
+apparently deserted house--Mr. Mackenzie piqued himself on the
+noiselessness of his establishment; and the other, which might almost
+seem to neutralize the first, was the danger we were always exposed
+to on going out, of the old man--sly, miserly, and intelligent--
+popping out upon us from his room, close to the left hand of the
+door, with some civility which we learned to distrust as a mere
+pretext for extorting more money, yet which it was difficult to
+refuse:  such as the offer of any books out of his library, a great
+temptation, for we could see into the shelf-lined room; but just as
+we were on the point of yielding, there was a hint of the
+"consideration" to be expected for the loan of books of so much
+higher a class than any to be obtained at the circulating library,
+which made us suddenly draw back.  Another time he came out of his
+den to offer us written cards, to distribute among our acquaintance,
+on which he undertook to teach the very things I was to learn; but I
+would rather have been the most ignorant woman that ever lived than
+tried to learn anything from that old fox in breeches.  When we had
+declined all his proposals, he went apparently into dudgeon.  Once
+when we had forgotten our latch-key we rang in vain for many times at
+the door, seeing our landlord standing all the time at the window to
+the right, looking out of it in an absent and philosophical state of
+mind, from which no signs and gestures of ours could arouse him.
+
+The women of the household were far better, and more really
+respectable, though even on them poverty had laid her heavy left
+hand, instead of her blessing right.  Miss Mackenzie kept us as short
+in our food as she decently could--we paid so much a week for our
+board, be it observed; and if one day we had less appetite than
+another our meals were docked to the smaller standard, until Miss
+Duncan ventured to remonstrate.  The sturdy maid-of-all-work was
+scrupulously honest, but looked discontented, and scarcely vouchsafed
+us thanks, when on leaving we gave her what Mrs. Dawson had told us
+would be considered handsome in most lodgings.  I do not believe
+Phenice ever received wages from the Mackenzies.
+
+But that dear Mrs. Dawson!  The mention of her comes into my mind
+like the bright sunshine into our dingy little drawing room came on
+those days;--as a sweet scent of violets greets the sorrowful passer
+among the woodlands.
+
+Mrs. Dawson was not Mr. Dawson's wife, for he was a bachelor.  She
+was his crippled sister, an old maid, who had, what she called, taken
+her brevet rank.
+
+After we had been about a fortnight in Edinburgh, Mr. Dawson said, in
+a sort of half doubtful manner to Miss Duncan -
+
+"My sister bids me say, that every Monday evening a few friends come
+in to sit round her sofa for an hour or so,--some before going to
+gayer parties--and that if you and Miss Greatorex would like a little
+change, she would only be too glad to see you.  Any time from seven
+to eight to-night; and I must add my injunctions, both for her sake,
+and for that of my little patient's, here, that you leave at nine
+o'clock.  After all, I do not know if you will care to come; but
+Margaret bade me ask you;" and he glanced up suspiciously and sharply
+at us.  If either of us had felt the slightest reluctance, however
+well disguised by manner, to accept this invitation, I am sure he
+would have at once detected our feelings, and withdrawn it; so
+jealous and chary was he of anything pertaining to the appreciation
+of this beloved sister.
+
+But if it had been to spend an evening at the dentist's, I believe I
+should have welcomed the invitation, so weary was I of the monotony
+of the nights in our lodgings; and as for Miss Duncan, an invitation
+to tea was of itself a pure and unmixed honour, and one to be
+accepted with all becoming form and gratitude:  so Mr. Dawson's sharp
+glances over his spectacles failed to detect anything but the truest
+pleasure, and he went on.
+
+"You'll find it very dull, I dare say.  Only a few old fogies like
+myself, and one or two good sweet young women:  I never know who'll
+come.  Margaret is obliged to lie in a darkened room--only half-
+lighted I mean,--because her eyes are weak,--oh, it will be very
+stupid, I dare say:  don't thank me till you've been once and tried
+it, and then if you like it, your best thanks will be to come again
+every Monday, from half-past seven to nine, you know.  Good-bye,
+good-bye."
+
+Hitherto I had never been out to a party of grown-up people; and no
+court ball to a London young lady could seem more redolent of honour
+and pleasure than this Monday evening to me.
+
+Dressed out in new stiff book-muslin, made up to my throat,--a frock
+which had seemed to me and my sisters the height of earthly grandeur
+and finery--Alice, our old nurse, had been making it at home, in
+contemplation of the possibility of such an event during my stay in
+Edinburgh, but which had then appeared to me a robe too lovely and
+angelic to be ever worn short of heaven--I went with Miss Duncan to
+Mr. Dawson's at the appointed time.  We entered through one small
+lofty room, perhaps I ought to call it an antechamber, for the house
+was old-fashioned, and stately and grand, the large square drawing-
+room, into the centre of which Mrs. Dawson's sofa was drawn.  Behind
+her a little was placed a table with a great cluster candlestick upon
+it, bearing seven or eight wax-lights; and that was all the light in
+the room, which looked to me very vast and indistinct after our
+pinched-up apartment at the Mackenzie's.  Mrs. Dawson must have been
+sixty; and yet her face looked very soft and smooth and child-like.
+Her hair was quite gray:  it would have looked white but for the
+snowiness of her cap, and satin ribbon.  She was wrapped in a kind of
+dressing-gown of French grey merino:  the furniture of the room was
+deep rose-colour, and white and gold,--the paper which covered the
+walls was Indian, beginning low down with a profusion of tropical
+leaves and birds and insects, and gradually diminishing in richness
+of detail till at the top it ended in the most delicate tendrils and
+most filmy insects.
+
+Mr. Dawson had acquired much riches in his profession, and his house
+gave one this impression.  In the corners of the rooms were great
+jars of Eastern china, filled with flower-leaves and spices; and in
+the middle of all this was placed the sofa, which poor Margaret
+Dawson passed whole days, and months, and years, without the power of
+moving by herself.  By-and-by Mrs. Dawson's maid brought in tea and
+macaroons for us, and a little cup of milk and water and a biscuit
+for her.  Then the door opened.  We had come very early, and in came
+Edinburgh professors, Edinburgh beauties, and celebrities, all on
+their way to some other gayer and later party, but coming first to
+see Mrs. Dawson, and tell her their bon-mots, or their interests, or
+their plans.  By each learned man, by each lovely girl, she was
+treated as a dear friend, who knew something more about their own
+individual selves, independent of their reputation and general
+society-character, than any one else.
+
+It was very brilliant and very dazzling, and gave enough to think
+about and wonder about for many days.
+
+Monday after Monday we went, stationary, silent; what could we find
+to say to any one but Mrs. Margaret herself?  Winter passed, summer
+was coming, still I was ailing, and weary of my life; but still Mr.
+Dawson gave hopes of my ultimate recovery.  My father and mother came
+and went; but they could not stay long, they had so many claims upon
+them.  Mrs. Margaret Dawson had become my dear friend, although,
+perhaps, I had never exchanged as many words with her as I had with
+Miss Mackenzie, but then with Mrs. Dawson every word was a pearl or a
+diamond.
+
+People began to drop off from Edinburgh, only a few were left, and I
+am not sure if our Monday evenings were not all the pleasanter.
+
+There was Mr. Sperano, the Italian exile, banished even from France,
+where he had long resided, and now teaching Italian with meek
+diligence in the northern city; there was Mr. Preston, the
+Westmoreland squire, or, as he preferred to be called, statesman,
+whose wife had come to Edinburgh for the education of their numerous
+family, and who, whenever her husband had come over on one of his
+occasional visits, was only too glad to accompany him to Mrs.
+Dawson's Monday evenings, he and the invalid lady having been friends
+from long ago.  These and ourselves kept steady visitors, and enjoyed
+ourselves all the more from having the more of Mrs. Dawson's society.
+
+One evening I had brought the little stool close to her sofa, and was
+caressing her thin white hand, when the thought came into my head and
+out I spoke it.
+
+"Tell me, dear Mrs. Dawson," said I, "how long you have been in
+Edinburgh; you do not speak Scotch, and Mr. Dawson says he is not
+Scotch."
+
+"No, I am Lancashire--Liverpool-born," said she, smiling.  "Don't you
+hear it in my broad tongue?"
+
+"I hear something different to other people, but I like it because it
+is just you; is that Lancashire?"
+
+"I dare say it is; for, though I am sure Lady Ludlow took pains
+enough to correct me in my younger days, I never could get rightly
+over the accent."
+
+"Lady Ludlow," said I, "what had she to do with you?  I heard you
+talking about her to Lady Madeline Stuart the first evening I ever
+came here; you and she seemed so fond of Lady Ludlow; who is she?"
+
+"She is dead, my child; dead long ago."
+
+I felt sorry I had spoken about her, Mrs. Dawson looked so grave and
+sad.  I suppose she perceived my sorrow, for she went on and said--
+"My dear, I like to talk and to think of Lady Ludlow:  she was my
+true, kind friend and benefactress for many years; ask me what you
+like about her, and do not think you give me pain."
+
+I grew bold at this.
+
+"Will you tell me all about her, then, please, Mrs. Dawson?"
+
+"Nay," said she, smiling, "that would be too long a story.  Here are
+Signor Sperano, and Miss Duncan, and Mr. and Mrs. Preston are coming
+to-night, Mr. Preston told me; how would they like to hear an old-
+world story which, after all, would be no story at all, neither
+beginning, nor middle, nor end, only a bundle of recollections?"
+
+"If you speak of me, madame," said Signor Sperano, "I can only say
+you do me one great honour by recounting in my presence anything
+about any person that has ever interested you."
+
+Miss Duncan tried to say something of the same kind.  In the middle
+of her confused speech, Mr. and Mrs. Preston came in.  I sprang up; I
+went to meet them.
+
+"Oh," said I, "Mrs. Dawson is just going to tell us all about Lady
+Ludlow, and a great deal more, only she is afraid it won't interest
+anybody:  do say you would like to hear it!"
+
+Mrs. Dawson smiled at me, and in reply to their urgency she promised
+to tell us all about Lady Ludlow, on condition that each one of us
+should, after she had ended, narrate something interesting, which we
+had either heard, or which had fallen within our own experience.  We
+all promised willingly, and then gathered round her sofa to hear what
+she could tell us about my Lady Ludlow.
+
+[At this point comes "My Lady Ludlow"--already released by Project
+Gutenberg]
+
+As any one may guess, it had taken Mrs. Dawson several Monday
+evenings to narrate all this history of the days of her youth.  Miss
+Duncan thought it would be a good exercise for me, both in memory and
+composition, to write out on Tuesday mornings all that I had heard
+the night before; and thus it came to pass that I have the manuscript
+of "My Lady Ludlow" now lying by me.
+
+
+Mr. Dawson had often come in and out of the room during the time that
+his sister had been telling us about Lady Ludlow.  He would stop, and
+listen a little, and smile or sigh as the case might be.  The Monday
+after the dear old lady had wound up her tale (if tale it could be
+called), we felt rather at a loss what to talk about, we had grown so
+accustomed to listen to Mrs. Dawson.  I remember I was saying, "Oh,
+dear!  I wish some one would tell us another story!" when her brother
+said, as if in answer to my speech, that he had drawn up a paper all
+ready for the Philosophical Society, and that perhaps we might care
+to hear it before it was sent off:  it was in a great measure
+compiled from a French book, published by one of the Academies, and
+rather dry in itself; but to which Mr. Dawson's attention had been
+directed, after a tour he had made in England during the past year,
+in which he had noticed small walled-up doors in unusual parts of
+some old parish churches, and had been told that they had formerly
+been appropriated to the use of some half-heathen race, who, before
+the days of gipsies, held the same outcast pariah position in most of
+the countries of western Europe.  Mr. Dawson had been recommended to
+the French book which he named, as containing the fullest and most
+authentic account of this mysterious race, the Cagots.  I did not
+think I should like hearing this paper as much as a story; but, of
+course, as he meant it kindly, we were bound to submit, and I found
+it, on the whole, more interesting than I anticipated.
+
+[At this point comes "An Accursed Race"--already released by Project
+Gutenberg]
+
+For some time past I had observed that Miss Duncan made a good deal
+of occupation for herself in writing, but that she did not like me to
+notice her employment.  Of course this made me all the more curious;
+and many were my silent conjectures--some of them so near the truth
+that I was not much surprised when, after Mr. Dawson had finished
+reading his Paper to us, she hesitated, coughed, and abruptly
+introduced a little formal speech, to the effect that she had noted
+down an old Welsh story the particulars of which had often been told
+her in her youth, as she lived close to the place where the events
+occurred.  Everybody pressed her to read the manuscript, which she
+now produced from her reticule; but, when on the point of beginning,
+her nervousness seemed to overcome her, and she made so many
+apologies for its being the first and only attempt she had ever made
+at that kind of composition, that I began to wonder if we should ever
+arrive at the story at all.  At length, in a high-pitched, ill-
+assured voice, she read out the title:
+
+"THE DOOM OF THE GRIFFITHS."
+
+[At this point comes "The Doom of the Griffiths"--already released by
+Project Gutenberg]
+
+You cannot think how kindly Mrs. Dawson thanked Miss Duncan for
+writing and reading this story.  She shook my poor, pale governess so
+tenderly by the hand that the tears came into her eyes, and the
+colour to her checks.
+
+"I though you had been so kind; I liked hearing about Lady Ludlow; I
+fancied, perhaps, I could do something to give a little pleasure,"
+were the half-finished sentences Miss Duncan stammered out.  I am
+sure it was the wish to earn similar kind words from Mrs. Dawson,
+that made Mrs. Preston try and rummage through her memory to see if
+she could not recollect some fact, or event, or history, which might
+interested Mrs. Dawson and the little party that gathered round her
+sofa.  Mrs. Preston it was who told us the following tale:
+
+"HALF A LIFE-TIME AGO."
+
+[At this point comes "Half a Life-Time Ago"--already released by
+Project Gutenberg]
+
+When this narrative was finished, Mrs. Dawson called on our two
+gentlemen, Signor Sperano and Mr. Preston, and told them that they
+had hitherto been amused or interested, but that it was now their
+turn to amuse or interest.  They looked at each other as if this
+application of hers took them by surprise, and seemed altogether as
+much abashed as well-grown men can ever be.  Signor Sperano was the
+first to recover himself:  after thinking a little, he said -
+
+"Your will, dear lady, is law.  Next Monday evening, I will bring you
+an old, old story, which I found among the papers of the good old
+priest who first welcomed me to England.  It was but a poor return
+for his generous kindness; but I had the opportunity of nursing him
+through the cholera, of which he died.  He left me all that he had--
+no money--but his scanty furniture, his book of prayers, his crucifix
+and rosary, and his papers.  How some of those papers came into his
+hands I know not.  They had evidently been written many years before
+the venerable man was born; and I doubt whether he had ever examined
+the bundles, which had come down to him from some old ancestor, or in
+some strange bequest.  His life was too busy to leave any time for
+the gratification of mere curiosity; I, alas! have only had too much
+leisure."
+
+Next Monday, Signor Sperano read to us the story which I will call
+
+"THE POOR CLARE."
+
+[At this point comes "The Poor Clare"--already released by Project
+Gutenberg]
+
+Now, of all our party who had first listened to my Lady Ludlow, Mr.
+Preston was the only one who had not told us something, either of
+information, tradition, history, or legend.  We naturally turned to
+him; but we did not like asking him directly for his contribution,
+for he was a grave, reserved, and silent man.
+
+He understood us, however, and, rousing himself as it were, he said -
+
+"I know you wish me to tell you, in my turn, of something which I
+have learnt during my life.  I could tell you something of my own
+life, and of a life dearer still to my memory; but I have shunk from
+narrating anything so purely personal.  Yet, shrink as I will, no
+other but those sad recollections will present themselves to my mind.
+I call them sad when I think of the end of it all.  However, I am not
+going to moralize.  If my dear brother's life and death does not
+speak for itself, no words of mine will teach you what may be learnt
+from it."
+
+[At this point comes the final story "The Half-Brothers"--already
+released by Project Gutenberg]
+
+
+
+
+End of the Project Gutenberg eText Round the Sofa

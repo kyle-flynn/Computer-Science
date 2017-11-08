@@ -62,7 +62,15 @@ void WordSearch::read_words(const string &file_name)
             /* if the word is in the ignored list, don't print it */
             if (ignored_words.find(word->str()) == ignored_words.end()) {
                 word_occurrances[word->str()]++;
-                total_words++;
+
+                if (prev.length() > 0) {
+                    // Then we can start learning...
+                    words_after_word[prev][word->str()]++;
+                }
+
+                prev = word->str();
+
+                words_total++;
             }
         }
         line++;
@@ -77,7 +85,7 @@ unsigned long WordSearch::word_count() const {
 //        total += pair.second;
 //    }
 //    return total;
-    return total_words;
+    return words_total;
 }
 
 set<string> WordSearch::words_of_length (int L) const {
@@ -101,6 +109,11 @@ set<string> WordSearch::words_of_length (int L) const {
 }
 
 pair<unsigned int,set<string>> WordSearch::most_frequent_words() const {
+
+    if (word_occurrances.empty() || word_occurrances.size() == 0 || words_total == 0) {
+        throw length_error("Data structure contains no data.");
+    }
+
     set<string> words;
 
     unsigned int times_occurred = 0;
@@ -108,17 +121,16 @@ pair<unsigned int,set<string>> WordSearch::most_frequent_words() const {
     
     for (auto const& pair : word_occurrances) {
         int word_count = pair.second;
-        if (word_count == max_count) {
-            times_occurred += word_count;
-            words.insert(pair.first);
-        }
         if (word_count > max_count) {
             times_occurred = 0;
             words.clear();
             max_count = word_count;
         }
+        if (word_count == max_count) {
+            times_occurred += word_count;
+            words.insert(pair.first);
+        }
     }
-
 
     return make_pair(times_occurred, words);
 }
@@ -134,7 +146,7 @@ set<string> WordSearch::least_frequent_words(int count) const {
         }
     }
 
-    if (words.empty()) {
+    if (!words.empty()) {
         return words;
     } else {
         return set<string>();
@@ -143,7 +155,18 @@ set<string> WordSearch::least_frequent_words(int count) const {
 
 string WordSearch::most_probable_word_after(const string& word) const {
 
-    /* TODO complete this function */
+    // Access is O(1)
+    auto const& word_map = words_after_word.at(word);
+    string probable_word;
+    int max_count = 0;
 
-    return "";
+    for (auto const& pair : word_map) {
+        int word_count = pair.second;
+        if (word_count > max_count) {
+            max_count = word_count;
+            probable_word = pair.first;
+        }
+    }
+
+    return probable_word;
 }
