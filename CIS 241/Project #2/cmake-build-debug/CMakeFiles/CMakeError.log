@@ -1,0 +1,24 @@
+Detecting C [-std=c11] compiler features failed to compile with the following output:
+Change Dir: C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/mingw32/bin/mingw32-make.exe" "cmTC_261be/fast"
+C:/MinGW/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_261be.dir\build.make CMakeFiles/cmTC_261be.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: *** No rule to make target 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project\', needed by 'CMakeFiles/cmTC_261be.dir/feature_tests.c.obj'.  Stop.
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:125: cmTC_261be/fast] Error 2
+
+
+
+Detecting CXX [-std=c++1z] compiler features failed to compile with the following output:
+Change Dir: C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/mingw32/bin/mingw32-make.exe" "cmTC_c1d9c/fast"
+C:/MinGW/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_c1d9c.dir\build.make CMakeFiles/cmTC_c1d9c.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe[1]: *** No rule to make target 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project\', needed by 'CMakeFiles/cmTC_c1d9c.dir/feature_tests.cxx.obj'.  Stop.
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 241/Project #2/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:125: cmTC_c1d9c/fast] Error 2
+
+
+

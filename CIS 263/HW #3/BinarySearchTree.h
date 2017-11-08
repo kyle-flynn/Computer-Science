@@ -31,9 +31,6 @@ public:
 
     void printTree(ostream& out = cout) const {
         print (out, root);
-
-//        cout << endl;
-//        cout << findMax(root)->data << endl;
     }
 
     const E & findMin() const {

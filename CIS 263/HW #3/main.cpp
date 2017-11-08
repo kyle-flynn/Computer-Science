@@ -12,6 +12,7 @@ int main() {
     me.insert (24);
     me.printTree();
 
+    // Remove the lowest value from the BST
     me.remove(-2);
     int min = me.findMin();
     int max = me.findMax();
@@ -32,7 +33,17 @@ int main() {
 
     cout << "Empty: " << empty << endl;
 
+    // This should print nothing because our binary tree is now empty.
     me.printTree();
+
+    me.insert(10);
+    me.insert(20);
+    me.printTree();
+
+    empty = me.isEmpty();
+
+    cout << endl;
+    cout << "Empty: " << empty << endl;
 
     return 0;
 }
