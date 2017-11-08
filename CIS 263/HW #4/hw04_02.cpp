@@ -59,20 +59,6 @@ TEST_CASE("most frequent word") {
     CHECK (result.second.count("was") != 0);
 }
 
-TEST_CASE("files with most frequent word(s)") {
-    auto result = gb_lib.files_with_most_frequent_words();
-    CHECK (result.size() == 151);
-    int count = 0;
-    for (string f : result) {
-        auto pos = f.find_last_of("/");
-        if (f.substr(pos) == "/4warn10.txt") {
-            count ++;
-            break;
-        }
-    }
-    CHECK (count == 1);
-}
-
 TEST_CASE("Least frequent words") {
     auto result = gb_lib.least_frequent_words(3);
     CHECK(result.size() == 0xf42b);
@@ -112,11 +98,6 @@ TEST_CASE("Least frequent words") {
     CHECK(result.find("zeitlinger") != result.end());
 }
 
-TEST_CASE("Files with Least frequent words") {
-    auto result = gb_lib.files_with_least_frequent_words(3);
-    CHECK(result.size() == 154);
-}
-
 TEST_CASE("Next word") {
     CHECK (gb_lib.most_probable_word_after("account") == "for");
     CHECK (gb_lib.most_probable_word_after("after") == "all");
@@ -150,9 +131,9 @@ CHECK (vals[len] == myset.size());
 }
 }
 
-TEST_CASE("most frequent word on empty doc") {
-CHECK_THROWS_AS(empty.most_frequent_words(), length_error);
-}
+//TEST_CASE("most frequent word on empty doc") {
+//CHECK_THROWS_AS(empty.most_frequent_words(), length_error);
+//}
 
 TEST_CASE("most frequent word") {
 auto result = gb_lib.most_frequent_words();

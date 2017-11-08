@@ -4,37 +4,31 @@
 
 #include <cstdlib>
 #include <string>
+#include <iostream>
 #include "FileSystem.h"
 
 using namespace std;
 
 namespace gvsu {
 /*--- constructor ---*/
-#ifndef USE_RE
-    FileSystem::FileSystem (const string& path)
-#else /* USE_RE */
     FileSystem::FileSystem (const string& p)
-    : FileSystem(p, regex(".+",regex::extended))
-{
-    /* the default regular expression ".+" will not filter any filename */
-}
+            : FileSystem(p, regex(".+",regex::extended))
+    {
+        /* the default regular expression ".+" will not filter any filename */
+    }
 
-FileSystem::FileSystem (const string& path, const regex& filter)
-#endif /* USE_RE */
+    FileSystem::FileSystem (const string& path, const regex filter)
     {
         /* Unix/OSX: absolute path begins with a "/" such as "/path/to/file"
            Windows: absolute path begins with X:/  or X:\\
          */
-        if (path[0] == '/' || path.find(":/") != string::npos ||
+        if (path.at(0) == '/' || path.find(":/") != string::npos ||
             path.find(":\\") != string::npos)  // is it an absolute path?
             absPath = path;
         else {
-            /* concatenate the path with the current directory */
-            absPath = string (getenv ("PWD")) + "/" + path;
+            throw "Directory must be an absolute path";
         }
-#ifdef USE_RE
         name_filter = filter;
-#endif /* USE_RE */
     }
 
 /* default iterator constructor */
@@ -50,17 +44,18 @@ FileSystem::FileSystem (const string& path, const regex& filter)
             closedir(curr_dir);
     }
 
-#ifndef USE_RE
-    FileSystem::gv_iter::gv_iter(const string& path)
+    FileSystem::gv_iter::gv_iter(const string& path, const regex& re) :
+            filter (re)
     {
-#else /* USE_RE */
-        FileSystem::gv_iter::gv_iter(const string& path, const regex& re) :
-    filter (re) {
-#endif /* USE_RE */
         curr_path = path;
         curr_dir = opendir (path.c_str());
         entry = readdir(curr_dir);
-        if (entry->d_type == DT_DIR)
+#ifdef _WIN32
+        auto attr = GetFileAttributes((curr_path + "/" + entry->d_name).c_str());
+        if (attr & FILE_ATTRIBUTE_DIRECTORY)
+#else
+            if (entry->d_type == DT_DIR)
+#endif
             operator++();
     }
 
@@ -89,33 +84,34 @@ FileSystem::FileSystem (const string& path, const regex& filter)
                 dir_stack.pop();
                 entry = readdir(curr_dir);
             }
-            else if (entry->d_type != DT_DIR) {
-                /* check if the filename matches the regex filter? */
-#ifndef USE_RE
-                string check_name{entry->d_name};
-                if (check_name.substr(check_name.length() - 3, 3) == "txt")
-#else /* USE_RE */
-                    if (regex_search(entry->d_name, filter))
-#endif /* USE_RE */
-                    found = true;
-                else
-                    entry = readdir(curr_dir);
-            }
             else {
-                /* handle a directory entry here */
-                string check_name {entry->d_name};
-                if (check_name == "." || check_name == "..") {
-                    /* skip "." and ".." */
-                    entry = readdir(curr_dir);
-                }
-                else {
-                    /* save the current directory onto the stack */
-                    dir_stack.push(make_pair(curr_dir, curr_path));
-                    curr_path = curr_path + "/" + entry->d_name;
+#ifdef _WIN32
+                auto attr = GetFileAttributes((curr_path + "/" + entry->d_name).c_str());
+                bool isDir = attr & FILE_ATTRIBUTE_DIRECTORY;
+#else
+                bool isDir = entry->d_type == DT_DIR;
+#endif
+                if (!isDir) {
+                    /* check if the filename matches the regex filter? */
+                    if (regex_search(entry->d_name, filter))
+                        found = true;
+                    else
+                        entry = readdir(curr_dir);
+                } else {
+                    /* handle a directory entry here */
+                    string check_name{entry->d_name};
+                    if (check_name.compare(".") == 0 || check_name.compare("..") == 0) {
+                        /* skip "." and ".." */
+                        entry = readdir(curr_dir);
+                    } else {
+                        /* save the current directory onto the stack */
+                        dir_stack.push(make_pair(curr_dir, curr_path));
+                        curr_path = curr_path + "/" + entry->d_name;
 
-                    /* recurse into the lower level directory */
-                    curr_dir = opendir(curr_path.c_str());
-                    entry = readdir(curr_dir);
+                        /* recurse into the lower level directory */
+                        curr_dir = opendir(curr_path.c_str());
+                        entry = readdir(curr_dir);
+                    }
                 }
             }
         }

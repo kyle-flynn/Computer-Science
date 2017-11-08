@@ -60,12 +60,9 @@ void WordSearch::read_words(const string &file_name)
         auto re_end = sregex_iterator{};
         for (auto word = re_begin; word != re_end; ++word) {
             /* if the word is in the ignored list, don't print it */
-            if (ignored_words.find(word->str()) == ignored_words.end())
-            {
-                /* TODO: REMOVE the following cout line */
-                cout << "Current word is " << word->str() << endl;
-
-                /* TODO: use the current word to update your data structures */
+            if (ignored_words.find(word->str()) == ignored_words.end()) {
+                word_occurrances[word->str()]++;
+                total_words++;
             }
         }
         line++;
@@ -75,29 +72,73 @@ void WordSearch::read_words(const string &file_name)
 
 
 unsigned long WordSearch::word_count() const {
-    /* TODO complete this function */
-    return 0;
+//    unsigned long total = 0;
+//    for (pair<string, int> pair : word_occurrances) {
+//        total += pair.second;
+//    }
+//    return total;
+    return total_words;
 }
 
 set<string> WordSearch::words_of_length (int L) const {
     /* TODO complete this function */
-    return set<string>();   /* return an empty set */
-}
 
-pair<unsigned int,set<string>> WordSearch::most_frequent_words() const throw (length_error) {
     set<string> words;
 
-    /* TODO complete this function */
+    for (auto const& pair : word_occurrances) {
+        string word = pair.first;
+        if (word.length() == L) {
+            words.insert(word);
+        }
+    }
 
-    return make_pair(0, words);
+    if (words.empty()) {
+        return set<string>();
+    } else {
+        return words;
+    }
+
+}
+
+pair<unsigned int,set<string>> WordSearch::most_frequent_words() const {
+    set<string> words;
+
+    unsigned int times_occurred = 0;
+    int max_count = 0;
+    
+    for (auto const& pair : word_occurrances) {
+        int word_count = pair.second;
+        if (word_count == max_count) {
+            times_occurred += word_count;
+            words.insert(pair.first);
+        }
+        if (word_count > max_count) {
+            times_occurred = 0;
+            words.clear();
+            max_count = word_count;
+        }
+    }
+
+
+    return make_pair(times_occurred, words);
 }
 
 set<string> WordSearch::least_frequent_words(int count) const {
     set<string> words;
-    /* TODO complete this function */
 
+    for (auto const& pair : word_occurrances) {
+        string word = pair.first;
+        int word_count = pair.second;
+        if (word_count <= count) {
+            words.insert(word);
+        }
+    }
 
-    return words;
+    if (words.empty()) {
+        return words;
+    } else {
+        return set<string>();
+    }
 }
 
 string WordSearch::most_probable_word_after(const string& word) const {

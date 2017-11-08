@@ -22,7 +22,9 @@ class WordSearch {
 private:
     unordered_set<string> ignored_words;
     /* TODO: declare additional data structures as needed */
-
+    unsigned long total_words;
+    map<string, int> word_occurrances;
+    set<string> words;
     void read_words (const string& file_name);
     void load_ignored_words(const string& file_name);
 public:
@@ -43,7 +45,7 @@ public:
      * the function throw a length_error exception when your data structure contains
      * no data.
      */
-    pair<unsigned int,set<string>> most_frequent_words() const throw(length_error);
+    pair<unsigned int,set<string>> most_frequent_words() const;
 
     /* return a set of words occurring less or equal to the given count */
     set<string> least_frequent_words (int count) const;

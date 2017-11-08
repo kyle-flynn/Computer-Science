@@ -122,6 +122,73 @@ part1/fast:
 	$(MAKE) -f CMakeFiles\part1.dir\build.make CMakeFiles/part1.dir/build
 .PHONY : part1/fast
 
+#=============================================================================
+# Target rules for targets named part2
+
+# Build rule for target.
+part2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 part2
+.PHONY : part2
+
+# fast build rule for target.
+part2/fast:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/build
+.PHONY : part2/fast
+
+FileSystem.obj: FileSystem.cpp.obj
+
+.PHONY : FileSystem.obj
+
+# target to build an object file
+FileSystem.cpp.obj:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/FileSystem.cpp.obj
+.PHONY : FileSystem.cpp.obj
+
+FileSystem.i: FileSystem.cpp.i
+
+.PHONY : FileSystem.i
+
+# target to preprocess a source file
+FileSystem.cpp.i:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/FileSystem.cpp.i
+.PHONY : FileSystem.cpp.i
+
+FileSystem.s: FileSystem.cpp.s
+
+.PHONY : FileSystem.s
+
+# target to generate assembly for a file
+FileSystem.cpp.s:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/FileSystem.cpp.s
+.PHONY : FileSystem.cpp.s
+
+WordSearch.obj: WordSearch.cpp.obj
+
+.PHONY : WordSearch.obj
+
+# target to build an object file
+WordSearch.cpp.obj:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/WordSearch.cpp.obj
+.PHONY : WordSearch.cpp.obj
+
+WordSearch.i: WordSearch.cpp.i
+
+.PHONY : WordSearch.i
+
+# target to preprocess a source file
+WordSearch.cpp.i:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/WordSearch.cpp.i
+.PHONY : WordSearch.cpp.i
+
+WordSearch.s: WordSearch.cpp.s
+
+.PHONY : WordSearch.s
+
+# target to generate assembly for a file
+WordSearch.cpp.s:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/WordSearch.cpp.s
+.PHONY : WordSearch.cpp.s
+
 hw04_01.obj: hw04_01.cpp.obj
 
 .PHONY : hw04_01.obj
@@ -149,6 +216,33 @@ hw04_01.cpp.s:
 	$(MAKE) -f CMakeFiles\part1.dir\build.make CMakeFiles/part1.dir/hw04_01.cpp.s
 .PHONY : hw04_01.cpp.s
 
+hw04_02.obj: hw04_02.cpp.obj
+
+.PHONY : hw04_02.obj
+
+# target to build an object file
+hw04_02.cpp.obj:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/hw04_02.cpp.obj
+.PHONY : hw04_02.cpp.obj
+
+hw04_02.i: hw04_02.cpp.i
+
+.PHONY : hw04_02.i
+
+# target to preprocess a source file
+hw04_02.cpp.i:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/hw04_02.cpp.i
+.PHONY : hw04_02.cpp.i
+
+hw04_02.s: hw04_02.cpp.s
+
+.PHONY : hw04_02.s
+
+# target to generate assembly for a file
+hw04_02.cpp.s:
+	$(MAKE) -f CMakeFiles\part2.dir\build.make CMakeFiles/part2.dir/hw04_02.cpp.s
+.PHONY : hw04_02.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -156,11 +250,21 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... part1
+	@echo ... part2
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... FileSystem.obj
+	@echo ... FileSystem.i
+	@echo ... FileSystem.s
+	@echo ... WordSearch.obj
+	@echo ... WordSearch.i
+	@echo ... WordSearch.s
 	@echo ... hw04_01.obj
 	@echo ... hw04_01.i
 	@echo ... hw04_01.s
+	@echo ... hw04_02.obj
+	@echo ... hw04_02.i
+	@echo ... hw04_02.s
 .PHONY : help
 
 
