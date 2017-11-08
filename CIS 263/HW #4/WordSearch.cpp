@@ -1,7 +1,7 @@
 //
 //  WordSearch.cpp
 //  CS263-HW4
-//
+//  Completed by: Kyle Flynn, Brittany Richards
 
 #include <iostream>
 #include <fstream>

@@ -3,7 +3,7 @@
 //  CS263-HW4
 //
 //  Created by Hans Dulimarta
-//
+//  Completed by: Kyle Flynn, Brittany Richards
 
 #ifndef __CS263_HW4__WordSearch__
 #define __CS263_HW4__WordSearch__

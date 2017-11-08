@@ -1,6 +1,6 @@
 //
 // Created by Hans Dulimarta.
-//
+// Completed by: Kyle Flynn, Brittany Richards
 
 #ifndef BINARYTREES_BINARYSEARCHTREE_H
 #define BINARYTREES_BINARYSEARCHTREE_H

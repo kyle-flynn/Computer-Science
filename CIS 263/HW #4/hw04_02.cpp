@@ -24,8 +24,8 @@ const string TOP_DIR = "C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CI
  * When PARTIAL_DATASET is defined, you will be using a smaller dataset (10 text files)
  * When PARTIAL_DATASET is undefined, you will be using all the files in the dataset (150+ text files)
  */
-//#undef PARTIAL_DATASET
-#define PARTIAL_DATASET
+#undef PARTIAL_DATASET
+//#define PARTIAL_DATASET
 
 #ifdef PARTIAL_DATASET
 WordSearch gb_lib{TOP_DIR + "/ebooks/partial", TOP_DIR + "/ignored.txt"};
