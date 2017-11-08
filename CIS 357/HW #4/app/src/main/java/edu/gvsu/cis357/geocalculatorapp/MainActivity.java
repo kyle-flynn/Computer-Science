@@ -15,6 +15,10 @@ import android.location.Location;
 import android.view.inputmethod.InputMethodManager;
 import android.content.Context;
 
+import org.joda.time.DateTime;
+
+import edu.gvsu.cis357.geocalculatorapp.dummy.HistoryContent;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
     String dist, bear;
     double distMult, bearMult;
 
-    Intent settingsIntent;
+    Intent settingsIntent, historyIntent;
+
+    static int SETTINGS_RESULT = 0, HISTORY_RESULT = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     System.out.println("Calculation failure.");
                 }
+            // remember the calculation.
+            HistoryContent.HistoryItem item = new HistoryContent.HistoryItem(lonOne.getText().toString(),
+                    lonOne.getText().toString(), latTwo.getText().toString(), lonTwo.getText().toString(), DateTime.now());
+            HistoryContent.addItem(item);
         });
 
         this.clear.setOnClickListener((View click) -> {
@@ -92,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         settingsIntent = new Intent(this, Settings.class);
+        historyIntent = new Intent(this, HistoryActivity.class);
     }
 
     @Override
@@ -103,18 +114,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            openSettings();
+        if(item.getItemId() == R.id.action_settings) {
+            Intent intent = new Intent(MainActivity.this,
+                    Settings.class);
+            startActivityForResult(settingsIntent, SETTINGS_RESULT );
+            return true;
+        } else if(item.getItemId() == R.id.action_history) {
+            Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+            startActivityForResult(historyIntent, HISTORY_RESULT );
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        return false;
     }
+
 
     public void openSettings() {
         startActivityForResult(settingsIntent, 1);
@@ -123,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
-            if(resultCode == Activity.RESULT_OK){
+            if(resultCode == SETTINGS_RESULT){
                 this.dist = data.getStringExtra("Distance");
                 this.bear = data.getStringExtra("Bearing");
                 System.out.println(this.dist + " | " + this.bear);
@@ -142,6 +154,14 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     System.out.println("No Click");
                 }
+            } else if (resultCode == HISTORY_RESULT) {
+                    String[] vals = data.getStringArrayExtra("item");
+                    this.latOne.setText(vals[0]);
+                    this.lonOne.setText(vals[1]);
+                    this.latTwo.setText(vals[2]);
+                    this.lonTwo.setText(vals[3]);
+                    this.calculate.callOnClick();  // code that updates the calcs.
+
             }
         }
     }
