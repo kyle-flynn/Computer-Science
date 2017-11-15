@@ -13,20 +13,20 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    Spinner miles, degrees;
-    FloatingActionButton save;
+public class Settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    @BindView(R.id.spinnerDegrees) Spinner degrees;
+    @BindView(R.id.spinnerMiles) Spinner miles;
+    @BindView(R.id.saveFab) FloatingActionButton save;
     Intent returnIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
-        miles = (Spinner) findViewById(R.id.spinnerMiles);
-        degrees = (Spinner) findViewById(R.id.spinnerDegrees);
-        save = (FloatingActionButton) findViewById(R.id.saveFab);
+        ButterKnife.bind(this);
 
         miles.setOnItemSelectedListener(this);
         degrees.setOnItemSelectedListener(this);
