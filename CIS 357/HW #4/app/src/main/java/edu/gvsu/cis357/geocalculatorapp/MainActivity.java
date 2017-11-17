@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.location.Location;
 import android.view.inputmethod.InputMethodManager;
 import android.content.Context;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.d("WEATHER_SERVICE", "onReceive: " + intent);
+            Toast.makeText(context, "RECEIVED", Toast.LENGTH_SHORT).show();
             Bundle bundle = intent.getExtras();
             double temp = bundle.getDouble("TEMPERATURE");
             String summary = bundle.getString("SUMMARY");
@@ -153,66 +155,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         this.bear = "Degrees";
         this.distMult = 1.0;
         this.bearMult = 1.0;
-
-        this.locButton.setOnClickListener((View click) -> {
-            startActivityForResult(locationIntent, LOCATION_RESULT);
-        });
-
-        this.calculate.setOnClickListener((View click) -> {
-            try {
-    //Found at https://stackoverflow.com/questions/3400028/close-virtual-keyboard-on-button-press
-                    InputMethodManager inputMethodManager =
-                            (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                            InputMethodManager.HIDE_NOT_ALWAYS);
-                    double lat1 = Double.parseDouble(latOne.getText().toString());
-                    double lon1 = Double.parseDouble(lonOne.getText().toString());
-                    double lat2 = Double.parseDouble(latTwo.getText().toString());
-                    double lon2 = Double.parseDouble(lonTwo.getText().toString());
-                    Location l1 = new Location("l1");
-                    l1.setLatitude(lat1);
-                    l1.setLongitude(lon1);
-                    Location l2 = new Location("l2");
-                    l2.setLatitude(lat2);
-                    l2.setLongitude(lon2);
-                    float[] results = new float[3];
-                    //results[0] dist results[1] initial bearing
-                    //android.location.Location.distanceBetween(lat1, lon1, lat2, lon2, results);
-                    l1.distanceTo(l2);
-                    double d = Math.round((l1.distanceTo(l2) / 10.0) * distMult) / 100.0;
-                    distance.setText("Distance: " + String.valueOf(d) + " " + dist);
-                    double b = Math.round(l1.bearingTo(l2) * bearMult * 100.0) / 100.0;
-                    bearing.setText("Bearing: " + String.valueOf(b) + " " + bear);
-
-                    LocationLookup entry = new LocationLookup();
-                    entry.setOrigLat(lat1);
-                    entry.setOrigLng(lon1);
-                    entry.setEndLat(lat2);
-                    entry.setEndLng(lon2);
-                    DateTimeFormatter fmt = ISODateTimeFormat.dateTime();
-                    entry.set_timestamp(fmt.print(DateTime.now()));
-                    topRef.push().setValue(entry);
-                } catch (Exception e) {
-                    System.out.println("Calculation failure.");
-                }
-        });
-
-        this.clear.setOnClickListener((View click) -> {
-    //Found at https://stackoverflow.com/questions/3400028/close-virtual-keyboard-on-button-press
-                InputMethodManager inputMethodManager =
-                        (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                        InputMethodManager.HIDE_NOT_ALWAYS);
-                latOne.setText(null);
-                latTwo.setText(null);
-                lonOne.setText(null);
-                lonTwo.setText(null);
-                distance.setText("Distance: ");
-                bearing.setText("Bearing: ");
-                IntentFilter weatherFilter = new IntentFilter(BROADCAST_WEATHER);
-                LocalBroadcastManager.getInstance(this).registerReceiver(weatherReceiver, weatherFilter);
-                setWeatherViews(View.INVISIBLE);
-        });
         settingsIntent = new Intent(this, Settings.class);
         historyIntent = new Intent(this, HistoryActivity.class);
         locationIntent = new Intent(this, LocationLookupActivity.class);
@@ -231,6 +173,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         lonTwo.setText(null);
         distance.setText("Distance: ");
         bearing.setText("Bearing: ");
+        setWeatherViews(View.INVISIBLE);
     }
 
     @OnClick(R.id.calculateBtn)
@@ -270,7 +213,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
             WeatherService.startGetWeather(this, Double.toString(lat1), Double.toString(lon1), "p1");
             WeatherService.startGetWeather(this, Double.toString(lat2), Double.toString(lon2), "p2");
-
+            Toast.makeText(this, "SATRT SERVICE", Toast.LENGTH_SHORT).show();
         } catch(Exception e) {
                 System.out.println("Calculation failure.");
         }
@@ -291,9 +234,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     public void onResume() {
         super.onResume();
         allHistory.clear();
-        setWeatherViews(View.INVISIBLE);
         topRef = FirebaseDatabase.getInstance().getReference("history");
         topRef.addChildEventListener(chEvListener);
+        IntentFilter weatherFilter = new IntentFilter(BROADCAST_WEATHER);
+        LocalBroadcastManager.getInstance(this).registerReceiver(weatherReceiver, weatherFilter);
+        setWeatherViews(View.INVISIBLE);
     }
 
     @Override
