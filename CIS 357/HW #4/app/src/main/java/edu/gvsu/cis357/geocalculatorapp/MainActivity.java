@@ -35,19 +35,29 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
-    @BindView(R.id.textLatOne) EditText latOne;
-    @BindView(R.id.textLonOne) EditText lonOne;
-    @BindView(R.id.textLatTwo) EditText latTwo;
-    @BindView(R.id.textLonTwo) EditText lonTwo;
-    @BindView(R.id.calculateBtn) Button calculate;
-    @BindView(R.id.clearBtn) Button clear;
-    @BindView(R.id.textDist) TextView distance;
-    @BindView(R.id.textBear) TextView bearing;
-    @BindView(R.id.locButton) Button locButton;
+    @BindView(R.id.textLatOne)
+    EditText latOne;
+    @BindView(R.id.textLonOne)
+    EditText lonOne;
+    @BindView(R.id.textLatTwo)
+    EditText latTwo;
+    @BindView(R.id.textLonTwo)
+    EditText lonTwo;
+    @BindView(R.id.calculateBtn)
+    Button calculate;
+    @BindView(R.id.clearBtn)
+    Button clear;
+    @BindView(R.id.textDist)
+    TextView distance;
+    @BindView(R.id.textBear)
+    TextView bearing;
+    @BindView(R.id.locButton)
+    Button locButton;
 
     private ChildEventListener chEvListener = new ChildEventListener() {
         @Override
@@ -109,72 +119,74 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .build();
 
         MainActivity.allHistory = new ArrayList<LocationLookup>();
+
         this.dist = "km";
         this.bear = "Degrees";
         this.distMult = 1.0;
         this.bearMult = 1.0;
 
-        this.locButton.setOnClickListener((View click) -> {
-            startActivityForResult(locationIntent, LOCATION_RESULT);
-        });
-
-        this.calculate.setOnClickListener((View click) -> {
-            try {
-    //Found at https://stackoverflow.com/questions/3400028/close-virtual-keyboard-on-button-press
-                    InputMethodManager inputMethodManager =
-                            (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                            InputMethodManager.HIDE_NOT_ALWAYS);
-                    double lat1 = Double.parseDouble(latOne.getText().toString());
-                    double lon1 = Double.parseDouble(lonOne.getText().toString());
-                    double lat2 = Double.parseDouble(latTwo.getText().toString());
-                    double lon2 = Double.parseDouble(lonTwo.getText().toString());
-                    Location l1 = new Location("l1");
-                    l1.setLatitude(lat1);
-                    l1.setLongitude(lon1);
-                    Location l2 = new Location("l2");
-                    l2.setLatitude(lat2);
-                    l2.setLongitude(lon2);
-                    float[] results = new float[3];
-                    //results[0] dist results[1] initial bearing
-                    //android.location.Location.distanceBetween(lat1, lon1, lat2, lon2, results);
-                    l1.distanceTo(l2);
-                    double d = Math.round((l1.distanceTo(l2) / 10.0) * distMult) / 100.0;
-                    distance.setText("Distance: " + String.valueOf(d) + " " + dist);
-                    double b = Math.round(l1.bearingTo(l2) * bearMult * 100.0) / 100.0;
-                    bearing.setText("Bearing: " + String.valueOf(b) + " " + bear);
-
-                    LocationLookup entry = new LocationLookup();
-                    entry.setOrigLat(lat1);
-                    entry.setOrigLng(lon1);
-                    entry.setEndLat(lat2);
-                    entry.setEndLng(lon2);
-                    DateTimeFormatter fmt = ISODateTimeFormat.dateTime();
-                    entry.set_timestamp(fmt.print(DateTime.now()));
-                    topRef.push().setValue(entry);
-                } catch (Exception e) {
-                    System.out.println("Calculation failure.");
-                }
-        });
-
-        this.clear.setOnClickListener((View click) -> {
-    //Found at https://stackoverflow.com/questions/3400028/close-virtual-keyboard-on-button-press
-                InputMethodManager inputMethodManager =
-                        (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                        InputMethodManager.HIDE_NOT_ALWAYS);
-                latOne.setText(null);
-                latTwo.setText(null);
-                lonOne.setText(null);
-                lonTwo.setText(null);
-                distance.setText("Distance: ");
-                bearing.setText("Bearing: ");
-
-        });
-
         settingsIntent = new Intent(this, Settings.class);
         historyIntent = new Intent(this, HistoryActivity.class);
         locationIntent = new Intent(this, LocationLookupActivity.class);
+    }
+
+    @OnClick(R.id.clearBtn)
+    public void clearClicked() {
+        //Found at https://stackoverflow.com/questions/3400028/close-virtual-keyboard-on-button-press
+        InputMethodManager inputMethodManager =
+                (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                InputMethodManager.HIDE_NOT_ALWAYS);
+        latOne.setText(null);
+        latTwo.setText(null);
+        lonOne.setText(null);
+        lonTwo.setText(null);
+        distance.setText("Distance: ");
+        bearing.setText("Bearing: ");
+    }
+
+    @OnClick(R.id.calculateBtn)
+    public void calculateClicked() {
+        try{
+            InputMethodManager inputMethodManager =
+                    (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                    InputMethodManager.HIDE_NOT_ALWAYS);
+            double lat1 = Double.parseDouble(latOne.getText().toString());
+            double lon1 = Double.parseDouble(lonOne.getText().toString());
+            double lat2 = Double.parseDouble(latTwo.getText().toString());
+            double lon2 = Double.parseDouble(lonTwo.getText().toString());
+            Location l1 = new Location("l1");
+            l1.setLatitude(lat1);
+            l1.setLongitude(lon1);
+            Location l2 = new Location("l2");
+            l2.setLatitude(lat2);
+            l2.setLongitude(lon2);
+            float[] results = new float[3];
+            //results[0] dist results[1] initial bearing
+            //android.location.Location.distanceBetween(lat1, lon1, lat2, lon2, results);
+            l1.distanceTo(l2);
+            double d = Math.round((l1.distanceTo(l2) / 10.0) * distMult) / 100.0;
+            distance.setText("Distance: " + String.valueOf(d) + " " + dist);
+            double b = Math.round(l1.bearingTo(l2) * bearMult * 100.0) / 100.0;
+            bearing.setText("Bearing: " + String.valueOf(b) + " " + bear);
+
+            LocationLookup entry = new LocationLookup();
+            entry.setOrigLat(lat1);
+            entry.setOrigLng(lon1);
+            entry.setEndLat(lat2);
+            entry.setEndLng(lon2);
+            DateTimeFormatter fmt = ISODateTimeFormat.dateTime();
+            entry.set_timestamp(fmt.print(DateTime.now()));
+            topRef.push().setValue(entry);
+        } catch(Exception e) {
+                System.out.println("Calculation failure.");
+        }
+    }
+
+    @OnClick(R.id.locButton)
+    public void locPressed() {
+        startActivityForResult(locationIntent, LOCATION_RESULT);
     }
 
     @Override
