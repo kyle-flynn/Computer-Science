@@ -111,16 +111,16 @@ public class LocationLookupActivity extends AppCompatActivity implements DatePic
         if (requestCode == PLACE_AUTOCOMPLETE_LOC_ONE) {
             if (resultCode == RESULT_OK) {
                 p1 = PlaceAutocomplete.getPlace(this, data);
-                startLoc.setText(p1.getAddress());
+                startLoc.setText(p1.getName());
             } else if (resultCode == RESULT_CANCELED) {
                 System.out.println("Cancelled by the user");
             } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
                 Status stat = PlaceAutocomplete.getStatus(this, data);
             }
-        }else if (requestCode == PLACE_AUTOCOMPLETE_LOC_TWO) {
+        } else if (requestCode == PLACE_AUTOCOMPLETE_LOC_TWO) {
             if (resultCode == RESULT_OK) {
                 p2 = PlaceAutocomplete.getPlace(this, data);
-                startLoc.setText(p2.getAddress());
+                endLoc.setText(p2.getName());
             } else if (resultCode == RESULT_CANCELED) {
                 System.out.println("Cancelled by the user");
             } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {

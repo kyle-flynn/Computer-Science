@@ -8,6 +8,7 @@ import org.parceler.Parcel;
 @Parcel
 public class LocationLookup {
     String _key;
+    String timestamp;
     double origLat;
     double origLng;
     double endLat;
@@ -15,11 +16,11 @@ public class LocationLookup {
 
 
     public String get_timestamp() {
-        return _key;
+        return timestamp;
     }
 
-    public void set_timestamp(String _key) {
-        this._key = _key;
+    public void set_timestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
     public double getOrigLat() {

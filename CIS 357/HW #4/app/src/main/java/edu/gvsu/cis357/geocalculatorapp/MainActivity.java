@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     entry.set_timestamp(fmt.print(DateTime.now()));
                     topRef.push().setValue(entry);
                 } catch (Exception e) {
-                System.out.println("Calculation failure.");
+                    System.out.println("Calculation failure.");
                 }
         });
 
