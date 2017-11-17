@@ -35,7 +35,7 @@ public class HistoryActivity extends AppCompatActivity implements HistoryFragmen
         Intent intent = new Intent();
         Parcelable parcel = Parcels.wrap(item);
         intent.putExtra("item", parcel);
-        setResult(MainActivity.HISTORY_RESULT, intent);
+        setResult(MainActivity.HISTORY_RESULT,  intent);
         finish();
     }
 
