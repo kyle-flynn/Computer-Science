@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.location.Location;
 import android.view.inputmethod.InputMethodManager;
@@ -48,6 +49,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     @BindView(R.id.textDist) TextView distance;
     @BindView(R.id.textBear) TextView bearing;
     @BindView(R.id.locButton) Button locButton;
+    @BindView(R.id.image_one) ImageView imageOne;
+    @BindView(R.id.image_two) ImageView imageTwo;
+    @BindView(R.id.image_one_text_one) TextView imageOneTxtOne;
+    @BindView(R.id.image_one_text_two) TextView imageOneTxtTwo;
+    @BindView(R.id.image_two_text_one) TextView imageTwoTxtOne;
+    @BindView(R.id.image_two_text_two) TextView imageTwoTxtTwo;
 
     private ChildEventListener chEvListener = new ChildEventListener() {
         @Override
@@ -169,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 lonTwo.setText(null);
                 distance.setText("Distance: ");
                 bearing.setText("Bearing: ");
-
+                setWeatherViews(View.INVISIBLE);
         });
 
         settingsIntent = new Intent(this, Settings.class);
@@ -187,6 +194,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     public void onResume() {
         super.onResume();
         allHistory.clear();
+        setWeatherViews(View.INVISIBLE);
         topRef = FirebaseDatabase.getInstance().getReference("history");
         topRef.addChildEventListener(chEvListener);
     }
@@ -258,4 +266,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+
+    private void setWeatherViews(int visible) {
+        imageOne.setVisibility(visible);
+        imageTwo.setVisibility(visible);
+        imageOneTxtOne.setVisibility(visible);
+        imageTwoTxtOne.setVisibility(visible);
+        imageOneTxtTwo.setVisibility(visible);
+        imageTwoTxtTwo.setVisibility(visible);
+    }
+
 }
