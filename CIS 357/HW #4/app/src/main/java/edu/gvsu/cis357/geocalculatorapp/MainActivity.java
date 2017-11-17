@@ -1,11 +1,15 @@
 package edu.gvsu.cis357.geocalculatorapp;
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,6 +41,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.gvsu.cis357.geocalculatorapp.webservice.WeatherService;
+
+import static edu.gvsu.cis357.geocalculatorapp.webservice.WeatherService.BROADCAST_WEATHER;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
 
@@ -55,6 +62,31 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     @BindView(R.id.image_one_text_two) TextView imageOneTxtTwo;
     @BindView(R.id.image_two_text_one) TextView imageTwoTxtOne;
     @BindView(R.id.image_two_text_two) TextView imageTwoTxtTwo;
+
+    private BroadcastReceiver weatherReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("WEATHER_SERVICE", "onReceive: " + intent);
+            Bundle bundle = intent.getExtras();
+            double temp = bundle.getDouble("TEMPERATURE");
+            String summary = bundle.getString("SUMMARY");
+            String icon = bundle.getString("ICON").replaceAll("-", "_");
+            String key = bundle.getString("KEY");
+            int resID = getResources().getIdentifier(icon , "drawable", getPackageName());
+            setWeatherViews(View.VISIBLE);
+            if (key.equals("p1"))  {
+                imageOneTxtOne.setText(summary);
+                imageOneTxtTwo.setText(Double.toString(temp));
+                imageOne.setImageResource(resID);
+                imageOne.setVisibility(View.INVISIBLE);
+            } else {
+                imageTwoTxtOne.setText(summary);
+                imageTwoTxtTwo.setText(Double.toString(temp));
+                imageTwo.setImageResource(resID);
+            }
+        }
+    };
+
 
     private ChildEventListener chEvListener = new ChildEventListener() {
         @Override
@@ -177,6 +209,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 lonTwo.setText(null);
                 distance.setText("Distance: ");
                 bearing.setText("Bearing: ");
+                IntentFilter weatherFilter = new IntentFilter(BROADCAST_WEATHER);
+                LocalBroadcastManager.getInstance(this).registerReceiver(weatherReceiver, weatherFilter);
                 setWeatherViews(View.INVISIBLE);
         });
         settingsIntent = new Intent(this, Settings.class);
@@ -233,6 +267,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             DateTimeFormatter fmt = ISODateTimeFormat.dateTime();
             entry.set_timestamp(fmt.print(DateTime.now()));
             topRef.push().setValue(entry);
+
+            WeatherService.startGetWeather(this, Double.toString(lat1), Double.toString(lon1), "p1");
+            WeatherService.startGetWeather(this, Double.toString(lat2), Double.toString(lon2), "p2");
+
         } catch(Exception e) {
                 System.out.println("Calculation failure.");
         }
@@ -262,6 +300,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     public void onPause(){
         super.onPause();
         topRef.removeEventListener(chEvListener);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(weatherReceiver);
     }
 
     @Override

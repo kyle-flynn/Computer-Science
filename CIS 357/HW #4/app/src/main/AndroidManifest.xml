@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.google.android.geo.API_KEY"
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC_uyJQ3EjeRZhq_737V99ZhMv_jbwqj64" />
 
         <activity
@@ -31,7 +32,11 @@
         <activity
             android:name=".LocationLookupActivity"
             android:label="@string/title_activity_location_lookup"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".webservice.WeatherService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
