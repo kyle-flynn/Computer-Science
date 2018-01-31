@@ -1,0 +1,92 @@
+#> InputSetLoader: gvFormat.InputSetLoaderSimpleGVFormat
+
+#################################################################
+#
+# *Partially* test a 16-bit signed adder.  (The student is
+# responsible for designing a more comprehensive test.)
+# To add tests, simply add more values to the named lists below
+# (lowPositive, lowNegative, allPositive, and allNegative).
+#
+# Author: Zachary Kurmas
+# (C) 2007 Grand Valley State University
+#
+#################################################################
+
+OUTPUT_SET_TYPE SHARED SignedAdderOutputSet
+
+NAMED_VALUE_LISTS
+  # The sum of any two lowPositive or lowNegative values will not overflow
+  lowPositive SIGNED(16) [ 0, 1, 2^14 - 1 ]
+  lowNegative SIGNED(16) [ -1, -2, -14512, -2^14 + 1 ]
+  allPositive SIGNED(16) [ lowPositive,  2^15 - 2, 2^15 - 1 ]
+  allNegative SIGNED(16) [ lowNegative,  -2^15 + 1, -2^15 ]
+
+###########################
+#
+# Positive and no overflow
+#
+###########################
+
+BEGIN positive_noOverflow
+  INPUTS
+    InputA SIGNED(16) lowPositive
+    InputB SIGNED(16) lowPositive
+    CarryIn [ 0, 1 ]
+  OUTPUTS
+    # Tell JLSCircuitTester to ignore value of Overflow output pin
+    Overflow EXCLUDE 
+
+
+###########################
+#
+# Negative and no overflow
+#
+###########################
+
+
+BEGIN negative_noOverflow_nn 
+   INPUTS
+     InputA SIGNED(16) lowNegative 
+     InputB SIGNED(16) lowNegative
+     CarryIn [ 0, 1 ]
+    OUTPUTS   
+       Overflow REQUIRE
+
+BEGIN negative_noOverflow_pn # pos + neg can never overflow
+   INPUTS
+     InputA SIGNED(16) allPositive
+     InputB SIGNED(16) allNegative
+     CarryIn [ 0, 1 ]
+    OUTPUTS   
+       Overflow REQUIRE  
+
+BEGIN negative_noOverflow_np # neg + pos can never overflow
+   INPUTS
+     InputA SIGNED(16) allNegative
+     InputB SIGNED(16) allPositive
+     CarryIn [ 0, 1 ]
+    OUTPUTS   
+       Overflow REQUIRE  
+
+#########################
+#
+# Overflow
+#
+#########################
+
+BEGIN positive_overflow
+  INPUTS
+    InputA SIGNED(16) allPositive
+    InputB SIGNED(16) allPositive
+    CarryIn [0, 1]
+ OUTPUTS   
+    Overflow REQUIRE  
+
+BEGIN negative_overflow
+  INPUTS
+    InputA SIGNED(16) allNegative
+    InputB SIGNED(16) allNegative
+    CarryIn [0, 1]
+ OUTPUTS   
+    Overflow REQUIRE  
+
