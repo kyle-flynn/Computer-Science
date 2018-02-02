@@ -2,4 +2,9 @@
     <string name="app_name">GeoCalculatorApp</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_history">HistoryActivity</string>
+    <string name="title_activity_location_lookup">LocationLookupActivity</string>
+    <string name="location_text">Location Information</string>
+    <string name="date_info_hint">Date Information</string>
+    <string name="date_hint">Enter a date</string>
 </resources>
+

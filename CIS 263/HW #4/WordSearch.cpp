@@ -89,8 +89,6 @@ unsigned long WordSearch::word_count() const {
 }
 
 set<string> WordSearch::words_of_length (int L) const {
-    /* TODO complete this function */
-
     set<string> words;
 
     for (auto const& pair : word_occurrances) {

@@ -13,133 +13,207 @@
         android:id="@+id/textLatOne"
         android:layout_width="0dp"
         android:layout_height="42dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
         android:hint="Enter latitude for p1"
         android:inputType="numberDecimal"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/guideline" />
+        app:layout_constraintRight_toLeftOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/textLonOne"
         android:layout_width="0dp"
         android:layout_height="42dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Enter longitude for p1"
         android:inputType="numberDecimal"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/textLatTwo"
         android:layout_width="0dp"
         android:layout_height="42dp"
+        android:layout_marginTop="8dp"
         android:hint="Enter latitude for p2"
+        android:inputType="numberDecimal"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
-        android:inputType="numberDecimal"
         app:layout_constraintLeft_toLeftOf="@+id/textLatOne"
         app:layout_constraintRight_toRightOf="@+id/textLatOne"
-        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/textLatOne" />
 
     <EditText
         android:id="@+id/textLonTwo"
         android:layout_width="0dp"
         android:layout_height="42dp"
+        android:layout_marginTop="8dp"
         android:hint="Enter longitude for p2"
+        android:inputType="numberDecimal"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
-        android:inputType="numberDecimal"
-        app:layout_constraintRight_toRightOf="@+id/textLonOne"
         app:layout_constraintLeft_toLeftOf="@+id/textLonOne"
-        android:layout_marginTop="8dp"
+        app:layout_constraintRight_toRightOf="@+id/textLonOne"
         app:layout_constraintTop_toBottomOf="@+id/textLonOne" />
 
     <Button
         android:id="@+id/calculateBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textLatTwo"
-        app:layout_constraintLeft_toLeftOf="@+id/textLatOne" />
+        android:text="Calculate"
+        app:layout_constraintLeft_toLeftOf="@+id/textLatOne"
+        app:layout_constraintTop_toBottomOf="@+id/textLatTwo" />
 
     <Button
         android:id="@+id/clearBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clear"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textLonTwo"
-        app:layout_constraintRight_toRightOf="@+id/textLonOne" />
+        android:text="Clear"
+        app:layout_constraintRight_toRightOf="@+id/textLonOne"
+        app:layout_constraintTop_toBottomOf="@+id/textLonTwo" />
 
     <TextView
         android:id="@+id/textBear"
         android:layout_width="0dp"
         android:layout_height="18dp"
+        android:layout_marginTop="8dp"
         android:text="Bearing"
         android:textColor="@color/colorAccent"
         app:layout_constraintLeft_toLeftOf="@+id/textLatOne"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textDist"
-        app:layout_constraintRight_toRightOf="@+id/textLonOne" />
+        app:layout_constraintRight_toRightOf="@+id/textLonOne"
+        app:layout_constraintTop_toBottomOf="@+id/textDist" />
 
     <TextView
         android:id="@+id/textDist"
         android:layout_width="0dp"
         android:layout_height="18dp"
+        android:layout_marginTop="8dp"
         android:text="Distance"
         android:textColor="@color/colorAccent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/calculateBtn"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="@+id/textLatOne"
         app:layout_constraintRight_toRightOf="@+id/textLonOne"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintTop_toBottomOf="@+id/calculateBtn" />
+
+    <ImageView
+        android:id="@+id/image_one"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBear"
+        app:srcCompat="@color/colorAccent" />
+
+    <ImageView
+        android:id="@+id/image_two"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/image_one"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_one"
+        app:srcCompat="@color/colorAccent" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="192dp" />
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
         android:text="Tired of typing?"
         android:textColor="@color/colorAccent"
-        android:layout_marginBottom="7dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/button"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/locButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
-        app:layout_constraintHorizontal_chainStyle="packed" />
+        app:layout_constraintVertical_bias="0.971" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/locButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/textView3"
+        android:layout_marginBottom="8dp"
+        android:text="Search"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView3"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995" />
+
+    <TextView
+        android:id="@+id/image_one_text_one"
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/textBear"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toEndOf="@+id/image_one"
+        app:layout_constraintTop_toBottomOf="@+id/textBear" />
+
+    <TextView
+        android:id="@+id/image_one_text_two"
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/image_one_text_one"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/image_one_text_one"
+        app:layout_constraintTop_toBottomOf="@+id/image_one_text_one" />
+
+    <TextView
+        android:id="@+id/image_two_text_one"
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/image_one_text_two"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/image_one_text_two"
+        app:layout_constraintTop_toBottomOf="@+id/image_one_text_two" />
+
+    <TextView
+        android:id="@+id/image_two_text_two"
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/image_two_text_one"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/image_two_text_one"
+        app:layout_constraintTop_toBottomOf="@+id/image_two_text_one"
+        app:layout_constraintVertical_bias="0.03" />
 </android.support.constraint.ConstraintLayout>

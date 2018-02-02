@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="edu.gvsu.cis357.geocalculatorapp.MainActivity"
+    tools:showIn="@layout/activity_location_lookup">
+
+    <TextView
+        android:id="@+id/locationInfo"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/location_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/startLocation"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:drawableEnd="@drawable/ic_near_me_black_24dp"
+        android:hint="@string/location_text"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="@id/locationInfo"
+        app:layout_constraintStart_toStartOf="@id/locationInfo"
+        app:layout_constraintTop_toBottomOf="@+id/locationInfo" />
+
+    <TextView
+        android:id="@+id/endlocation"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:drawableEnd="@drawable/ic_near_me_black_24dp"
+        android:hint="@string/location_text"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="@id/startLocation"
+        app:layout_constraintStart_toStartOf="@id/startLocation"
+        app:layout_constraintTop_toBottomOf="@+id/startLocation" />
+
+    <TextView
+        android:id="@+id/dateinfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/date_info_hint"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/endlocation"
+        app:layout_constraintStart_toStartOf="@+id/endlocation"
+        app:layout_constraintTop_toBottomOf="@+id/endlocation" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:drawableEnd="@drawable/ic_expand_more_black_24dp"
+        android:hint="@string/date_hint"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="@+id/dateinfo"
+        app:layout_constraintStart_toStartOf="@+id/dateinfo"
+        app:layout_constraintTop_toBottomOf="@+id/dateinfo" />
+
+</android.support.constraint.ConstraintLayout>

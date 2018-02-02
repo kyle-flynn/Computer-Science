@@ -23,7 +23,7 @@ private:
     unordered_set<string> ignored_words;
     /* TODO: declare additional data structures as needed */
     map<string, int> word_occurrances;
-    map<string, map<string, int>> words_after_word;
+    unordered_map<string, map<string, int>> words_after_word;
 
     unsigned long words_total;
 
