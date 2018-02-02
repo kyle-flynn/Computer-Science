@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
+				<Option working_dir="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="part_one">
-				<Option output="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/part_one.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
+				<Option output="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/part_one.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -32,15 +32,15 @@
 					<Add directory="C:/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 part_one"/>
-					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 part_one"/>
+					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="part_one/fast">
-				<Option output="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/part_one.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
+				<Option output="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/part_one.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,25 +53,25 @@
 					<Add directory="C:/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 part_one/fast"/>
-					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 part_one/fast"/>
+					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
+				<Option working_dir="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="part_two">
-				<Option output="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/part_two.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
+				<Option output="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/part_two.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -84,15 +84,15 @@
 					<Add directory="C:/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 part_two"/>
-					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 part_two"/>
+					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="part_two/fast">
-				<Option output="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/part_two.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
+				<Option output="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/part_two.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -105,45 +105,45 @@
 					<Add directory="C:/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 part_two/fast"/>
-					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 part_two/fast"/>
+					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
+				<Option working_dir="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/mingw32/bin/mingw32-make.exe -f &quot;Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/BinarySearchTree.h">
+		<Unit filename="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/BinarySearchTree.h">
 			<Option target="part_one"/>
 		</Unit>
-		<Unit filename="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/FileSystem.cpp">
+		<Unit filename="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/FileSystem.cpp">
 			<Option target="part_two"/>
 		</Unit>
-		<Unit filename="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/FileSystem.h">
+		<Unit filename="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/FileSystem.h">
 			<Option target="part_two"/>
 		</Unit>
-		<Unit filename="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/WordSearch.cpp">
+		<Unit filename="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/WordSearch.cpp">
 			<Option target="part_two"/>
 		</Unit>
-		<Unit filename="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/WordSearch.h">
+		<Unit filename="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/WordSearch.h">
 			<Option target="part_two"/>
 		</Unit>
-		<Unit filename="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/hw04_01.cpp">
+		<Unit filename="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/hw04_01.cpp">
 			<Option target="part_one"/>
 		</Unit>
-		<Unit filename="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/hw04_02.cpp">
+		<Unit filename="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/hw04_02.cpp">
 			<Option target="part_two"/>
 		</Unit>
-		<Unit filename="C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4/CMakeLists.txt">
+		<Unit filename="Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

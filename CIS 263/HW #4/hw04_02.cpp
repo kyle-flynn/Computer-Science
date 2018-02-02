@@ -16,8 +16,8 @@
  *   TOP_DIR = "C:/Users/YourName/blah/blah/.....";
  *
  */
-//const string TOP_DIR = "Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4";
-const string TOP_DIR = "C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4";
+const string TOP_DIR = "Z:/Coding/Repositories/Computer-Science/CIS 263/HW #4";
+//const string TOP_DIR = "C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 263/HW #4";
 
 /* TODO: comment out only one of the following two directive lines
  * to select which dataset to use for testing your program.
