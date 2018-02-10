@@ -1,0 +1,41 @@
+#> InputSetLoader: gvFormat.InputSetLoaderSimpleGVFormat
+
+##########################################################################
+#
+# *Partially* test a 16-bit unsigned adder/subtracter.  (The student is
+# responsible for designing a more comprehensive test.)
+#
+# Author: Zachary Kurmas
+# (C) 2014 Grand Valley State University
+#
+##########################################################################
+
+
+
+BEGIN add_noOverflow
+  INPUTS
+    InputA 2^16-2
+    InputB 1
+    Op 0
+  OUTPUTS
+    Output 2^16-1
+    CarryOut 0
+    Overflow EXCLUDE 
+
+BEGIN add_overflow
+  INPUTS
+    InputA 2^16-2
+    InputB [2, 3, 2^16-1]
+    Op 0
+  OUTPUTS
+    Output EXCLUDE
+    CarryOut [1, 1, 1]
+    Overflow EXCLUDE
+
+
+#
+# Note, we don't need to test subtraction for overflow
+# Overflow is not possible.
+# Subtraction producing a negative result is not considered an overflow.
+#
+

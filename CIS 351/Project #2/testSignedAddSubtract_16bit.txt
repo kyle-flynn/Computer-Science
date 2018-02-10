@@ -1,0 +1,148 @@
+#> InputSetLoader: gvFormat.InputSetLoaderSimpleGVFormat
+
+##########################################################################
+#
+# *Partially* test a 16-bit signed adder/subtracter.  (The student is
+# responsible for designing a more comprehensive test.)
+#
+# Author: Zachary Kurmas
+# (C) 2007 Grand Valley State University
+#
+##########################################################################
+
+OUTPUT_SET_TYPE SHARED AddSubtractOutputSet
+
+NAMED_VALUE_LISTS
+  # The sum of any two lowPositive or lowNegative values will not overflow
+  lowPositive SIGNED(16) [ 0, 1,  2^14 - 1 ]
+  lowNegative SIGNED(16) [ -1, -2, -2^14 + 1 ]
+  allPositive SIGNED(16) [ lowPositive, 2^15 - 2, 2^15 - 1 ]
+  allNegative SIGNED(16) [ lowNegative, -2^15 + 1, -2^15 ]
+
+###################
+#
+# Add, no overflow
+#
+###################
+
+BEGIN positiveAdd_noOverflow
+  INPUTS
+    InputA SIGNED(16) lowPositive
+    InputB SIGNED(16) lowPositive
+    Op 0
+  OUTPUTS
+    # Tell JLSCircuitTester to ignore value of Overflow output pin
+    Overflow EXCLUDE 
+
+BEGIN negativeAdd_noOverflow_nn 
+   INPUTS
+     InputA SIGNED(16) lowNegative 
+     InputB SIGNED(16) lowNegative
+     Op 0
+    OUTPUTS   
+       Overflow REQUIRE  
+
+BEGIN negativeAdd_noOverflow_pn # pos + neg can never overflow
+   INPUTS
+     InputA SIGNED(16) allPositive
+     InputB SIGNED(16) allNegative
+     Op 0
+    OUTPUTS   
+       Overflow REQUIRE  
+
+BEGIN negativeAdd_noOverflow_np # neg + pos can never overflow
+   INPUTS
+     InputA SIGNED(16) allNegative
+     InputB SIGNED(16) allPositive
+     Op 0
+    OUTPUTS   
+       Overflow REQUIRE  
+
+
+
+########################
+#
+# Subtract, no overflow
+#
+########################
+
+BEGIN positiveSubtract_noOverflow # pos - pos can never overflow
+  INPUTS
+    InputA SIGNED(16) allPositive
+    InputB SIGNED(16) allPositive
+    Op 1
+  OUTPUTS
+    # Tell JLSCircuitTester to ignore value of Overflow output pin
+    Overflow EXCLUDE 
+
+BEGIN negativeSubtract_noOverflow_nn 
+   INPUTS
+     InputA SIGNED(16) allNegative 
+     InputB SIGNED(16) allNegative
+     Op 1
+    OUTPUTS   
+       Overflow REQUIRE  
+
+BEGIN negativeSubtract_noOverflow_pn 
+   INPUTS
+     InputA SIGNED(16) lowPositive
+     InputB SIGNED(16) lowNegative
+     Op 1
+    OUTPUTS   
+       Overflow REQUIRE  
+
+BEGIN negativeSubtract_noOverflow_np # neg + pos can never overflow
+   INPUTS
+     InputA SIGNED(16) lowNegative
+     InputB SIGNED(16) lowPositive
+     Op 1
+    OUTPUTS   
+       Overflow REQUIRE  
+
+
+###############
+#
+# Add overflow
+#
+###############
+
+BEGIN positiveAdd_overflow
+  INPUTS
+    InputA SIGNED(16) allPositive
+    InputB SIGNED(16) allPositive
+    Op 0
+ OUTPUTS   
+    Overflow REQUIRE  
+
+BEGIN negativeAdd_overflow
+  INPUTS
+    InputA SIGNED(16) allNegative
+    InputB SIGNED(16) allNegative
+    Op 0
+ OUTPUTS   
+    Overflow REQUIRE  
+
+
+
+####################
+#
+# Subtract overflow
+#
+####################
+
+BEGIN positiveSubtract_overflow
+  INPUTS
+    InputA SIGNED(16) allPositive
+    InputB SIGNED(16) allNegative
+    Op 1
+ OUTPUTS   
+    Overflow REQUIRE  
+
+BEGIN negativeSubtract_overflow
+  INPUTS
+    InputA SIGNED(16) allNegative
+    InputB SIGNED(16) allPositive
+    Op 1
+ OUTPUTS   
+    Overflow REQUIRE  
+
