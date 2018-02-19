@@ -12,8 +12,8 @@
 
 BEGIN sltu
   INPUTS
-    InputA [0, 1, 1000, 14000, 78, 2^15-1]
-    InputB [0, 1, 1000, 14000, 78, 2^15-1]
+    InputA [0, 1, 2^15-1]
+    InputB [0, 1, 2^15-1]
     Signed 0
   OUTPUTS
     LessThan [0, 1, 1,
@@ -22,12 +22,11 @@ BEGIN sltu
 
 BEGIN slt
   INPUTS
-    InputA SIGNED(16) [-2^14, -15000, -100, -1, 1, 2^14-1]
-    InputB SIGNED(16) [-2^14, -15000, -100, -1, 1, 2^14-1]
+    InputA SIGNED(16) [-32678, -1, 1, 32767]
+    InputB SIGNED(16) [-32678, -1, 1, 32767]
     Signed 1
   OUTPUTS
     LessThan [0, 1, 1, 1,
               0, 0, 1, 1,
               0, 0, 0, 1,
               0, 0, 0, 0]
-
