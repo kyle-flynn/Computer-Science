@@ -1,0 +1,186 @@
+SQL> /*
+SQL> Homework: SQL/DDL
+SQL> Author: Kyle Flynn
+SQL> */
+SQL> -- --------------------------------------------------------------------
+SQL> DROP TABLE Students;
+
+Table dropped.
+
+SQL> --
+SQL> CREATE TABLE Students
+  2  (
+  3  id INTEGER,
+  4  name CHAR(10) NOT NULL,
+  5  classification CHAR(10) NOT NULL,
+  6  hours INTEGER,
+  7  gpa NUMBER(3,2) NOT NULL,
+  8  mentor INTEGER,
+  9  --
+ 10  -- IMPORTANT: use the names IC1, IC2, IC3, IC4, and IC5 as given below.
+ 11  -- IC1:
+ 12  -- Student Id is the primary key
+ 13  CONSTRAINT IC1 PRIMARY KEY (id),
+ 14  -- IC2:
+ 15  -- Every student must be classified as 'freshman', 'sophomore',
+ 16  -- 'junior', or 'senior'
+ 17  CONSTRAINT IC2 CHECK (classification IN ('freshman', 'sophomore', 'junior', 'senior')),
+ 18  -- IC3: The gpa must be between 0 and 4.0 (inclusive).
+ 19  CONSTRAINT IC3 CHECK (gpa >= 0 AND gpa <= 4.0),
+ 20  -- IC4:
+ 21  -- To be classified as a 'junior',a student must have
+ 22  -- completed between 55 and 84 hours (inclusive).
+ 23  CONSTRAINT IC4 CHECK (NOT (classification = 'junior' AND (hours < 55 OR hours > 84))),
+ 24  -- IC5:
+ 25  -- Every mentor must be a student, and
+ 26  -- A student may or may not have a mentor, and
+ 27  -- If a mentor's row is deleted, then his/her students are
+ 28  -- left without a mentor, and
+ 29  -- Defer the spec of this IC so that a student’s record can be
+ 30  -- inserted before his/her mentor’s record is inserted.
+ 31  CONSTRAINT IC5 FOREIGN KEY (mentor) REFERENCES Students(id) ON DELETE SET NULL  DEFERRABLE INITIALLY DEFERRED
+ 32  );
+
+Table created.
+
+SQL> -- ------------------------------------------------------------------
+SQL> -- TESTING THE SCHEMA
+SQL> -- ------------------------------------------------------------------
+SQL> -- Beginning of Transaction-1 (consisting of the next 5 INSERTs)
+SQL> SET AUTOCOMMIT OFF
+SQL> INSERT INTO Students VALUES (10, 'Joe', 'freshman', 15,2.8, 20);
+
+1 row created.
+
+SQL> INSERT INTO Students VALUES (20, 'Joyce', 'sophomore', 35, 3.7, 30);
+
+1 row created.
+
+SQL> INSERT INTO Students VALUES (30, 'Lisa', 'junior', 63, 3.5, 40);
+
+1 row created.
+
+SQL> INSERT INTO Students VALUES (40, 'George', 'senior', 82, 3.7, null);
+
+1 row created.
+
+SQL> INSERT INTO Students VALUES (50, 'Kim', 'junior', 54, 3.5, 40);
+INSERT INTO Students VALUES (50, 'Kim', 'junior', 54, 3.5, 40)
+*
+ERROR at line 1:
+ORA-02290: check constraint (FLYNNKY.IC4) violated 
+
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> -- End of Transaction-1
+SQL> SELECT * FROM Students;
+
+        ID NAME       CLASSIFICA      HOURS        GPA     MENTOR               
+---------- ---------- ---------- ---------- ---------- ----------               
+        10 Joe        freshman           15        2.8         20               
+        20 Joyce      sophomore          35        3.7         30               
+        30 Lisa       junior             63        3.5         40               
+        40 George     senior             82        3.7                          
+
+SQL> -- -------------------------------------------------------------------
+SQL> -- Now treat every one of the following INSERTs as a transaction by itself.
+SQL> SET AUTOCOMMIT ON
+SQL> INSERT INTO Students VALUES (20, 'John', 'freshman', 10, 3.5, 30);
+INSERT INTO Students VALUES (20, 'John', 'freshman', 10, 3.5, 30)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (FLYNNKY.IC1) violated 
+
+
+SQL> INSERT INTO Students VALUES (null, 'nobody', 'freshman', 10, 3.5, 30);
+INSERT INTO Students VALUES (null, 'nobody', 'freshman', 10, 3.5, 30)
+                             *
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("FLYNNKY"."STUDENTS"."ID") 
+
+
+SQL> INSERT INTO Students VALUES (60, null, 'freshman', 10, 3.5, 30);
+INSERT INTO Students VALUES (60, null, 'freshman', 10, 3.5, 30)
+                                 *
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("FLYNNKY"."STUDENTS"."NAME") 
+
+
+SQL> INSERT INTO Students VALUES (62, 'Bob', 'Senior', 82, 3.7, null);
+INSERT INTO Students VALUES (62, 'Bob', 'Senior', 82, 3.7, null)
+*
+ERROR at line 1:
+ORA-02290: check constraint (FLYNNKY.IC2) violated 
+
+
+SQL> INSERT INTO Students VALUES (63, 'Allen', 'freshman', 10, 4.2, 30);
+INSERT INTO Students VALUES (63, 'Allen', 'freshman', 10, 4.2, 30)
+*
+ERROR at line 1:
+ORA-02290: check constraint (FLYNNKY.IC3) violated 
+
+
+SQL> INSERT INTO Students VALUES (64, 'May', 'junior', 43, 3.7, 40);
+INSERT INTO Students VALUES (64, 'May', 'junior', 43, 3.7, 40)
+*
+ERROR at line 1:
+ORA-02290: check constraint (FLYNNKY.IC4) violated 
+
+
+SQL> INSERT INTO Students VALUES (74, 'Drew', 'junior', 85, 3.7, 40);
+INSERT INTO Students VALUES (74, 'Drew', 'junior', 85, 3.7, 40)
+*
+ERROR at line 1:
+ORA-02290: check constraint (FLYNNKY.IC4) violated 
+
+
+SQL> INSERT INTO Students VALUES (75, 'Jane', 'sophomore', 39, 3.9, 70);
+
+1 row created.
+
+ERROR:
+ORA-02091: transaction rolled back 
+ORA-02291: integrity constraint (FLYNNKY.IC5) violated - parent key not found 
+
+
+SQL> INSERT INTO Students VALUES (41, 'David', 'senior', 93, 3.9, 40);
+
+1 row created.
+
+Commit complete.
+SQL> -- --------------------------------------------------------------------
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> -- Inspect the table
+SQL> SELECT * From Students;
+
+        ID NAME       CLASSIFICA      HOURS        GPA     MENTOR               
+---------- ---------- ---------- ---------- ---------- ----------               
+        10 Joe        freshman           15        2.8         20               
+        20 Joyce      sophomore          35        3.7         30               
+        30 Lisa       junior             63        3.5         40               
+        40 George     senior             82        3.7                          
+        41 David      senior             93        3.9         40               
+
+SQL> --
+SQL> DELETE FROM Students WHERE id = 40;
+
+1 row deleted.
+
+Commit complete.
+SQL> SELECT * From Students;
+
+        ID NAME       CLASSIFICA      HOURS        GPA     MENTOR               
+---------- ---------- ---------- ---------- ---------- ----------               
+        10 Joe        freshman           15        2.8         20               
+        20 Joyce      sophomore          35        3.7         30               
+        30 Lisa       junior             63        3.5                          
+        41 David      senior             93        3.9                          
+
+SQL> --
+SQL> SET ECHO OFF
