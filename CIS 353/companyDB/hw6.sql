@@ -54,9 +54,10 @@ SELECT e.ssn, P.Pnumber, W.hours FROM employee e, project p, works_on w WHERE w.
 --
 /*(12B)
 Write a query that consists of one block only.
-For every employee who works less than 10 hours on any project that is controlled by the department he works for: Find the employee's lname, his department number, project number, the number of the department controlling it, and the number of hours he works on that project. Sort the results by lname.
+For every employee who works less than 10 hours on any project that is controlled by the department he works for: 
+Find the employee's lname, his department number, project number, the number of the department controlling it, and the number of hours he works on that project. Sort the results by lname.
 */
--- <<< Your SQL code goes here >>>
+SELECT e.name, e.dno, p.pnumber, p.dnum, w.hours, FROM employee e, project p, works_on, WHERE w.hours < 10 AND p.dnum = e.dno ORDER BY lname;
 --
 -- JOINING 4 TABLES -------------------------
 --
