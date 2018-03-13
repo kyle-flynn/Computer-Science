@@ -62,9 +62,11 @@ SELECT e.name, e.dno, p.pnumber, p.dnum, w.hours, FROM employee e, project p, wo
 -- JOINING 4 TABLES -------------------------
 --
 /*(13B)
-For every employee who works on any project that is located in Houston: Find the employees ssn and lname, and the names of his/her dependent(s) and their relationship(s) to the employee. Notice that there will be one row per qualyfing dependent. Sort the results by employee lname.
+For every employee who works on any project that is located in Houston: 
+Find the employees ssn and lname, and the names of his/her dependent(s) and their relationship(s) to the employee. 
+Notice that there will be one row per qualyfing dependent. Sort the results by employee lname.
 */
--- <<< Your SQL code goes here >>>
+SELECT e.ssn, e.lname, d.dependent_name, d.relationship FROM employee e, dependent d, project p, works_on w WHERE p.plocation = 'Houston';
 --
 -- SELF JOIN -------------------------------------------
 -- 
