@@ -41,14 +41,21 @@ SET ECHO ON
 /*(10B)
 Find the ssn and last name of every employee whose ssn contains two consecutive 8's, and has a supervisor. Sort the results by ssn.
 */
-SELECT ssn, lname FROM EMPLOYEE WHERE ssn LIKE '%88%' AND super_ssn IS NOT NULL;
+SELECT ssn, lname 
+FROM employee 
+WHERE ssn 
+LIKE '%88%' 
+AND super_ssn IS NOT NULL;
 --
 -- JOINING 3 TABLES ------------------------------
 -- 
 /*(11B)
 For every employee who works for more than 20 hours on any project that is controlled by the research department: Find the ssn, project number,  and number of hours. Sort the results by ssn.
 */
-SELECT e.ssn, P.Pnumber, W.hours FROM employee e, project p, works_on w WHERE w.hours > 20 AND p.dnum = 5 ORDER BY e.ssn;
+SELECT e.ssn, p.Pnumber, w.hours 
+FROM employee e, project p, works_on w 
+WHERE w.hours > 20 
+AND p.dnum = 5 ORDER BY e.ssn;
 --
 -- JOINING 3 TABLES ---------------------------
 --
@@ -57,7 +64,10 @@ Write a query that consists of one block only.
 For every employee who works less than 10 hours on any project that is controlled by the department he works for: 
 Find the employee's lname, his department number, project number, the number of the department controlling it, and the number of hours he works on that project. Sort the results by lname.
 */
-SELECT e.name, e.dno, p.pnumber, p.dnum, w.hours, FROM employee e, project p, works_on, WHERE w.hours < 10 AND p.dnum = e.dno ORDER BY lname;
+SELECT e.name, e.dno, p.pnumber, p.dnum, w.hours 
+FROM employee e, project p, works_on 
+WHERE w.hours < 10 AND p.dnum = e.dno 
+ORDER BY lname;
 --
 -- JOINING 4 TABLES -------------------------
 --
@@ -66,7 +76,10 @@ For every employee who works on any project that is located in Houston:
 Find the employees ssn and lname, and the names of his/her dependent(s) and their relationship(s) to the employee. 
 Notice that there will be one row per qualyfing dependent. Sort the results by employee lname.
 */
-SELECT e.ssn, e.lname, d.dependent_name, d.relationship FROM employee e, dependent d, project p, works_on w WHERE p.plocation = 'Houston';
+SELECT e.ssn, e.lname, d.dependent_name, d.relationship 
+FROM employee e, dependent d, project p, works_on w 
+WHERE p.plocation = 'Houston'
+ORDER BY e.lname;
 --
 -- SELF JOIN -------------------------------------------
 -- 
