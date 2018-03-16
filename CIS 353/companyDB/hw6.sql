@@ -43,8 +43,7 @@ Find the ssn and last name of every employee whose ssn contains two consecutive 
 */
 SELECT ssn, lname 
 FROM employee 
-WHERE ssn 
-LIKE '%88%' 
+WHERE ssn LIKE '%88%' 
 AND super_ssn IS NOT NULL;
 --
 -- JOINING 3 TABLES ------------------------------
@@ -52,10 +51,11 @@ AND super_ssn IS NOT NULL;
 /*(11B)
 For every employee who works for more than 20 hours on any project that is controlled by the research department: Find the ssn, project number,  and number of hours. Sort the results by ssn.
 */
-SELECT e.ssn, p.Pnumber, w.hours 
+SELECT e.ssn, p.pnumber, w.hours 
 FROM employee e, project p, works_on w 
 WHERE w.hours > 20 
-AND p.dnum = 5 ORDER BY e.ssn;
+AND p.dnum = 5 
+ORDER BY e.ssn;
 --
 -- JOINING 3 TABLES ---------------------------
 --
@@ -64,10 +64,10 @@ Write a query that consists of one block only.
 For every employee who works less than 10 hours on any project that is controlled by the department he works for: 
 Find the employee's lname, his department number, project number, the number of the department controlling it, and the number of hours he works on that project. Sort the results by lname.
 */
-SELECT e.name, e.dno, p.pnumber, p.dnum, w.hours 
-FROM employee e, project p, works_on 
-WHERE w.hours < 10 AND p.dnum = e.dno 
-ORDER BY lname;
+SELECT e.lname, p.pnumber, p.dnum, w.hours 
+FROM employee e, project p, works_on w
+WHERE w.hours < 10 AND p.dnum = e.dno
+ORDER BY e.lname;
 --
 -- JOINING 4 TABLES -------------------------
 --
@@ -87,7 +87,10 @@ ORDER BY e.lname;
 Write a query that consists of one block only.
 For every employee who works for a department that is different from his supervisor's department: Find his ssn, lname, department number; and his supervisor's ssn, lname, and department number. Sort the results by ssn.  
 */
--- <<< Your SQL code goes here >>>
+SELECT e.ssn, e.lname, e.dno, e2.ssn, e2.lname, e2.dno 
+FROM employee e, employee e2 
+WHERE e.dno != e2.dno 
+AND e2.ssn = e.super_ssn ORDER BY e.ssn;
 --
 -- USING MORE THAN ONE RANGE VARIABLE ON ONE TABLE -------------------
 --
@@ -99,7 +102,12 @@ Find pairs of employee lname's such that the two employees in the pair work on t
 /*(16B)
 For every employee who has more than one dependent: Find the ssn, lname, and number of dependents. Sort the result by lname
 */
--- <<< Your SQL code goes here >>>
+SELECT e.ssn, e.lname, count(*)
+FROM employee e, dependent d
+WHERE d.essn = e.ssn
+GROUP BY e.lname, e.ssn
+HAVING count(*) > 2
+ORDER BY e.lname;
 -- 
 /*(17B)
 For every project that has more than 2 employees working on and the total hours worked on it is less than 40: Find the project number, project name, number of employees working on it, and the total number of hours worked by all employees on that project. Sort the results by project number.
