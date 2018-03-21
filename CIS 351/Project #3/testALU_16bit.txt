@@ -52,28 +52,28 @@ BEGIN not
 #
 # Xor
 #
-#BEGIN xor
-  #INPUTS
-    #InputA [0x0000, 0xFFFF]
-    #InputB [0xABCD, 0x1234]
-    #Op 5
-  #OUTPUTS 
-    #Output [0xABCD, 0x1234,
-    #        0x5432, 0xEDCB]
-    #Overflow 0
+BEGIN xor
+  INPUTS
+    InputA [0x0000, 0xFFFF]
+    InputB [0xABCD, 0x1234]
+    Op 5
+  OUTPUTS 
+    Output [0xABCD, 0x1234,
+            0x5432, 0xEDCB]
+    Overflow 0
 
 #
 # lui
 #
-#BEGIN lui
-   #INPUTS
-     #InputA [0x0000, 0xFFFF]
-     #InputB [0x1234, 0xF0F0]
-     #Op 6
-  #OUTPUTS
-    #Output [0x0000, 0x0000, 
-    #        0xFF00, 0xFF00]
-    #Overflow 0
+BEGIN lui
+   INPUTS
+     InputA [0x0000, 0xFFFF]
+     InputB [0x1234, 0xF0F0]
+     Op 6
+  OUTPUTS
+    Output [0x0000, 0x0000, 
+            0xFF00, 0xFF00]
+    Overflow 0
 
 
 #
