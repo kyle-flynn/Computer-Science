@@ -179,8 +179,8 @@ WHERE NOT EXISTS ((SELECT p.pnumber
                                             FROM project p, works_on w 
                                             WHERE w.pno = p.pnumber 
                                                 AND w.essn = e.ssn 
-                                                AND p.dnum = 4)) O
-                                                RDER BY e.lname;
+                                                AND p.dnum = 4)) 
+												ORDER BY e.lname;
 --
 SET ECHO OFF
 SPOOL OFF
