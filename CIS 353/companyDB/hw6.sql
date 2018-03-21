@@ -101,7 +101,7 @@ SELECT p.pnumber, p.pname, COUNT(*), SUM(w.hours) FROM project p, works_on w WHE
 /*(18B)
 For every employee whose salary is above the average salary in his department: Find the dno, ssn, lname, and salary. Sort the results by department number.
 */
-/*SELECT e.dno, e.ssn, e.lname, e.salary FROM employee e WHERE AVG(e.salary) NOT IN (SELECT AVG(e.salary) FROM employee e GROUP BY e.dno) ORDER BY e.dno;*/
+SELECT e.dno, e.ssn, e.lname, e.salary FROM employee e WHERE e.salary > (SELECT AVG(e1.salary) FROM employee e1 WHERE e.dno = e1.dno) ORDER BY e.dno;
 --
 -- CORRELATED SUBQUERY -------------------------------
 --
@@ -116,7 +116,7 @@ SELECT e.ssn, e.lname FROM employee e WHERE e.dno = 5 AND NOT EXISTS (SELECT * F
 /*(20B) Hint: This is a DIVISION query
 For every employee who works on every project that is controlled by department 4: Find the ssn and lname. Sort the results by lname
 */
-SELECT e.ssn, e.lname FROM employee e WHERE NOT EXISTS ((SELECT p.pnumber FROM project p WHERE p.dnum = 4) MINUS (SELECT p.pnumber FROM project p, works_on w WHERE w.pno = p.pnumber AND p.dnum = e.dno AND p.dnum = 4)) ORDER BY e.lname;
+SELECT e.ssn, e.lname FROM employee e WHERE NOT EXISTS ((SELECT p.pnumber FROM project p WHERE p.dnum = 4) MINUS (SELECT p.pnumber FROM project p, works_on w WHERE w.pno = p.pnumber AND w.essn = e.ssn AND p.dnum = 4)) ORDER BY e.lname;
 --
 SET ECHO OFF
 SPOOL OFF
