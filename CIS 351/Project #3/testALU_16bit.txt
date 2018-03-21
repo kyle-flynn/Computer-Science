@@ -1,0 +1,208 @@
+#> InputSetLoader: gvFormat.InputSetLoaderSimpleGVFormat
+
+###########################################################################
+#
+# Starter test file for ALU. (You need to add some more of your own tests.)
+#
+# Author: Zachary Kurmas
+# (C) 2012 Grand Valley State University
+#
+##########################################################################
+
+
+#
+# And
+#
+BEGIN and
+  INPUTS
+    InputA [0x0000, 0xFFFF]
+    InputB [0xABCD, 0x1234]
+    Op 2
+  OUTPUTS 
+    Output [0x0000, 0x0000,
+    	    0xABCD, 0x1234]
+    Overflow 0
+
+#
+# Or
+#
+BEGIN or
+  INPUTS
+    InputA [0x0000, 0xFFFF]
+    InputB [0xABCD, 0x1234]
+    Op 3
+  OUTPUTS 
+    Output [0xABCD, 0x1234,
+            0xFFFF, 0xFFFF]
+    Overflow 0
+
+#
+# Not
+#
+BEGIN not
+  INPUTS
+    InputA [0x0000, 0xFFFF]
+    InputB [0xABCD, 0x1234]
+    Op 4
+  OUTPUTS 
+    Output [0xFFFF, 0xFFFF,
+            0x0000, 0x0000]
+    Overflow 0
+
+#
+# Xor
+#
+#BEGIN xor
+  #INPUTS
+    #InputA [0x0000, 0xFFFF]
+    #InputB [0xABCD, 0x1234]
+    #Op 5
+  #OUTPUTS 
+    #Output [0xABCD, 0x1234,
+    #        0x5432, 0xEDCB]
+    #Overflow 0
+
+#
+# lui
+#
+#BEGIN lui
+   #INPUTS
+     #InputA [0x0000, 0xFFFF]
+     #InputB [0x1234, 0xF0F0]
+     #Op 6
+  #OUTPUTS
+    #Output [0x0000, 0x0000, 
+    #        0xFF00, 0xFF00]
+    #Overflow 0
+
+
+#
+# slt
+#
+BEGIN slt
+  INPUTS
+    InputA SIGNED(16) [-5, 5]
+    InputB SIGNED(16) [-5, 5]
+    Op 15
+  OUTPUTS
+    Output [0, 1, 0, 0]
+    Overflow 0
+
+#
+# sltu
+#
+BEGIN sltu
+  INPUTS
+    InputA [0x000A, 0xFFFF]
+    InputB [0x000A, 0xFFFF]
+    Op 7
+  OUTPUTS
+    Output [0, 1, 0, 0]
+    Overflow 0
+
+
+#
+# Add
+#
+BEGIN add
+  INPUTS
+    InputA SIGNED(16) [-5, 7]
+    InputB SIGNED(16) [-8, 4]
+    Op 8
+  OUTPUTS
+    Output SIGNED(16) [-13, -1, -1, 11]
+    Overflow 0
+
+
+BEGIN add_withOverflow
+  INPUTS
+    InputA SIGNED(16) [2^15-2, 2^15-1]
+    InputB SIGNED(16) [1, 2]
+    Op 8
+  OUTPUTS
+    Output SIGNED(16) [2^15-1, -2^15, -2^15, -2^15+1]
+    Overflow [0, 1, 1, 1]
+
+
+#
+# sub
+#
+BEGIN sub
+  INPUTS
+    InputA SIGNED(16) [-5, 7]
+    InputB SIGNED(16) [-8, 4]
+    Op 9
+  OUTPUTS
+    Output SIGNED(16) [3, -9, 15, 3]
+    Overflow 0
+
+
+BEGIN sub_withOverflow
+  INPUTS
+    InputA SIGNED(16) [-2^15, -2^15+1]
+    InputB SIGNED(16) [1, 2]
+    Op 9
+  OUTPUTS
+    Output SIGNED(16) [2^15-1, 2^15-2, -2^15, 2^15-1]
+    Overflow [1, 1, 0, 1]
+
+
+
+#
+# Addu
+#
+BEGIN addu
+  INPUTS
+    InputA [1, 2^15]
+    InputB [3, 2^14+7]
+    Op 0
+  OUTPUTS
+    Output [4, 2^14+8, 2^15+3, 0xC007] 
+    Overflow 0
+
+
+BEGIN addu_withOverflow
+  INPUTS
+    InputA [2^15-1, 2^16-2, 2^16-1]
+    InputB [1, 2]
+    Op 0
+  OUTPUTS
+    Output [2^15, 2^15+1, 2^16-1, 0, 0, 1]
+    # Overflow is always 0 for addu
+    Overflow 0
+
+
+#
+# subu
+#
+BEGIN subu
+  INPUTS
+    InputA [15, 9]
+    InputB [8, 4]
+    Op 1
+  OUTPUTS
+    Output [7, 11, 1, 5]
+    Overflow 0
+
+
+BEGIN sub_withOverflow
+  INPUTS
+    InputA [1, 2^16-2]
+    InputB [3, 2^16-1]
+    Op 1
+  OUTPUTS
+    Output [0xFFFE, 2, 2^16-5, 0xFFFF] 
+    # overflow is always 0 for subu
+    Overflow 0
+
+BEGIN sub_withOverflow2
+  INPUTS
+    InputA [2^15-1, 2^15+1]
+    InputB [2^15-1, 2^15+1]
+    Op 1
+  OUTPUTS
+    Output [0, 0xFFFE, 2, 0]
+    # overflow is always 0 for subu
+    Overflow 0
+
+
