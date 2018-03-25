@@ -44,7 +44,8 @@ Find the ssn and last name of every employee whose ssn contains two consecutive 
 SELECT ssn, lname 
 FROM employee 
 WHERE ssn LIKE '%88%' 
-    AND super_ssn IS NOT NULL;
+    AND super_ssn IS NOT NULL
+ORDER BY ssn
 --
 -- JOINING 3 TABLES ------------------------------
 -- 
@@ -113,7 +114,8 @@ WHERE e1.ssn = w1.essn
     AND e2.ssn = w2.essn 
     AND e1.ssn < e2.ssn 
     AND w1.pno = w2.pno 
-    AND w1.hours = w2.hours;
+    AND w1.hours = w2.hours
+ORDER BY e1.lname;
 --
 /*(16B)
 For every employee who has more than one dependent: Find the ssn, lname, and number of dependents. Sort the result by lname
