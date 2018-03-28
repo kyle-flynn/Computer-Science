@@ -99,5 +99,3 @@ SELECT e.ssn, e.super_ssn FROM employee e START WITH e.ssn = 453453453 CONNECT B
 ---------------------------------------------------------------
 SET ECHO OFF
 SPOOL OFF
-
-
