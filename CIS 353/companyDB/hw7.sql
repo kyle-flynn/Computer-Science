@@ -41,49 +41,73 @@ SET ECHO ON
 /*(110) Using ROWNUM to limit the size of the result. (Notice that SQL and some systems use the LIMIT or TOP clauses. Oracle uses ROENUM to accomplish similar tasks.)
 Find the ssn, lname, and salary of only four employees.
 */
-SELECT e.ssn, e.lname, e.salary FROM employee e WHERE ROWNUM < 5;
+SELECT e.ssn, e.lname, e.salary 
+	FROM employee e 
+	WHERE ROWNUM < 5;
 --
 /*(115) TOP-N query.
 Find the ssn, lname, and salary of the four highest paid employees.
 */
-SELECT e.ssn, e.lname, e.salary FROM employee e ORDER BY e.salary DESC FETCH FIRST 4 ROWS ONLY;
+SELECT e.ssn, e.lname, e.salary 
+	FROM employee e 
+	ORDER BY e.salary 
+	DESC FETCH FIRST 4 ROWS ONLY;
 --
 /*(120) TOP-N query.
 Find the ssn, lname, and salary of the four lowest paid employees
 */
-SELECT e.ssn, e.lname, e.salary FROM employee e ORDER BY e.salary ASC FETCH FIRST 4 ROWS ONLY;
+SELECT e.ssn, e.lname, e.salary 
+	FROM employee e 
+	ORDER BY e.salary 
+	ASC FETCH FIRST 4 ROWS ONLY;
 --
 /*(125) TOP-N query.
 Find the lowest two salaries in the company.(Notice that in our database, the two lowest salaries are 25K and 30K.)
 */
-SELECT DISTINCT e.salary FROM employee e ORDER BY e.salary ASC FETCH FIRST 2 ROWS ONLY;
+SELECT DISTINCT e.salary 
+	FROM employee e 
+	ORDER BY e.salary 
+	ASC FETCH FIRST 2 ROWS ONLY;
 --
 /*(130) TOP-N query.
 For every employee whose salary is equal to one of the two lowest salaries, Find the ssn, lname, and salary.
 */
-SELECT e.ssn, e.lname, e.salary FROM employee e WHERE e.salary IN (
-    SELECT DISTINCT e.salary FROM employee e ORDER BY e.salary ASC FETCH FIRST 2 ROWS ONLY
-);
+SELECT e.ssn, e.lname, e.salary 
+	FROM employee e 
+	WHERE e.salary IN (
+		SELECT DISTINCT e.salary 
+		FROM employee e 
+		ORDER BY e.salary 
+		ASC FETCH FIRST 2 ROWS ONLY
+	);
 --
 /*(135) RANK query
 Find the rank of the salary 30000 among all salaries. (HINT: The ranks in our database are 1 for 25000, 4 for 30000, 5 for 38000, and so on.)
 */
-SELECT RANK(30000) WITHIN GROUP (ORDER BY salary) "Rank" FROM employee;
+SELECT RANK(30000) WITHIN 
+	GROUP (ORDER BY salary) "Rank" 
+	FROM employee;
 --
 /*(140) RANK query ... compare with the previous query.
 Find the rank of the salary 31000 among all salaries.
 */
-SELECT RANK(31000) WITHIN GROUP (ORDER BY salary) "Rank" FROM employee;
+SELECT RANK(31000) WITHIN 
+	GROUP (ORDER BY salary) "Rank" 
+	FROM employee;
 --
 /*(145) DENSE RANK query
 Find the dense rank of the salary 30000 among all salaries. Hint: The dense ranks in our database are 1 for 25000, 2 for 30000, 3 for 38000, and so on.
 */
-SELECT DENSE_RANK(30000) WITHIN GROUP (ORDER BY salary) "Dense Rank" FROM employee;
+SELECT DENSE_RANK(30000) WITHIN 
+	GROUP (ORDER BY salary) "Dense Rank" 
+	FROM employee;
 -- 
 /*(150) DENSE RANK query ... compare with the previous query.
 Find the dense rank of the salary 31000 among all salaries. Hint: The dense ranks in our database are 1 for 25000, 2 for 30000, 3 for 38000, and so on.
 */
-SELECT DENSE_RANK(31000) WITHIN GROUP (ORDER BY salary) "Dense Rank" FROM employee;
+SELECT DENSE_RANK(31000) WITHIN 
+	GROUP (ORDER BY salary) "Dense Rank" 
+	FROM employee;
 --
 /*(155)HIERARCHICAL query (uses START WITH and CONNECT BY PRIOR)
 Find pairs of SSN's such that the first SSN in the pair is that of an employee while the second SSN in the pair is that of his/her supervisor. Start with SSN 453453453.
@@ -94,7 +118,10 @@ Hint: The output of your query should be:
 888665555	- 
 */
 
-SELECT e.ssn, e.super_ssn FROM employee e START WITH e.ssn = 453453453 CONNECT BY PRIOR e.super_ssn = e.ssn;
+SELECT e.ssn, e.super_ssn 
+	FROM employee e 
+	START WITH e.ssn = 453453453 
+	CONNECT BY PRIOR e.super_ssn = e.ssn;
 
 ---------------------------------------------------------------
 SET ECHO OFF
