@@ -24,12 +24,22 @@ CREATE TABLE district_ranking (
 );
 
 CREATE TABLE team (
+  eventID    number(4) PRIMARY KEY, 
+  weekOfComp varchar2(100),
+  eventName  varchar2(100),
+  'state'    varchar2(2),
+  city       varchar2(25),
+  venue      varchar2(50)
+);
+
+CREATE TABLE event (
   teamNumber  number(4) PRIMARY KEY, 
   teamName    varchar2(100),
   teamOrigin  varchar2(100),
   'state'     varchar2(2),
   city        varchar2(25)
 );
+
 
 /* In the DDL, every IC must have a unique name; e.g. IC5, IC10, IC15, etc. */
 --
