@@ -23,8 +23,8 @@ CREATE TABLE district_ranking (
   advancedToStates number(1)
 );
 
-CREATE TABLE team (
-  eventID    number(4) PRIMARY KEY, 
+CREATE TABLE event (
+  eventID    varchar(15) PRIMARY KEY, 
   weekOfComp varchar2(100),
   eventName  varchar2(100),
   'state'    varchar2(2),
@@ -32,7 +32,7 @@ CREATE TABLE team (
   venue      varchar2(50)
 );
 
-CREATE TABLE event (
+CREATE TABLE team (
   teamNumber  number(4) PRIMARY KEY, 
   teamName    varchar2(100),
   teamOrigin  varchar2(100),
@@ -40,6 +40,38 @@ CREATE TABLE event (
   city        varchar2(25)
 );
 
+CREATE TABLE years_active (
+  teamNumber  number(4) PRIMARY KEY,
+  years       number(2)
+);
+
+CREATE TABLE registration (
+  eventID     varchar(15) PRIMARY KEY, 
+  teamNumber  number(4), 
+  didPayFee   number(1)
+);
+
+CREATE TABLE awards (
+  awardID     varchar(20) PRIMARY KEY, 
+  eventID     varchar(15), 
+  awardName   varchar(50), 
+  teamNumber  number(4), 
+  points      (2)
+);
+
+CREATE TABLE 'match' (
+  matchID     varchar(20), 
+  eventID     varchar(15), 
+  teamNumber  number(4), 
+  'level'     number(2)
+);
+
+CREATE TABLE match_participant (
+  matchID     varchar(20),
+  teamNumber  number(4),
+  alliance    varchar(4),
+  didShow     number(1)
+);
 
 /* In the DDL, every IC must have a unique name; e.g. IC5, IC10, IC15, etc. */
 --
