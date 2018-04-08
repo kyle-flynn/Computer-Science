@@ -65,9 +65,15 @@ INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-EK", 1
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 33, true);
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 67, true);
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 1023, true);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 503, true);
 
-// TODO - Implement match values.
-INSERT INTO match (matchID, eventID, teamNumber, level) VALUES ();
+INSERT INTO match (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E01", "18-FIM-FH", 10, "Quarterfinals 1 Match 1", 387, 398);
+INSERT INTO match (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E02", "18-FIM-FH", 11, "Quarterfinals 2 Match 1", 124, 50);
+INSERT INTO match (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E03", "18-FIM-FH", 12, "Quarterfinals 3 Match 1", 356, 354);
+INSERT INTO match (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E04", "18-FIM-FH", 13, "Quarterfinals 4 Match 1", 247, 247);
 
-// TODO - Implement match participant values based upon match values and registration.
-INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ()
+INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ("18-FIM-FH-E01", 1023, "red", 1);
+INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ("18-FIM-FH-E01", 67, "blue", 1);
+
+INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ("18-FIM-FH-E02", 33, "red", 1);
+INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ("18-FIM-FH-E02", 503, "blue", 1);
