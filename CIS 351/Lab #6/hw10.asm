@@ -22,17 +22,52 @@ wackySum:
   jr $ra
 
 loop:
-  lw $a0, 4($sp)
-  lw $a1, 8($sp)
-  lw $a2, 12($sp)
+  lw $t0, 4($sp)
+  lw $t1, 8($sp)
+  lw $t2, 12($sp)
 
-  add $s0, $s0, $a2
-  slt $t0, $s0, $a1 # if a < b, t0 = 1
+  # combineFour(i, (i+1)/2, (i+2)/2, (i+3));
+  addi $a0, $s0, 0
+  addi $a1, $s0, 1
+  addi $a2, $s0, 2
+  addi $a3, $s0, 3
+  div $a1, $a1, 2
+  div $a2, $a2, 2
+
+  add $s1, $s1, $v0
+
+  jal combineFour
+
+  add $v0, $v0, $s1
+
+  add $s0, $s0, $t2
+  slt $t3, $s0, $t1 # if a < b, t0 = 1
   
-  beq $t0, 1, loop
-  beq $t1, 0, exit
+  beq $s0, $t1, loop
+  beq $t3, 1, loop
+  beq $t3, 0, exit
 
 combineFour:
+  add $v0, $a0, $a1
+  add $v0, $v0, $a2
+  add $v0, $v0, $a3
+  
+  addi $sp, $sp, -8
+  sw $v0, 0($sp)
+  sw $ra, 4($sp)
+  
+  rem $t0, $v0, 2
+  beq $t0, 1, returnHalf
+  lw $ra, 4($sp)
+  addi $sp, $sp, 8
+  jr $ra
+
+returnHalf:
+  lw $v0, 0($sp)
+  lw $ra, 4($sp)
+  addi $sp, $sp, 8
+  div $v0, $v0, 2
+  jr $ra
 
 exit:
   lw $ra, 0($sp)
