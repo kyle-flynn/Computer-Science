@@ -21,24 +21,30 @@ CREATE TABLE district_ranking (
   rankID           number(3) PRIMARY KEY, 
   teamNumber       number(4),
   districtPoints   number(3),
-  advancedToStates number(1)
+  advancedToStates number(1),
+  CONSTRAINT IC2 FOREIGN KEY (teamNumber) REFERENCES team(teamNumber)
+           ON DELETE SET NULL
+           DEFERRABLE INITIALLY DEFERRED
 );
 
 CREATE TABLE event (
-  eventID    varchar(15) PRIMARY KEY, 
+  eventID    varchar(15), 
   weekOfComp number(1),
   eventName  varchar2(40),
   "state"    varchar2(2),
   city       varchar2(25),
-  venue      varchar2(40)
+  venue      varchar2(40),
+  CONSTRAINT IC1 PRIMARY KEY(eventID)
 );
 
 CREATE TABLE team (
-  teamNumber  number(4) PRIMARY KEY, 
+  teamNumber  number(4), 
   teamName    varchar2(30),
   teamOrigin  varchar2(50),
   "state"     varchar2(2),
-  city        varchar2(25)
+  city        varchar2(25),
+  CONSTRAINT IC3 CHECK teamName NOT NULL,
+  CONSTRAINT IC4 PRIMARY KEY (teamNumber) NOT NULL
 );
 
 CREATE TABLE years_active (
@@ -181,6 +187,17 @@ SELECT * FROM match_participant;
 3. The SQL code for the query. */
 --
 
+--< 1. A join involving at least four relations. >--
+SELECT DISTINCT t.teamNumber, y.years, r.rankID, a.awardName 
+	FROM team t, event e, district_ranking r, years_active y, awards a
+	WHERE t.teamNumber = y.teamNumber AND
+		t.teamNumber = r.teamNumber AND
+		t.teamNumber = a.teamNumber
+		ORDER BY r.rankID;
+
+--< 2. A self-join. >--
+
+		
 --< The insert/delete/update statements to test the enforcement of ICs >
 /* Include the following items for every IC that you test (Important: see the next section titled
 “Submit a final report” regarding which ICs to test).
