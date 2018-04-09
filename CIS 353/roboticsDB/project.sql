@@ -1,5 +1,6 @@
 SPOOL project.out
 SET ECHO ON
+SET DEFINE OFF
 /*
 CIS 353 - Database Design Project
 Jarrod Parr
@@ -10,7 +11,7 @@ Santiago Quirogas
 DROP TABLE district_ranking CASCADE CONSTRAINTS;
 DROP TABLE team CASCADE CONSTRAINTS;
 DROP TABLE event CASCADE CONSTRAINTS;
-DROP TABLE 'match' CASCADE CONSTRAINTS;
+DROP TABLE "match" CASCADE CONSTRAINTS;
 DROP TABLE match_participant CASCADE CONSTRAINTS;
 DROP TABLE awards CASCADE CONSTRAINTS;
 DROP TABLE years_active CASCADE CONSTRAINTS;
@@ -27,7 +28,7 @@ CREATE TABLE event (
   eventID    varchar(15) PRIMARY KEY, 
   weekOfComp varchar2(100),
   eventName  varchar2(100),
-  'state'    varchar2(2),
+  "state"    varchar2(2),
   city       varchar2(25),
   venue      varchar2(50)
 );
@@ -36,7 +37,7 @@ CREATE TABLE team (
   teamNumber  number(4) PRIMARY KEY, 
   teamName    varchar2(100),
   teamOrigin  varchar2(100),
-  'state'     varchar2(2),
+  "state"     varchar2(2),
   city        varchar2(25)
 );
 
@@ -59,10 +60,10 @@ CREATE TABLE awards (
   points      (2)
 );
 
-CREATE TABLE 'match' (
+CREATE TABLE "match" (
   matchID     varchar2(20), 
   eventID     varchar2(15), 
-  'level'     number(2),
+  "level"     number(2),
   matchName   varchar2(20),
   redScore    number(3),
   blueScore   number(3)
@@ -147,10 +148,10 @@ INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 6
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 1023, true);
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 503, true);
 
-INSERT INTO match (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E01", "18-FIM-FH", 10, "Quarterfinals 1 Match 1", 387, 398);
-INSERT INTO match (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E02", "18-FIM-FH", 11, "Quarterfinals 2 Match 1", 124, 50);
-INSERT INTO match (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E03", "18-FIM-FH", 12, "Quarterfinals 3 Match 1", 356, 354);
-INSERT INTO match (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E04", "18-FIM-FH", 13, "Quarterfinals 4 Match 1", 247, 247);
+INSERT INTO "match" (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E01", "18-FIM-FH", 10, "Quarterfinals 1 Match 1", 387, 398);
+INSERT INTO "match" (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E02", "18-FIM-FH", 11, "Quarterfinals 2 Match 1", 124, 50);
+INSERT INTO "match" (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E03", "18-FIM-FH", 12, "Quarterfinals 3 Match 1", 356, 354);
+INSERT INTO "match" (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E04", "18-FIM-FH", 13, "Quarterfinals 4 Match 1", 247, 247);
 
 INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ("18-FIM-FH-E01", 1023, "red", 1);
 INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ("18-FIM-FH-E01", 67, "blue", 1);
@@ -168,17 +169,17 @@ SELECT * FROM event;
 SELECT * FROM district_ranking;
 SELECT * FROM registration;
 SELECT * FROM awards;
-SELECT * FROM 'match';
+SELECT * FROM "match";
 SELECT * FROM match_participant;
 --
-< The SQL queries>. Include the following for each query:
+--< The SQL queries>. Include the following for each query:
 /* 1. A comment line stating the query number and the feature(s) it demonstrates
 (e.g. – Q25 – correlated subquery).
 2. A comment line stating the query in English.
 3. The SQL code for the query. */
 --
 
-< The insert/delete/update statements to test the enforcement of ICs >
+--< The insert/delete/update statements to test the enforcement of ICs >
 /* Include the following items for every IC that you test (Important: see the next section titled
 “Submit a final report” regarding which ICs to test).
  A comment line stating: Testing: < IC name>
