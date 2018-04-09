@@ -32,7 +32,7 @@ SPOOL companyDML-b.out
 SET ECHO ON
 -- ------------------------------------------------------------
 -- 
--- Name: Kyle Flynn
+-- Name: Jarred Parr
 --
 -- -------------------------------------------------------------
 --
@@ -45,7 +45,7 @@ SELECT ssn, lname
 FROM employee 
 WHERE ssn LIKE '%88%' 
     AND super_ssn IS NOT NULL
-ORDER BY ssn
+ORDER BY ssn;
 --
 -- JOINING 3 TABLES ------------------------------
 -- 
