@@ -47,9 +47,10 @@ CREATE TABLE years_active (
 );
 
 CREATE TABLE registration (
-  eventID     varchar2(15) PRIMARY KEY, 
+  eventID     varchar2(15), 
   teamNumber  number(4), 
-  didPayFee   number(1)
+  didPayFee   number(1),
+  PRIMARY KEY(eventID, teamNumber)
 );
 
 CREATE TABLE awards (
@@ -73,7 +74,8 @@ CREATE TABLE match_participant (
   matchID     varchar2(20),
   teamNumber  number(4),
   alliance    varchar2(4),
-  didShow     number(1)
+  didShow     number(1),
+  PRIMARY KEY(matchID, teamNumber)
 );
 
 /* In the DDL, every IC must have a unique name; e.g. IC5, IC10, IC15, etc. */
