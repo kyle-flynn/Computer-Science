@@ -8,7 +8,8 @@ int main() {
 
 	for (i = 0; i < ARRAY_SIZE*NUM_LOOPS; i++) {
 		solution *= array[0];
-		solution *= array[8192+8];
+		solution *= array[64];
+		solution *= array[128];
 	}
 	return solution;
 }
