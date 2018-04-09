@@ -64,7 +64,7 @@ CREATE TABLE "match" (
   matchID     varchar2(20), 
   eventID     varchar2(15), 
   "level"     number(2),
-  matchName   varchar2(20),
+  matchName   varchar2(25),
   redScore    number(3),
   blueScore   number(3)
 );
@@ -128,25 +128,25 @@ INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18
 INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18-FIM-FH-WIN', '18-FIM-FH', 'Event Winner', 1023, 20);
 INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18-FIM-CMP-WIN', '18-FIM-CMP', 'Event Winner', 4003, 60);
 
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-TC', 3618, true);
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-TC', 1918, true);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-TC', 3618, 1);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-TC', 1918, 1);
 
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-KU2', 4003, true);
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-KU2', 469, true);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-KU2', 4003, 1);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-KU2', 469, 1);
 
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-GULL', 3618, true);
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-GULL', 469, true);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-GULL', 3618, 1);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-GULL', 469, 1);
 
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-WMI', 4003, true);
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-WMI', 5980, true);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-WMI', 4003, 1);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-WMI', 5980, 1);
 
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-EK', 2767, true);
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-EK', 1, true);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-EK', 2767, 1);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-EK', 1, 1);
 
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 33, true);
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 67, true);
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 1023, true);
-INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 503, true);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 33, 1);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 67, 1);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 1023, 1);
+INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 503, 1);
 
 INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 1 Match 1', 387, 398);
 INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E02', '18-FIM-FH', 11, 'Quarterfinals 2 Match 1', 124, 50);
