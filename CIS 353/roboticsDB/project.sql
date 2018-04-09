@@ -23,8 +23,8 @@ CREATE TABLE team (
   teamOrigin  varchar2(50),
   "state"     varchar2(2),
   city        varchar2(25),
-  CONSTRAINT IC3 CHECK teamName NOT NULL,
-  CONSTRAINT IC4 PRIMARY KEY (teamNumber) NOT NULL
+  CONSTRAINT has_team_name CHECK (teamName IS NOT NULL),
+  CONSTRAINT team_num_unique PRIMARY KEY (teamNumber)
 );
 
 CREATE TABLE district_ranking (
@@ -32,7 +32,7 @@ CREATE TABLE district_ranking (
   teamNumber       number(4),
   districtPoints   number(3),
   advancedToStates number(1),
-  CONSTRAINT IC2 FOREIGN KEY (teamNumber) REFERENCES team(teamNumber)
+  CONSTRAINT ranking_references_team FOREIGN KEY (teamNumber) REFERENCES team(teamNumber)
            ON DELETE SET NULL
            DEFERRABLE INITIALLY DEFERRED
 );
@@ -44,7 +44,7 @@ CREATE TABLE event (
   "state"    varchar2(2),
   city       varchar2(25),
   venue      varchar2(40),
-  CONSTRAINT IC1 PRIMARY KEY(eventID)
+  CONSTRAINT event_id_unique PRIMARY KEY(eventID)
 );
 
 CREATE TABLE years_active (
@@ -196,7 +196,29 @@ SELECT DISTINCT t.teamNumber, y.years, r.rankID, a.awardName
 		ORDER BY r.rankID;
 
 --< 2. A self-join. >--
+SELECT m1.matchName, m1.redScore, m1.blueScore, m2.matchName, m2.redScore, m2.blueScore
+	FROM "match" m1, "match" m2
+	WHERE m1.redScore > m2.redScore;
+	
+--< 3. UNION, INTERSECT, and/or MINUS. >--
+/* Find the highest scoring match for the red alliance, and the highest scoring match for the blue alliance. */		
+		
+--< 4. SUM, AVG, MAX, and/or MIN. >--
 
+
+--< 5. GROUP BY, HAVING, and ORDER BY, all appearing in the same query >--
+
+--< 6. A correlated subquery. >--
+
+--< 7. A non-correlated subquery. >--
+
+--< 8. A relational DIVISION query. >--
+
+--< 9. An outer join query.  >--
+		
+--< 10. A RANK query. >--
+
+--< 11. A Top-N query. >--
 		
 --< The insert/delete/update statements to test the enforcement of ICs >
 /* Include the following items for every IC that you test (Important: see the next section titled
