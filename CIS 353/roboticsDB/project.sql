@@ -57,7 +57,7 @@ CREATE TABLE awards (
   eventID     varchar2(15), 
   awardName   varchar2(50), 
   teamNumber  number(4), 
-  points      (2)
+  points      number(2)
 );
 
 CREATE TABLE "match" (
@@ -79,16 +79,16 @@ CREATE TABLE match_participant (
 /* In the DDL, every IC must have a unique name; e.g. IC5, IC10, IC15, etc. */
 --
 SET FEEDBACK OFF
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (1, "The Juggernauts", "Molex & Oakland Schools", "MI", "Pontiac");
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (33, "Killer Bees", "Notre Dame Preparatory", "MI", "Auburn Hills");
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (67, "The HOT Team", "Huron Valley Schools", "MI", "Highland");
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (469, "Las Guerrillas", "Gorman's Gallery & International Academy", "MI", "Bloomfield Hills");
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (1023, "Bedford Express", "Bedford Senior High School", "MI", "Bedford");
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (1918, "NC Gears", "Newaygo County", "MI", "Fremont");
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (2767, "Stryke Force", "Kalamazoo County", "MI", "Kalamazoo");
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (3618, "Petoskey Paladins", "Petoskey High School", "MI", "Petoskey");
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (4003, "TriSonics", "Allendale & Jenison Schools", "MI", "Allendale");
-INSERT INTO team (teamNumber, teamName, teamOrigin, state, city) VALUES (5980, "East Grand Rapids Robotics", "East Grand Rapids High School", "MI", "Grand Rapids");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (1, "The Juggernauts", "Molex & Oakland Schools", "MI", "Pontiac");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (33, "Killer Bees", "Notre Dame Preparatory", "MI", "Auburn Hills");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (67, "The HOT Team", "Huron Valley Schools", "MI", "Highland");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (469, "Las Guerrillas", "Gorman's Gallery & International Academy", "MI", "Bloomfield Hills");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (1023, "Bedford Express", "Bedford Senior High School", "MI", "Bedford");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (1918, "NC Gears", "Newaygo County", "MI", "Fremont");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (2767, "Stryke Force", "Kalamazoo County", "MI", "Kalamazoo");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (3618, "Petoskey Paladins", "Petoskey High School", "MI", "Petoskey");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (4003, "TriSonics", "Allendale & Jenison Schools", "MI", "Allendale");
+INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (5980, "East Grand Rapids Robotics", "East Grand Rapids High School", "MI", "Grand Rapids");
 
 INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (1, 4003, 147, 1);
 INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (2, 2767, 146, 0);
@@ -101,13 +101,13 @@ INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStat
 INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (9, 1, 82, 0);
 INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (10, 469, 79, 0);
 
-INSERT INTO event (eventID, weekOfComp, eventName, state, city, venue) VALUES ("18-FIM-TC", 1, "Traverse City District Event", "MI", "Traverse City", "Traverse City Central High School");
-INSERT INTO event (eventID, weekOfComp, eventName, state, city, venue) VALUES ("18-FIM-KU2", 2, "Kettering University District Event #2", "MI", "Flint", "Kettering University");
-INSERT INTO event (eventID, weekOfComp, eventName, state, city, venue) VALUES ("18-FIM-GULL", 3, "Gull Lake District Event", "MI", "Richland", "Gull Lake High School");
-INSERT INTO event (eventID, weekOfComp, eventName, state, city, venue) VALUES ("18-FIM-WMI", 4, "West Michigan District Event", "MI", "Allendale", "Grand Valley State University");
-INSERT INTO event (eventID, weekOfComp, eventName, state, city, venue) VALUES ("18-FIM-EK", 5, "East Kentwood District Event", "MI", "East Kentwood", "East Kentwood High School");
-INSERT INTO event (eventID, weekOfComp, eventName, state, city, venue) VALUES ("18-FIM-FH", 6, "Forest Hills District Event", "MI", "Forest Hills", "Forest Hills Central High School");
-INSERT INTO event (eventID, weekOfComp, eventName, state, city, venue) VALUES ("18-FIM-CMP", 7, "Michigan State Championship", "MI", "Saginaw", "Saginaw Valley State University");
+INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ("18-FIM-TC", 1, "Traverse City District Event", "MI", "Traverse City", "Traverse City Central High School");
+INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ("18-FIM-KU2", 2, "Kettering University District Event #2", "MI", "Flint", "Kettering University");
+INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ("18-FIM-GULL", 3, "Gull Lake District Event", "MI", "Richland", "Gull Lake High School");
+INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ("18-FIM-WMI", 4, "West Michigan District Event", "MI", "Allendale", "Grand Valley State University");
+INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ("18-FIM-EK", 5, "East Kentwood District Event", "MI", "East Kentwood", "East Kentwood High School");
+INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ("18-FIM-FH", 6, "Forest Hills District Event", "MI", "Forest Hills", "Forest Hills Central High School");
+INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ("18-FIM-CMP", 7, "Michigan State Championship", "MI", "Saginaw", "Saginaw Valley State University");
 
 INSERT INTO years_active (teamNumber, years) VALUES (1, 22);
 INSERT INTO years_active (teamNumber, years) VALUES (33, 23);
@@ -148,10 +148,10 @@ INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 6
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 1023, true);
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ("18-FIM-FH", 503, true);
 
-INSERT INTO "match" (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E01", "18-FIM-FH", 10, "Quarterfinals 1 Match 1", 387, 398);
-INSERT INTO "match" (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E02", "18-FIM-FH", 11, "Quarterfinals 2 Match 1", 124, 50);
-INSERT INTO "match" (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E03", "18-FIM-FH", 12, "Quarterfinals 3 Match 1", 356, 354);
-INSERT INTO "match" (matchID, eventID, level, matchName, redScore, blueScore) VALUES ("18-FIM-FH-E04", "18-FIM-FH", 13, "Quarterfinals 4 Match 1", 247, 247);
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ("18-FIM-FH-E01", "18-FIM-FH", 10, "Quarterfinals 1 Match 1", 387, 398);
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ("18-FIM-FH-E02", "18-FIM-FH", 11, "Quarterfinals 2 Match 1", 124, 50);
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ("18-FIM-FH-E03", "18-FIM-FH", 12, "Quarterfinals 3 Match 1", 356, 354);
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ("18-FIM-FH-E04", "18-FIM-FH", 13, "Quarterfinals 4 Match 1", 247, 247);
 
 INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ("18-FIM-FH-E01", 1023, "red", 1);
 INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ("18-FIM-FH-E01", 67, "blue", 1);
