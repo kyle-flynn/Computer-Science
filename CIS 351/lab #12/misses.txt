@@ -1,0 +1,12 @@
+output_dl1_16kb_16b:dl1.misses                    55088 # total number of misses
+output_dl1_16kb_32b:dl1.misses                    32857 # total number of misses
+output_dl1_16kb_64b:dl1.misses                    25403 # total number of misses
+output_dl1_16kb_8b:dl1.misses                   103700 # total number of misses
+output_dl1_1kb_16b:dl1.misses                   327904 # total number of misses
+output_dl1_1kb_32b:dl1.misses                   478762 # total number of misses
+output_dl1_1kb_64b:dl1.misses                   741374 # total number of misses
+output_dl1_1kb_8b:dl1.misses                   410036 # total number of misses
+output_dl1_4kb_16b:dl1.misses                   130002 # total number of misses
+output_dl1_4kb_32b:dl1.misses                   134220 # total number of misses
+output_dl1_4kb_64b:dl1.misses                   199499 # total number of misses
+output_dl1_4kb_8b:dl1.misses                   176971 # total number of misses
