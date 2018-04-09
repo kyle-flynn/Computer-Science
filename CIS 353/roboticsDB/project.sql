@@ -17,6 +17,16 @@ DROP TABLE awards CASCADE CONSTRAINTS;
 DROP TABLE years_active CASCADE CONSTRAINTS;
 DROP TABLE registration CASCADE CONSTRAINTS;
 
+CREATE TABLE team (
+  teamNumber  number(4), 
+  teamName    varchar2(30),
+  teamOrigin  varchar2(50),
+  "state"     varchar2(2),
+  city        varchar2(25),
+  CONSTRAINT IC3 CHECK teamName NOT NULL,
+  CONSTRAINT IC4 PRIMARY KEY (teamNumber) NOT NULL
+);
+
 CREATE TABLE district_ranking (
   rankID           number(3) PRIMARY KEY, 
   teamNumber       number(4),
@@ -35,16 +45,6 @@ CREATE TABLE event (
   city       varchar2(25),
   venue      varchar2(40),
   CONSTRAINT IC1 PRIMARY KEY(eventID)
-);
-
-CREATE TABLE team (
-  teamNumber  number(4), 
-  teamName    varchar2(30),
-  teamOrigin  varchar2(50),
-  "state"     varchar2(2),
-  city        varchar2(25),
-  CONSTRAINT IC3 CHECK teamName NOT NULL,
-  CONSTRAINT IC4 PRIMARY KEY (teamNumber) NOT NULL
 );
 
 CREATE TABLE years_active (
