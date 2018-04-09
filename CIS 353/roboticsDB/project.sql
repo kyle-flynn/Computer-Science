@@ -54,11 +54,11 @@ CREATE TABLE registration (
 );
 
 CREATE TABLE awards (
-  awardID     varchar2(20) PRIMARY KEY, 
   eventID     varchar2(15), 
   awardName   varchar2(30), 
   teamNumber  number(4), 
-  points      number(2)
+  points      number(2),
+  PRIMARY KEY(eventID, awardName)
 );
 
 CREATE TABLE "match" (
@@ -122,13 +122,13 @@ INSERT INTO years_active (teamNumber, years) VALUES (3618, 9);
 INSERT INTO years_active (teamNumber, years) VALUES (4003, 8);
 INSERT INTO years_active (teamNumber, years) VALUES (5980, 3);
 
-INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18-FIM-WMI-CHM', '18-FIM-WMI', 'Chairmans Award', 4003, 10);
-INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18-FIM-TC-EI', '18-FIM-EI', 'Engineering Inspiration', 3618, 8);
-INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18-FIM-KU2-IC', '18-FIM-KU2', 'Innovation in Control', 4003, 5);
-INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18-FIM-GULL-CHM', '18-FIM-CHM', 'Chairmans Award', 469, 10);
-INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18-FIM-EK-IC', '18-FIM-EK', 'Innovation in Control', 2767, 5);
-INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18-FIM-FH-WIN', '18-FIM-FH', 'Event Winner', 1023, 20);
-INSERT INTO awards (awardID, eventID, awardName, teamNumber, points) VALUES ('18-FIM-CMP-WIN', '18-FIM-CMP', 'Event Winner', 4003, 60);
+INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-WMI', 'Chairmans Award', 4003, 10);
+INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-EI', 'Engineering Inspiration', 3618, 8);
+INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-KU2', 'Innovation in Control', 4003, 5);
+INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-CHM', 'Chairmans Award', 469, 10);
+INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-EK', 'Innovation in Control', 2767, 5);
+INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-FH', 'Event Winner', 1023, 20);
+INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-CMP', 'Event Winner', 4003, 60);
 
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-TC', 3618, 1);
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-TC', 1918, 1);
