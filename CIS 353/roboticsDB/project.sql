@@ -26,17 +26,17 @@ CREATE TABLE district_ranking (
 
 CREATE TABLE event (
   eventID    varchar(15) PRIMARY KEY, 
-  weekOfComp varchar2(100),
-  eventName  varchar2(100),
+  weekOfComp number(1),
+  eventName  varchar2(40),
   "state"    varchar2(2),
   city       varchar2(25),
-  venue      varchar2(50)
+  venue      varchar2(40)
 );
 
 CREATE TABLE team (
   teamNumber  number(4) PRIMARY KEY, 
-  teamName    varchar2(100),
-  teamOrigin  varchar2(100),
+  teamName    varchar2(30),
+  teamOrigin  varchar2(50),
   "state"     varchar2(2),
   city        varchar2(25)
 );
@@ -55,13 +55,13 @@ CREATE TABLE registration (
 CREATE TABLE awards (
   awardID     varchar2(20) PRIMARY KEY, 
   eventID     varchar2(15), 
-  awardName   varchar2(50), 
+  awardName   varchar2(30), 
   teamNumber  number(4), 
   points      number(2)
 );
 
 CREATE TABLE "match" (
-  matchID     varchar2(20), 
+  matchID     varchar2(20) PRIMARY KEY, 
   eventID     varchar2(15), 
   "level"     number(2),
   matchName   varchar2(25),
