@@ -204,27 +204,70 @@ SELECT m1.matchName, m1.redScore, m1.blueScore, m2.matchName, m2.redScore, m2.bl
 /* Find the highest scoring match for the red alliance, and the highest scoring match for the blue alliance. */		
 		
 --< 4. SUM, AVG, MAX, and/or MIN. >--
-
+/** Find the max, average, and minimum years active of all teams **/
+SELECT MAX(years) AS maxyears, AVG(years) AS averageYears, MIN(years) AS minYears
+FROM   awards;
 
 --< 5. GROUP BY, HAVING, and ORDER BY, all appearing in the same query >--
+/** Select the teamNumber and total number of points for all teams at a match with at least 2 awards and at least 70 points **/
+SELECT t.teamNumber, COUNT(*), SUM(a.points)
+FROM team t, awards a
+WHERE t.teamNumber = a.teamNumber
+GROUP BY t.teamNumber
+HAVING COUNT(*) > 2
+       AND SUM(a.points) >= 70
+       ORDER BY t.teamNumber;
 
 --< 6. A correlated subquery. >--
+/*  Select the teamNumber of teams whose been active more than 10 years with no recent award */
+SELECT y.teamNumber 
+FROM years_active y
+WHERE y.years > 10  AND
+      y.teamNumber NOT IN (SELECT * 
+                           FROM awards a
+                           WHERE a.teamNumber = y.teamNumber);
 
 --< 7. A non-correlated subquery. >--
+SELECT y.teamNumber
+FROM years_active y
+WHERE y.years > 10 AND 
+      y.temNumber NOT IN (SELECT a.teamnumber
+                          FROM awards a);
 
 --< 8. A relational DIVISION query. >--
 
 --< 9. An outer join query.  >--
 		
 --< 10. A RANK query. >--
+/** Find the rank of 140 in the district_ranking table **/
+SELECT RANK(140) WITHIN
+    GROUP (ORDER BY district_points) "Rank"
+    FROM district_ranking;
 
 --< 11. A Top-N query. >--
+/** Find the top 2 youngest groups **/
+SELECT DISTINCT y.years_active
+FROM years_active y
+ORDER BY y.years_active
+ASC FETCH FIRST 2 ROWS ONLY;
 		
 --< The insert/delete/update statements to test the enforcement of ICs >
 /* Include the following items for every IC that you test (Important: see the next section titled
 “Submit a final report” regarding which ICs to test).
  A comment line stating: Testing: < IC name>
  A SQL INSERT, DELETE, or UPDATE that will test the IC. */
+
+--< Testing The Unique Event ID constraint IC1 >--
+INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-TC', 1, 'Traverse City District Event', 'MI', 'Traverse City', 'Traverse City Central High School');
+
+--< Testing the teamNumber must exist constraint IC2 >--
+INSERT INTO district_ranking(rankID, teamNumber, districtPoints, advancedToStates) VALUES(11, 75, 83, 0);
+
+--< Testing constraint IC3 >--
+INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(1, NULL, 'Grand Valley State University', 'MI', 'Allendale');
+
+--< Testing constraint IC4 >--
+INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(NULL, 'The Lakers', 'Grand Valley State University', 'MI', 'Allendale');
 COMMIT;
 --
 SPOOL OFF
