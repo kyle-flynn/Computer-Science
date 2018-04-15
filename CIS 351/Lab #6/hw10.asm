@@ -1,8 +1,4 @@
 main:
-  addi $a0, $0, 3
-  addi $a1, $0, 7
-  addi $a2, $0, 2
-
   j wackySum
 
 wackySum:
@@ -34,7 +30,7 @@ loop:
   div $a1, $a1, 2
   div $a2, $a2, 2
 
-  add $s1, $s1, $v0
+  add $s1, $v0, $0
 
   jal combineFour
 
