@@ -74,8 +74,7 @@ CREATE TABLE "match" (
   matchName   varchar2(25),
   redScore    number(3),
   blueScore   number(3)
-  CONSTRAINT BC5 CHECK (redScore > 0)
-  CONSTRAINT BC6 CHECK (bluescore > 0)
+  CONSTRAINT BC5 CHECK (redScore > 0) AND CHECK (bluescore > 0)
 );
 
 CREATE TABLE match_participant (
@@ -288,10 +287,8 @@ INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(7, NULL
 INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(1, 'The Lakers', 'Grand Valley State University', 'MI', 'Allendale');
 
 --< Testing constraint BC5 redScore must be > 0 >--
-INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 5 Match 1', -7, 398);
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 5 Match 1', -7, -10);
 
---< Testing constraint BC6 blueScore must be > 0 >--
-INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 6 Match 1', 320, -10);
 COMMIT;
 --
 SPOOL OFF
