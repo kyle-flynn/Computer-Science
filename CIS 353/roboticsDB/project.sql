@@ -23,8 +23,8 @@ CREATE TABLE team (
   teamOrigin  varchar2(50),
   "state"     varchar2(2),
   city        varchar2(25),
-  CONSTRAINT has_team_name CHECK (teamName IS NOT NULL),
-  CONSTRAINT team_num_unique PRIMARY KEY (teamNumber)
+  CONSTRAINT BC3 CHECK (teamName IS NOT NULL),
+  CONSTRAINT BC4 PRIMARY KEY (teamNumber)
 );
 
 CREATE TABLE district_ranking (
@@ -32,7 +32,7 @@ CREATE TABLE district_ranking (
   teamNumber       number(4),
   districtPoints   number(3),
   advancedToStates number(1),
-  CONSTRAINT ranking_references_team FOREIGN KEY (teamNumber) REFERENCES team(teamNumber)
+  CONSTRAINT BC2 FOREIGN KEY (teamNumber) REFERENCES team(teamNumber) /* BC2 */
            ON DELETE SET NULL
            DEFERRABLE INITIALLY DEFERRED
 );
@@ -44,7 +44,7 @@ CREATE TABLE event (
   "state"    varchar2(2),
   city       varchar2(25),
   venue      varchar2(40),
-  CONSTRAINT event_id_unique PRIMARY KEY(eventID)
+  CONSTRAINT BC1 PRIMARY KEY(eventID) /* BC1 */
 );
 
 CREATE TABLE years_active (
@@ -74,6 +74,8 @@ CREATE TABLE "match" (
   matchName   varchar2(25),
   redScore    number(3),
   blueScore   number(3)
+  CONSTRAINT BC5 CHECK (redScore > 0)
+  CONSTRAINT BC6 CHECK (bluescore > 0)
 );
 
 CREATE TABLE match_participant (
@@ -273,17 +275,23 @@ SELECT DISTINCT y.years_active
  A comment line stating: Testing: < IC name>
  A SQL INSERT, DELETE, or UPDATE that will test the IC. */
 
---< Testing The Unique Event ID constraint IC1 >--
+--< Testing The Unique Event ID constraint BC1 >--
 INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-TC', 1, 'Traverse City District Event', 'MI', 'Traverse City', 'Traverse City Central High School');
 
---< Testing the teamNumber must exist constraint IC2 >--
+--< Testing the teamNumber must exist constraint BC2 >--
 INSERT INTO district_ranking(rankID, teamNumber, districtPoints, advancedToStates) VALUES(11, 75, 83, 0);
 
---< Testing constraint IC3 >--
-INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(1, NULL, 'Grand Valley State University', 'MI', 'Allendale');
+--< Testing constraint teamName must exist BC3 >--
+INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(7, NULL, 'Grand Valley State University', 'MI', 'Allendale');
 
---< Testing constraint IC4 >--
-INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(NULL, 'The Lakers', 'Grand Valley State University', 'MI', 'Allendale');
+--< Testing constraint teamNumber must be unique BC4 >--
+INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(1, 'The Lakers', 'Grand Valley State University', 'MI', 'Allendale');
+
+--< Testing constraint BC5 redScore must be > 0 >--
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 5 Match 1', -7, 398);
+
+--< Testing constraint BC6 blueScore must be > 0 >--
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 6 Match 1', 320, -10);
 COMMIT;
 --
 SPOOL OFF
