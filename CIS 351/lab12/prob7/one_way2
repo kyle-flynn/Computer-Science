@@ -1,0 +1,67 @@
+sim-cache: SimpleScalar/PISA Tool Set version 3.0 of August, 2003.
+Copyright (c) 1994-2003 by Todd M. Austin, Ph.D. and SimpleScalar, LLC.
+All Rights Reserved. This version of SimpleScalar is licensed for academic
+non-commercial use.  No portion of this work may be used by any commercial
+entity, or for any commercial purpose, without the prior written permission
+of SimpleScalar, LLC (info@simplescalar.com).
+
+Usage: /home/moorejar/public_html/public/CIS351/Executables/Simplescalar/bin/sim-cache {-options} executable {arguments}
+
+sim-cache: This simulator implements a functional cache simulator.  Cache
+statistics are generated for a user-selected cache and TLB configuration,
+which may include up to two levels of instruction and data cache (with any
+levels unified), and one level of instruction and data TLBs.  No timing
+information is generated.
+
+#
+# -option        <args>           #    <default> # description           
+#
+-config          <string>         #       <null> # load configuration from a file
+-dumpconfig      <string>         #       <null> # dump configuration to a file
+-h               <true|false>     #         true # print help message    
+-v               <true|false>     #        false # verbose operation     
+-d               <true|false>     #        false # enable debug message  
+-i               <true|false>     #        false # start in Dlite debugger
+-seed            <int>            #            1 # random number generator seed (0 for timer seed)
+-q               <true|false>     #        false # initialize and terminate immediately
+-chkpt           <string>         #       <null> # restore EIO trace execution from <fname>
+-redir:sim       <string>         #     one_way2 # redirect simulator output to file (non-interactive only)
+-redir:prog      <string>         #    /dev/null # redirect simulated program output to file
+-nice            <int>            #            0 # simulator scheduling priority
+-max:inst        <uint>           #            0 # maximum number of inst's to execute
+-cache:dl1       <string>         #  dl1:8:8:1:l # l1 data cache config, i.e., {<config>|none}
+-cache:dl2       <string>         # ul2:1024:64:4:l # l2 data cache config, i.e., {<config>|none}
+-cache:il1       <string>         # il1:256:32:1:l # l1 inst cache config, i.e., {<config>|dl1|dl2|none}
+-cache:il2       <string>         #          dl2 # l2 instruction cache config, i.e., {<config>|dl2|none}
+-tlb:itlb        <string>         # itlb:16:4096:4:l # instruction TLB config, i.e., {<config>|none}
+-tlb:dtlb        <string>         # dtlb:32:4096:4:l # data TLB config, i.e., {<config>|none}
+-flush           <true|false>     #        false # flush caches on system calls
+-cache:icompress <true|false>     #        false # convert 64-bit inst addresses to 32-bit inst equivalents
+-pcstat          <string list...> #       <null> # profile stat(s) against text addr's (mult uses ok)
+
+  The cache config parameter <config> has the following format:
+
+    <name>:<nsets>:<bsize>:<assoc>:<repl>
+
+    <name>   - name of the cache being defined
+    <nsets>  - number of sets in the cache
+    <bsize>  - block size of the cache
+    <assoc>  - associativity of the cache
+    <repl>   - block replacement strategy, 'l'-LRU, 'f'-FIFO, 'r'-random
+
+    Examples:   -cache:dl1 dl1:4096:32:1:l
+                -dtlb dtlb:128:4096:32:r
+
+  Cache levels can be unified by pointing a level of the instruction cache
+  hierarchy at the data cache hiearchy using the "dl1" and "dl2" cache
+  configuration arguments.  Most sensible combinations are supported, e.g.,
+
+    A unified l2 cache (il2 is pointed at dl2):
+      -cache:il1 il1:128:64:1:l -cache:il2 dl2
+      -cache:dl1 dl1:256:32:1:l -cache:dl2 ul2:1024:64:2:l
+
+    Or, a fully unified cache hierarchy (il1 pointed at dl1):
+      -cache:il1 dl1
+      -cache:dl1 ul1:256:32:1:l -cache:dl2 ul2:1024:64:2:l
+
+
