@@ -235,9 +235,25 @@ WHERE y.years > 10 AND
                           FROM awards a);
 
 --< 8. A relational DIVISION query. >--
+/** For every team that has won an award that is worth more than 10 district points, find their team number, award name, and event the award was given. **/
+SELECT t.teamNumber 
+FROM team t 
+WHERE NOT EXISTS ((SELECT a.eventID
+                   FROM awards a 
+                   WHERE a.points > 10) MINUS (SELECT a.eventID 
+                                            FROM awards a, event e 
+                                            WHERE a.eventID = e.eventID 
+                                                AND a.teamNumber = t.teamNumber 
+                                                AND a.points > 10)) 
+												ORDER BY t.teamNumber;
 
 --< 9. An outer join query.  >--
-		
+/** Find every match's match participants and show the match name, team number, and alliance color. **/
+SELECT m.matchName, mp.teamNumber, mp.alliance 
+	FROM "match" m
+	RIGHT OUTER JOIN match_participant mp
+	ON m.matchID = mp.matchID;
+	
 --< 10. A RANK query. >--
 /** Find the rank of 140 in the district_ranking table **/
 SELECT RANK(140) WITHIN
@@ -245,11 +261,11 @@ SELECT RANK(140) WITHIN
     FROM district_ranking;
 
 --< 11. A Top-N query. >--
-/** Find the top 2 youngest groups **/
+/** Find the top 2 youngest teams **/
 SELECT DISTINCT y.years_active
-FROM years_active y
-ORDER BY y.years_active
-ASC FETCH FIRST 2 ROWS ONLY;
+	FROM years_active y
+	ORDER BY y.years_active
+	ASC FETCH FIRST 2 ROWS ONLY;
 		
 --< The insert/delete/update statements to test the enforcement of ICs >
 /* Include the following items for every IC that you test (Important: see the next section titled
