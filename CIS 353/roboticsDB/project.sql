@@ -74,7 +74,7 @@ CREATE TABLE "match" (
   matchName   varchar2(25),
   redScore    number(3),
   blueScore   number(3),
-  CONSTRAINT BC5 CHECK (redScore > 0) AND CHECK (bluescore > 0)
+  CONSTRAINT BC5 CHECK (redScore > 0 AND blueScore > 0)
 );
 --
 CREATE TABLE match_participant (
@@ -158,7 +158,7 @@ INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 1
 INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 503, 1);
 --
 INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 1 Match 1', 387, 398);
-INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E02', '18-FIM-FH', 11, 'Quarterfinals 2 Match 1', 124, 50);
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E02', '18-FIM-FH', 11, 'Quarterfinals 2 Match 1', 50, 400);
 INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E03', '18-FIM-FH', 12, 'Quarterfinals 3 Match 1', 356, 354);
 INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E04', '18-FIM-FH', 13, 'Quarterfinals 4 Match 1', 247, 247);
 --
@@ -167,6 +167,12 @@ INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('
 --
 INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E02', 33, 'red', 1);
 INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E02', 503, 'blue', 1);
+--
+INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E03', 4003, 'red', 1);
+INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E03', 5980, 'blue', 1);
+--
+INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E04', 1, 'red', 1);
+INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E04', 3618, 'blue', 1);
 /* Important: Keep the number of rows in each table small enough so that the results of your
 queries can be verified by hand. See the Sailors database as an example. */
 SET FEEDBACK ON
@@ -181,13 +187,10 @@ SELECT * FROM awards;
 SELECT * FROM "match";
 SELECT * FROM match_participant;
 --
---< The SQL queries>. Include the following for each query:
-/* 1. A comment line stating the query number and the feature(s) it demonstrates
-(e.g. – Q25 – correlated subquery).
-2. A comment line stating the query in English.
-3. The SQL code for the query. */
+--< The SQL queries>
 --
 --< 1. A join involving at least four relations. >--
+-- Find the team number, years, rank, and award name of every team to win an award at an event.
 SELECT DISTINCT t.teamNumber, y.years, r.rankID, a.awardName 
 	FROM team t, event e, district_ranking r, years_active y, awards a
 	WHERE t.teamNumber = y.teamNumber AND
@@ -195,17 +198,19 @@ SELECT DISTINCT t.teamNumber, y.years, r.rankID, a.awardName
 		t.teamNumber = a.teamNumber
 		ORDER BY r.rankID;
 --< 2. A self-join. >--
-SELECT m1.matchName, m1.redScore, m1.blueScore, m2.matchName, m2.redScore, m2.blueScore
+-- For every match, find the match that has a higher score than current selected match.
+SELECT m1.matchName, m1.redScore, m2.matchName, m2.redScore
 	FROM "match" m1, "match" m2
 	WHERE m1.redScore > m2.redScore;
 --< 3. UNION, INTERSECT, and/or MINUS. >--
-/* Find the highest scoring match for the red alliance, and the highest scoring match for the blue alliance. */		
+-- Find the highest scoring match for the red alliance, and the highest scoring match for the blue alliance.
+SELECT * FROM "match" WHERE redScore=(SELECT MAX(redScore) FROM "match") UNION SELECT * FROM "match" WHERE blueScore=(SELECT MAX(blueScore) FROM "match");
 --< 4. SUM, AVG, MAX, and/or MIN. >--
-/** Find the max, average, and minimum years active of all teams **/
+/* Find the max, average, and minimum years active of all teams **/
 SELECT MAX(years) AS maxyears, AVG(years) AS averageYears, MIN(years) AS minYears
-FROM   awards;
+    FROM years_active;
 --< 5. GROUP BY, HAVING, and ORDER BY, all appearing in the same query >--
-/** Select the teamNumber and total number of points for all teams at a match with at least 2 awards and at least 70 points **/
+-- Select the teamNumber and total number of points for all teams at a match with at least 2 awards and at least 70 points.
 SELECT t.teamNumber, COUNT(*), SUM(a.points)
 FROM team t, awards a
 WHERE t.teamNumber = a.teamNumber
@@ -214,53 +219,52 @@ HAVING COUNT(*) > 2
        AND SUM(a.points) >= 70
        ORDER BY t.teamNumber;
 --< 6. A correlated subquery. >--
-/*  Select the teamNumber of teams whose been active more than 10 years with no recent award */
-SELECT y.teamNumber 
-FROM years_active y
-WHERE y.years > 10  AND
-      y.teamNumber NOT IN (SELECT * 
-                           FROM awards a
-                           WHERE a.teamNumber = y.teamNumber);
---< 7. A non-correlated subquery. >--
+-- Select the teamNumber of teams whose been active more than 10 years and have not won an award.
 SELECT y.teamNumber
-FROM years_active y
-WHERE y.years > 10 AND 
-      y.temNumber NOT IN (SELECT a.teamnumber
-                          FROM awards a);
+    FROM years_active y
+    WHERE y.years > 10  AND 
+	NOT EXISTS (SELECT a.awardName 
+	                FROM awards a
+					WHERE a.teamNumber=y.teamNumber);
+--< 7. A non-correlated subquery. >--
+-- Select the teamNumber of teams whose been active more than 10 years and have not won an award.
+SELECT y.teamNumber
+    FROM years_active y
+    WHERE y.years > 10  AND 
+	      y.teamNumber NOT IN (SELECT a.teamNumber
+	                               FROM awards a);
 --< 8. A relational DIVISION query. >--
-/** For every team that has won an award that is worth more than 10 district points, find their team number, award name, and event the award was given. **/
-SELECT t.teamNumber 
-FROM team t 
-WHERE NOT EXISTS ((SELECT a.eventID
-                   FROM awards a 
-                   WHERE a.points > 10) MINUS (SELECT a.eventID 
-                                            FROM awards a, event e 
-                                            WHERE a.eventID = e.eventID 
-                                                AND a.teamNumber = t.teamNumber 
-                                                AND a.points > 10)) 
-												ORDER BY t.teamNumber;
+-- Find the team number of every team who has won every award called the 'Chairmans Award'. 
+-- (HINT: This query should ALWAYS return 0 rows, because no single team can win every Chairmans Award.)
+SELECT t.teamNumber
+    FROM team t
+	WHERE NOT EXISTS((SELECT a.eventID
+	                  FROM awards a
+					  WHERE a.awardName = 'Chairmans Award')
+					  MINUS
+					 (SELECT a.eventID
+					  FROM event e, awards a
+					  WHERE a.teamNumber = t.teamNumber AND
+					        a.eventID = e.eventID AND
+					        a.awardName = 'Chairmans Award'));
 --< 9. An outer join query.  >--
-/** Find every match's match participants and show the match name, team number, and alliance color. **/
+-- Find every match's match participants and show the match name, team number, and alliance color.
 SELECT m.matchName, mp.teamNumber, mp.alliance 
-	FROM "match" m
-	RIGHT OUTER JOIN match_participant mp
-	ON m.matchID = mp.matchID;
+	FROM match_participant mp
+	RIGHT OUTER JOIN "match" m
+	ON mp.matchID=m.matchID;
 --< 10. A RANK query. >--
-/** Find the rank of 140 in the district_ranking table **/
+-- Find the rank of 140 in the district_ranking table.
 SELECT RANK(140) WITHIN
-    GROUP (ORDER BY district_points) "Rank"
+    GROUP (ORDER BY districtPoints) "Rank"
     FROM district_ranking;
 --< 11. A Top-N query. >--
-/** Find the top 2 youngest teams **/
-SELECT DISTINCT y.years_active
+-- Find the top 2 youngest teams.
+SELECT DISTINCT y.years
 	FROM years_active y
-	ORDER BY y.years_active
+	ORDER BY y.years
 	ASC FETCH FIRST 2 ROWS ONLY;
 --< The insert/delete/update statements to test the enforcement of ICs >
-/* Include the following items for every IC that you test (Important: see the next section titled
-“Submit a final report” regarding which ICs to test).
- A comment line stating: Testing: < IC name>
- A SQL INSERT, DELETE, or UPDATE that will test the IC. */
 --
 --< Testing The Unique Event ID constraint BC1 >--
 INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-TC', 1, 'Traverse City District Event', 'MI', 'Traverse City', 'Traverse City Central High School');

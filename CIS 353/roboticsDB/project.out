@@ -1,0 +1,687 @@
+SQL> SET ECHO ON
+SQL> SET DEFINE OFF
+SQL> /*
+SQL> CIS 353 - Database Design Project
+SQL> Jarrod Parr
+SQL> Kyle Flynn
+SQL> Brendon Caywoood
+SQL> Santiago Quirogas
+SQL> */
+SQL> DROP TABLE district_ranking CASCADE CONSTRAINTS;
+
+Table dropped.
+
+SQL> DROP TABLE team CASCADE CONSTRAINTS;
+
+Table dropped.
+
+SQL> DROP TABLE event CASCADE CONSTRAINTS;
+
+Table dropped.
+
+SQL> DROP TABLE "match" CASCADE CONSTRAINTS;
+
+Table dropped.
+
+SQL> DROP TABLE match_participant CASCADE CONSTRAINTS;
+
+Table dropped.
+
+SQL> DROP TABLE awards CASCADE CONSTRAINTS;
+
+Table dropped.
+
+SQL> DROP TABLE years_active CASCADE CONSTRAINTS;
+
+Table dropped.
+
+SQL> DROP TABLE registration CASCADE CONSTRAINTS;
+
+Table dropped.
+
+SQL> --
+SQL> CREATE TABLE team (
+  2    teamNumber  number(4),
+  3    teamName    varchar2(30),
+  4    teamOrigin  varchar2(50),
+  5    "state"	   varchar2(2),
+  6    city	   varchar2(25),
+  7    CONSTRAINT BC3 CHECK (teamName IS NOT NULL),
+  8    CONSTRAINT BC4 PRIMARY KEY (teamNumber)
+  9  );
+
+Table created.
+
+SQL> --
+SQL> CREATE TABLE district_ranking (
+  2    rankID		number(3) PRIMARY KEY,
+  3    teamNumber	number(4),
+  4    districtPoints	number(3),
+  5    advancedToStates number(1),
+  6    CONSTRAINT BC2 FOREIGN KEY (teamNumber) REFERENCES team(teamNumber) /* BC2 */
+  7  		ON DELETE SET NULL
+  8  		DEFERRABLE INITIALLY DEFERRED
+  9  );
+
+Table created.
+
+SQL> --
+SQL> CREATE TABLE event (
+  2    eventID	  varchar(15),
+  3    weekOfComp number(1),
+  4    eventName  varchar2(40),
+  5    "state"	  varchar2(2),
+  6    city	  varchar2(25),
+  7    venue	  varchar2(40),
+  8    CONSTRAINT BC1 PRIMARY KEY(eventID) /* BC1 */
+  9  );
+
+Table created.
+
+SQL> --
+SQL> CREATE TABLE years_active (
+  2    teamNumber  number(4) PRIMARY KEY,
+  3    years	   number(2)
+  4  );
+
+Table created.
+
+SQL> --
+SQL> CREATE TABLE registration (
+  2    eventID	   varchar2(15),
+  3    teamNumber  number(4),
+  4    didPayFee   number(1),
+  5    PRIMARY KEY(eventID, teamNumber)
+  6  );
+
+Table created.
+
+SQL> --
+SQL> CREATE TABLE awards (
+  2    eventID	   varchar2(15),
+  3    awardName   varchar2(30),
+  4    teamNumber  number(4),
+  5    points	   number(2),
+  6    PRIMARY KEY(eventID, awardName)
+  7  );
+
+Table created.
+
+SQL> --
+SQL> CREATE TABLE "match" (
+  2    matchID	   varchar2(20) PRIMARY KEY,
+  3    eventID	   varchar2(15),
+  4    "level"	   number(2),
+  5    matchName   varchar2(25),
+  6    redScore    number(3),
+  7    blueScore   number(3),
+  8    CONSTRAINT BC5 CHECK (redScore > 0 AND blueScore > 0)
+  9  );
+
+Table created.
+
+SQL> --
+SQL> CREATE TABLE match_participant (
+  2    matchID	   varchar2(20),
+  3    teamNumber  number(4),
+  4    alliance    varchar2(4),
+  5    didShow	   number(1),
+  6    PRIMARY KEY(matchID, teamNumber)
+  7  );
+
+Table created.
+
+SQL> --
+SQL> /* In the DDL, every IC must have a unique name; e.g. IC5, IC10, IC15, etc. */
+SQL> --
+SQL> SET FEEDBACK OFF
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city)VALUES (1, 'The Juggernauts', 'Molex & Oakland Schools', 'MI', 'Pontiac');
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (33, 'Killer Bees', 'Notre Dame Preparatory', 'MI', 'Auburn Hills');
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (67, 'The HOT Team', 'Huron Valley Schools', 'MI', 'Highland');
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (469, 'Las Guerrillas', 'Gormans Gallery & International Academy', 'MI', 'Bloomfield Hills');
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (1023, 'Bedford Express', 'Bedford Senior High School', 'MI', 'Bedford');
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (1918, 'NC Gears', 'Newaygo County', 'MI', 'Fremont');
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (2767, 'Stryke Force', 'Kalamazoo County', 'MI', 'Kalamazoo');
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (3618, 'Petoskey Paladins', 'Petoskey High School', 'MI', 'Petoskey');
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (4003, 'TriSonics', 'Allendale & Jenison Schools', 'MI', 'Allendale');
+SQL> INSERT INTO team (teamNumber, teamName, teamOrigin, "state", city) VALUES (5980, 'East Grand Rapids Robotics', 'East Grand Rapids High School', 'MI', 'Grand Rapids');
+SQL> --
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (1, 4003, 147, 1);
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (2, 2767, 146, 0);
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (3, 1918, 142, 0);
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (4, 33, 140, 0);
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (5, 67, 139, 0);
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (6, 1023, 137, 0);
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (7, 5980, 130, 0);
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (8, 3618, 100, 1);
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (9, 1, 82, 0);
+SQL> INSERT INTO district_ranking (rankID, teamNumber, districtPoints, advancedToStates) VALUES (10, 469, 79, 0);
+SQL> --
+SQL> INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-TC', 1, 'Traverse City District Event', 'MI', 'Traverse City', 'Traverse City Central High School');
+SQL> INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-KU2', 2, 'Kettering University District Event #2', 'MI', 'Flint', 'Kettering University');
+SQL> INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-GULL', 3, 'Gull Lake District Event', 'MI', 'Richland', 'Gull Lake High School');
+SQL> INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-WMI', 4, 'West Michigan District Event', 'MI', 'Allendale', 'Grand Valley State University');
+SQL> INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-EK', 5, 'East Kentwood District Event', 'MI', 'East Kentwood', 'East Kentwood High School');
+SQL> INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-FH', 6, 'Forest Hills District Event', 'MI', 'Forest Hills', 'Forest Hills Central High School');
+SQL> INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-CMP', 7, 'Michigan State Championship', 'MI', 'Saginaw', 'Saginaw Valley State University');
+SQL> --
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (1, 22);
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (33, 23);
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (67, 22);
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (469, 19);
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (1023, 16);
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (1918, 13);
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (2767, 10);
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (3618, 9);
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (4003, 8);
+SQL> INSERT INTO years_active (teamNumber, years) VALUES (5980, 3);
+SQL> --
+SQL> INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-WMI', 'Chairmans Award', 4003, 10);
+SQL> INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-EI', 'Engineering Inspiration', 3618, 8);
+SQL> INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-KU2', 'Innovation in Control', 4003, 5);
+SQL> INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-CHM', 'Chairmans Award', 469, 10);
+SQL> INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-EK', 'Innovation in Control', 2767, 5);
+SQL> INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-FH', 'Event Winner', 1023, 20);
+SQL> INSERT INTO awards (eventID, awardName, teamNumber, points) VALUES ('18-FIM-CMP', 'Event Winner', 4003, 60);
+SQL> --
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-TC', 3618, 1);
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-TC', 1918, 1);
+SQL> --
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-KU2', 4003, 1);
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-KU2', 469, 1);
+SQL> --
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-GULL', 3618, 1);
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-GULL', 469, 1);
+SQL> --
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-WMI', 4003, 1);
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-WMI', 5980, 1);
+SQL> --
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-EK', 2767, 1);
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-EK', 1, 1);
+SQL> --
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 33, 1);
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 67, 1);
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 1023, 1);
+SQL> INSERT INTO registration (eventID, teamNumber, didPayFee) VALUES ('18-FIM-FH', 503, 1);
+SQL> --
+SQL> INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 1 Match 1', 387, 398);
+SQL> INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E02', '18-FIM-FH', 11, 'Quarterfinals 2 Match 1', 50, 400);
+SQL> INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E03', '18-FIM-FH', 12, 'Quarterfinals 3 Match 1', 356, 354);
+SQL> INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E04', '18-FIM-FH', 13, 'Quarterfinals 4 Match 1', 247, 247);
+SQL> --
+SQL> INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E01', 1023, 'red', 1);
+SQL> INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E01', 67, 'blue', 1);
+SQL> --
+SQL> INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E02', 33, 'red', 1);
+SQL> INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E02', 503, 'blue', 1);
+SQL> --
+SQL> INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E03', 4003, 'red', 1);
+SQL> INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E03', 5980, 'blue', 1);
+SQL> --
+SQL> INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E04', 1, 'red', 1);
+SQL> INSERT INTO match_participant (matchID, teamNumber, alliance, didShow) VALUES ('18-FIM-FH-E04', 3618, 'blue', 1);
+SQL> /* Important: Keep the number of rows in each table small enough so that the results of your
+SQL> queries can be verified by hand. See the Sailors database as an example. */
+SQL> SET FEEDBACK ON
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> --
+SQL> SELECT * FROM team;
+
+TEAMNUMBER TEAMNAME                                                             
+---------- ------------------------------                                       
+TEAMORIGIN                                         st CITY                      
+-------------------------------------------------- -- ------------------------- 
+         1 The Juggernauts                                                      
+Molex & Oakland Schools                            MI Pontiac                   
+                                                                                
+        33 Killer Bees                                                          
+Notre Dame Preparatory                             MI Auburn Hills              
+                                                                                
+        67 The HOT Team                                                         
+Huron Valley Schools                               MI Highland                  
+                                                                                
+
+TEAMNUMBER TEAMNAME                                                             
+---------- ------------------------------                                       
+TEAMORIGIN                                         st CITY                      
+-------------------------------------------------- -- ------------------------- 
+       469 Las Guerrillas                                                       
+Gormans Gallery & International Academy            MI Bloomfield Hills          
+                                                                                
+      1023 Bedford Express                                                      
+Bedford Senior High School                         MI Bedford                   
+                                                                                
+      1918 NC Gears                                                             
+Newaygo County                                     MI Fremont                   
+                                                                                
+
+TEAMNUMBER TEAMNAME                                                             
+---------- ------------------------------                                       
+TEAMORIGIN                                         st CITY                      
+-------------------------------------------------- -- ------------------------- 
+      2767 Stryke Force                                                         
+Kalamazoo County                                   MI Kalamazoo                 
+                                                                                
+      3618 Petoskey Paladins                                                    
+Petoskey High School                               MI Petoskey                  
+                                                                                
+      4003 TriSonics                                                            
+Allendale & Jenison Schools                        MI Allendale                 
+                                                                                
+
+TEAMNUMBER TEAMNAME                                                             
+---------- ------------------------------                                       
+TEAMORIGIN                                         st CITY                      
+-------------------------------------------------- -- ------------------------- 
+      5980 East Grand Rapids Robotics                                           
+East Grand Rapids High School                      MI Grand Rapids              
+                                                                                
+
+10 rows selected.
+
+SQL> SELECT * FROM years_active;
+
+TEAMNUMBER      YEARS                                                           
+---------- ----------                                                           
+         1         22                                                           
+        33         23                                                           
+        67         22                                                           
+       469         19                                                           
+      1023         16                                                           
+      1918         13                                                           
+      2767         10                                                           
+      3618          9                                                           
+      4003          8                                                           
+      5980          3                                                           
+
+10 rows selected.
+
+SQL> SELECT * FROM event;
+
+EVENTID         WEEKOFCOMP EVENTNAME                                st          
+--------------- ---------- ---------------------------------------- --          
+CITY                      VENUE                                                 
+------------------------- ----------------------------------------              
+18-FIM-TC                1 Traverse City District Event             MI          
+Traverse City             Traverse City Central High School                     
+                                                                                
+18-FIM-KU2               2 Kettering University District Event #2   MI          
+Flint                     Kettering University                                  
+                                                                                
+18-FIM-GULL              3 Gull Lake District Event                 MI          
+Richland                  Gull Lake High School                                 
+                                                                                
+
+EVENTID         WEEKOFCOMP EVENTNAME                                st          
+--------------- ---------- ---------------------------------------- --          
+CITY                      VENUE                                                 
+------------------------- ----------------------------------------              
+18-FIM-WMI               4 West Michigan District Event             MI          
+Allendale                 Grand Valley State University                         
+                                                                                
+18-FIM-EK                5 East Kentwood District Event             MI          
+East Kentwood             East Kentwood High School                             
+                                                                                
+18-FIM-FH                6 Forest Hills District Event              MI          
+Forest Hills              Forest Hills Central High School                      
+                                                                                
+
+EVENTID         WEEKOFCOMP EVENTNAME                                st          
+--------------- ---------- ---------------------------------------- --          
+CITY                      VENUE                                                 
+------------------------- ----------------------------------------              
+18-FIM-CMP               7 Michigan State Championship              MI          
+Saginaw                   Saginaw Valley State University                       
+                                                                                
+
+7 rows selected.
+
+SQL> SELECT * FROM district_ranking;
+
+    RANKID TEAMNUMBER DISTRICTPOINTS ADVANCEDTOSTATES                           
+---------- ---------- -------------- ----------------                           
+         1       4003            147                1                           
+         2       2767            146                0                           
+         3       1918            142                0                           
+         4         33            140                0                           
+         5         67            139                0                           
+         6       1023            137                0                           
+         7       5980            130                0                           
+         8       3618            100                1                           
+         9          1             82                0                           
+        10        469             79                0                           
+
+10 rows selected.
+
+SQL> SELECT * FROM registration;
+
+EVENTID         TEAMNUMBER  DIDPAYFEE                                           
+--------------- ---------- ----------                                           
+18-FIM-TC             3618          1                                           
+18-FIM-TC             1918          1                                           
+18-FIM-KU2            4003          1                                           
+18-FIM-KU2             469          1                                           
+18-FIM-GULL           3618          1                                           
+18-FIM-GULL            469          1                                           
+18-FIM-WMI            4003          1                                           
+18-FIM-WMI            5980          1                                           
+18-FIM-EK             2767          1                                           
+18-FIM-EK                1          1                                           
+18-FIM-FH               33          1                                           
+
+EVENTID         TEAMNUMBER  DIDPAYFEE                                           
+--------------- ---------- ----------                                           
+18-FIM-FH               67          1                                           
+18-FIM-FH             1023          1                                           
+18-FIM-FH              503          1                                           
+
+14 rows selected.
+
+SQL> SELECT * FROM awards;
+
+EVENTID         AWARDNAME                      TEAMNUMBER     POINTS            
+--------------- ------------------------------ ---------- ----------            
+18-FIM-WMI      Chairmans Award                      4003         10            
+18-FIM-EI       Engineering Inspiration              3618          8            
+18-FIM-KU2      Innovation in Control                4003          5            
+18-FIM-CHM      Chairmans Award                       469         10            
+18-FIM-EK       Innovation in Control                2767          5            
+18-FIM-FH       Event Winner                         1023         20            
+18-FIM-CMP      Event Winner                         4003         60            
+
+7 rows selected.
+
+SQL> SELECT * FROM "match";
+
+MATCHID              EVENTID              level MATCHNAME                       
+-------------------- --------------- ---------- -------------------------       
+  REDSCORE  BLUESCORE                                                           
+---------- ----------                                                           
+18-FIM-FH-E01        18-FIM-FH               10 Quarterfinals 1 Match 1         
+       387        398                                                           
+                                                                                
+18-FIM-FH-E02        18-FIM-FH               11 Quarterfinals 2 Match 1         
+        50        400                                                           
+                                                                                
+18-FIM-FH-E03        18-FIM-FH               12 Quarterfinals 3 Match 1         
+       356        354                                                           
+                                                                                
+
+MATCHID              EVENTID              level MATCHNAME                       
+-------------------- --------------- ---------- -------------------------       
+  REDSCORE  BLUESCORE                                                           
+---------- ----------                                                           
+18-FIM-FH-E04        18-FIM-FH               13 Quarterfinals 4 Match 1         
+       247        247                                                           
+                                                                                
+
+4 rows selected.
+
+SQL> SELECT * FROM match_participant;
+
+MATCHID              TEAMNUMBER ALLI    DIDSHOW                                 
+-------------------- ---------- ---- ----------                                 
+18-FIM-FH-E01              1023 red           1                                 
+18-FIM-FH-E01                67 blue          1                                 
+18-FIM-FH-E02                33 red           1                                 
+18-FIM-FH-E02               503 blue          1                                 
+18-FIM-FH-E03              4003 red           1                                 
+18-FIM-FH-E03              5980 blue          1                                 
+18-FIM-FH-E04                 1 red           1                                 
+18-FIM-FH-E04              3618 blue          1                                 
+
+8 rows selected.
+
+SQL> --
+SQL> --< The SQL queries>
+SQL> --
+SQL> --< 1. A join involving at least four relations. >--
+SQL> -- Find the team number, years, rank, and award name of every team to win an award at an event.
+SQL> SELECT DISTINCT t.teamNumber, y.years, r.rankID, a.awardName
+  2  	     FROM team t, event e, district_ranking r, years_active y, awards a
+  3  	     WHERE t.teamNumber = y.teamNumber AND
+  4  		     t.teamNumber = r.teamNumber AND
+  5  		     t.teamNumber = a.teamNumber
+  6  		     ORDER BY r.rankID;
+
+TEAMNUMBER      YEARS     RANKID AWARDNAME                                      
+---------- ---------- ---------- ------------------------------                 
+      4003          8          1 Chairmans Award                                
+      4003          8          1 Event Winner                                   
+      4003          8          1 Innovation in Control                          
+      2767         10          2 Innovation in Control                          
+      1023         16          6 Event Winner                                   
+      3618          9          8 Engineering Inspiration                        
+       469         19         10 Chairmans Award                                
+
+7 rows selected.
+
+SQL> --< 2. A self-join. >--
+SQL> -- For every match, find the match that has a higher score than current selected match.
+SQL> SELECT m1.matchName, m1.redScore, m2.matchName, m2.redScore
+  2  	     FROM "match" m1, "match" m2
+  3  	     WHERE m1.redScore > m2.redScore;
+
+MATCHNAME                   REDSCORE MATCHNAME                   REDSCORE       
+------------------------- ---------- ------------------------- ----------       
+Quarterfinals 1 Match 1          387 Quarterfinals 3 Match 1          356       
+Quarterfinals 1 Match 1          387 Quarterfinals 4 Match 1          247       
+Quarterfinals 1 Match 1          387 Quarterfinals 2 Match 1           50       
+Quarterfinals 3 Match 1          356 Quarterfinals 4 Match 1          247       
+Quarterfinals 3 Match 1          356 Quarterfinals 2 Match 1           50       
+Quarterfinals 4 Match 1          247 Quarterfinals 2 Match 1           50       
+
+6 rows selected.
+
+SQL> --< 3. UNION, INTERSECT, and/or MINUS. >--
+SQL> -- Find the highest scoring match for the red alliance, and the highest scoring match for the blue alliance.
+SQL> SELECT * FROM "match" WHERE redScore=(SELECT MAX(redScore) FROM "match") UNION SELECT * FROM "match" WHERE blueScore=(SELECT MAX(blueScore) FROM "match");
+
+MATCHID              EVENTID              level MATCHNAME                       
+-------------------- --------------- ---------- -------------------------       
+  REDSCORE  BLUESCORE                                                           
+---------- ----------                                                           
+18-FIM-FH-E01        18-FIM-FH               10 Quarterfinals 1 Match 1         
+       387        398                                                           
+                                                                                
+18-FIM-FH-E02        18-FIM-FH               11 Quarterfinals 2 Match 1         
+        50        400                                                           
+                                                                                
+
+2 rows selected.
+
+SQL> --< 4. SUM, AVG, MAX, and/or MIN. >--
+SQL> /* Find the max, average, and minimum years active of all teams **/
+SQL> SELECT MAX(years) AS maxyears, AVG(years) AS averageYears, MIN(years) AS minYears
+  2  	 FROM years_active;
+
+  MAXYEARS AVERAGEYEARS   MINYEARS                                              
+---------- ------------ ----------                                              
+        23         14.5          3                                              
+
+1 row selected.
+
+SQL> --< 5. GROUP BY, HAVING, and ORDER BY, all appearing in the same query >--
+SQL> -- Select the teamNumber and total number of points for all teams at a match with at least 2 awards and at least 70 points.
+SQL> SELECT t.teamNumber, COUNT(*), SUM(a.points)
+  2  FROM team t, awards a
+  3  WHERE t.teamNumber = a.teamNumber
+  4  GROUP BY t.teamNumber
+  5  HAVING COUNT(*) > 2
+  6  	    AND SUM(a.points) >= 70
+  7  	    ORDER BY t.teamNumber;
+
+TEAMNUMBER   COUNT(*) SUM(A.POINTS)                                             
+---------- ---------- -------------                                             
+      4003          3            75                                             
+
+1 row selected.
+
+SQL> --< 6. A correlated subquery. >--
+SQL> -- Select the teamNumber of teams whose been active more than 10 years and have not won an award.
+SQL> SELECT y.teamNumber
+  2  	 FROM years_active y
+  3  	 WHERE y.years > 10  AND
+  4  	     NOT EXISTS (SELECT a.awardName
+  5  			     FROM awards a
+  6  					     WHERE a.teamNumber=y.teamNumber);
+
+TEAMNUMBER                                                                      
+----------                                                                      
+      1918                                                                      
+        33                                                                      
+         1                                                                      
+        67                                                                      
+
+4 rows selected.
+
+SQL> --< 7. A non-correlated subquery. >--
+SQL> -- Select the teamNumber of teams whose been active more than 10 years and have not won an award.
+SQL> SELECT y.teamNumber
+  2  	 FROM years_active y
+  3  	 WHERE y.years > 10  AND
+  4  		   y.teamNumber NOT IN (SELECT a.teamNumber
+  5  					    FROM awards a);
+
+TEAMNUMBER                                                                      
+----------                                                                      
+      1918                                                                      
+        33                                                                      
+         1                                                                      
+        67                                                                      
+
+4 rows selected.
+
+SQL> --< 8. A relational DIVISION query. >--
+SQL> -- Find the team number of every team who has won every award called the 'Chairmans Award'.
+SQL> -- (HINT: This query should ALWAYS return 0 rows, because no single team can win every Chairmans Award.)
+SQL> SELECT t.teamNumber
+  2  	 FROM team t
+  3  	     WHERE NOT EXISTS((SELECT a.eventID
+  4  			       FROM awards a
+  5  					       WHERE a.awardName = 'Chairmans Award')
+  6  					       MINUS
+  7  					      (SELECT a.eventID
+  8  					       FROM event e, awards a
+  9  					       WHERE a.teamNumber = t.teamNumber AND
+ 10  						     a.eventID = e.eventID AND
+ 11  						     a.awardName = 'Chairmans Award'));
+
+no rows selected
+
+SQL> --< 9. An outer join query.  >--
+SQL> -- Find every match's match participants and show the match name, team number, and alliance color.
+SQL> SELECT m.matchName, mp.teamNumber, mp.alliance
+  2  	     FROM match_participant mp
+  3  	     RIGHT OUTER JOIN "match" m
+  4  	     ON mp.matchID=m.matchID;
+
+MATCHNAME                 TEAMNUMBER ALLI                                       
+------------------------- ---------- ----                                       
+Quarterfinals 1 Match 1         1023 red                                        
+Quarterfinals 1 Match 1           67 blue                                       
+Quarterfinals 2 Match 1           33 red                                        
+Quarterfinals 2 Match 1          503 blue                                       
+Quarterfinals 3 Match 1         4003 red                                        
+Quarterfinals 3 Match 1         5980 blue                                       
+Quarterfinals 4 Match 1            1 red                                        
+Quarterfinals 4 Match 1         3618 blue                                       
+
+8 rows selected.
+
+SQL> --< 10. A RANK query. >--
+SQL> -- Find the rank of 140 in the district_ranking table.
+SQL> SELECT RANK(140) WITHIN
+  2  	 GROUP (ORDER BY districtPoints) "Rank"
+  3  	 FROM district_ranking;
+
+      Rank                                                                      
+----------                                                                      
+         7                                                                      
+
+1 row selected.
+
+SQL> --< 11. A Top-N query. >--
+SQL> -- Find the top 2 youngest teams.
+SQL> SELECT DISTINCT y.years
+  2  	     FROM years_active y
+  3  	     ORDER BY y.years
+  4  	     ASC FETCH FIRST 2 ROWS ONLY;
+
+     YEARS                                                                      
+----------                                                                      
+         3                                                                      
+         8                                                                      
+
+2 rows selected.
+
+SQL> --< The insert/delete/update statements to test the enforcement of ICs >
+SQL> --
+SQL> --< Testing The Unique Event ID constraint BC1 >--
+SQL> INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-TC', 1, 'Traverse City District Event', 'MI', 'Traverse City', 'Traverse City Central High School');
+INSERT INTO event (eventID, weekOfComp, eventName, "state", city, venue) VALUES ('18-FIM-TC', 1, 'Traverse City District Event', 'MI', 'Traverse City', 'Traverse City Central High School')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (FLYNNKY.BC1) violated 
+
+
+SQL> --
+SQL> --< Testing the teamNumber must exist constraint BC2 >--
+SQL> INSERT INTO district_ranking(rankID, teamNumber, districtPoints, advancedToStates) VALUES(11, 75, 83, 0);
+
+1 row created.
+
+SQL> --
+SQL> --< Testing constraint teamName must exist BC3 >--
+SQL> INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(7, NULL, 'Grand Valley State University', 'MI', 'Allendale');
+INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(7, NULL, 'Grand Valley State University', 'MI', 'Allendale')
+*
+ERROR at line 1:
+ORA-02290: check constraint (FLYNNKY.BC3) violated 
+
+
+SQL> --
+SQL> --< Testing constraint teamNumber must be unique BC4 >--
+SQL> INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(1, 'The Lakers', 'Grand Valley State University', 'MI', 'Allendale');
+INSERT INTO team(teamNumber, teamName, teamOrigin, "state", city) VALUES(1, 'The Lakers', 'Grand Valley State University', 'MI', 'Allendale')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (FLYNNKY.BC4) violated 
+
+
+SQL> --
+SQL> --< Testing constraint BC5 redScore and blueScore must be > 0 >--
+SQL> INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 5 Match 1', -7, 398);
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 5 Match 1', -7, 398)
+*
+ERROR at line 1:
+ORA-02290: check constraint (FLYNNKY.BC5) violated 
+
+
+SQL> INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 6 Match 1', 320, -10);
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 6 Match 1', 320, -10)
+*
+ERROR at line 1:
+ORA-02290: check constraint (FLYNNKY.BC5) violated 
+
+
+SQL> INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 5 Match 1', -7, -10);
+INSERT INTO "match" (matchID, eventID, "level", matchName, redScore, blueScore) VALUES ('18-FIM-FH-E01', '18-FIM-FH', 10, 'Quarterfinals 5 Match 1', -7, -10)
+*
+ERROR at line 1:
+ORA-02290: check constraint (FLYNNKY.BC5) violated 
+
+
+SQL> COMMIT;
+COMMIT
+*
+ERROR at line 1:
+ORA-02091: transaction rolled back 
+ORA-02291: integrity constraint (FLYNNKY.BC2) violated - parent key not found 
+
+
+SQL> --
+SQL> SPOOL OFF
