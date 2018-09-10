@@ -1,0 +1,6 @@
+qsort_8192_8_16_l:dl1.miss_rate                0.0129 # miss rate (i.e., misses/ref)
+qsort_8192_8_1_l:dl1.miss_rate                0.0142 # miss rate (i.e., misses/ref)
+qsort_8192_8_2_l:dl1.miss_rate                0.0123 # miss rate (i.e., misses/ref)
+qsort_8192_8_4_l:dl1.miss_rate                0.0125 # miss rate (i.e., misses/ref)
+qsort_8192_8_8192_l:dl1.miss_rate                0.0049 # miss rate (i.e., misses/ref)
+qsort_8192_8_8_l:dl1.miss_rate                0.0128 # miss rate (i.e., misses/ref)

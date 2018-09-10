@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.c
+file_utils.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.h
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.h
+
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/reverse.c
+stdio.h
+-
+stdlib.h
+-
+file_utils.h
+C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.h
+
