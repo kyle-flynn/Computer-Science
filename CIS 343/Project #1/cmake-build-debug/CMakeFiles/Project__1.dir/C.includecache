@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,17 +6,25 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.c
+/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.c
 file_utils.h
-C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.h
+/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.h
 
-C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.h
+/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+errno.h
+-
 
-C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/reverse.c
+/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/reverse.c
 stdio.h
 -
 stdlib.h
 -
 file_utils.h
-C:/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.h
+/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 343/Project #1/file_utils.h
 

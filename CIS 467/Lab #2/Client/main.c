@@ -55,7 +55,6 @@ int main(int argc, char** argv) {
 
     char* newlineChar = strchr(line, '\n');
     *newlineChar = '\0';
-
     send(socketFileDescriptor, line, strlen(line) + 1, 0);
     recv(socketFileDescriptor, line2, 5000, 0);
     printf("Server Response: %s\n", line2);
