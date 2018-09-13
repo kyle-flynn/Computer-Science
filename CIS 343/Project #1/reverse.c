@@ -11,7 +11,7 @@ size_t get_fsize(const char* filename) {
     FILE* file = fopen(filename, "r");
 
     if (file == NULL) {
-        printf("There was an error analyzing the given filename's size.");
+        printf("There was an error analyzing the given filename's size.\n");
         return 0;
     }
 
