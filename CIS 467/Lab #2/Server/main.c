@@ -13,11 +13,11 @@ int queryPort() {
     return atoi(port);
 }
 
-int readFile(char* location, char* contents) {
+char* readFile(char* location) {
     FILE *f = fopen(location, "r");
     if (f == NULL) {
         printf("File [%s] does not exist.\n", location);
-        return -1;
+        return "";
     }
 
     fseek(f, 0L, SEEK_END);
@@ -31,10 +31,8 @@ int readFile(char* location, char* contents) {
 
     printf("Buffer: %s\n", buffer);
 
-    strcpy(contents, buffer);
-
     fclose(f);
-    return 0;
+    return buffer;
 }
 
 int main(int argc, char** argv) {
@@ -71,13 +69,12 @@ int main(int argc, char** argv) {
         recv(clientSocket, line, 5000, 0);
         printf("Client file request: %s\n", line);
 
-        char* contents = (char*) malloc(sizeof(char*));
-        int result = readFile(line, contents);
-        if (result < 0) {
-            char response[5000] = "Error: File does not exist.";
+        char* result = readFile(line);
+        if (strlen(result) <= 0) {
+            char* response = "Error: File does not exist.";
             send(clientSocket, response, strlen(response) + 1, 0);
         } else {
-            send(clientSocket, contents, strlen(contents) + 1, 0);
+            send(clientSocket, result, strlen(result) + 1, 0);
         }
 
         close(clientSocket);
