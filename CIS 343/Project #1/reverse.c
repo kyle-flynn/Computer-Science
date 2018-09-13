@@ -3,6 +3,30 @@
 #include "file_utils.h"
 
 /**
+ * The following helper method returns the size (in bytes) of a given filename.
+ *
+ * @param {char*} filename - The location of the file.
+ */
+size_t get_fsize(const char* filename) {
+    FILE* file = fopen(filename, "r");
+
+    if (file == NULL) {
+        printf("There was an error analyzing the given filename's size.");
+        return 0;
+    }
+
+    /*
+     * Instead of using sys/stat.h, stdio.h provides a seek method that does roughly the same thing. I could've made
+     * my life easier and used the provided code, but I wanted to be different and found this all by myself in the C
+     * documentation. Yay me.
+     */
+    fseek(file, 0L, SEEK_END);
+    size_t size = (size_t) ftell(file);
+    fseek(file, 0L, SEEK_SET);
+    return size;
+}
+
+/**
  * The following helper method reverses a given string into a destination string.
  *
  * @param {char*} src - The source string.
@@ -45,19 +69,19 @@ int main(int argc, char** argv) {
         char* read_loc = argv[1];
         char* write_loc = argv[2];
 
-        // Dynamically allocating memory for our buffer, and getting the response code from our read_file method.
-        char **buffer = (char**) malloc(sizeof(char**));
-        int read_response = read_file(read_loc, buffer);
-
+        // Dynamically allocating memory for our variables based on file size.
+        size_t size = get_fsize(read_loc);
+        char* buffer = (char*)malloc(size * sizeof(char));
+        char* reversed_str = (char*)malloc(size * sizeof(char));
+        int read_response = read_file(read_loc, &buffer);
         if (read_response != EXIT_SUCCESS) {
             printf("There was an error reading the file. Error code " + read_response);
             return read_response;
         }
 
         // Reversing our string, and getting the response code from our write_file method.
-        char* reversed_str = (char*) malloc(sizeof(buffer));
-        reverse(*buffer, reversed_str);
-        int write_response = write_file(write_loc, reversed_str, sizeof(reversed_str));
+        reverse(buffer, reversed_str);
+        int write_response = write_file(write_loc, reversed_str, size);
 
         if (write_response != EXIT_SUCCESS) {
             printf("There was an error writing to the file. Error code " + write_response);

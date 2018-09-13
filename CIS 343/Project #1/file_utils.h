@@ -11,6 +11,6 @@
 #include <errno.h>
 
 int read_file( char* filename, char **buffer );
-int write_file( char* filename, char *buffer, unsigned int size);
+int write_file( char* filename, char *buffer, size_t size);
 
 #endif //PROJECT_1_FILE_UTILS_H

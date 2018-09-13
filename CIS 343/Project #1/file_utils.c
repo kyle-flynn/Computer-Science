@@ -18,17 +18,11 @@ int read_file(char* filename, char **buffer) {
         return errno;
     }
 
-    /*
-     * Instead of using sys/stat.h, stdio.h provides a seek method that does roughly the same thing. I could've made
-     * my life easier and used the provided code, but I wanted to be different and found this all by myself in the C
-     * documentation. Yay me.
-     */
+    // Grabbing file size
     fseek(file, 0L, SEEK_END);
     size_t size = (size_t) ftell(file);
     fseek(file, 0L, SEEK_SET);
 
-    // De-referencing the buffer and setting the content to the file's contents.
-    *buffer = (char*) malloc(size * sizeof(char*));
     fread(*buffer, sizeof(char), size, file);
     fclose(file);
 
@@ -42,7 +36,7 @@ int read_file(char* filename, char **buffer) {
  * @param {char*} buffer - The content buffer that will be written to the file
  * @param {size_t} size - The desired size of the file
  */
-int write_file(char* filename, char *buffer, unsigned int size) {
+int write_file(char* filename, char *buffer, size_t size) {
     FILE* file = fopen(filename, "w");
 
     // If the file wasn't found, return the designated error code to the caller.
@@ -51,7 +45,7 @@ int write_file(char* filename, char *buffer, unsigned int size) {
     }
 
     // Very simply write back to the file and close it. The fprintf function will handle \n's and all original bytes.
-    fprintf(file, buffer);
+    fwrite(buffer, sizeof(char), size, file);
     fclose(file);
 
     return 0;
