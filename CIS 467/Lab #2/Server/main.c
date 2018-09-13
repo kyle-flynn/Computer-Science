@@ -7,7 +7,7 @@
 #include <arpa/inet.h>
 
 int queryPort() {
-    printf("Enter the server port number (defaults to 8080): ");
+    printf("Enter the server port number: ");
     char port[5000] = "8080";
     fgets(port, 5000, stdin);
     return atoi(port);

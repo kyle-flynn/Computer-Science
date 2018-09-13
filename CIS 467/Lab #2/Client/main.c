@@ -7,7 +7,7 @@
 #include <arpa/inet.h>
 
 int queryPort() {
-    printf("Enter the server port number (defaults to 8080): ");
+    printf("Enter the server port number: ");
     char port[5000] = "8080";
     fgets(port, 5000, stdin);
     return atoi(port);
@@ -19,6 +19,14 @@ char* queryAddress() {
     fgets(address, 21, stdin);
     address[strlen(address) - 1] = '\0';
     return address;
+}
+
+char* queryNewLocation() {
+    printf("Enter a location for the new file: ");
+    char* location = (char*) malloc(sizeof(char*));
+    fgets(location, 21, stdin);
+    location[strlen(location) - 1] = '\0';
+    return location;
 }
 
 int main(int argc, char** argv) {
@@ -48,17 +56,29 @@ int main(int argc, char** argv) {
     }
 
     printf("Enter a file location: ");
-    char line[5000];
-    char line2[5000];
+    char fileLocation[5000];
+    char fileContents[5000];
 
-    fgets(line, 5000, stdin);
+    fgets(fileLocation, 5000, stdin);
 
-    char* newlineChar = strchr(line, '\n');
+    char* newlineChar = strchr(fileLocation, '\n');
     *newlineChar = '\0';
-    send(socketFileDescriptor, line, strlen(line) + 1, 0);
-    recv(socketFileDescriptor, line2, 5000, 0);
-    printf("Server Response: %s\n", line2);
+    send(socketFileDescriptor, fileLocation, strlen(fileLocation) + 1, 0);
+    recv(socketFileDescriptor, fileContents, 5000, 0);
+    printf("--Server Response--\n%s\n", fileContents);
     close(socketFileDescriptor);
 
-    return 0;
+    char* location = queryNewLocation();
+
+    FILE* file = fopen(location, "w");
+
+    if (file == NULL) {
+        printf("Error opening file at that desired location. Exiting program.");
+        return EXIT_FAILURE;
+    }
+
+    fputs(fileContents, file);
+    fclose(file);
+
+    return EXIT_SUCCESS;
 }

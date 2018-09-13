@@ -23,6 +23,7 @@ int reverse(const char* src, char* dest) {
             j++;
         }
     }
+
     return EXIT_SUCCESS;
 }
 
@@ -62,6 +63,9 @@ int main(int argc, char** argv) {
             printf("There was an error writing to the file. Error code " + write_response);
             return write_response;
         }
+
+        free(buffer);
+        free(reversed_str);
     }
 
     // If no other exit code, then the program was a success.
