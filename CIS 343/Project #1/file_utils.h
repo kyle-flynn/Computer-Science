@@ -10,7 +10,10 @@
 #include <string.h>
 #include <errno.h>
 
+/** Reads a given filename into the designated character buffer. **/
 int read_file( char* filename, char **buffer );
+
+/** Writes to a given filename with the given character buffer and designated file size. **/
 int write_file( char* filename, char *buffer, size_t size);
 
 #endif //PROJECT_1_FILE_UTILS_H
