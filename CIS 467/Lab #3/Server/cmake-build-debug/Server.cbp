@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/z/Coding/Repositories/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/z/Coding/Repositories/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server">
-				<Option output="/cygdrive/z/Coding/Repositories/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug/Server.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/z/Coding/Repositories/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug/Server.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server/fast">
-				<Option output="/cygdrive/z/Coding/Repositories/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug/Server.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/z/Coding/Repositories/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug/Server.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,27 +63,27 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/z/Coding/Repositories/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 467/Lab #3/Server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/z/Coding/Repositories/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Kyle\ Flynn/Documents/GitHub/Computer-Science/CIS\ 467/Lab\ #3/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/z/Coding/Repositories/Computer-Science/CIS 467/Lab #3/Server/main.c">
+		<Unit filename="/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 467/Lab #3/Server/main.c">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/cygdrive/z/Coding/Repositories/Computer-Science/CIS 467/Lab #3/Server/CMakeLists.txt">
+		<Unit filename="/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 467/Lab #3/Server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

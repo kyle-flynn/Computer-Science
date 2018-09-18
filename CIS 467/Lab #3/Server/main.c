@@ -14,12 +14,18 @@ int queryPort() {
 }
 
 int main(int argc, char** argv) {
-    int socketFileDescriptor = socket(AF_INET, SOCK_STREAM, 0);
+    int socketFileDescriptor = socket(AF_INET, SOCK_DGRAM, 0);
 
     if (socketFileDescriptor < 0) {
         printf("There was an error creating the socket.\n");
         return 1;
     }
+
+    struct timeval socketTimeout;
+    socketTimeout.tv_sec = 5;
+    socketTimeout.tv_usec = 0;
+
+    setsockopt(socketFileDescriptor, SOL_SOCKET, SO_RCVTIMEO, &socketTimeout, sizeof(socketTimeout));
 
     uint16_t port = (uint16_t) queryPort();
 
@@ -38,18 +44,19 @@ int main(int argc, char** argv) {
         return 3;
     }
 
-    listen(socketFileDescriptor, 10);
-
     while(1) {
         int length = sizeof(clientAddressInfo);
-        int clientSocket = accept(socketFileDescriptor, (struct sockaddr*)&clientAddressInfo, &length);
-        char line[5000];
-        recv(clientSocket, line, 5000, 0);
-        printf("Client sent: %s\n", line);
+        char clientMessage[5000];
+        int responseBytes = recvfrom(socketFileDescriptor, clientMessage, 5000, 0, (struct sockaddr*)&clientAddressInfo, &length);
 
-        send(clientSocket, line, strlen(line) + 1, 0);
+        if (responseBytes == -1) {
+            printf("Socket has timed out while trying to receive connections.\n");
+        } else {
+            printf("Client sent: %s\n", clientMessage);
+        }
 
-        close(clientSocket);
+        sendto(socketFileDescriptor, clientMessage, strlen(clientMessage) + 1, 0, (struct sockaddr*)&clientAddressInfo,
+               sizeof(clientAddressInfo));
     }
 
     close(socketFileDescriptor);

@@ -22,7 +22,7 @@ char* queryAddress() {
 }
 
 int main(int argc, char** argv) {
-    int socketFileDescriptor = socket(AF_INET, SOCK_STREAM, 0);
+    int socketFileDescriptor = socket(AF_INET, SOCK_DGRAM, 0);
 
     if (socketFileDescriptor < 0) {
         printf("There was an error creating the socket.\n");
@@ -40,13 +40,6 @@ int main(int argc, char** argv) {
     serverAddressInfo.sin_port = htons(port);
     serverAddressInfo.sin_addr.s_addr = inet_addr(address);
 
-    int connection = connect(socketFileDescriptor, (struct sockaddr*)& serverAddressInfo, sizeof(serverAddressInfo));
-
-    if (connection < 0) {
-        printf("There was en error connecting.\n");
-        return 2;
-    }
-
     printf("Enter a message to send to the server: ");
     char message[5000];
     char response[5000];
@@ -56,7 +49,7 @@ int main(int argc, char** argv) {
     char* newlineChar = strchr(message, '\n');
     *newlineChar = '\0';
 
-    send(socketFileDescriptor, message, strlen(message) + 1, 0);
+    sendto(socketFileDescriptor, message, strlen(message) + 1, 0, (struct sockaddr*)&serverAddressInfo, sizeof(serverAddressInfo));
     recv(socketFileDescriptor, response, 5000, 0);
     printf("--Server Response--\n%s\n", response);
     close(socketFileDescriptor);
