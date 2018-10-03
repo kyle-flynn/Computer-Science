@@ -44,10 +44,19 @@ int main(int argc, char** argv) {
       if (cli_addr.sll_pkttype != PACKET_OUTGOING) {
         struct ether_header* pck_headr = (struct ether_header*) message;
 				struct iphdr* ip_headr = (struct iphdr*) (message + sizeof(pck_headr));
-			  printf("\n---------- INCOMING PACKET HEADER ----------\n");
-				printf("Destination: %s\n", pck_headr->ether_shost);
-				printf("Source: %s\n", pck_headr->ether_dhost);
+				struct sockaddr_in src, dest;
+			  src.sin_addr.s_addr = ip_headr->saddr;
+				dest.sin_addr.s_addr = ip_headr->daddr;
+
+				printf("\n---------- INCOMING PACKET HEADER ----------\n");
+				printf("Destination: %s\n", inet_ntoa(src.sin_addr));
+				printf("Source: %s\n", inet_ntoa(dest.sin_addr));
 				printf("Type: %d\n", ntohs(pck_headr->ether_type));
+
+        if (ntohs(pck_headr->ether_type) == ETH_P_IP) {
+          printf("*THIS IS AN IPV4 PACKET*");
+				}
+
 				printf("\n--------------------------------------------\n");
 			}
 
