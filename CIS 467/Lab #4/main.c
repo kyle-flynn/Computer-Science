@@ -2,10 +2,12 @@
 #include <netpacket/packet.h>
 #include <net/ethernet.h>
 #include <netinet/ip.h>
+#include <netinet/in.h>
 #include <stdio.h>
 #include <errno.h>
 #include <sys/types.h>
 #include <net/if.h>
+#include <arpa/inet.h>
 
 int main(int argc, char** argv) {
 
@@ -52,6 +54,13 @@ int main(int argc, char** argv) {
 				printf("Destination: %s\n", inet_ntoa(src.sin_addr));
 				printf("Source: %s\n", inet_ntoa(dest.sin_addr));
 				printf("Type: %d\n", ntohs(pck_headr->ether_type));
+
+				struct ethhdr *eth = (struct ethhdr*) message;
+
+				printf("---- Ethernet Header\n");
+				printf("-Destination %.2X-%.2X-%.2X-%.2X-%.2X-%.2X \n", eth->h_dest[0], eth->h_dest[1], eth->h_dest[2], eth->h_dest[3], eth->h_dest[4], eth->h_dest[5]);
+				printf("-Source Address %.2X-%.2X-%.2X-%.2X-%.2X-%.2X \n", eth->h_source[0], eth->h_source[1], eth->h_source[2], eth->h_source[3], eth->h_source[4], eth->h_source[5]);
+				printf("-Protocol %u\n", (unsigned short)eth->h_proto);
 
         if (ntohs(pck_headr->ether_type) == ETH_P_IP) {
           printf("*THIS IS AN IPV4 PACKET*");
