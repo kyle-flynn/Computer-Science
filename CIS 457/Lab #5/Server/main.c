@@ -60,34 +60,43 @@ int main(int argc, char** argv) {
     char* input;
 
     int length = sizeof(clientAddressInfo);
-    clientSocket = accept(socketFileDescriptor, (struct sockaddr*)&clientAddressInfo, &length);
 
     while (1) {
         fd_set read_fds;
         FD_ZERO(&read_fds);
-        int fdmax = socketFileDescriptor;
+        int fdMax = socketFileDescriptor;
         FD_SET(socketFileDescriptor, &read_fds);
+        FD_SET(STDIN_FILENO, &read_fds);
+        int activity = select(fdMax + 1, &read_fds, NULL, NULL, NULL) == -1;
 
-        if (select(fdmax+1, &read_fds, NULL,NULL,&timeout) == -1) {
+        if (activity == -1) {
             printf("Unable to modify socket file descriptor.\n");
         }
 
-        // Deals with receiving from the client
-        recv(clientSocket, response, MESSAGE_SIZE, 0);
-        printf("Client: %s\n", response);
-
-        if (strcmp("Quit", response) != 0) {
-            printf("Client has disconnected.\n");
+        if (FD_ISSET(socketFileDescriptor, &read_fds)) {
+            clientSocket = accept(socketFileDescriptor, (struct sockaddr*)&clientAddressInfo, &length);
+            printf("New client connection. You can start typing to the client.\n");
         }
 
-        // Deals with sending to the client
-        input = queryInput();
-        send(clientSocket, input, strlen(input) + 1, 0);
-        free(input);
+        if (FD_ISSET(STDIN_FILENO, &read_fds)) {
+            // Deals with sending to the client
+            input = queryInput();
+            send(clientSocket, input, strlen(input) + 1, 0);
+            free(input);
 
-        if (strcmp("Quit", input) != 0) {
-            break;
+            if (strcmp("Quit", input) == 0) {
+                break;
+            }
+
+            // Deals with receiving from the client
+            recv(clientSocket, response, MESSAGE_SIZE, 0);
+            printf("Client: %s\n", response);
+
+            if (strcmp("Quit", response) == 0) {
+                printf("Client has disconnected.\n");
+            }
         }
+
     }
 
     close(clientSocket);

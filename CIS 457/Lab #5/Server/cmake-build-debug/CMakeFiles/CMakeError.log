@@ -1,24 +1,24 @@
 Detecting C [-std=c11] compiler features failed to compile with the following output:
-Change Dir: /cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make.exe" "cmTC_e4b3a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e4b3a.dir/build.make CMakeFiles/cmTC_e4b3a.dir/build
-make[1]: Entering directory '/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp'
-make[1]: *** No rule to make target '/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 457/Lab\', needed by 'CMakeFiles/cmTC_e4b3a.dir/feature_tests.c.o'.  Stop.
-make[1]: Leaving directory '/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp'
-make: *** [Makefile:126: cmTC_e4b3a/fast] Error 2
+Run Build Command:"/usr/bin/make.exe" "cmTC_e7d47/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e7d47.dir/build.make CMakeFiles/cmTC_e7d47.dir/build
+make[1]: Entering directory '/cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp'
+make[1]: *** No rule to make target '/cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab\', needed by 'CMakeFiles/cmTC_e7d47.dir/feature_tests.c.o'.  Stop.
+make[1]: Leaving directory '/cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:126: cmTC_e7d47/fast] Error 2
 
 
 
 Detecting CXX [-std=c++14] compiler features failed to compile with the following output:
-Change Dir: /cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make.exe" "cmTC_57eda/fast"
-/usr/bin/make -f CMakeFiles/cmTC_57eda.dir/build.make CMakeFiles/cmTC_57eda.dir/build
-make[1]: Entering directory '/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp'
-make[1]: *** No rule to make target '/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 457/Lab\', needed by 'CMakeFiles/cmTC_57eda.dir/feature_tests.cxx.o'.  Stop.
-make[1]: Leaving directory '/cygdrive/c/Users/Kyle Flynn/Documents/GitHub/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp'
-make: *** [Makefile:126: cmTC_57eda/fast] Error 2
+Run Build Command:"/usr/bin/make.exe" "cmTC_6b684/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6b684.dir/build.make CMakeFiles/cmTC_6b684.dir/build
+make[1]: Entering directory '/cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp'
+make[1]: *** No rule to make target '/cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab\', needed by 'CMakeFiles/cmTC_6b684.dir/feature_tests.cxx.o'.  Stop.
+make[1]: Leaving directory '/cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab #5/Server/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:126: cmTC_6b684/fast] Error 2
 
 
 

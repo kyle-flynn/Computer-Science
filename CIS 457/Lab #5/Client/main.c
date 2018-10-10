@@ -68,27 +68,35 @@ int main(int argc, char** argv) {
     while (1) {
         fd_set read_fds;
         FD_ZERO(&read_fds);
-        int fdmax = socketFileDescriptor;
+        int fdMax = socketFileDescriptor;
         FD_SET(socketFileDescriptor, &read_fds);
+        FD_SET(STDIN_FILENO, &read_fds);
+        int activity = select(fdMax + 1, &read_fds, NULL, NULL, NULL) == -1;
 
-        if (select(fdmax+1, &read_fds, NULL,NULL,&timeout) == -1) {
+        if (activity == -1) {
             printf("Unable to modify socket file descriptor.\n");
         }
 
-        // Deals with sending to the server
-        input = queryInput();
-        send(socketFileDescriptor, input, strlen(input) + 1, 0);
-
-        if (strcmp("Quit", input) != 0) {
-            break;
+        if (FD_ISSET(socketFileDescriptor, &read_fds)) {
+            printf("SFD is set\n");
         }
 
-        // Deals with receiving from the server
-        recv(socketFileDescriptor, response, MESSAGE_SIZE, 0);
-        printf("Server: %s\n", response);
+        if (FD_ISSET(STDIN_FILENO, &read_fds)) {
+            // Deals with sending to the server
+            input = queryInput();
+            send(socketFileDescriptor, input, strlen(input) + 1, 0);
 
-        if (strcmp("Quit", response) != 0) {
-            printf("Server has disconnected.\n");
+            if (strcmp("Quit", input) == 0) {
+                break;
+            }
+
+            // Deals with receiving from the server
+            recv(socketFileDescriptor, response, MESSAGE_SIZE, 0);
+            printf("Server: %s\n", response);
+
+            if (strcmp("Quit", response) == 0) {
+                printf("Server has disconnected.\n");
+            }
         }
     }
 
