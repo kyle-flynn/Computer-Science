@@ -25,7 +25,7 @@ char* queryAddress() {
 }
 
 char* queryInput() {
-    printf("Type something to the server: ");
+//    printf("Type something to the server: ");
     char* input = (char*) malloc(sizeof(char));
     fgets(input, MESSAGE_SIZE, stdin);
     input[strlen(input) - 1] = '\0';
@@ -53,6 +53,8 @@ int main(int argc, char** argv) {
 
     int connection = connect(socketFileDescriptor, (struct sockaddr*)& serverAddressInfo, sizeof(serverAddressInfo));
 
+    printf("Connected. You can begin typing to the server.\n");
+
     if (connection < 0) {
         printf("There was en error connecting.\n");
         return 2;
@@ -78,7 +80,15 @@ int main(int argc, char** argv) {
         }
 
         if (FD_ISSET(socketFileDescriptor, &read_fds)) {
-            printf("SFD is set\n");
+            // Deals with receiving from the server
+            recv(socketFileDescriptor, response, MESSAGE_SIZE, 0);
+
+            if (strcmp("Quit", response) == 0) {
+                printf("Server has disconnected. Closing client.\n");
+                break;
+            } else {
+                printf("Server: %s\n", response);
+            }
         }
 
         if (FD_ISSET(STDIN_FILENO, &read_fds)) {
@@ -88,14 +98,6 @@ int main(int argc, char** argv) {
 
             if (strcmp("Quit", input) == 0) {
                 break;
-            }
-
-            // Deals with receiving from the server
-            recv(socketFileDescriptor, response, MESSAGE_SIZE, 0);
-            printf("Server: %s\n", response);
-
-            if (strcmp("Quit", response) == 0) {
-                printf("Server has disconnected.\n");
             }
         }
     }

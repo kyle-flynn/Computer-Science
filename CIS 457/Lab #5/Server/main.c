@@ -17,7 +17,7 @@ int queryPort() {
 }
 
 char* queryInput() {
-    printf("Type something to the client: ");
+//    printf("Type something to the client: ");
     char* input = (char*) malloc(sizeof(char));
     fgets(input, MESSAGE_SIZE, stdin);
     input[strlen(input) - 1] = '\0';
@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
     timeout.tv_sec = 0;
     timeout.tv_usec = 0;
 
-    int clientSocket;
+    int clientSocket = -1;
     char response[MESSAGE_SIZE];
     char* input;
 
@@ -67,7 +67,12 @@ int main(int argc, char** argv) {
         int fdMax = socketFileDescriptor;
         FD_SET(socketFileDescriptor, &read_fds);
         FD_SET(STDIN_FILENO, &read_fds);
-        int activity = select(fdMax + 1, &read_fds, NULL, NULL, NULL) == -1;
+
+        if (clientSocket > -1) {
+            FD_SET(clientSocket, &read_fds);
+        }
+
+        int activity = select(fdMax + 2, &read_fds, NULL, NULL, NULL) == -1;
 
         if (activity == -1) {
             printf("Unable to modify socket file descriptor.\n");
@@ -78,6 +83,17 @@ int main(int argc, char** argv) {
             printf("New client connection. You can start typing to the client.\n");
         }
 
+        if (clientSocket > -1 && FD_ISSET(clientSocket, &read_fds)) {
+            // Deals with receiving from the client
+            recv(clientSocket, response, MESSAGE_SIZE, 0);
+
+            if (strcmp("Quit", response) == 0) {
+                printf("Client has disconnected.\n");
+            } else {
+                printf("Client: %s\n", response);
+            }
+        }
+
         if (FD_ISSET(STDIN_FILENO, &read_fds)) {
             // Deals with sending to the client
             input = queryInput();
@@ -86,14 +102,6 @@ int main(int argc, char** argv) {
 
             if (strcmp("Quit", input) == 0) {
                 break;
-            }
-
-            // Deals with receiving from the client
-            recv(clientSocket, response, MESSAGE_SIZE, 0);
-            printf("Client: %s\n", response);
-
-            if (strcmp("Quit", response) == 0) {
-                printf("Client has disconnected.\n");
             }
         }
 
