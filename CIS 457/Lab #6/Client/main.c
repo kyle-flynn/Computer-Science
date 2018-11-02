@@ -80,7 +80,7 @@ int main(int argc, char** argv) {
 
     pthread_t thread;
 
-    int receiveResult = pthread_create(&thread, NULL, receiveMsg, (void*) socketFileDescriptor);
+    int receiveResult = pthread_create(&thread, NULL, receiveMsg, socketFileDescriptor);
     if (receiveResult < 0) {
         printf("There was an error creating the receive thread.\n");
     }
