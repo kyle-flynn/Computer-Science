@@ -1,0 +1,3 @@
+/cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab #6/Server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab #6/Server/cmake-build-debug/CMakeFiles/Server.dir
+/cygdrive/z/Coding/Repositories/Computer-Science/CIS 457/Lab #6/Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir

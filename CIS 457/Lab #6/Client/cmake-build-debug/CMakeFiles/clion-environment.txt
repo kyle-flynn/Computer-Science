@@ -1,0 +1,3 @@
+ToolSet: 2.11.1@D:\cygwin
+Options: 
+CMake: 3.6.2@D:\cygwin\bin\cmake.exe
