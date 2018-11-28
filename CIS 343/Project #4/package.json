@@ -1,0 +1,22 @@
+{
+  "name": "oogle-api",
+  "version": "1.0.0",
+  "description": "jarred sucks",
+  "main": "build/server.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -- --watch",
+    "start": "tsc && node build/server.js"
+  },
+  "author": "The Lord Of The Nine Realms",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.12.10",
+    "typescript": "^3.1.6"
+  }
+}
