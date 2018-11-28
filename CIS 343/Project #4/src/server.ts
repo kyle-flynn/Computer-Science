@@ -48,16 +48,16 @@ app.put('/:id', (req, res) => {
   const result = isValid(body);
   if (!result.valid) {
     res.send(`json is invalid. you're missing the ${result.missing} field.`);
-  }
-
-  let newPerson: object = {};
-  for (let i = 0; i < database.length; i++) {
-    if (database[i].SID === id) {
-      database[i] = body;
-      newPerson = database[i];
+  } else {
+    let newPerson: object = {};
+    for (let i = 0; i < database.length; i++) {
+      if (database[i].SID === id) {
+        database[i] = body;
+        newPerson = database[i];
+      }
     }
+    res.send(newPerson);
   }
-  res.send(newPerson);
 });
 
 app.post('/', (req, res) => {
@@ -66,10 +66,10 @@ app.post('/', (req, res) => {
   const result = isValid(body);
   if (!result.valid) {
     res.send(`json is invalid. you're missing the ${result.missing} field.`);
+  } else {
+    database.push(body);
+    res.send(database[database.length - 1]);
   }
-
-  database.push(body);
-  res.send(database[database.length - 1]);
 });
 
 // IMPLEMENT A ROUTE TO HANDLE ALL OTHER ROUTES AND RETURN AN ERROR MESSAGE

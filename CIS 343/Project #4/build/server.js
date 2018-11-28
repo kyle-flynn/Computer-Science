@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
+const requirements = ["firstName", "lastName", "homeAddress", "SID", "goodSlave", "beatingsToDate", "family"];
 const database = require('../db/programmers.json');
 // We must have our list of programmers to use
 if (!fs_1.default.existsSync(path_1.default.join(__dirname, '../db/programmers.json'))) {
@@ -34,11 +35,29 @@ app.get('/:id', (req, res) => {
 });
 app.put('/:id', (req, res) => {
     const id = req.params.id;
-    res.send(`Fill me in to update values with ID: ${id}`);
+    const body = req.body;
+    const result = isValid(body);
+    if (!result.valid) {
+        res.send(`json is invalid. you're missing the ${result.missing} field.`);
+    }
+    let newPerson = {};
+    for (let i = 0; i < database.length; i++) {
+        if (database[i].SID === id) {
+            database[i] = body;
+            newPerson = database[i];
+        }
+    }
+    res.send(newPerson);
 });
 app.post('/', (req, res) => {
-    const body = req.body; // Hold your JSON in here!
-    res.send(`You sent: ${body}`);
+    const id = req.params.id;
+    const body = req.body;
+    const result = isValid(body);
+    if (!result.valid) {
+        res.send(`json is invalid. you're missing the ${result.missing} field.`);
+    }
+    database.push(body);
+    res.send(database[database.length - 1]);
 });
 // IMPLEMENT A ROUTE TO HANDLE ALL OTHER ROUTES AND RETURN AN ERROR MESSAGE
 app.all("*", (req, res, next) => {
@@ -47,3 +66,22 @@ app.all("*", (req, res, next) => {
 app.listen(port, () => {
     console.log(`She's alive on port ${port}`);
 });
+function isValid(json) {
+    if (json instanceof Array) {
+        for (const record of json) {
+            for (let i = 0; i < requirements.length; i++) {
+                if (typeof record[requirements[i]] === "undefined") {
+                    return { valid: false, missing: requirements[i] };
+                }
+            }
+        }
+    }
+    else {
+        for (let i = 0; i < requirements.length; i++) {
+            if (typeof json[requirements[i]] === "undefined") {
+                return { valid: false, missing: requirements[i] };
+            }
+        }
+    }
+    return { valid: true, missing: '' };
+}
