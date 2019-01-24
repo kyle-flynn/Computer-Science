@@ -21,7 +21,13 @@ function main() {
         // clear the color buffer
         gl.clear(gl.COLOR_BUFFER_BIT);
 
-        let vertices = [-0.8, -0.6,  0.7, -0.6,  -0.5, 0.7];
+        let vertices = [];
+
+        for (let i = 0; i < 30; i++) {
+          let x = getRandomNumber(-1, 1);
+          let y = getRandomNumber(-1, 1);
+          vertices.push(x, y);
+        }
 
         // create a buffer
         let vertexBuff = gl.createBuffer();
@@ -41,11 +47,16 @@ function main() {
           0);        /* the offset (in bytes) to the first component in the attribute array */
 
         let myColorUnit = gl.getUniformLocation(prog, "myColor");
-        gl.uniform3f (myColorUnit, 0.25, 0.44, 0.76);
+        gl.uniform3f (myColorUnit, getRandomNumber(0, 1), getRandomNumber(0, 1), getRandomNumber(0, 1));
 
         gl.drawArrays(gl.POINTS,  /* draw only points */
           0,  /* starting index in the array */
           vertices.length/2); /* number of vertices to draw */
       });
   });
+}
+
+
+function getRandomNumber(min, max) {
+  return Math.random() * (max - min) + min;
 }
