@@ -1,0 +1,75 @@
+/* Style sheet created by: Kyle Flynn, 1/30/2019 */
+
+/* Style for body specifies a background color */
+body {
+  background-color: #FFFF99;
+}
+
+/* Style for container cents the page and sets the element width */
+#container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style for header specifies top and bottom margins, background color, rounded border, shadow, and alignment */
+header {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 12px 12px 12px #404040;
+  text-align: center;
+}
+
+/* Style for nav specifies text properties, padding, margins, and borders */
+nav {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border-top: 5px solid #FFFFFF;
+  border-bottom: 5px solid #FFFFFF;
+}
+
+/* Style for main specifies a block display, text properties, margins, padding, rounded border, and shadow */
+main {
+  display: block;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 12px 12px 12px #404040;
+}
+
+/* Style for footer specifies font size, text alignment, and top margin */
+footer {
+  font-size: 0.70em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.equip {
+  float: left;
+  padding-right: 20px;
+}
+
+ul {
+  margin-bottom: 50px;
+  list-style-position: inside;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  padding-bottom: 20px;
+}
