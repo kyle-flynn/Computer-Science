@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--Kyle Flynn
+    2/6/2019 -->
+<html lang="en">
+<head>
+	<title>CSS declarations</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="css04.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="cssterminology04.html">CSS Terminology</a>&nbsp;</li>
+			<li><a href="csssyntax04.html">CSS Syntax</a>&nbsp;</li>
+			<li><a href="cssdeclarations04.html">CSS Declarations</a>&nbsp;</li>
+			<li><a href="cssblock04.html">CSS Styles for Blocks and Float</a>&nbsp;</li>
+		</ul>
+	</nav>
+	<div id="main">
+	<h1>CSS Declarations</h1>
+		<p>Consist of a property name followed by a colon (:) followed by the property value followed by a semicolon (;) </p>
+		<p>color: #FF0000;</p>
+		<p>The property name never has a space.  The value never has a space, but there are exceptions.  See below.</p>
+	<h1>Tricky CSS Declarations</h1>
+		<h2>font-family: Georgia, "Times New Roman", serif;</h2>
+		<p>Font names are listed in the order in which you want the browser to apply them. In this case if the Georgia font cannot be applied, then use Times New Roman. If the browser cannot apply Times New Roman, then it applies whatever serif font is available to it. Font names that consist of multiple words are enclosed in "quotation marks".  A comma and space separate each font name in the list.  A generic font name such as serif or sans-serif is always listed last.</p>
+		<h2>padding: 0 10% 0 20%;</h2>
+		<p>Padding, border, and margin each have 4 sides that are always referenced in a clockwise order (top right bottom left).  While each side can be referred to with an individual property (padding-top, padding-right, padding-bottom, padding-left), the padding property by itself refers to all four sides with the value for each side listed in order separated by a space.</p>
+		<h2>margin: 10%;</h2>
+		<p>When padding, border, or margin are listed with only one value, it applies to each of the four sides.</p>
+		<h2>border: red 1px thin;</h2>
+		<p>The border property has three properties (color, thickness, and style) in addition to being able to be applied to four different sides.  The border property (border: red 1px thin;) therefore, summarizes 12 (3 properties times 4 sides) different individual properties as follows: </p>
+		<p>border-top-color: red;</p>
+		<p>border-right-color: red;</p>
+		<p>border-bottom-color: red;</p>
+		<p>border-left-color: red;</p>
+		<p>border-top-size: 1px;</p>
+		<p>border-right-size: 1px;</p>
+		<p>border-bottom-size: 1px;</p>
+		<p>border-left-size: 1px;</p>
+		<p>border-top-style: thin;</p>
+		<p>border-right-style: thin;</p>
+		<p>border-bottom-style: thin;</p>
+		<p>border-left-style: thin;</p>
+		
+	
+	</div><!--end main-->
+</body>
+</html>
+
+

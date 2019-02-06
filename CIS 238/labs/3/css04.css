@@ -1,0 +1,37 @@
+/* Kyle Flynn 2/6/2019 */
+#main {
+  width: 90%;
+  margin: 0 auto 0 auto;
+  padding: 2%;
+  background-color: #D7D7D7;
+}
+
+h1 {
+  color: #CF0000;
+}
+
+p {
+  border: blue 1px solid;
+}
+
+.floatleft {
+  float: left;
+}
+
+.clearfloat {
+  clear: both;
+}
+
+.floatright {
+  float: right;
+}
+
+
+nav li {
+  list-style-type: none;
+  display: inline;
+}
+
+.cssterm {
+  font-weight: bold;
+}

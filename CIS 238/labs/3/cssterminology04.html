@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--Kyle Flynn
+    2/6/2019 -->
+<html lang="en">
+<head>
+	<title>CSS terminology</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="css04.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="cssterminology04.html">CSS Terminology</a>&nbsp;</li>
+			<li><a href="csssyntax04.html">CSS Syntax</a>&nbsp;</li>
+			<li><a href="cssdeclarations04.html">CSS Declarations</a>&nbsp;</li>
+			<li><a href="cssblock04.html">CSS Styles for Blocks and Float</a>&nbsp;</li>
+		</ul>
+	</nav>
+	<div id="main">
+	<h1>CSS: Cascading Style Sheets - Terminology</h1>
+        <p><span class="cssterm">External styles</span>, also called linked styles, are separated into a separate file with a .css extension.</p>
+        <p><span class="cssterm">Embedded styles</span>, also called internal styles, are inserted within style tags in the head section of an .html page.</p>
+        <p><span class="cssterm">Inline styles</span> are inserted in the opening tag using a style attribute.</p>
+		<p><span class="cssterm">Rules</span> are also referred to as styles and consist of a selector and a set of one or more declarations.</p>
+		<p>A <span class="cssterm">selector</span> may "select" different areas in the html to style:</p>
+			<ul>
+				<li>An element name such as body or h1</li>
+				<li>A class value.  class="floatright" connects to the .floatright selector.</li>
+				<li>An id value.  id="outerwrapper" connects to the #outerwraper selector.</li>
+				<li>Multiple items that are separated by commas. For example h1, h2, h3</li>
+				<li>A descendant selector (for example, nav li) which selects only the li content within the nav tags.</li>
+			</ul>
+		<p>A <span class="cssterm">declaration</span> (for example, color: #FFFFFF;) is made up of a CSS property followed by a colon : followed by the property value and ends with a semicolon ;</p>
+		<p><span class="cssterm">Inheritance</span> means that CSS properties can be inherited from a parent container.  For example, paragraphs and headings will inherit the font and color rules of the body selector. Properties that affect the placement of elements such as padding, borders, and margins are not inherited.</p>
+		<p><span class="cssterm">Specificity</span> means that if the background-color property was applied to the body, p (paragraph), and #leftcolumn selectors in the same style sheet, the more specific selector wins. So the rule for the #leftcolumn selector would beat the p rule which would beat the body rule.</p>
+		<p>Specificity also means that that if two or more rules for the same property apply to the same content, the closer rule will win. For example, if the  background-color property was created for the body selector in three different style sheets (inline, embedded, external), the inline style would beat the embedded style which would beat the external style.</p>
+		<p>The rules by which styles are applied help explain the "cascade" in cascading style sheets.</p>
+			
+	
+	</div><!--end main-->
+</body>
+</html>
+
+

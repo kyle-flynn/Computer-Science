@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--Kyle Flynn
+    2/6/2019 -->
+<html lang="en">
+<head>
+	<title>CSS block styles</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="css04.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="cssterminology04.html">CSS Terminology</a>&nbsp;</li>
+			<li><a href="csssyntax04.html">CSS Syntax</a>&nbsp;</li>
+			<li><a href="cssdeclarations04.html">CSS Declarations</a>&nbsp;</li>
+			<li><a href="cssblock04.html">CSS Styles for Blocks and Float</a>&nbsp;</li>
+		</ul>
+	</nav>
+	<div id="main">
+	<h1>Block Versus Inline Content</h1>
+		<p>Most html content renders in a browser as block content.</p>
+		<p>The most common inline elements are span, a (hyperlink), and img (image).</p>
+		<p>Images are the trickiest inline elements because they are often followed by block content making them "appear" to be blocks.  But consider the following examples.</p>
+		<p>Example 1: several images positioned together prove that the img is an inline element -- images stay on the same line (inline).</p>
+		<img src="man.jpg" alt="professional man" height="282" width="198">
+		<img src="man.jpg" alt="professional man" height="282" width="198">
+		<img src="man.jpg" alt="professional man" height="282" width="198">
+		<p>Example 2: one image followed by block content makes the image "appear" that it is also a block element.</p>
+		<img src="man.jpg" alt="professional man" height="282" width="198">
+		<p>Paragraph content is block content which starts on its own line, its own block.</p>
+		<p>Example 3: one image - float left.</p>
+		<img src="man.jpg" alt="professional man" height="282" width="198" class="floatleft">
+		<p>Block content that follows a left float.</p>
+		<p class="clearfloat">Example 4: one image - float right.</p>
+		<img src="man.jpg" alt="professional man" height="282" width="198" class="floatright">
+		<p>Block content that follows a right float.</p>
+	<h2>float: left; and clear: both;</h2>
+		<p>The float property allows content that follows the floated content to occupy the available horizontal space not used by the floated content.  Float is commonly applied to images given they have a distinct width which leaves extra horizontal white space beside the image when the next block of content is rendered on the page.  Float can also be applied to sections of content to create multiple columns on a page.  Content is floated left or right with the float: left; or float: right; declarations.  </p>
+		<p>To "clear" the float use the clear: both; declaration on the content that you want to start on its own line. You may also clear only the left or right float by using clear: left; or clear: right; declarations.</p>
+	<h2>Float tips...</h2>
+			<ul>
+				<li>The content that is floated - whether left or right -- is positioned before other content in the html file.</li>
+				<li>Because we read from left to right in the English language, content that is floated right may appear out of order in the html file.  Content that is floated right must appear before other content in the html file.</li>
+				<li>The "box" (margins, border, and padding) of content that follows a floated element behaves as if the floated element is not there.</li>
+				<li>To clear a float which allows a block element to start on its own line, use the clear property. clear: both; is the most common declaration, but you can clear only a left or only a right float using clear: left; or clear: right;</li>
+				<li>Textual content that is styled with a float should be given a width value.  (Images have an inherent width.)</li>
+				<li>It is not possible to float content in the center, only left or right.</li>
+				<li>Floating content left or right shifts it to the left or right edge of the containing block.</li>
+			</ul>
+	
+	</div><!--end main-->
+</body>
+</html>
+
+
