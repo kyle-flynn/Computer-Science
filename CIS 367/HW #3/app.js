@@ -80,7 +80,7 @@ const circleVertices = generateCircleVertices(
 
 let circleColors = [1, 0, 0]; // Center is RED
 for (let k = 0; k < POINTS_ON_CIRCLE + 1; k++) {
-  circleColors.push(1, 1, 0); // Perimeter color is YELLOW
+  circleColors.push(1, 0.5, 0); // Perimeter color is YELLOW
 }
 circle = createGeometry(gl)
   .attr('vertexPos', circleVertices, { size: 3 })
