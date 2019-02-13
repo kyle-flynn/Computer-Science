@@ -5,29 +5,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>WebGL</title>
+  <title>WebGL Homework #3</title>
   <script src="./dist/bundle.js" async></script>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 
 <body>
-  <h1>Sample WebGL</h1>
-  <ul>
-    <li>The blue/yellow quad is drawn using TRIANGLE_STRIP</li>
-    <li>The green triangle is drawn using TRIANGLES</li>
-    <li>The red/yellow circle is drawn using TRIANGLE_FAN</li>
-    <li>The cirle is draw at Z = 0 but the base of the triangle spans from
-      negative Z (on the left, closer to the camera) to positive Z (on the right, farther
-      from the camera), creating the
-      effect that the triangle cuts through the circle</li>
-  </ul>
-  <div>
-    <canvas id="mycanvas" width="512" height="512"></canvas>
-    <img src="images/SSB%20PP.png" width="512" height="512"/>
-  </div>
-  <div>
-    <h2>Picture Origins</h2>
-    <img src="images/SSBB%20Logo.jpg" width="800" height="450"/>
-    <img src="images/SSBB%20Piranha%20Plant.jpg" width="512" height="512"/>
+  <div id="wrapper">
+    <div id="header">
+      <h1>Super Smash Bros. Abstract</h1>
+      <h2>By Kyle Flynn (~4 hours)</h2>
+    </div>
+    <div>
+      <h3>Scene Background Information</h3>
+      <p>
+        This WebGL 2D render is of a few video game assets from the new Nintendo Switch game, <i>Super Smash Bros. Ultimate</i>.
+        Unfortunately my WebGL skills are not yet up to par, but this is a nice framework for a scene that introduces the
+        new character, the <i>Piranha Plant</i> from the <i>Super Mario Bros.</i> series. The red sphere is the logo for
+        the game, and the other object is of the character, Piranha Plant.
+      </p>
+      <img src="images/SSB%20PP.png" class="fit-w"/>
+    </div>
+    <div>
+      <h3>Scene Marked Sketch</h3>
+      <p>
+        The marked sketch may seem a little hard to understand, but it's divided into 3 parts. <b class="blue">Blue</b> markings
+        represent quad polygons using <b class="blue">TRIANGLES_STRIP</b>. <b class="yellow">Gold</b> markings represent circles, ellpises, or cones (parts of circles)
+        that can be drawn using <b class="yellow">TRIANGLES_FAN</b>. And finally, <b class="pink">Pink</b> markings represent actual triangles
+        that can be drawn using <b class="pink">TRIANGLES</b>.
+      </p>
+      <p>
+        <i>
+          NOTE: Not shown are two outlines. The first outline is all along the logo circle object on the right, this will be done using <b>LINE_STRIP</b>.
+          Secondly, there will be an outline along the bottom of the character for clarification using <b>LINES</b>.
+        </i>
+      </p>
+      <img src="images/SSB%20PP%20Marked.png" class="fit-w"/>
+    </div>
+    <div>
+      <h3>Scene WebGL Result</h3>
+      <canvas id="mycanvas" width="512" height="512"></canvas>
+    </div>
+    <div>
+      <p>
+        The most <b>intriguing/challenging</b> aspect of this rendering is the mouth opening/cone shape in the Piranha plant.
+        Since circles are within the polar plane and we are in the cartesian coordinate system, it's a little hard to take a chunk
+        of a circle. However, with a little experimentation and math it wasn't that difficult, but the started code provided
+        lots of versatility. For example, the brown shadow at the bottom was created as an ellipse that takes a xMax and yMax
+        parameter.
+      </p>
+      <p>
+        The <b>depth</b> effect was used a little bit differently in this scene. The depth effect was used to create
+        layering, such as for the teeth to overlay on top of the mouth cone opening, which layers on top of the piranha
+        plant head.
+      </p>
+    </div>
+    <div>
+      <h2>Picture Origins</h2>
+      <img src="images/SSBB%20Logo.jpg" class="fit-w"/>
+      <img src="images/SSBB%20Piranha%20Plant.jpg" class="fit-w"/>
+    </div>
   </div>
 </body>
 
