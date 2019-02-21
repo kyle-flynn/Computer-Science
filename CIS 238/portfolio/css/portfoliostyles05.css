@@ -1,8 +1,8 @@
-/* Kyle Flynn - 2/9/2019 */
+/* Kyle Flynn - 2/21/2019 */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-  font-family: 'Robot', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1em;
 }
 
@@ -20,7 +20,7 @@ nav li {
 }
 
 #outerwrapper {
-  width: 70%;
+  width: 100%;
   margin: 0 auto 0 auto;
 }
 
@@ -28,8 +28,17 @@ nav li {
   clear: both;
   background-color: #1dffdd;
   padding: 3%;
-  border: 2px black solid;
-  border-radius: 25px;
+  border: 0.15em black solid;
+  border-radius: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+.portfolio-img {
+  height: auto;
+  width: 400px;
 }
 
 footer {
