@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>WebGL: Projection &amp; Viewing</title>
+    <script src="./dist/bundle.js" async></script>
+    <style>
+      #control {
+        display: inline-grid;
+        grid-template-columns: 10em 300px;
+        margin: 0 16px 16px 16px;
+        border: 2px solid gray;
+        padding: 16px;
+        border-radius: 8px;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <h1>Projection &amp; Viewing</h1>
+      <div>
+        <div id="control">
+          <label for="cameraRoll">Camera roll angle</label>
+          <input type="range" min="-45" max="45" id="cameraRoll" />
+          <label for="cameraZ">Camera Forward/Backward</label>
+          <input type="range" min="-5" max="3" step="0.2" id="cameraZ" />
+          <span>Projection: </span>
+          <select id="projectionType">
+            <option value="perspective">Perspective</option>
+            <option value="orthotop">Orthographic Top</option>
+            <option value="orthofront">Orthographic Front</option>
+            <option value="orthoside">Orthographic Side</option>
+          </select>
+        </div>
+      </div>
+      <canvas id="mycanvas"></canvas>
+
+    </div>
+
+  </body>
+</html>

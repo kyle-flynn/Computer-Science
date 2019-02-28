@@ -1,0 +1,25 @@
+{
+  "name": "hw03-shapes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Hans Dulimarta",
+  "license": "MIT",
+  "scripts": {
+    "serve": "webpack"
+  },
+  "dependencies": {
+    "gl-context": "^0.1.1",
+    "gl-geometry": "^3.1.1",
+    "gl-shader-core": "^2.2.0",
+    "gl-matrix": "^3.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "webpack": "^4.29.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-glsl-loader": "^1.0.1"
+  }
+}
