@@ -1,5 +1,7 @@
 import GeometricObject from './GeometricObject';
 
+export const RECTANGLE_VERTICES = 8;
+
 export default class Rectangle extends GeometricObject {
     /* Create a rectangle with the given width, height, and length.
        The rectangle is centered around the points (0, 0, 0), and starts

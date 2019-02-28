@@ -8,9 +8,9 @@ import vsMulti from './shaders/vs_vertexcolor.glsl';
 import fsMulti from './shaders/fs_vertexcolor.glsl';
 import Cone from './geometry/Cone';
 import Polygonal from './geometry/Polygonal';
-import Arrow from './model/Arrow';
 import Axes from './model/Axes';
-import TestRectangle from './model/TestRectangle';
+import Windmill from './model/Windmill';
+import Fence from './model/Fence';
 
 const POINTS_ON_CIRCLE = 30;
 const IDENTITY = mat4.create();
@@ -25,7 +25,8 @@ const CONE_REVOLUTION_SPEED = 30.0; // degrees per second
 const HEXAGON_SPIN_SPEED = 180.0;
 let canvas, gl;
 let cone, tube, axes; // geometric objects
-let windmillBase;
+let windmill;
+let fence;
 let oneColorShader = null;
 let multiColorShader = null;
 let projectionMatrix, viewMatrix;
@@ -82,7 +83,7 @@ function renderFunc() {
   mat4.multiply(coneCF, coneRevolution, coneCF);
 
   // To render GLGeometry objects, supply a shader and coordinate frame
-  cone.render(multiColorShader, coneCF);
+  // cone.render(multiColorShader, coneCF);
   // windmillBase.render(multiColorShader, coneCF);
 
   mat4.fromRotation(
@@ -92,11 +93,10 @@ function renderFunc() {
   );
   mat4.multiply(tubeCF, tubeCF, hexaSpin);
   // tube.render(multiColorShader, tubeCF);
-  // windmillBase.render(myObjectRenderer, IDENTITY);
-
+  windmill.render(myObjectRenderer, IDENTITY);
+  fence.render(myObjectRenderer, mat4.translate(mat4.create(), IDENTITY, [0.8, 0, 0]));
   // To render ObjectGroup, supply a rendering function and coord frame
-  windmillBase.render(myObjectRenderer, IDENTITY);
-  axes.render(myObjectRenderer, IDENTITY);
+  // axes.render(myObjectRenderer, IDENTITY);
 }
 
 function onWindowResized() {
@@ -153,11 +153,11 @@ function onProjectionTypeChanged(ev) {
       break;
     case 'orthofront':
       mat4.ortho(projectionMatrix, -4 / 3, +4 / 3, -1, +1, -4, +4);
-      mat4.lookAt(viewMatrix, [1,1,0], [1, 0, 0], CAMERA_UP);
+      mat4.lookAt(viewMatrix, [0,0,0], [-1, 0, 0], [0, 0, 1]);
       break;
     case 'orthoside':
       mat4.ortho(projectionMatrix, -4 / 3, +4 / 3, -1, +1, -4, +4);
-        mat4.lookAt(viewMatrix, [1,1,0], [0, 0, 0], CAMERA_UP);
+      mat4.lookAt(viewMatrix, [1,1,0], [1, 0, 0], [0, 0, 1]);
       break;
     case 'perspective':
       mat4.perspective(projectionMatrix, glMatrix.toRadian(45), 4 / 3, 0.1, 6);
@@ -241,7 +241,13 @@ export default function main() {
     .attr('vertexPos', cylShape.geometry())
     .attr('vertexCol', cylColors);
 
-  windmillBase = new TestRectangle({
+  windmill = new Windmill({
+    glContext: gl,
+    positionAttribute: 'vertexPos',
+    colorAttribute: 'vertexCol'
+  });
+
+  fence = new Fence({
     glContext: gl,
     positionAttribute: 'vertexPos',
     colorAttribute: 'vertexCol'
