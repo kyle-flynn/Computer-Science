@@ -1,24 +1,11 @@
 import GLGeometry from 'gl-geometry';
 import ObjectGroup from '../core/ObjectGroup';
-import Sphere, {SPHERE_DIV} from '../geometry/Sphere';
 import Rectangle, {RECTANGLE_VERTICES} from '../geometry/Rectangle';
 import { mat4, vec3 } from 'gl-matrix';
 import Cone from "../geometry/Cone";
 export default class WindmillBase extends ObjectGroup {
   constructor({ glContext, positionAttribute, colorAttribute }) {
     super();
-
-    // let testRectangle = new Sphere({
-    //   radius: 0.5
-    // });
-    // let cylColors = [];
-    // for (let k = 0; k < (SPHERE_DIV + 1) * (SPHERE_DIV + 1) + 1; k++) cylColors.push(0.3, 1.0, 0.3);
-    // const cyl = new GLGeometry(glContext)
-    //   .attr(positionAttribute, testRectangle.geometry())
-    //   .attr(colorAttribute, cylColors);
-    // const cylCF = mat4.create();
-    //
-    // this.add({ object: cyl, frame: cylCF });
 
     let base = new Rectangle({
       width: 0.75,

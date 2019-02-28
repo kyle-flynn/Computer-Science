@@ -20,8 +20,12 @@ export default class Windmill extends ObjectGroup {
       positionAttribute,
       colorAttribute
     });
-    let sailsCF = mat4.fromTranslation(mat4.create(), [0.4, 0.375, 0.9]);
+    this.sailsCF = mat4.fromTranslation(mat4.create(), [0.4, 0.375, 0.9]);
 
-    this.add({ object: sails, frame: sailsCF });
+    this.add({ object: sails, frame: this.sailsCF });
+  }
+
+  applySailRotation(rotationMatrix) {
+    this.children[1].frame = mat4.multiply(this.sailsCF, this.sailsCF, rotationMatrix);
   }
 }

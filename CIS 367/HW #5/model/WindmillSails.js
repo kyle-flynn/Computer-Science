@@ -25,7 +25,10 @@ export default class WindmillSails extends ObjectGroup {
       length: 0.2
     });
     const sailColors = [];
-    for (let k = 0; k < RECTANGLE_VERTICES; k++) sailColors.push(0.8, 0.8, 0.8);
+    for (let k = 0; k < RECTANGLE_VERTICES; k++) {
+      sailColors.push(1, 1, 1);
+      sailColors.push(0.3, 0.3, 0.3);
+    }
     const sailOneObj = new GLGeometry(glContext)
       .attr(positionAttribute, sailOne.geometry())
       .attr(colorAttribute, sailColors);

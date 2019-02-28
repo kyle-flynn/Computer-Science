@@ -10,7 +10,8 @@ import Cone from './geometry/Cone';
 import Polygonal from './geometry/Polygonal';
 import Axes from './model/Axes';
 import Windmill from './model/Windmill';
-import Fence from './model/Fence';
+import WindmillEntrance from './model/WindmillEntrance';
+import Ground from './model/Ground';
 
 const POINTS_ON_CIRCLE = 30;
 const IDENTITY = mat4.create();
@@ -26,7 +27,8 @@ const HEXAGON_SPIN_SPEED = 180.0;
 let canvas, gl;
 let cone, tube, axes; // geometric objects
 let windmill;
-let fence;
+let windmillEntrance;
+let ground;
 let oneColorShader = null;
 let multiColorShader = null;
 let projectionMatrix, viewMatrix;
@@ -72,29 +74,30 @@ function renderFunc() {
     glMatrix.toRadian((deltaTime * CONE_SPIN_SPEED) / 1000),
     [0, 0, 1]
   );
-  mat4.fromRotation(
+
+  mat4.fromTranslation(
     coneRevolution,
-    glMatrix.toRadian((deltaTime * CONE_REVOLUTION_SPEED) / 1000),
-    [0, 0, 1]
+    [0, 0, Math.sin((deltaTime * CONE_REVOLUTION_SPEED) / 1000)]
   );
   // Post-multiply: rotate around its own Z-axis
   mat4.multiply(coneCF, coneCF, coneSpin);
   // Pre-multiply: rotate arount the world Z-axis
-  mat4.multiply(coneCF, coneRevolution, coneCF);
+  // mat4.multiply(coneCF, coneRevolution, coneCF);
 
   // To render GLGeometry objects, supply a shader and coordinate frame
   // cone.render(multiColorShader, coneCF);
-  // windmillBase.render(multiColorShader, coneCF);
 
   mat4.fromRotation(
     hexaSpin,
     (-1 * glMatrix.toRadian(deltaTime * HEXAGON_SPIN_SPEED)) / 1000,
-    [0, 0, 1]
+    [1, 0, 0]
   );
-  mat4.multiply(tubeCF, tubeCF, hexaSpin);
-  // tube.render(multiColorShader, tubeCF);
+
+  windmill.applySailRotation(hexaSpin);
   windmill.render(myObjectRenderer, IDENTITY);
-  fence.render(myObjectRenderer, mat4.translate(mat4.create(), IDENTITY, [0.8, 0, 0]));
+  windmillEntrance.tick();
+  windmillEntrance.render(myObjectRenderer, mat4.translate(mat4.create(), IDENTITY, [0.8, 0, 0]));
+  ground.render(myObjectRenderer, IDENTITY);
   // To render ObjectGroup, supply a rendering function and coord frame
   // axes.render(myObjectRenderer, IDENTITY);
 }
@@ -247,7 +250,13 @@ export default function main() {
     colorAttribute: 'vertexCol'
   });
 
-  fence = new Fence({
+  windmillEntrance = new WindmillEntrance({
+    glContext: gl,
+    positionAttribute: 'vertexPos',
+    colorAttribute: 'vertexCol'
+  });
+
+  ground = new Ground({
     glContext: gl,
     positionAttribute: 'vertexPos',
     colorAttribute: 'vertexCol'
