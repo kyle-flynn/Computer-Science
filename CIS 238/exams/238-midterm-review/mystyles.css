@@ -1,0 +1,43 @@
+/* CIS 238 Midterm Review */
+
+/* Style for the body that removes margins */
+body {
+  margin: 0;
+}
+
+/* Style for the wrapper that contains all content */
+#wrapper {
+
+}
+
+/* Style for the banner image in the header */
+img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+/* Style for the navigation section */
+nav ul {
+  list-style-type: none;
+}
+
+/* Style for the footer element */
+footer {
+  background-color: #CACACA;
+  text-align: center;
+}
+
+/* Style for the paragraph text inside of the footer that removes margins */
+footer p {
+  margin: 0;
+}
+
+/* Classes for (default) mobile viewport */
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
