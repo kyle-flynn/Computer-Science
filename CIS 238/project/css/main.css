@@ -1,0 +1,64 @@
+/* Kyle Flynn CIS 238 Project */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Universal selector that makes sure ALL elements implements the border-box model. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style removes default margins on the body. */
+body {
+  font-family: 'Roboto', sans-serif;
+  width: auto;
+  height: auto;
+  overflow-x: hidden;
+}
+
+#container {
+  background-color: #ededed;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+#mobile-menu {
+  background-color: #DE9E1F;
+  color: #FFFFFF;
+  position: fixed;
+  width: 100vw;
+  font-size: 2.5em;
+}
+
+#mobile-menu nav {
+  transition: all 0.5s ease-in;
+  transform: translateY(-125%);
+}
+
+#mobile-menu nav ul {
+  list-style-type: none;
+}
+
+#mobile-toggle, #mobile-menu nav ul li {
+  width: 100%;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+#mobile-menu nav ul li {
+  border-top: 0.1em solid #bd861a;
+}
+
+#mobile-menu nav ul li a,
+#mobile-menu nav ul li:link,
+#mobile-menu nav ul li:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
