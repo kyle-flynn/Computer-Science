@@ -7,7 +7,7 @@ body {
 
 /* Style for the wrapper that contains all content */
 #wrapper {
-
+  width: 100%;
 }
 
 /* Style for the banner image in the header */
@@ -22,10 +22,16 @@ nav ul {
   list-style-type: none;
 }
 
+/* Style that employs padding for the article */
+article {
+  padding: 1em;
+}
+
 /* Style for the footer element */
 footer {
   background-color: #CACACA;
   text-align: center;
+  padding: 1% 0 1% 0;
 }
 
 /* Style for the paragraph text inside of the footer that removes margins */
@@ -33,11 +39,95 @@ footer p {
   margin: 0;
 }
 
+/* Styles to remove default underline on hyperlinks */
+a, a:visited, a:link {
+  text-decoration: none;
+}
+
 /* Classes for (default) mobile viewport */
 .mobile {
   display: block;
 }
 
+/* Class that hides desktop content in a mobile viewport */
 .desktop {
   display: none;
+}
+
+/* Media query for desktop viewport targets screens with a minimum width of 830px. */
+@media only screen and (min-width: 830px) {
+
+  /* Style for the wrapper that contains the content to 80% of the browser width */
+  #wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    clear: left;
+  }
+
+  /* Style for the desktop horizontal navigation bar */
+  nav ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Style that employs the desktop horizontal navigation bar */
+  nav ul li {
+    display: inline;
+    float: left;
+    width: 20%;
+    text-align: center;
+  }
+
+  /* Style that sets up the multi-column layout for the page */
+  article {
+    float: left;
+    width: 75%;
+    padding: 0;
+  }
+
+  /* Style that defines top margin on the h1 article element */
+  article h1 {
+    margin: 5% 0 0 0;
+  }
+
+  /* Style that employs the multi-column layout for the page and aside element */
+  aside {
+    float: right;
+    background-color: #ca8928;
+    width: 20%;
+    margin: 5% 0 0 0;
+    padding: 0.5% 0.75% 0.5% 0.75%;
+    border: 0.25em solid #ca6f00;
+  }
+
+  /* Style that removes default margins from a paragraph element */
+  aside p {
+    margin: 0;
+  }
+
+  /* Style for the footer that clears the previous floats */
+  footer {
+    clear: left;
+  }
+
+  /* Style that changes hover properties for hyperlinks */
+  a:hover {
+    font-style: italic;
+  }
+
+  /* Style that changes visited properties for hyperlinks */
+  a:visited {
+    color: #ff644e;
+  }
+
+  /* Style that hides the mobile viewport elements */
+  .mobile {
+    display: none;
+  }
+
+  /* Style that shows the desktop viewport elements */
+  .desktop {
+    display: block;
+  }
 }
