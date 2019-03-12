@@ -1,4 +1,4 @@
-/* CIS 238 Midterm Review */
+/* Kyle Flynn CIS 238 Midterm Review */
 
 /* Style for the body that removes margins */
 body {
@@ -94,7 +94,7 @@ a, a:visited, a:link {
   /* Style that employs the multi-column layout for the page and aside element */
   aside {
     float: right;
-    background-color: #ca8928;
+    background-color: #ffb42c;
     width: 20%;
     margin: 5% 0 0 0;
     padding: 0.5% 0.75% 0.5% 0.75%;
