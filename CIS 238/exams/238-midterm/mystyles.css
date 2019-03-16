@@ -1,0 +1,104 @@
+/* Kyle Flynn CIS 238 Midterm Exam */
+
+/* Style to make the banner flexible */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style to change colors throughout the body */
+body {
+  background-color: #0A4378;
+  color: #5a5656;
+  font-family: Verdena, arial, helvetica, sans-serif;
+}
+
+/* Style to change the text color of h1 and h2 elements */
+h1, h2 {
+  color: #F0A401;
+}
+
+/* Style that reduces the font size of h1 tags */
+h1 {
+  font-size: 1em;
+}
+
+/* Style that reduces the font size of h2 tags */
+h2 {
+  font-size: 0.9em;
+}
+
+/* Controls the background color of the wrapper */
+#wrapper {
+  background-color: #FFFFFF;
+}
+
+/* Style that centers the footer and controls background color */
+footer {
+  text-align: center;
+  background-color: #F0A401;
+}
+
+/* Style that hides desktop content on mobile devices */
+.phone-desktop {
+  display: none;
+}
+
+/* Media query for desktop viewport targets screens with a minimum width of 769px. */
+@media only screen and (min-width: 769px) {
+  #wrapper {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  article {
+    width: 29%; /* Leaves us 13% width to employ box model */
+    float: left;
+    padding: 0 1% 0 0;
+    margin: 0 0 0 3.333%;
+  }
+
+  footer {
+    clear: both;
+    padding: 0.1em;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-left: 2%;
+    padding-top: 2%;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .phone-mobile {
+    display: none;
+  }
+
+  .phone-desktop {
+    display: block;
+  }
+
+  a:link {
+    color: #7b832d;
+  }
+
+  a:visited {
+    color: #0A4378;
+  }
+
+  a:hover {
+    color: #F0A401;
+  }
+
+  a:active {
+    color: #000;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
