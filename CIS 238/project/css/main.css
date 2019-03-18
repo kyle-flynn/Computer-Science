@@ -1,7 +1,7 @@
 /* Kyle Flynn CIS 238 Project */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-/* Universal selector that makes sure ALL elements implements the border-box model. */
+/* Universal selector that makes sure ALL elements implement the border-box model. */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,28 +10,42 @@
 
 /* Style removes default margins on the body. */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: auto;
   height: auto;
   overflow-x: hidden;
 }
 
+/* Overlay for the body. Height should be 100vh exactly. */
 #overlay {
-  display: none;
-  position: fixed;
-  width: 100vw;
   height: 100vh;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Overlay for the mobile menu toggle. */
+#mobile-overlay {
+  height: 2.75em;
+  z-index: 1;
+}
+
+/* Both overlays share these same properties. */
+#overlay,
+#mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0s width, 0.3s ease-in opacity;
+}
+
+/* The container spans at least 100vh, and has a defined background color. */
 #container {
   background-color: #ededed;
   width: 100vw;
   min-height: 100vh;
 }
 
+/* The mobile menu has a box shadow, background color, and fixed position. */
 #mobile-menu {
   background-color: #F89808;
   color: #FFFFFF;
@@ -41,42 +55,69 @@ body {
   box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.8rem rgba(0, 0, 0, 0.35);
 }
 
+/* The actual mobile menu nav is also fixed, and has different background colors and text colors. */
 #mobile-menu nav {
   position: fixed;
   top: 0;
   background-color: #FFFFFF;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.87);
   width: 60vw;
   height: 100vh;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in transform;
   transform: translateX(-80vw);
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
+/* Remove the text decoration of unordered list items. */
 #mobile-menu nav ul {
   list-style-type: none;
 }
 
-#mobile-menu-toggle, #mobile-menu nav ul li {
-  width: 100%;
-  padding: 0.75em 1em 0.75em 1em;
+/* This is the header of the mobile menu drawer when it appears. */
+#mobile-menu-header {
+  background-color: #F89808;
+  color: #FFFFFF;
 }
 
-#mobile-menu nav ul li {
-  border-top: 0.1em solid #bd861a;
-}
-
-#mobile-menu nav ul li a,
-#mobile-menu nav ul li:link,
-#mobile-menu nav ul li:visited {
+#mobile-menu-toggle a,
+#mobile-menu-toggle a:link,
+#mobile-menu-toggle a:visited {
   text-decoration: none;
   color: #FFFFFF;
 }
 
+/* Defines padding for all 'list' items in the mobile menu. */
+#mobile-menu-toggle,
+#mobile-menu-header,
+#mobile-menu nav ul li {
+  width: 100%;
+  padding: 0.75em 1em 0.75em 1em;
+}
+
+/* Every list item has a faded border to separate list items. */
+#mobile-menu nav ul li {
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.07);
+}
+
+/* All mobile menu links have no underline and are a certain color. */
+#mobile-menu nav ul li a,
+#mobile-menu nav ul li a:link,
+#mobile-menu nav ul li a:visited {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+#mobile-menu nav ul li a:active {
+  color: #68A3D1;
+}
+
+/* Class that shows content for mobile. */
 .mobile {
   display: block;
 }
 
+/* Class that hides content for desktops. */
 .desktop {
   display: none;
 }

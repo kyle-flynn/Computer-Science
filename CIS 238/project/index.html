@@ -7,17 +7,26 @@
   </head>
   <body>
 
+    <!-- Overlay for when mobile menu any content is on top of the body. -->
     <div id="overlay"></div>
 
+    <!-- All web content will fit inside of the container. -->
     <div id="container">
 
-      <!-- Mobile hamburger menu -->
+      <!-- Mobile hamburger menu (only visible on mobile of course). -->
       <div id="mobile-menu" class="mobile">
+
+        <!-- Since the original overlay doesn't apply to fixed elements, a mobile overlay was added. -->
+        <div id="mobile-overlay"></div>
+
+        <!-- This element contains the toggle for the mobile menu. -->
         <div id="mobile-menu-toggle">
           <a href="#">Menu</a>
         </div>
+
+        <!-- This is the main navigation content. It looks like a drawer. -->
         <nav class="hidden">
-          <div>
+          <div id="mobile-menu-header">
             Event Management System
           </div>
           <ul>
