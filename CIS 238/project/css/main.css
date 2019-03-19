@@ -1,6 +1,14 @@
 /* Kyle Flynn CIS 238 Project */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+/*
+  -= NOTE ABOUT Z-INDEXES =-
+  0: #main
+  1: #mobile-menu, #banner-text
+  2: #mobile-overlay,
+  3: #mobile-menu nav,
+ */
+
 /* Universal selector that makes sure ALL elements implement the border-box model. */
 * {
   box-sizing: border-box;
@@ -16,15 +24,22 @@ body {
   overflow-x: hidden;
 }
 
+/* All images fit their width of their container by default. */
+img {
+  width: 100%;
+  height: auto;
+}
+
 /* Overlay for the body. Height should be 100vh exactly. */
 #overlay {
   height: 100vh;
+  z-index: 1;
 }
 
 /* Overlay for the mobile menu toggle. */
 #mobile-overlay {
   height: 2.75em;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Both overlays share these same properties. */
@@ -53,6 +68,7 @@ body {
   width: 100vw;
   font-size: 2.5em;
   box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.8rem rgba(0, 0, 0, 0.35);
+  z-index: 1;
 }
 
 /* The actual mobile menu nav is also fixed, and has different background colors and text colors. */
@@ -66,7 +82,7 @@ body {
   transition: 0.3s ease-in transform;
   transform: translateX(-80vw);
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  z-index: 3;
 }
 
 /* Remove the text decoration of unordered list items. */
@@ -110,6 +126,31 @@ body {
 
 #mobile-menu nav ul li a:active {
   color: #68A3D1;
+}
+
+#main {
+  position: relative;
+  font-size: 2.5em;
+  padding-top: 2.75em;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+}
+
+#banner {
+  width: 100vw;
+  height: 20vh;
+  overflow: hidden;
+}
+
+#banner-text {
+  position: absolute;
+  width: 100vw;
+  height: 20vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #FFFFFF;
+  z-index: 1;
+  text-align: center;
 }
 
 /* Class that shows content for mobile. */
