@@ -4,9 +4,9 @@
 /*
   -= NOTE ABOUT Z-INDEXES =-
   0: #main
-  1: #mobile-menu, #banner-text
-  2: #mobile-overlay,
-  3: #mobile-menu nav,
+  1: #banner-text
+  2: #mobile-overlay, #mobile-menu
+  3: #mobile-menu nav
  */
 
 /* Universal selector that makes sure ALL elements implement the border-box model. */
@@ -19,8 +19,6 @@
 /* Style removes default margins on the body. */
 body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: auto;
-  height: auto;
   overflow-x: hidden;
 }
 
@@ -30,10 +28,31 @@ img {
   height: auto;
 }
 
+/* Font sizes for h1 tags */
+h1 {
+  font-size: 1.6em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+/* Basic link styling for mobile. */
+a,
+a:link,
+a:visited {
+  color: #F89808;
+  text-decoration: none;
+}
+
+a:active {
+  color: #68A3D1;
+}
+
 /* Overlay for the body. Height should be 100vh exactly. */
 #overlay {
   height: 100vh;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Overlay for the mobile menu toggle. */
@@ -56,8 +75,8 @@ img {
 /* The container spans at least 100vh, and has a defined background color. */
 #container {
   background-color: #ededed;
-  width: 100vw;
-  min-height: 100vh;
+  min-height: 100vh; /* Generally, each mobile page should be at least 100vh. */
+  height: fit-content; /* However, if we go past that ensure we fit the content height. */
 }
 
 /* The mobile menu has a box shadow, background color, and fixed position. */
@@ -68,7 +87,7 @@ img {
   width: 100vw;
   font-size: 2.5em;
   box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.8rem rgba(0, 0, 0, 0.35);
-  z-index: 1;
+  z-index: 2;
 }
 
 /* The actual mobile menu nav is also fixed, and has different background colors and text colors. */
@@ -128,19 +147,17 @@ img {
   color: #68A3D1;
 }
 
-#main {
-  position: relative;
-  font-size: 2.5em;
-  padding-top: 2.75em;
-  z-index: 0;
-  width: 100%;
-  height: auto;
-}
-
 #banner {
   width: 100vw;
   height: 20vh;
   overflow: hidden;
+  font-size: 2.5em;
+  position: relative;
+  top: 2.75em;
+}
+
+#banner img {
+  filter: blur(2px);
 }
 
 #banner-text {
@@ -151,6 +168,35 @@ img {
   color: #FFFFFF;
   z-index: 1;
   text-align: center;
+  line-height: 8vh;
+}
+
+#main {
+  position: relative;
+  font-size: 2.5em;
+  margin-top: 2.75em;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+  padding: 0.75em 0.5em 0 0.75em;
+}
+
+#main h2 {
+  text-align: center;
+}
+
+#main div {
+  margin-bottom: 2vh;
+}
+
+/* Class for making images into neat icons. */
+.icon {
+  border: 0.1em solid #F89808;
+}
+
+/* Class that determines what active link styles are. */
+.active {
+  color: #F89808 !important; /* Needs !important */
 }
 
 /* Class that shows content for mobile. */

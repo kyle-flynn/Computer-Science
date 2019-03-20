@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Kyle Flynn CIS 238 Project -->
+<html lang="en">
+<head>
+  <title>EMS | About</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<!-- Overlay for when mobile menu any content is on top of the body. -->
+<div id="overlay"></div>
+
+<!-- All web content will fit inside of the container. -->
+<div id="container">
+
+  <!-- Mobile hamburger menu (only visible on mobile of course). -->
+  <div id="mobile-menu" class="mobile">
+
+    <!-- Since the original overlay doesn't apply to fixed elements, a mobile overlay was added. -->
+    <div id="mobile-overlay"></div>
+
+    <!-- This element contains the toggle for the mobile menu. -->
+    <div id="mobile-menu-toggle">
+      <a href="#">Menu</a>
+    </div>
+
+    <!-- This is the main navigation content. It looks like a drawer. -->
+    <nav class="hidden">
+      <div id="mobile-menu-header">
+        Event Management System
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="banner">
+    <div id="banner-text">
+      <h1>Event Management System</h1>
+      <h2>ABOUT</h2>
+    </div>
+    <img src="imgs/ems_play.PNG" alt="Event Management System Team">
+  </div>
+
+  <div id="main">
+    <div>
+      <h2>About!</h2>
+    </div>
+  </div>
+
+</div>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
