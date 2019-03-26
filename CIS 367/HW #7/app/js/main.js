@@ -42,6 +42,10 @@ export default class App {
     lightOne.position.set(10, 40, 100);
     this.scene.add(lightOne);
 
+    const lightTwo = new THREE.DirectionalLight(0xFFFFFF, 0.5);
+    lightTwo.position.set(5, 0, -8);
+    this.scene.add(lightTwo);
+
     window.addEventListener('resize', () => this.resizeHandler());
     this.resizeHandler();
     requestAnimationFrame(() => this.render());

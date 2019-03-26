@@ -7,9 +7,9 @@ export default class WindmillSails extends Group {
     super();
 
     const middle = new Sphere(0.5, 20, 0xe6e6e6);
-    const sailOne = new Rectangle(0.1, 0.75, 3, 0x1a52ba);
-    const sailTwo = new Rectangle(0.1, 0.75, 3, 0x1a52ba);
-    const sailThree = new Rectangle(0.1, 0.75, 3, 0x1a52ba);
+    const sailOne = new Rectangle(0.1, 0.75, 3, 0x939393);
+    const sailTwo = new Rectangle(0.1, 0.75, 3, 0x939393);
+    const sailThree = new Rectangle(0.1, 0.75, 3, 0x939393);
 
     sailOne.translateX(-1);
     sailOne.translateY(0.5);
