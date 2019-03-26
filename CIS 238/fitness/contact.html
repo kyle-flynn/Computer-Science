@@ -30,17 +30,53 @@
   <!-- Use the main area to add the main content of the webpage  -->
   <main>
   
-	<h2>Ready to get started? Contact us today.</h2>
-	
-	<p>We are located at:<br>
-	25743 Bloom Court<br>
-	Locket, GA 85524</p>
-	
-  <p>Phone Number</p>
-	<p><a class="mobile" href="tel:8145559608">(814) 555-9608</a><span class="desktop">(814) 555-9608</span></p>
-	
-  <p>Email Address</p>
-	<p><a href="mailto:forwardfitness@club.net" class="contact">forwardfitness@club.net</a></p>
+    <h2>Complete the form below to begin your free trial.</h2>
+
+    <form method="post" action="feedback.php"><!-- Start Form -->
+      <label for="fName">First Name</label>
+      <input type="text" id="fName" name="fName">
+
+      <label for="lName">Last Name</label>
+      <input type="text" id="lName" name="lName">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone">
+
+      <p>I would like more information about:</p>
+      <ul>
+        <li><input type="checkbox" name="grpfit" id="grpfit" value="grpfit" class="chkbx">Group Fitness</li>
+        <li><input type="checkbox" name="prtrain" id="prtrain" value="prtrain" class="chkbx">Personal Training</li>
+        <li><input type="checkbox" name="nutr" id="nutr" value="nutr" class="chkbx">Nutrition</li>
+      </ul>
+
+      <label for="reference">Referral Source</label>
+      <select name="reference" id="reference">
+        <option value="ad">Advertisement</option>
+        <option value="friend">Friend</option>
+        <option value="google">Google</option>
+        <option value="social">Social Network</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="questions">Questions</label>
+      <textarea id="questions" name="questions" rows="3" cols="25"></textarea>
+
+      <input type="submit" id="submit" value="Submit" class="btn">
+      <input type="reset" id="reset" value="Reset Form" class="btn">
+    </form>
+
+    <p>We are located at:<br>
+    25743 Bloom Court<br>
+    Locket, GA 85524</p>
+
+    <p>Phone Number</p>
+    <p><a class="mobile" href="tel:8145559608">(814) 555-9608</a><span class="desktop">(814) 555-9608</span></p>
+
+    <p>Email Address</p>
+    <p><a href="mailto:forwardfitness@club.net" class="contact">forwardfitness@club.net</a></p>
 
   </main>
 

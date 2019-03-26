@@ -148,13 +148,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="HW #5" type="b2602c69:ProjectViewProjectNode" />
               <item name="HW #5" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HW #5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW #5" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HW #5" type="b2602c69:ProjectViewProjectNode" />
@@ -170,6 +174,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -210,14 +215,16 @@
       <workItem from="1551393752387" duration="619000" />
       <workItem from="1551458456390" duration="666000" />
       <workItem from="1551545882258" duration="602000" />
+      <workItem from="1553545898981" duration="117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5466000" />
+    <option name="totallyTimeSpent" value="5583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
       <window_info id="Structure" order="1" weight="0.25" />

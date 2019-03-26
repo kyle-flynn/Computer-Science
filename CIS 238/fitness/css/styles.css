@@ -133,6 +133,27 @@ aside {
   font-style: italic;
 }
 
+/* Style rule for input, select, and textarea form elements */
+input, select, textarea {
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* Style rule for label element */
+label {
+  display: block;
+}
+
+/* Style rule for unordered list within a form */
+form ul {
+  list-style-type: none;
+}
+
+/* Style rule for checkbox class */
+.chkbx {
+  display: inline-block;
+}
+
 /* Media Query for tablet viewport targets screen size with a minimum width of 660px. */
 @media only screen and (min-width: 660px) {
 
@@ -281,6 +302,46 @@ aside {
     text-decoration: underline;
   }
 
+  /* Style for table element */
+  table {
+    border: 0.1em solid #000000;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  /* Style specifies border and padding for th and td elements */
+  th, td {
+    border: 0.1em solid #000000;
+    padding: 1em;
+  }
+
+  /* Style for th element */
+  th {
+    background-color: #1D1D1C;
+    color: #ffffff;
+  }
+
+  /* Style for caption element */
+  caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+  }
+
+  /* Style rule for label element */
+  label {
+    float: left;
+    padding-right: 0.5em;
+    text-align: right;
+    width: 10em;
+  }
+
+  /* Style rule for btn class */
+  .btn {
+    margin-left: 12em;
+  }
 }
 
 /* Media query for desktop viewport targets screens with a minimum width of 830px. */
@@ -409,9 +470,30 @@ aside {
     padding: 2em;
   }
 
+  /* Style for table element */
+  table {
+    background-color: #FFFFFF;
+    width: 85%;
+  }
+
+  /* Style for caption element */
+  caption {
+    color: #FFFFFF;
+  }
+
   /* Style for contact class */
   .contact {
     color: #FFFFFF;
   }
 
+  /* Style rule for form element */
+  form {
+    background-color: #FFFFFF;
+    padding: 1em;
+  }
+
+  /* Style rule for paragraph with form element */
+  form p {
+    color: #000000;
+  }
 }
