@@ -189,6 +189,41 @@ a:active {
   margin-bottom: 2vh;
 }
 
+/* Class for making medium-sized cards */
+.card-md {
+  width: 100%;
+  height: 40vh;
+  background-color: #ffe1b4;
+}
+
+.card-header {
+  width: 100%;
+  height: 10vh;
+  padding-top: 1vh;
+  margin: 0 !important;
+}
+
+.card-content {
+  width: 100%;
+  height: 30vh;
+  padding: 0.5vh 1vw;
+  margin: 0 !important;
+}
+
+
+.card-icon {
+  border: 0.1em solid #F89808;
+  border-radius: 4vh;
+}
+
+.img-placeholder {
+  width: 8vh;
+  height: 8vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0 !important;
+}
+
 /* Class for making images into neat icons. */
 .icon {
   border: 0.1em solid #F89808;

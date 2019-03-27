@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebGL Three.js Starter</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+      body {
+        background-color: #000000;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      #wrapper {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2%;
+        background-color: #ffffff;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      h3 {
+        text-align: center;
+      }
+
+      .blue {
+        color: blue;
+      }
+
+      .pink {
+        color: deeppink;
+      }
+
+      .yellow {
+        color: gold;
+      }
+
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <h1>Projection &amp; Viewing (Three.js)</h1>
+      <h2>By Kyle Flynn</h2>
+      <p>
+        The following is a scene of a windmill in the plains with spinning sails. A <span class="blue">cone</span> was used for the
+        windmill top, and <span class="pink">rectangles</span> were used for the sails and windmill base. The windmill sails are
+        connected by a <span class="yellow">UV sphere</span>. The fence posts are all <span class="red">cylinders</span>.
+      </p>
+
+      <canvas id="mycanvas"></canvas>
+    </div>
+  <script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
