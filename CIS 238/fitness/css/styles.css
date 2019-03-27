@@ -154,6 +154,19 @@ form ul {
   display: inline-block;
 }
 
+/* Style rule for the video class */
+.video {
+  padding: 1em;
+  text-align: center;
+}
+
+/* Style rule for video element */
+video {
+  border: 0.5em ridge #ffffff;
+  height: auto;
+  max-width: 100%;
+}
+
 /* Media Query for tablet viewport targets screen size with a minimum width of 660px. */
 @media only screen and (min-width: 660px) {
 
