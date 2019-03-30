@@ -130,6 +130,52 @@ section h2 {
   text-decoration: underline;
 }
 
+/* Styles for table border and layout */
+table {
+  width: 100%;
+  margin-bottom: 4vh;
+  border: 0.1em solid #000000;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+/* Styles for table content */
+th, td {
+  border: 0.1em solid #000000;
+  text-align: center;
+}
+
+/* Styles for the caption element */
+caption {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-bottom: 0.375em;
+}
+
+/* Styles for form labels */
+label, input[type="text"], input[type="email"], select {
+  display: block;
+  width: 100%;
+  margin-bottom: 1vh;
+}
+
+input {
+  border-radius: 0.5em;
+}
+
+textarea {
+  width: 100%;
+}
+
+input[type="submit"], input[type="reset"] {
+  margin-top: 1vh;
+  height: 5vh; ;
+  width: 100%;
+  background-color: #1494ff;
+  color: #ffffff;
+  border: 0;
+}
+
 /* Media Query for tablet viewport targets screen size with a minimum width of 660px. */
 @media only screen and (min-width: 660px) {
 
@@ -167,6 +213,21 @@ section h2 {
   /* Styles for the section tags on the education page. */
   section {
     font-size: 1.2em;
+  }
+
+  /* Styles for table margin bottom */
+  table {
+    margin-bottom: 3vh;
+  }
+
+  /* Styles for table data padding */
+  th, td {
+    padding: 0.5em;
+  }
+
+  input[type="submit"], input[type="reset"] {
+    width: 75%;
+    margin-left: 12.5%;
   }
 
 }
@@ -210,5 +271,27 @@ section h2 {
   /* Styles for the section tags on the education page. */
   section {
     font-size: 1.1em;
+  }
+
+  /* Styles for the table bottom margin */
+  table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  th, td {
+    padding: 0.75em;
+  }
+
+  fieldset {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  input[type="submit"], input[type="reset"] {
+    width: 50%;
+    margin-left: 25%;
   }
 }
