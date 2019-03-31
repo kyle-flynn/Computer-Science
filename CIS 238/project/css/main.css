@@ -143,10 +143,12 @@ a:active {
   color: rgba(0, 0, 0, 0.87);
 }
 
+/* On mobile menu links, the color changes to a nice material design blue. */
 #mobile-menu nav ul li a:active {
   color: #68A3D1;
 }
 
+/* This is the top banner on each page. */
 #banner {
   width: 100vw;
   height: 20vh;
@@ -156,10 +158,12 @@ a:active {
   top: 2.75em;
 }
 
+/* To make the overlay text appear more readable, blur the image slightly. */
 #banner img {
   filter: blur(2px);
 }
 
+/* Banner text is positioned absolutely over the banner. Same width and height. */
 #banner-text {
   position: absolute;
   width: 100vw;
@@ -171,6 +175,7 @@ a:active {
   line-height: 8vh;
 }
 
+/* This is the MAIN content of the webpage, not the container. */
 #main {
   position: relative;
   font-size: 2.5em;
@@ -181,52 +186,72 @@ a:active {
   padding: 0.75em 0.5em 0 0.75em;
 }
 
+/* For now at least, headers will always be centered on mobile. */
 #main h2 {
   text-align: center;
 }
 
-#main div {
+/* All first-level divs in the page should also have a bottom margin. */
+#main > div {
   margin-bottom: 2vh;
 }
 
+/* START UTILITY CLASSES */
 /* Class for making medium-sized cards */
 .card-md {
   width: 100%;
   height: 40vh;
-  background-color: #ffe1b4;
+  background-color: #ffad51;
+  box-shadow: 0 0.6rem 1.1rem rgba(0, 0, 0, 0.35);
+  margin-top: 2.5vh;
 }
 
+/* Default card headers will have a defined height and 0 margins. */
 .card-header {
   width: 100%;
   height: 10vh;
-  padding-top: 1vh;
-  margin: 0 !important;
 }
 
+/* Cards with an icon in their header need to be offset properly. */
+.card-icon-header {
+  width: 100%;
+  height: 10vh;
+  margin-top: 10vh;
+}
+
+/* Card content is defined. */
 .card-content {
   width: 100%;
   height: 30vh;
   padding: 0.5vh 1vw;
-  margin: 0 !important;
+  color: #FFFFFF;
 }
 
+/* Card content paragraph spacing is defined */
+.card-content p {
+  margin-top: 2vh;
+}
 
+/* Card icons have a defined border, color, and position. */
 .card-icon {
-  border: 0.1em solid #F89808;
-  border-radius: 4vh;
-}
-
-.img-placeholder {
-  width: 8vh;
-  height: 8vh;
+  border: 0.1em solid #bb7101;
+  border-radius: 7.5vh;
+  position: relative;
+  top: -7.5vh;
+  width: 15vh;
+  height: 15vh;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 0 !important;
+  background-color: #ededed;
+}
+
+.card-icon img {
+  padding: 1vh;
 }
 
 /* Class for making images into neat icons. */
 .icon {
-  border: 0.1em solid #F89808;
+  border: 0.1em solid #bb7101;
 }
 
 /* Class that determines what active link styles are. */
