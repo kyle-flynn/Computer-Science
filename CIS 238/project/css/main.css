@@ -206,6 +206,11 @@ a:active {
   margin-bottom: 2vh;
 }
 
+/* Add margins to all ul */
+#main ul {
+  margin-left: 5vw;
+}
+
 /* START UTILITY CLASSES */
 /* Class for making medium-sized cards. */
 .card-md {
@@ -265,6 +270,29 @@ a:active {
 
 .card-icon img {
   padding: 1vh;
+}
+
+/* Divider class */
+.divider {
+  width: 100%;
+  height: 0.05em;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+}
+
+/* Class for faq items */
+.faq-item {
+
+}
+
+.faq-q {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.faq-a {
+  margin-top: 1vh;
 }
 
 /* Class for primary card theme. */
