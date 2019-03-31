@@ -37,6 +37,11 @@ h2 {
   font-size: 1.3em;
 }
 
+h3 {
+  font-size: 1.0em;
+  font-weight: normal;
+}
+
 /* Basic link styling for mobile. */
 a,
 a:link,
@@ -143,6 +148,11 @@ a:active {
   color: rgba(0, 0, 0, 0.87);
 }
 
+#mobile-menu nav ul li.mobile-menu-submenu {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 /* On mobile menu links, the color changes to a nice material design blue. */
 #mobile-menu nav ul li a:active {
   color: #68A3D1;
@@ -187,21 +197,28 @@ a:active {
 }
 
 /* For now at least, headers will always be centered on mobile. */
-#main h2 {
+#main h2, #main h3 {
   text-align: center;
 }
 
 /* All first-level divs in the page should also have a bottom margin. */
-#main > div {
+#main > div, #main > div > p {
   margin-bottom: 2vh;
 }
 
 /* START UTILITY CLASSES */
-/* Class for making medium-sized cards */
+/* Class for making medium-sized cards. */
 .card-md {
   width: 100%;
   height: 40vh;
-  background-color: #ffad51;
+  box-shadow: 0 0.6rem 1.1rem rgba(0, 0, 0, 0.35);
+  margin-top: 2.5vh;
+}
+
+/* Class for making small-sized cards. */
+.card-sm {
+  width: 100%;
+  height: 30vh;
   box-shadow: 0 0.6rem 1.1rem rgba(0, 0, 0, 0.35);
   margin-top: 2.5vh;
 }
@@ -209,22 +226,23 @@ a:active {
 /* Default card headers will have a defined height and 0 margins. */
 .card-header {
   width: 100%;
-  height: 10vh;
+  height: 25%;
+  padding-top: 2.5vh;
+  text-align: center;
 }
 
 /* Cards with an icon in their header need to be offset properly. */
 .card-icon-header {
   width: 100%;
-  height: 10vh;
+  height: 25%;
   margin-top: 10vh;
 }
 
 /* Card content is defined. */
 .card-content {
   width: 100%;
-  height: 30vh;
-  padding: 0.5vh 1vw;
-  color: #FFFFFF;
+  height: 75%;
+  padding: 1vh 1.5vw;
 }
 
 /* Card content paragraph spacing is defined */
@@ -247,6 +265,53 @@ a:active {
 
 .card-icon img {
   padding: 1vh;
+}
+
+/* Class for primary card theme. */
+.primary-card {
+  background-color: #ffad51;
+  color: #FFFFFF;
+}
+
+/* Class for secondary card theme. */
+.secondary-card {
+  background-color: #ededed;
+  color: #000000;
+}
+
+/* Download Button Classes */
+.dl-btn-container {
+  position: relative;
+  width: calc(100vw - 1.5em);
+  height: 8vh;
+  margin: 2.5vh auto 2.5vh auto;
+}
+
+.dl-btn {
+  position: absolute;
+  width: calc(100vw - 1.5em);
+  height: 8vh;
+  background-color: #F89808;
+  color: #FFFFFF !important; /* Needs !important to override default link color. */
+}
+
+.dl-btn-title {
+  position: absolute;
+  width: 100%;
+  height: 2vh;
+  top: 0.75vh;
+  text-align: center;
+  font-size: 3vh;
+}
+
+.dl-btn-subtitle {
+  position: absolute;
+  width: 100%;
+  height: 2vh;
+  top: 4.5vh;
+  text-align: center;
+  font-size: 3.75vw;
+  color: #eaeaea;
 }
 
 /* Class for making images into neat icons. */
