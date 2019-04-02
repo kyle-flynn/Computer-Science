@@ -1,78 +1,81 @@
 <!DOCTYPE html>
 <!-- Kyle Flynn CIS 238 Project -->
 <html lang="en">
-  <head>
-    <title>EMS | Home</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-  </head>
-  <body>
+<head>
+  <title>EMS | Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
 
-    <!-- Overlay for when mobile menu any content is on top of the body. -->
-    <div id="overlay"></div>
+<!-- Overlay for when mobile menu any content is on top of the body. -->
+<div id="overlay"></div>
 
-    <!-- All web content will fit inside of the container. -->
-    <div id="container">
+<!-- All web content will fit inside of the container. -->
+<div id="container">
 
-      <!-- Mobile hamburger menu (only visible on mobile of course). -->
-      <div id="mobile-menu" class="mobile">
+  <!-- Mobile hamburger menu (only visible on mobile of course). -->
+  <div id="mobile-menu" class="mobile">
 
-        <!-- Since the original overlay doesn't apply to fixed elements, a mobile overlay was added. -->
-        <div id="mobile-overlay"></div>
+    <!-- Since the original overlay doesn't apply to fixed elements, a mobile overlay was added. -->
+    <div id="mobile-overlay"></div>
 
-        <!-- This element contains the toggle for the mobile menu. -->
-        <div id="mobile-menu-toggle">
-          <a href="#">Menu</a>
-        </div>
-
-        <!-- This is the main navigation content. It looks like a drawer. -->
-        <nav class="hidden">
-          <div id="mobile-menu-header">
-            Event Management System
-          </div>
-          <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="download.html">Download</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="mobile-menu-submenu">
-              <ul>
-                <li><a href="contributing.html">Contributing</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="changelog.html">Changelog</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div id="banner">
-        <div id="banner-text">
-          <h1>Event Management System</h1>
-          <h2>HOME</h2>
-        </div>
-        <img src="imgs/earnst_2.png" alt="Event Management System in Action Banner">
-      </div>
-
-      <div id="main">
-        <div>
-          <h2>What is EMS?</h2>
-          <img src="imgs/earnst_1.png" alt="Event Management System at FIRST in Michigan FTC State Championship" class="icon">
-          <p>The Event Management System is a suite of programs and applications that work together to provide a comprehensive event experience for organizations such as <i>FIRST</i>, <i>FIRST</i> Global, or Battlebots. Questions? Check our our <a href="#">FAQ</a>.</p>
-        </div>
-        <div>
-          <h2>Why EMS?</h2>
-          <img src="imgs/global_1.jpg" alt="Event Management System at FIRST Global in Mexico City, Mexico" class="icon">
-          <p>EMS was built by the community, for the community. With customizable options ranging from audience display icons to event administrative tasks, EMS is ready to tackle your event's every need. Check out its <a href="#">features</a>.</p>
-        </div>
-        <div>
-          <h2>How?</h2>
-          <img src="imgs/publicdomain_code.png" alt="HTML Code" class="icon">
-          <p>Powerful web technologies such as TypeScript, React, Electron, and Express all fuel EMS, which is what makes it cross-platform. Interested in <a href="#">contributing</a>?</p>
-        </div>
-      </div>
-
+    <!-- This element contains the toggle for the mobile menu. -->
+    <div id="mobile-menu-toggle">
+      <a href="#">Menu</a>
     </div>
-  </body>
-  <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- This is the main navigation content. It looks like a drawer. -->
+    <nav class="hidden">
+      <div id="mobile-menu-header">
+        <h2>Event Management System</h2>
+      </div>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="mobile-menu-submenu">
+          <ul>
+            <li><a href="contributing.html">Contributing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="banner">
+    <div id="banner-text">
+      <h1>Event Management System</h1>
+      <h2>HOME</h2>
+    </div>
+    <img src="imgs/earnst_2.png" alt="Event Management System in Action Banner">
+  </div>
+
+  <div id="main">
+    <div>
+      <h2>What is EMS?</h2>
+      <img src="imgs/earnst_1.png" alt="Event Management System at FIRST in Michigan FTC State Championship" class="icon">
+      <p>The Event Management System is a suite of programs and applications that work together to provide a comprehensive event experience for organizations such as <i>FIRST</i>, <i>FIRST</i> Global, or Battlebots. Questions? Check our our <a href="faq.html">FAQ</a>.</p>
+    </div>
+    <div>
+      <h2>Why EMS?</h2>
+      <img src="imgs/global_1.jpg" alt="Event Management System at FIRST Global in Mexico City, Mexico" class="icon">
+      <p>EMS was built by the community, for the community. With customizable options ranging from audience display icons to event administrative tasks, EMS is ready to tackle your event's every need. Check out its <a href="features.html">features</a>.</p>
+    </div>
+    <div>
+      <h2>How?</h2>
+      <img src="imgs/publicdomain_code.png" alt="HTML Code" class="icon">
+      <p>Powerful web technologies such as TypeScript, React, Electron, and Express all fuel EMS, which is what makes it cross-platform. Interested in <a href="contributing.html">contributing</a>?</p>
+    </div>
+  </div>
+
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
 </html>
