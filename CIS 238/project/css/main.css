@@ -223,6 +223,36 @@ a:active {
   margin-left: 5vw;
 }
 
+/* START FORM CLASSES */
+/* Fieldset styles */
+fieldset {
+  padding: 0.5em 0.75em;
+  margin-bottom: 2vh;
+  border: 2px solid #F89808;
+}
+
+/* Legend styles, mostly padding */
+legend {
+  padding: 0 0.5em 0 0.5em;
+}
+
+/* Input styles */
+label, input[type="text"], input[type="email"], select {
+  display: block;
+  width: 100%;
+  margin-bottom: 1vh;
+  padding: 0.3em;
+}
+
+/* Inputs that are required */
+input[required] {
+  border: 1px solid #ff434b;
+}
+
+.required {
+  color: #ff434b;
+}
+
 /* START UTILITY CLASSES */
 /* Class for making medium-sized cards. */
 .card-md {
@@ -294,10 +324,6 @@ a:active {
 }
 
 /* Class for faq items */
-.faq-item {
-
-}
-
 .faq-q {
   font-weight: bold;
   font-size: 1.5em;
