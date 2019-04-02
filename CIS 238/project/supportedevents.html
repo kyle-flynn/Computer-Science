@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- Kyle Flynn CIS 238 Project -->
+<html lang="en">
+<head>
+  <title>EMS | Games &amp; Events</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+<!-- Overlay for when mobile menu any content is on top of the body. -->
+<div id="overlay"></div>
+
+<!-- All web content will fit inside of the container. -->
+<div id="container">
+
+  <!-- Mobile hamburger menu (only visible on mobile of course). -->
+  <div id="mobile-menu" class="mobile">
+
+    <!-- Since the original overlay doesn't apply to fixed elements, a mobile overlay was added. -->
+    <div id="mobile-overlay"></div>
+
+    <!-- This element contains the toggle for the mobile menu. -->
+    <div id="mobile-menu-toggle">
+      <a href="#">Menu</a>
+    </div>
+
+    <!-- This is the main navigation content. It looks like a drawer. -->
+    <nav class="hidden">
+      <div id="mobile-menu-header">
+        <h2>Event Management System</h2>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Games &amp; Events</a></li>
+        <li class="mobile-menu-submenu">
+          <ul>
+            <li><a href="supportedevents.html" class="active">Games & Events</a></li>
+          </ul>
+        </li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="mobile-menu-submenu">
+          <ul>
+            <li><a href="about.html">Contributing</a></li>
+            <li><a href="about.html">FAQ</a></li>
+            <li><a href="about.html">Changelog</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="banner">
+    <div id="banner-text">
+      <h1>Event Management System</h1>
+      <h2>GAMES &amp; EVENTS</h2>
+    </div>
+    <img src="imgs/global_1.jpg" alt="Event Management System Team">
+  </div>
+
+  <div id="main">
+    <div>
+      <h2>Games & Events</h2>
+      <p>Event Management system was built to support events of multiple platforms in multiple programs. Check out the following table to see the list of supported events and games.</p>
+
+      <div>
+        <table>
+          <caption>EMS Supported Event Types</caption>
+          <thead>
+          <tr>
+            <th>Program</th>
+            <th>Game</th>
+            <th>Events</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><i>FIRST</i> Global</td>
+              <td>Energy Impact</td>
+              <td>Championship</td>
+              <td><span class="supported"></span></td>
+            </tr>
+          <tr>
+            <td><i>FIRST</i> Tech Challenge</td>
+            <td>Rover Ruckus</td>
+            <td>Scrimmage, League, Offseason</td>
+            <td><span class="supported"></span></td>
+          </tr>
+            <tr>
+              <td><i>FIRST</i> Robotics Competition</td>
+              <td>Destination: Deep Space</td>
+              <td>N/A</td>
+              <td><span class="not-supported"></span></td>
+            </tr>
+            <tr>
+              <td><i>FIRST</i> Lego League</td>
+              <td>Hydrodynamics</td>
+              <td>N/A</td>
+              <td><span class="kinda-supported"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+</html>

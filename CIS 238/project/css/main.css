@@ -223,6 +223,51 @@ a:active {
   margin-left: 5vw;
 }
 
+/* START STYLES FOR TABLES */
+table {
+  width: 100%;
+  margin-bottom: 4vh;
+  border: 0.1em solid #bb7101;
+  border-collapse: collapse;
+  font-size: 0.75em; /* Smaller text to fit smaller displays */
+}
+
+th, td {
+  position: relative;
+  border: 0.1em solid #bb7101;
+  text-align: center;
+  height: 5vh;
+}
+
+caption {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-bottom: 0.375em;
+  background-color: #F89808;
+  color: #FFFFFF;
+}
+
+.supported, .not-supported, .kinda-supported {
+  width: 4vh;
+  height: 4vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #000000;
+}
+
+.supported {
+  background-color: #238f23;
+}
+
+.kinda-supported {
+  background-color: #e3e300;
+}
+
+.not-supported {
+  background-color: #e10000;
+}
+
 /* START FORM CLASSES */
 /* Fieldset styles */
 fieldset {
@@ -247,6 +292,18 @@ label, input[type="text"], input[type="email"], select {
 /* Inputs that are required */
 input[required], select[required] {
   border: 1px solid #ff434b;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 60vw;
+  height: 4vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F89808;
+  color: #FFFFFF;
+  border: 0;
+  margin-top: 1vh;
 }
 
 textarea {
