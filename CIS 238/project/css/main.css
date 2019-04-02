@@ -62,7 +62,7 @@ a:active {
 
 /* Overlay for the mobile menu toggle. */
 #mobile-overlay {
-  height: 2.75em;
+  height: 7.5vh;
   z-index: 2;
 }
 
@@ -245,8 +245,12 @@ label, input[type="text"], input[type="email"], select {
 }
 
 /* Inputs that are required */
-input[required] {
+input[required], select[required] {
   border: 1px solid #ff434b;
+}
+
+textarea {
+  width: 100%;
 }
 
 .required {

@@ -64,6 +64,8 @@
         <fieldset>
           <legend>Personal Information</legend>
 
+          <i><span class="required">*</span> denotes required fields</i>
+
           <label for="firstname">First Name<span class="required">*</span></label>
           <input type="text" id="firstname" name="firstname" placeholder="John" required>
 
@@ -77,14 +79,25 @@
         <fieldset>
           <legend>Additional Information</legend>
 
-          <label for="state">Reason for Contact<span class="required">*</span></label>
-          <select id="state" name="state" required>
-            <option value="ems_development">EMS Development</option>
-            <option value="live_support">Live Support</option>
+          <label for="program">Relevant Program<span class="required">*</span></label>
+          <select id="program" name="program" required>
+            <option value="ftc">FIRST Tech Challenge</option>
+            <option value="frc">FIRST Robotics Competition</option>
+            <option value="fgc">FIRST Global</option>
+            <option value="bb">Battlebots</option>
+            <option value="other">Other</option>
           </select>
+
+          <label>Reason for Contact</label>
+          <input type="radio" name="reason" value="business">Business<br>
+          <input type="radio" name="reason" value="personal">EMS Development<br>
+          <input type="radio" name="reason" value="other">Live Support<br>
+          <input type="radio" name="reason" value="other">Other
         </fieldset>
         <fieldset>
           <legend>Extra</legend>
+
+          <textarea placeholder="Additional reason for contact, any more information, etc." rows="4"></textarea>
         </fieldset>
       </form>
     </div>
