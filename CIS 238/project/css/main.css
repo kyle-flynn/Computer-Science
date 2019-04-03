@@ -487,6 +487,15 @@ textarea {
   display: none;
 }
 
+.retina {
+  max-width: 95%;
+  width: 1024px;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /* Media Query for tablet viewport targets screen size with a minimum width of 660px. */
 @media only screen and (min-width: 660px) {
   #mobile-overlay {
@@ -728,6 +737,21 @@ textarea {
 
   a:hover {
     border-bottom: 0.1em dotted #F89808;
+  }
+
+  fieldset {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  button[type="submit"] {
+    width: 20vw;
+    height: 5vh;
+  }
+
+  button[type="submit"]:hover, .dl-btn:hover {
+    background-color: #bb7101;
+    cursor: pointer;
   }
 
   footer {
