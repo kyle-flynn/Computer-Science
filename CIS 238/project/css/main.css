@@ -169,6 +169,29 @@ a:active {
   color: #68A3D1;
 }
 
+#mobile-menu-footer {
+  font-size: 0.75em;
+  text-align: center;
+}
+
+#mobile-menu-footer > a,
+#mobile-menu-footer > a:link,
+#mobile-menu-footer > a:visited {
+  color: #F89808 !important; /* Need this to override black color from li styles above. */
+}
+
+#mobile-menu-logo {
+  display: block;
+  margin-top: 1vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mobile-menu-logo > img {
+  height: 10vh;
+  width: auto;
+}
+
 /* This is the top banner on each page. */
 #banner {
   width: 100vw;
@@ -214,7 +237,10 @@ a:active {
 }
 
 /* All first-level divs in the page should also have a bottom margin. */
-#main > div, #main > div > p {
+#main > div,
+#main > div > p,
+#main > section,
+#main > article > p {
   margin-bottom: 2vh;
 }
 
