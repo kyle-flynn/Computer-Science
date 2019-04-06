@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+      li {
+        color: red;
+      }
+      .emphasis {
+        color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li>Hello</li>
+      <li>Hello 2</li>
+      <li>Hello 3</li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+      var lis = $('ul li');
+      lis.addClass("emphasis");
+    </script>
+  </body>
+</html>
