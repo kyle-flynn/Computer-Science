@@ -1,0 +1,171 @@
+/* Kyle Flynn - 2/21/2019 */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  background-color: #fcfcfc;
+  background: -moz-linear-gradient(#FFFFFF, #7ecbff); /* Firefox */
+  background: -o-linear-gradient(#FFFFFF, #7ecbff); /* Opera */
+  background: -webkit-linear-gradient(#FFFFFF, #7ecbff); /* Chrome, Safari */
+  background: linear-gradient(#FFFFFF, #7ecbff);
+  background-attachment: fixed;
+}
+
+.float-left {
+  float: left;
+}
+
+img {
+  margin-right: 3%;
+  margin-bottom: 2%;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+#outerwrapper {
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+
+#main {
+  clear: both;
+  background-color: #00eeff;
+  padding: 3%;
+  border: 0.15em black solid;
+  border-radius: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+.portfolio-img {
+  height: auto;
+  width: 400px;
+  box-sizing: border-box;
+  border: 0.1em solid #1494ff;
+}
+
+header {
+  padding: 0 1%;
+  text-align: center;
+}
+
+footer {
+  margin-top: 1%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.myname {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* Styles displays for the mobile class */
+.mobile {
+  display: inline;
+}
+
+/* Style hides the desktop class */
+.desktop {
+  display: none;
+}
+
+/* Style hides the tablet class */
+.tablet {
+  display: none;
+}
+
+/* Style for links, unvisited and visited */
+a:link, a:visited {
+  text-decoration: none;
+  color: #1494ff;
+}
+
+/* Style for navigation menu that removes padding */
+nav ul {
+  padding: 0;
+}
+
+/* Style for navigation menu list items */
+nav ul li {
+  background-color: #1494ff;
+  text-align: center;
+  padding: 0.5em 0;
+  margin: 0.25em 0;
+  border-radius: 0.5em;
+}
+
+/* Styles for navigation menu links */
+nav ul li a, nav ul li a:link, nav ul li:visited {
+  color: #ffffff !important;
+}
+
+/* Media Query for tablet viewport targets screen size with a minimum width of 660px. */
+@media only screen and (min-width: 660px) {
+
+  /* Style specifies to hide the mobile class */
+  .mobile {
+    display: none;
+  }
+
+  /* Style specifies to display the tablet class */
+  .tablet {
+    display: inline;
+  }
+
+  /* Style specifies to display the desktop class */
+  .desktop {
+    display: inline;
+  }
+
+  /* Style shrinks the outer wrapper's width */
+  #outerwrapper {
+    width: 95%;
+  }
+
+  nav {
+    float: right;
+    width: calc(95% - 400px);
+  }
+
+}
+
+/* Media query for desktop viewport targets screens with a minimum width of 830px. */
+@media only screen and (min-width: 830px) {
+
+  /* Style ups scaling for navigation boxes */
+  nav ul li {
+    padding: 2% 0;
+  }
+
+  /* Style adds hover style changes */
+  nav ul li:hover {
+    background-color: #1370d6;
+  }
+
+  /* Style adds hover style changes */
+  nav ul li a:hover {
+    color: #e1e1e1;
+  }
+
+  /* Style adds hover style changes */
+  a:hover {
+    text-decoration: none;
+    color: #1370d6;
+    border-bottom: 0.1em dotted #1370d6;
+  }
+
+  /* Style adds active style changes */
+  a:active {
+    font-style: italic;
+  }
+
+}

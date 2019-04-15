@@ -1,0 +1,72 @@
+/*Style sheet for the form only on the contact.html page*/
+
+/*----------------
+Rules for mobile always listed first in a mobile-first strategy. All rules below cascade and impact tablet and laptop/desktop viewports.  The media queries for tablet and laptop/desktop make adjustments where necessary.
+----------------*/
+/*Ensures the form doesn't stretch too wide before viewport hits the first break point*/
+form {max-width: 25em; background: #95ab63;/*darker green */}
+
+/* Style rule for all the control elements in the form (input, select, and textarea) to be displayed like block elements. These control elements are inline elements that normally flow with the rest of the content, not on a new line like block elements. */
+input, select, textarea {display: block;margin-bottom: .5em;}
+
+/*Adds some spacing between the buttons*/
+#buttons input {margin: 1.5em;}
+
+/* Style rule for Services Required check boxes. Elements display inline horizontally as they would by default anyway, but maintain block element characteristics. */
+#services input {display: inline-block;}
+
+/* Style rule for timeframe radio buttons */
+#timeframe input {display: inline-block;}
+
+/*Removes the bullets for the check boxes and the radio buttons*/
+form ul {list-style-type: none;}
+
+/*Below are rules for the really pretty stuff, colors, borders, etc.*/
+
+/*Light green. Removes default border for fieldsets*/
+fieldset {background: #bdd684; border: none; }
+
+/*Text in upper-left of each fieldset. A bit larger font, white text, and taller dark green area so text fits.*/
+legend {font-size: 1.1em; color: #fff; height: 2.65em;}
+
+ /*Pseudo-classes are used to define a special state of an element. You've seen pseudo classes for hyperlinks, which change color depending on the state (link, visited, hover, active). Here is another pseudo-class, focus. Focus is used for the input and textarea elements. When a user taps/clicks in one of these elements (which is the state), the element has a light-gray color.  Good visual indication that the control is active.  */ 
+input:focus, textarea:focus {background: #E2F0D6;}
+
+
+/*--------------Rules for tablet----------------*/
+@media only screen and (min-width: 660px) {
+
+/*Ensures the form doesn't stretch too wide*/
+form {max-width: 40em;}
+
+/* Style rule for get in touch label elements (text and control). To see what each declaration does, remove one at a time, save, and then refresh. */
+#get-in-touch label {float: left; padding-right: 1em;text-align: right;	width: 5em;}
+
+/* Adds more space between the controls.*/
+#get-in-touch input {margin-bottom: 1em;}
+
+/* Style rule for check boxes and radio buttons. Makes the list elements display inline horizontally instead of block as li elements do by default. */
+#services li, #timeframe li {display: inline;}
+
+/*Makes the textarea larger to take advantage of the additional space available on the larger viewport*/
+textarea {width: 40em;}
+
+/* Style rule buttons. Puts the buttons side-by-side again, which they do by default. But the mobile style above made them block. */
+#buttons input{	display: inline; margin: .5em;}
+
+
+}/*End of tablet media query*/
+
+
+
+/*----------------Rules for laptop / desktop---------------- */
+
+@media only screen and (min-width: 830px) {
+
+/*Lets the form and large text area stretch a little bit wider for larger viewports*/	
+form {max-width: 50em;}
+textarea {width: 50em;}	
+	
+	
+}/*End of laptop / desktop media query*/
+

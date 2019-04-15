@@ -1,4 +1,4 @@
-/* Style sheet created by: Kyle Flynn, 1/30/2019 */
+/* Style sheet created by: Kyle Flynn, 4/3/2019 */
 
 /* Style for body specifies a background color */
 body {
@@ -165,6 +165,24 @@ video {
   border: 0.5em ridge #ffffff;
   height: auto;
   max-width: 100%;
+}
+
+/* Style rule for the copyright div */
+#copyright {
+  float: left;
+  margin-top: 2em;
+  width: 80%;
+}
+
+/* Style rule for the social div */
+#social {
+  float: right;
+  width: 20%;
+}
+
+/* Style rule for social media icons */
+#social img {
+  padding: 0.5em;
 }
 
 /* Media Query for tablet viewport targets screen size with a minimum width of 660px. */
@@ -351,6 +369,11 @@ video {
     width: 10em;
   }
 
+  /* Style rule for form unordered list element */
+  form ul {
+    margin-left: 2em;
+  }
+
   /* Style rule for btn class */
   .btn {
     margin-left: 12em;
@@ -481,6 +504,7 @@ video {
     background-color: #2A2A2A;
     margin-top: -0.2em;
     padding: 2em;
+    overflow: auto;
   }
 
   /* Style for table element */

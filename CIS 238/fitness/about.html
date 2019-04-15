@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<!-- This website template was created by: Kyle Flynn 3/27/2019 -->
+<!-- This website template was created by: Kyle Flynn 4/3/2019 -->
 <head>
   <link rel="stylesheet" href="css/styles.css">
   <title>Forward Fitness Club</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Forward Fitness Club has sate-of-the-art fitness equipment and provides personal training.">
+  <script src="scripts/myFunctions.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -31,7 +33,7 @@
   <main>
 
     <div class="video">
-      <video autoplay controls>
+      <video controls poster="images/homeBanner.jpg">
         <source src="media/ffc_vid.mp4" type="video/mp4">
         <source src="media/ffc_vid.ogg" type="video/ogg">
         <source src="media/ffc_vid.webm" type="video/webm">
@@ -41,7 +43,7 @@
 
     <section>
       <h1>Weights</h1>
-      <img class="equip" src="images/equipment1.jpg" alt="Weight Equipment">
+      <img class="equip" src="images/equipment1.jpg" alt="Weight Fitness Equipment">
       <p>Our facility includes a weight training area with several weight options. Build lean muscle with weights and improve your core with weight training.</p>
       <ul class="items">
         <li>Dumbbells</li>
@@ -52,7 +54,7 @@
 
     <section>
       <h1>Cardio</h1>
-      <img class="equip" src="images/equipment2.jpg" alt="Cardio Equipment">
+      <img class="equip" src="images/equipment2.jpg" alt="Cardio Fitness Equipment">
       <p>Burn fat through cardio workouts. If you need to lose 20 lbs or more, include at least 30 minutes of cardio each day. We have several equipment choices for your workout.</p>
       <ul class="items">
         <li>Treadmills</li>
@@ -77,13 +79,22 @@
       <p>The following are common exercises that we encourage our clients to do as part of their daily exercise routine.</p>
       <dl>
         <dt>Burpee</dt>
-        <dd>Burpees are a great, full body exercise to increase your strength and endurance. Begin in a standing position, drop into a squat and extend your hands forward, kick your feet back and then forward again quickly, and then jump up from a squatted position.</dd>
+        <dd>
+          Burpees are a great, full body exercise to increase your strength and endurance. Begin in a standing position, drop into a squat and extend your hands forward, kick your feet back and then forward again quickly, and then jump up from a squatted position.<br>
+          <button onclick="burpees()">See example</button>
+        </dd>
 
         <dt>Plank</dt>
-        <dd>Planks build your core strength. To perform a plank, get in a push up position and rest your forearms on the floor. Hold the position as long as you can.</dd>
+        <dd>
+          Planks build your core strength. To perform a plank, get in a push up position and rest your forearms on the floor. Hold the position as long as you can.<br>
+          <button onclick="plank()">See example</button>
+        </dd>
 
         <dt>Mountain Climber</dt>
-        <dd>Mountain climbers are a good cardio exercise. Place your hands on the floor in a push up position, then bring one knee up to your chest and then switch as quickly as you can (as though you are climbing a mountain).</dd>
+        <dd>
+          Mountain climbers are a good cardio exercise. Place your hands on the floor in a push up position, then bring one knee up to your chest and then switch as quickly as you can (as though you are climbing a mountain).<br>
+          <button onclick="mtnClimber()">See example</button>
+        </dd>
       </dl>
 
       <p>For more information about how to stay active, visit <a href="http://www.fitness.gov/be-active/ways-to-be-active/">fitness.gov</a>.</p>
@@ -91,11 +102,20 @@
 
   </main>
 
-  <!-- Use the footer area to add the webpage footer content  -->
-  <footer>
-    &copy; Copyright 2015. All Rights Reserved.<br>
-    <a href="mailto:forwardfitness@club.net">forwardfitness@club.net</a>
-  </footer>
+    <!-- Use the footer area to add the webpage footer content  -->
+    <footer>
+      <div id="copyright">
+        <p>&copy; Copyright 2015. All Rights Reserved.<br><a href="mailto:forwardfitness@club.net">forwardfitness@club.net</a></p>
+      </div>
+
+      <div id="social">
+        <p>Connect with us:</p>
+        <p>
+          <a href="https://www.facebook.com/fwdfitclub"><img src="images/fblogo.png" alt="Facebook logo"></a>
+          <a href="https://twitter.com/fwdfitclub"><img src="images/twitterlogo.png" alt="Twitter logo"></a>
+        </p>
+      </div>
+    </footer>
 
   </div>
   

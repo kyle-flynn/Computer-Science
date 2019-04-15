@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- Kyle Flynn 4/10/2019 -->
+<html lang="en">
+<head>
+	<title>Website Usability Test</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+<div id="outerwrapper">	
+	<h1>CIS238 Event Management System Project Website</h1>
+	<!-- Replace "Name of your Website" with the actual name of your website above. -->
+	<p>Please complete the following survey as to the ease of use and experience using my website. Please explore  <a href="http://cis.gvsu.edu/~flynnky/project" target="_blank">website</a>, then come back and complete the survey. Note: all fields below are required.</p>
+	<!-- Replace username above with your username. Revise the directory path, if needed.-->
+	<div id="main">
+		<form action="feedback.php" method="post"> 			
+  
+      	<fieldset id="get-in-touch">
+		
+            <legend>Evaluator</legend>
+			
+            <label for="firstname">First Name</label>
+              	<input type="text" id="firstname" name="firstname" placeholder="First name" required >
+            
+        
+            <label for="lastname">Last Name</label>
+          		<input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+		</fieldset>	  
+ 	 
+		<fieldset id="timeframe">		
+			  
+			  <legend>Ratings</legend>
+			  <p>Please provide a rating for the following questions, using the scale below:<br>
+			  1 - Strongly agree, 2 - Agree, 3 - Neutral, 4 - Disagree, 5 - Strongly disagree</p>
+			  
+			  <hr>
+			  <p>The website is easy to navigate:</p>
+			  <ul>
+				  <span>Strongly agree</span>
+				  <li><input id="1" type="radio" name="easy-to-navigate" value="1" required>
+				  <label for="1">1</label></li>
+				  
+				  <li><input id="2" type="radio" name="easy-to-navigate" value="2">
+				  <label for="2">2</label></li>
+
+				  <li><input id="3" type="radio" name="easy-to-navigate" value="3">
+				  <label for="3">3</label></li>
+				 
+				  <li><input id="4" type="radio" name="easy-to-navigate" value="4">
+				  <label for="4">4</label></li>
+				  
+				  <li><input id="5" type="radio" name="easy-to-navigate" value="5">
+				  <label for="5">5</label></li>
+				  <span>Strongly disagree</span>
+			   </ul>
+			   
+			   <hr>
+			   <p>Graphics are visually appealing:</p>
+			   <ul>
+				  <span>Strongly agree</span>
+				  <li><input id="1" type="radio" name="visually-appealing" value="1" required>
+				  <label for="1">1</label></li>
+				  
+				  <li><input id="2" type="radio" name="visually-appealing" value="2">
+				  <label for="2">2</label></li>
+
+				  <li><input id="3" type="radio" name="visually-appealing" value="3">
+				  <label for="3">3</label></li>
+				 
+				  <li><input id="4" type="radio" name="visually-appealing" value="4">
+				  <label for="4">4</label></li>
+				  
+				  <li><input id="5" type="radio" name="visually-appealing" value="5">
+				  <label for="5">5</label></li>
+				  <span>Strongly disagree</span>
+			   </ul>
+			   
+			   <hr>
+			   <p>I was able to find content easily:</p>
+			   <ul>
+				  <span>Strongly agree</span>
+				  <li><input id="1" type="radio" name="find-content" value="1" required>
+				  <label for="1">1</label></li>
+				  
+				  <li><input id="2" type="radio" name="find-content" value="2">
+				  <label for="2">2</label></li>
+
+				  <li><input id="3" type="radio" name="find-content" value="3">
+				  <label for="3">3</label></li>
+				 
+				  <li><input id="4" type="radio" name="find-content" value="4">
+				  <label for="4">4</label></li>
+				  
+				  <li><input id="5" type="radio" name="find-content" value="5">
+				  <label for="5">5</label></li>
+				  <span>Strongly disagree</span>
+			   </ul>
+			   
+			   <hr>
+			   <p>The website is intuitive and user-friendly:</p>
+			   <ul>
+				  <span>Strongly agree</span>
+				  <li><input id="1" type="radio" name="user-friendly" value="1" required>
+				  <label for="1">1</label></li>
+				  
+				  <li><input id="2" type="radio" name="user-friendly" value="2">
+				  <label for="2">2</label></li>
+
+				  <li><input id="3" type="radio" name="user-friendly" value="3">
+				  <label for="3">3</label></li>
+				 
+				  <li><input id="4" type="radio" name="user-friendly" value="4">
+				  <label for="4">4</label></li>
+				  
+				  <li><input id="5" type="radio" name="user-friendly" value="5">
+				  <label for="5">5</label></li>
+				  <span>Strongly disagree</span>
+			   </ul>
+			   
+			   <hr>
+			   <p>Content is clearly organized:</p>
+			   <ul>
+				  <span>Strongly agree</span>
+				  <li><input id="1" type="radio" name="organized" value="1" required>
+				  <label for="1">1</label></li>
+				  
+				  <li><input id="2" type="radio" name="organized" value="2">
+				  <label for="2">2</label></li>
+
+				  <li><input id="3" type="radio" name="organized" value="3">
+				  <label for="3">3</label></li>
+				 
+				  <li><input id="4" type="radio" name="organized" value="4">
+				  <label for="4">4</label></li>
+				  
+				  <li><input id="5" type="radio" name="organized" value="5">
+				  <label for="5">5</label></li>
+				  <span>Strongly disagree</span>
+			   </ul>
+			
+		</fieldset>
+           
+		<fieldset id="written-feedback">
+		  
+			<legend>Written feedback</legend>
+			
+				<textarea name="what-to-change" rows="4" cols="35" placeholder="What is one thing about the website you would change, if you could?" required></textarea>
+
+				<textarea name="liked-best" rows="4" cols="35" placeholder="What did you like best about the website?" required></textarea>					
+				
+				<textarea name="liked-least" rows="4" cols="35" placeholder="What did you like least about the website?" required></textarea>	
+				
+		</fieldset>
+                               
+		 <fieldset id="buttons">
+		 
+			<input type="submit" value="Send feedback now">
+		
+			<input type="reset" value="Reset">
+			
+		</fieldset>
+		  
+     </form>
+	</div><!--end main-->
+	<footer>
+		<p>CIS238 | Usability Test </p>
+	</footer>
+</div><!--end outwrapper-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
