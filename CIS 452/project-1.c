@@ -39,8 +39,8 @@ int main() {
 	int newRow = 0;
 	int newCol = 0;
 	while (newRow >= 0 && newCol >= 0) {
-		printf("Enter desired row and column (separated by space): ");
-		scanf("%d %d", &newRow, &newCol);
+		printf("Enter desired row and column (separated by comma): ");
+		scanf("%d,%d", &newRow, &newCol);
 		if (newRow < row && newCol < col && newRow >= 0 && newCol >= 0) {
 			putp(clear);
 			putp(tparm(cursor_address, newRow, newCol));
