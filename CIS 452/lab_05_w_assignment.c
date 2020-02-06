@@ -1,22 +1,52 @@
-#include <iostream> 
-#include <sys/ipc.h> 
+#include <sys/ipc.h>
 #include <sys/shm.h> 
 #include <stdio.h> 
-using namespace std; 
-  
-int main() 
-{ 
-    key_t key = ftok("shmfile",65); 
-    int shmid = shmget(key,1024,IPC_CREAT | S_IRUSR | S_IWUSR); 
-    char *str = (char*) shmat(shmid,(void*)0,0); 
-  
-    cout<<"Write Data : "; 
-    gets(str); 
-  
-    printf("Data written in memory: %s\n",str); 
-      
-    //detach from shared memory  
-    shmdt(str); 
-  
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <string.h>
+#include "shared.h"
+
+int main() {
+		struct Message *ptr = malloc(sizeof *ptr);	
+    key_t key = ftok("shmfile",65);
+		size_t size = sizeof *ptr;
+		int flags = IPC_CREAT | S_IRUSR | S_IWUSR;
+    int shmid = shmget(key, size, flags); 
+		char quitStr[MAX] = "quit";
+		if (shmid < 0) {
+			printf("WRITER: Error creating shared memory segment.\n");
+			exit(1);
+		}
+
+		ptr = (struct Message*) shmat(shmid, NULL, 0);
+		if (((void *) ptr) < 0) {
+			printf("WRITER: Error attaching shared memory segment.\n");
+			exit(1);
+		}
+
+		ptr->status = WAITING;
+
+    while (ptr->status > QUIT) {
+      printf("Input > ");
+			scanf("%s", ptr->str);
+			printf("Sending message %s to readers...", ptr->str);
+			fflush(stdout);
+			if (strcmp(quitStr, ptr->str) == 0) {
+				ptr->status = QUIT;
+			} else {
+				while (ptr->status < COMPLETE) {
+					ptr->status = ptr->status + 1;
+				  /* Do Nothing */
+				}
+				printf("\nReaders received message.\n");
+				ptr->status = WAITING;
+				sleep(1);
+			}
+		}
+
+		shmdt((void *) ptr);
+		shmctl(shmid, IPC_RMID, NULL);
+		printf("\nCleaned up. Writer exiting.\n");
     return 0; 
 } 
