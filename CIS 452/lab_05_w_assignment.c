@@ -1,3 +1,6 @@
+/* Lab #5 Assignment - Writer  */
+/* Author: Kyle Flynn & John C. Doneth  */
+
 #include <sys/ipc.h>
 #include <sys/shm.h> 
 #include <stdio.h> 
@@ -30,16 +33,14 @@ int main() {
     while (ptr->status > QUIT) {
       printf("Input > ");
 			scanf("%s", ptr->str);
-			printf("Sending message %s to readers...", ptr->str);
 			fflush(stdout);
 			if (strcmp(quitStr, ptr->str) == 0) {
 				ptr->status = QUIT;
 			} else {
+				ptr->status = WRITTEN;
 				while (ptr->status < COMPLETE) {
-					ptr->status = ptr->status + 1;
 				  /* Do Nothing */
 				}
-				printf("\nReaders received message.\n");
 				ptr->status = WAITING;
 				sleep(1);
 			}

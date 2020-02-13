@@ -1,3 +1,6 @@
+/* Lab $5 Assignment - Shared Code  */
+/* Author: Kyle Flynn & John C. Doneth */
+
 #define QUIT -1
 #define WAITING 0
 #define WRITTEN 1

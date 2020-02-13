@@ -1,3 +1,6 @@
+/* Lab #5 Assignment - Reader  */
+/* Author: Kyle Flynn & John C. Doneth */
+
 #include <sys/ipc.h> 
 #include <sys/shm.h> 
 #include <stdio.h> 
@@ -9,7 +12,7 @@
 int main() { 
     key_t key = ftok("shmfile",65); 
  		size_t size = sizeof(struct Message);
-		int flags = IPC_CREAT | S_IRUSR | S_IWUSR;	
+		int flags = S_IRUSR | S_IWUSR;	
 		struct Message *ptr;
 		int shmid = shmget(key, size, flags);
 
@@ -29,7 +32,7 @@ int main() {
 		while (ptr->status > QUIT) {
 			if (ptr->status >= WRITTEN && didRead == 0) {
 				ptr->status = ptr->status + 1;
-				printf("Output > %s\n", ptr->str);
+				printf("(%d) Output > %s\n", ptr->status, ptr->str);
 				didRead = 1;
 			} else if (ptr->status == WAITING && didRead == 1) {
 				printf("READER: Resetting...\n");
