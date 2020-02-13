@@ -100,19 +100,22 @@ void* writerLoop(void* argp) {
 	char usr[MAX];
 	printf("Welcome to SimplChat.\n(%d) active clients.\nEnter your name: ", ptr->clients);
 	fgets(usr, MAX, stdin);
+	usr[strlen(usr) - 1] = '\0';
 	printf("\n");
   fflush(stdout);
-	char msg[MAX];
-	char qit[MAX] = "quit";
+	char msg[MAX] = {0};
+	char quit[] = "quit";
 	while (mem->active == 1) {
     while (ptr->status == SENT) {
       /* Do nothing  */
 		}
 		sleep(1);
 		printf("Input > ");
-	  fgets(msg, MAX, stdin);
-		scanf("%s", msg);
-		if (strcmp(msg, qit) == 0) {
+	  if (fgets(msg, MAX, stdin) == NULL) {
+      printf("HERE");
+		}
+		msg[strlen(msg) - 1] = '\0';
+		if (strcmp(quit, msg) == 0) {
       mem->active = 0;
 			break;
 		} else {
