@@ -8,7 +8,6 @@
 #include <pthread.h>
 
 #define QUIT -1
-#define WAITING 0
 #define SENT 1
 #define IDLE 99
 #define MAX 255
@@ -76,14 +75,19 @@ void* readerLoop(void* argp) {
 	struct Message *ptr = (struct Message*) mem->msg;
 	int didRead = 0;
   while (mem->active == 1) {
-		while (ptr->status >= WRITTEN && !didRead) {
+		while (ptr->status == IDLE || didRead == 1) {
+			if (ptr->status < IDLE) {
+				didRead = 0;
+			}
+		}
+		if (ptr->status >= SENT && didRead == 0) {
 			ptr->status = ptr->status + 1;
 			didRead = 1;
 			printf("\n%s: %s\n", ptr->usr, ptr->str);
 			fflush(stdout);
 		}
-		if (didRead == 1 && (ptr->status - WRITTEN) >=  ptr->clients) {
-			ptr->status = WAITING;
+		if (didRead == 1 && (ptr->status - SENT) >= ptr->clients) {
+			ptr->status = IDLE;
 			didRead = 0;
 		}
 	}
@@ -95,17 +99,18 @@ void* writerLoop(void* argp) {
 	struct Message *ptr = (struct Message*) mem->msg;
 	char usr[MAX];
 	printf("Welcome to SimplChat.\n(%d) active clients.\nEnter your name: ", ptr->clients);
-	scanf("%s", usr);
+	fgets(usr, MAX, stdin);
 	printf("\n");
   fflush(stdout);
 	char msg[MAX];
 	char qit[MAX] = "quit";
 	while (mem->active == 1) {
-    while (ptr->status == WRITTEN) {
+    while (ptr->status == SENT) {
       /* Do nothing  */
 		}
 		sleep(1);
-	  printf("Input > ");
+		printf("Input > ");
+	  fgets(msg, MAX, stdin);
 		scanf("%s", msg);
 		if (strcmp(msg, qit) == 0) {
       mem->active = 0;
@@ -114,7 +119,7 @@ void* writerLoop(void* argp) {
   		fflush(stdout);
 	  	strcpy(ptr->usr, usr);
 		  strcpy(ptr->str, msg);
-		  ptr->status = WRITTEN;
+		  ptr->status = SENT;
 		}
 	}
 	printf("Writer thread exiting...");
